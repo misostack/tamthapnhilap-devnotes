@@ -1,85 +1,35 @@
 # General
 
-## Repositories
+### URL
 
-```
-mkdir blog-nhatkiduan
-cd blog-nhatkiduan
-git clone git@bitbucket.org:tamthapnhilap/blog-nhatkiduan.git src
-git clone git@github.com:misostack/nhatkiduan.git dist
-```
+http://devnotes.tamthapnhilap.site/
 
-## Development
+### Commands
 
-```
-hugo serve # run
+```bash
 hugo # build
+hugo serve # watch
+# theme
+cd themes/techblog2019
+yarn start # watch changes
+# docs ==> the build folder
 ```
 
-### Setup tools
+### Blog
 
-**Step 1**
+#### New Subject
 
-```
-npm init -y
-npm install --save-dev webpack
-```
-
-*How to make ES6 work?*
-
-```
-npm install babel-core babel-loader babel-preset-env babel-preset-es2015 babel-preset-stage-2 --save-dev
+```bash
+hugo new article/subject-xxx-short-desc.md
 ```
 
-```javascript
-    module: {
-        rules: [
-          {
-            test: /\.js?$/,
-            use: [
-              {
-                loader: 'babel-loader',
-                options: {
-                  presets: ['es2015','stage-2'],
-                },
-              },
-            ],
-          }
-        ]
-    },
-       
+#### New Blog Post
+
+```bash
+hugo new blog/post-name
 ```
 
-*How to test your js with html?*
-
+#### New note for projects
+```bash
+hugo new note/projectname-xxx-short-desc.md
 ```
-npm install --save-dev webpack-dev-server
-npm install --save-dev html-webpack-plugin
-```
-
-*Create new file index.html in src dir*
-
-
-**Step 2**
-
-```
-npm install html-webpack-plugin --save-dev
-```
-
-
-```
-hugo server -D
-```
-
-# New posts
-
-```
-hugo new posts/example-day-001.md
-```
-
-# References
-
-- (Istnall)[https://gohugo.io/getting-started/installing]
-- https://gohugo.io/getting-started/quick-start/
-
-https://bwaycer.github.io/hugo_tutorial.hugo/templates/list/

@@ -155,8 +155,22 @@ img.lazy{
 }
 
 .hl-keywords{
-    &-rails, &-ruby{
+    &-rails, &-ruby, 
+    &-angular,
+    &-php, &-laravel, &-lumen{
         color: red;
+        font-weight: bold;
+    }
+    &-nodejs{
+        color: green;
+        font-weight: bold;
+    }
+    &-javascript, &-reactjs{
+        color:cyan;
+        font-weight: bold;
+    }
+    &-go{
+        color:cyan;
         font-weight: bold;
     }
 }

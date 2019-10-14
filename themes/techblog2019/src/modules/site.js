@@ -48,8 +48,12 @@ var Site = Site || {};
     },
     keywords: function(){
       return [
-        'ruby',
-        'rails'
+        'ruby', 'rails', 'hanabi', 'sinatra',
+        'angular', 'reactjs', 'vuejs', 'javascript',
+        'nodejs',
+        'php','laravel','lumen',
+        'python','flask',
+        'go'
       ];
     },
     // scrollpy
