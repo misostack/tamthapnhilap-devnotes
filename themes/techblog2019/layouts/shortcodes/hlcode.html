@@ -1,0 +1,11 @@
+{{ if .Get "id" }}
+<a class="collapse-trigger" data-toggle="collapse" href="#{{ .Get "id" }}" role="button" aria-expanded="false" 
+aria-controls="{{ .Get "id" }}">
+    <strong>{{ if .Get "text" }}{{ .Get "text" }}{{ else }}{{ .Get "id" }}{{ end }}</strong>
+  </a>
+<div class="collapse" id="{{ .Get "id" }}">
+<pre><code class="language-{{ if .Get "language" }}{{ .Get "language" }}{{ else }}bash{{ end }}">{{ trim .Inner "\n" }}</code></pre>
+</div>
+{{ else }}
+<pre><code class="language-{{ if .Get "language" }}{{ .Get "language" }}{{ else }}bash{{ end }}">{{ trim .Inner "\n" }}</code></pre>
+{{ end}}

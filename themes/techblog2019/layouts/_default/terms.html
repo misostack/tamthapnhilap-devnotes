@@ -1,0 +1,40 @@
+{{ define "main" }}
+    <section class="row-section">
+        <h2 class="row-section-title">{{ .Title }}</h2>            
+        {{ $data := .Data }}
+        {{ .Scratch.Set "taxonomylist" .Site.Data.categories }}
+        {{ if eq $data.Plural "projects" }}
+            {{ .Scratch.Set "taxonomylist" .Site.Data.projects }}            
+        {{ end }}
+        {{ if eq $data.Plural "subjects" }}
+            {{ .Scratch.Set "taxonomylist" .Site.Data.subjects }}            
+        {{ end }}        
+        {{ $taxonomy_list := .Scratch.Get "taxonomylist" }}
+        
+        <div class="list-term-items row">            
+        {{ range $key, $value := .Data.Terms.Alphabetical }}
+            {{ $combine := (printf "%v/%v" $data.Plural ($value.Name | urlize) ) }}
+            <div class="list-term-item col-md-4">
+                <a class="item-link" href="{{ $combine | absURL }}">                
+                {{ $taxonomy_term := (index $taxonomy_list $value.Name) }}
+                    
+                    {{ if $taxonomy_term }}
+                    <img class="item-image" src="{{ (printf "%v" $taxonomy_term.image) | absURL }}" alt="{{ $value.Name }}" />
+                    {{ else }}
+                    <img class="item-image" src="{{ "common/no-image-available.jpg" | absURL }}" alt="{{ $value.Name }}" />
+                    {{ end }}
+                    <span class="item-post-name">{{ $value.Name }}({{ $value.Count }})</span>
+                    <span class="item-description">
+                        {{ $taxonomy_term.description }}
+                    </span>
+                </a>                
+            </div>
+        {{ end }}
+        </div>
+    </section>    
+{{ end }}
+{{ define "aside" }}
+<div class="sidebar-fixed">
+                     
+</div>
+{{ end }}

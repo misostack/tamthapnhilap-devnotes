@@ -1,0 +1,76 @@
+html{
+    font-size: 14px;
+    @include for-size(mobile){
+        font-size:16px;
+    }
+}
+body{
+    font-size:1rem;    
+    word-wrap:break-word;
+    @include font_default();
+}
+
+* {box-sizing: border-box;}
+h1,h2,h3,h4,h5,h6,a{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size:2rem;    
+}
+h2{
+    font-size:1.6rem;
+}
+h3{
+    font-size:1.4rem;
+}
+h4,h5,h6{
+    font-size:1.2rem;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+p{
+    line-height: 1.4rem;
+}
+
+.container,.container-fluid{
+    padding:0 20px;    
+}
+.container{
+    max-width: 1170px;
+    margin:0px auto;
+}
+.container-fluid{
+    max-width: 100%;
+    margin:0px auto;
+}
+
+
+.clearfix{
+    @extend %clearfix;
+}
+
+.fixed-bottom{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;    
+}
+
+a,a:hover,a:active,a:visited{
+    text-decoration: none;    
+}
+
+.ucfirst{
+    text-transform: capitalize;
+}
+
+.important{
+    color:red;
+    font-weight: bold;
+}

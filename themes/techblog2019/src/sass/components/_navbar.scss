@@ -1,0 +1,52 @@
+.navbar{
+    @include flexbox();        
+    @include flex-flow(row wrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    font-size:1.2rem;
+    a{        
+        text-decoration: none;
+    }
+    ul, ol{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-menu{
+        @include flexbox();        
+        // @include flex-direction(row);
+        // @include flex-wrap(wrap);
+        @include flex-flow(row wrap);
+        @include justify-content(flex-end);
+        li{
+            position: relative;
+        }
+        > li {
+            display:inline-block;
+            &.has-children > a:after{
+                padding: 0 0.8rem;
+                content: "\F078";
+                @extend .fa;
+                font-size:0.8rem;
+            }
+        }
+        a{
+            text-transform: capitalize;
+            padding: 0px 15px;
+            display: block;
+            line-height: 60px;
+        }
+        ul{
+            position: absolute;
+            right:0;
+            left:auto;
+            top:100%;
+            width:240px;
+            a{
+                text-align: center;
+                line-height: 40px;
+            }
+            display: none;
+        }
+    }
+}

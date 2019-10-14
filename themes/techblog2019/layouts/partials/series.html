@@ -1,0 +1,8 @@
+<div class="sidebar-widget">
+    <h3 class="widget-header ucfirst"><span>Post Series</span></h3>
+    <ul class="sidebar-links">
+    {{ range $index, $element := (sort (where .Site.Pages ".Params.categories" "intersect" .Params.categories) "Date" "asc" ) }}
+        <li><a class="ucfirst" href="{{ .Permalink }}">{{add $index 1}}.{{ .Title }}</a></li>          
+    {{ end }}
+    </ul>
+</div>
