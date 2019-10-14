@@ -41,13 +41,7 @@
             </div>
             {{ end }}
         </div>
-        <footer id="footer" class="footer footer-default">
-            <div class="container">
-                <div class="text">
-                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
-                </div>
-            </div>
-        </footer>        
+        {{ partial "footer.html" . }}
     </div>
     <script type="text/javascript" src="{{ "dist/app.bundle.js" | absURL }}"></script></body>
 </html>

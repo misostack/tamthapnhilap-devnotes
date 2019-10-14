@@ -3,7 +3,7 @@ copyright = "Everything is mine"
 baseURL = "http://devnotes.tamthapnhilap.site"
 languageCode = "vi-VN"
 title = "DevNotes 2019"
-theme = "techblog2018"
+theme = "techblog2019"
 publishDir = "docs"
 disableHugoGeneratorInject = true
 [params]
