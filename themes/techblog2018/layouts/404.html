@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="article">
+    <h3>404 Notfound</h3>
+    <p>The page does not exist</p>
+</article>
+{{ end }}
+{{ define "aside" }}
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header"><a href="#">Tools</a></h3>
+        <ul class="sidebar-links">            
+            <li><a target="_blank" href="https://regex101.com/">Online Regex</a></li>
+            <li><a target="_blank" href="http://www.bashoneliners.com/">Bash Online</a></li>
+            <li><a target="_blank" href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+            <li><a target="_blank" href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+            <li><a target="_blank" href="https://explainshell.com/">Explain Shell</a></li>                        
+        </ul>
+    </div>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst"><span>{{ $taxonomyname }}</span></h3>
+        <ul class="sidebar-links">            
+            {{ range $key, $value := $taxonomy }}
+            <li><a class="ucfirst" href="{{ (print $taxonomyname "/" $key) | absURL }}">{{ $key }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}                        
+</div>
+{{ end }}

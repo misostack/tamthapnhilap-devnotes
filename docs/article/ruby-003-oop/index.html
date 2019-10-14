@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby Module and Classes | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 003 OOP" />
+    <meta name="description" content="Ruby 003 OOP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby Module and Classes</h1>
+        
+
+<h2 id="object-oriented-programming">Object Oriented Programming</h2>
+
+<ul>
+<li>Data Abstraction</li>
+<li>Encapsulation</li>
+<li>Inheritance</li>
+
+<li><p>Polymorphism</p>
+
+<pre><code class="language-ruby">class Animal
+	# symbols : immutable
+	attr_reader :name, :talk	
+	def initialize
+		@name = self.class.name.capitalize		
+	end	
+	def speak
+		puts &quot;#{@name} says 'hello'&quot;
+	end
+end
+
+class Dog &lt; Animal
+	def initialize
+		super
+		@talk = 'gou gou gou'
+	end
+end
+
+class Cat &lt; Animal
+	def initialize
+		super
+		@talk = 'meow meow meow'
+	end	
+end
+
+dog = Dog.new
+dog.speak
+puts dog.name
+cat = Cat.new
+cat.speak
+puts cat.name
+</code></pre></li>
+</ul>
+
+<h2 id="symbol">Symbol</h2>
+
+<ul>
+<li><p><a href="https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/">https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/</a></p></li>
+
+<li><p>A Symbol is basically the same as a String, but with one important difference.</p></li>
+
+<li><p>A Symbol is <strong>immutable</strong>.</p></li>
+
+<li><p>Symbols are better for performance</p>
+
+<pre><code class="language-html">When you create two String objects with the same value, those two objects are treated as two different objects. When you create a Symbol, referencing the Symbol will always use the same object.
+
+This is much better for performance because the same String object will be created and destroyed over and over again when in reality the same object can just be reused each time.
+</code></pre>
+
+<pre><code class="language-ruby">:hello.class  
+=&gt; Symbol
+
+&quot;hello&quot;.class  
+=&gt; String  
+
+name = &quot;Philip&quot;  
+=&gt; &quot;Philip&quot;
+
+name.freeze  
+=&gt; &quot;Philip&quot;
+
+name &lt;&lt; &quot;Jim&quot;  
+RuntimeError: can’t modify frozen String  
+
+&quot;philip&quot;.object_id  
+=&gt; 70288511587360  
+&quot;philip&quot;.object_id  
+=&gt; 70288504327720
+
+:philip.object_id  
+=&gt; 539368  
+:philip.object_id  
+=&gt; 539368  
+</code></pre></li>
+</ul>
+
+<p><strong>When should you use Symbols?</strong></p>
+
+<ul>
+<li><p>Identifying things</p>
+
+<pre><code class="language-ruby">person = {:name =&gt; &quot;Philip&quot;} # Symbol
+person = {&quot;name&quot; =&gt; &quot;Philip&quot;} # String
+person = {name: &quot;Philip&quot;}  # Symbol
+</code></pre></li>
+
+<li><p>Used in method calls</p>
+
+<pre><code class="language-ruby">people = [&quot;Marty&quot;, &quot;Emmett&quot;, &quot;Bif&quot;]  
+=&gt; [&quot;Marty&quot;, &quot;Emmett&quot;, &quot;Bif&quot;]
+
+people.send(:pop) # execute method pop of array
+=&gt; &quot;Bif&quot;
+
+people.respond_to?(:map) # Check to see if the map method is available on this object.
+
+class Dog  
+attr_accessor :name
+end
+
+dog1 = Dog.new  
+dog1.name = &quot;Einstein&quot;
+</code></pre></li>
+
+<li><p>When you want to set the status of something?(Same as Enums)</p>
+
+<pre><code class="language-ruby">module IkariamUnit
+	class Unit
+		attr_reader :name, :description, :hitpoints, :armour, :size, :type, :speed, :cost, :barracks, :status
+		def initialize(unit_type)
+			@name = unit_type
+			@status = :inactive if(unit_type == 'Hoptile')
+			@status = :active unless(unit_type == 'Hoptile')
+			Object.const_get( self.class.name.split('::')[0] + &quot;::#{unit_type}&quot;)
+		end
+
+		def display			
+			puts prepare_display
+		end
+
+		protected
+
+		def prepare_display
+			'-' * 20
+			&quot;Name: #{name}\n&quot; +
+			&quot;Description: #{description}\n&quot;.capitalize +
+			&quot;hitpoints: #{hitpoints}\n&quot;.capitalize +
+			&quot;armour: #{armour}\n&quot;.capitalize +
+			&quot;size: #{size}\n&quot;.capitalize +
+			&quot;type: #{type}\n&quot;.capitalize +
+			&quot;speed: #{speed}\n&quot;.capitalize +
+			&quot;cost: #{cost}\n&quot;.capitalize +
+			&quot;barracks: #{barracks}\n&quot;.capitalize +
+			&quot;status: #{status}\n&quot;.capitalize +
+			'-' * 20
+		end
+	end
+
+	class Hoptile &lt; Unit
+	end
+
+	class SteamGiant &lt; Unit
+	end
+
+	class Swordman &lt; Unit
+	end
+
+	class Spearman &lt; Unit
+	end
+
+	class SulphurCarabineer &lt; Unit
+	end
+
+	def self.show_all_units
+		['Hoptile','SteamGiant','Swordman','Spearman','SulphurCarabineer'].each do |u|
+			unit_obj = Unit.new(u)
+			unit_obj.display
+		end
+	end
+end
+
+IkariamUnit.show_all_units
+</code></pre></li>
+</ul>
+
+<h3 id="a-payroll-system">A Payroll System</h3>
+
+<p><strong>Fixnum and Float</strong></p>
+
+<pre><code class="language-ruby">puts 1/2
+puts 1.0/ 2
+puts Float(1.0) /2
+
+class Employee
+	attr_reader :name, :salary
+
+	def initialize(name = 'Anonymous', salary = 0.0)
+		@name = name
+		@salary = salary
+	end
+
+	def name=(name)
+		raise 'Name can not be blank' if name == ''
+		@name = name
+	end
+
+	def salary=(salary)
+		raise &quot;A salary of #{salary} is not valid!&quot; if salary &lt; 0
+		puts salary.class
+		@salary = salary * 1.0
+		puts @salary.class
+	end
+
+	def print_pay_stub
+		puts format(&quot;The %s 's pay period is $%0.2f&quot;, @name, @salary/365 * 14)
+	end
+end
+
+jack = Employee.new 'Jack', 100000
+# jack.name = &quot;Jack&quot;
+# jack.salary = 100000
+jack.print_pay_stub
+
+</code></pre>
+
+<h3 id="modules-and-its-useful">Modules and its useful</h3>
+
+<p><strong>Ruby Object Model (ROM)</strong></p>
+
+<pre><code class="language-ruby">module Cream
+  def cream?
+    true
+  end
+end
+
+class Cookie
+  include Cream
+end
+
+cookie = Cookie.new
+p cookie.cream?
+</code></pre>
+
+<p><strong>Look this sample</strong></p>
+
+<pre><code class="language-ruby">require 'digest'
+
+module Encryption
+	def encrypt(string)
+		Digest::SHA2.hexdigest(string)
+	end
+end
+
+class User
+	include Encryption
+	
+	def login(username,password)
+		@hashed_password = encrypt_password(password)
+		p &quot;#{username} - #{@hashed_password}&quot;
+	end
+
+	def encrypt_password(password, salt = '')
+		encrypt(password.to_s + (salt.empty? ? '123456' : salt).to_s )
+	end
+end
+
+u = User.new
+u.login 'username', '123456'
+</code></pre>
+
+<p>Có 3 điều chúng ta có thể làm với một module:</p>
+
+<ol>
+<li>Include nó trong class-objects</li>
+<li>Prepend nó trong class-objects</li>
+<li>Extend nó trong class objects hoặc tạo objects với nó</li>
+</ol>
+
+<p><strong>The Helicopter Rule</strong></p>
+
+<p><img src="/posts/ruby-module.png" alt="ruby-module.png" /></p>
+
+<pre><code class="language-ruby">module A; end
+module B; end
+module C; end
+
+class MyClass
+    include A
+    prepend B
+    extend C
+end
+
+MyClass.ancestors
+=&gt; [B, MyClass, A, Object, Kernel, BasicObject] 
+MyClass.singleton_class.ancestors
+=&gt; [#&lt;Class:MyClass&gt;, C, #&lt;Class:Object&gt;, #&lt;Class:BasicObject&gt;, Class, Module, Object, Kernel, BasicObject]
+</code></pre>
+
+<h3 id="build-method">Build Method</h3>
+
+<pre><code class="language-bash">build won't &quot;create&quot; a record in database, just create a new object in memory so that the view can take this object and display something, especially for a form.
+</code></pre>
+
+<pre><code class="language-ruby">params = {name: 'A'}
+obj = objAType.send(:build, params)
+obj.displayName
+</code></pre>
+
+<p><strong>You wanna read more?</strong></p>
+
+<ul>
+<li><a href="http://ruby-for-beginners.rubymonstas.org/advanced/modules.html">http://ruby-for-beginners.rubymonstas.org/advanced/modules.html</a></li>
+<li><a href="https://learnrubythehardway.org/book/ex40.html">https://learnrubythehardway.org/book/ex40.html</a></li>
+<li><a href="https://viblo.asia/p/tim-hieu-sau-ve-ruby-modules-jvElaLgYZkw">https://viblo.asia/p/tim-hieu-sau-ve-ruby-modules-jvElaLgYZkw</a></li>
+<li><a href="https://www.sitepoint.com/get-the-low-down-on-ruby-modules/">https://www.sitepoint.com/get-the-low-down-on-ruby-modules/</a></li>
+<li><a href="https://stackoverflow.com/questions/19761766/build-method-on-ruby-on-rails">https://stackoverflow.com/questions/19761766/build-method-on-ruby-on-rails</a></li>
+</ul>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Reactjs Ways - Main Concepts | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Reactjs Ways 001" />
+    <meta name="description" content="Reactjs Ways 001" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+<article class="article article-scrollby" data-target="#article-scrollpy">
+    <img src="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Reactjs Ways - Main Concepts" />
+    <h1>Reactjs Ways - Main Concepts</h1>
+    
+
+<h3 id="1-jsx"><strong>1.JSX</strong></h3>
+
+<blockquote class="important">
+<ul>
+    <li>javascript syntax extension</li>
+    <li>Since JSX is closer to JavaScript than to HTML, React DOM uses camelCase property naming convention instead of HTML attribute names.</li>
+</ul>
+</blockquote>
+
+<pre><code class="language-javascript">const element = &lt;img src={user.avatarUrl}&gt;&lt;/img&gt;;
+
+const element = &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;
+
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+
+ReactDOM.render(element, document.getElementById('root'));
+</code></pre>
+
+<h3 id="2-render"><strong>2.Render</strong></h3>
+
+<blockquote class="important">
+<ol>
+<li>Elements are the smallest building blocks of React apps.</li>
+<li>React elements are immutable. Once you create an element, you can’t change its children or attributes</li>
+<li>React Only Updates What’s Necessary</li>
+</ol>
+</blockquote>
+
+<pre><code class="language-javascript">ReactDOM.render(element, document.getElementById('root'));
+</code></pre>
+
+<p><strong><a href="https://en.wikipedia.org/wiki/Immutable_object">https://en.wikipedia.org/wiki/Immutable_object</a></strong></p>
+
+<h3 id="3-components-and-props"><strong>3.Components and Props</strong></h3>
+
+<ul>
+<li>Rendering a Component</li>
+<li>Composing Components</li>
+<li>Extracting Components</li>
+<li>Props are Read-Only</li>
+</ul>
+
+<blockquote class="important">
+- Conceptually, components are like JavaScript functions. <br/>
+- They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.<br/>
+- All React components must act like <strong>pure functions</strong> with respect to their props.
+</blockquote>
+
+<p><strong>The simplest way to define a component is to write a JavaScript function:</strong></p>
+
+<pre><code class="language-javascript">function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+</code></pre>
+
+<p><strong>Common way to define a component(ES6 class):</strong></p>
+
+<pre><code class="language-javascript">class Welcome extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+  }
+}
+
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+}
+
+const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+</code></pre>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+<li><a href="https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized">https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized</a></li>
+</ul>
+
+<blockquote class="important">
+- Always start component names with a capital letter.<br>
+- React treats components starting with lowercase letters as DOM tags
+</blockquote>
+
+<h3 id="4-state-and-lifecyle"><strong>4.State and Lifecyle</strong></h3>
+
+<blockquote class="important">
+- State is similar to props, but it is private and fully controlled by the component. <br/>
+- Do Not Modify State Directly<br/>
+- State Updates May Be Asynchronous<br/>
+- State Updates are Merged<br/>
+- The Data Flows Down
+</blockquote>
+
+<ul>
+<li>Because this.props and this.state may be updated asynchronously, you should not rely on their values for calculating the next state.</li>
+</ul>
+
+<p>
+<a class="collapse-trigger" data-toggle="collapse" href="#example-sample-component" role="button" aria-expanded="false" 
+aria-controls="example-sample-component">
+    <strong>sample-component</strong>
+  </a>
+<div class="collapse" id="example-sample-component">
+<pre><code class="language-javascript">
+// Wrong
+this.setState({
+  counter: this.state.counter &#43; this.props.increment,
+});
+
+// Correct
+this.setState((prevState, props) =&gt; ({
+  counter: prevState.counter &#43; props.increment
+}));
+
+// Correct
+this.setState(function(prevState, props) {
+  return {
+    counter: prevState.counter &#43; props.increment
+  };
+});
+
+componentDidMount() {
+    fetchPosts().then(response =&gt; {
+      this.setState({
+        posts: response.posts
+      });
+    });
+
+    fetchComments().then(response =&gt; {
+      this.setState({
+        comments: response.comments
+      });
+    });
+  }
+</code></pre>
+</div>
+
+<br/>
+
+<a class="collapse-trigger" data-toggle="collapse" href="#example-timer-component" role="button" aria-expanded="false" 
+aria-controls="example-timer-component">
+    <strong>timer-component</strong>
+  </a>
+<div class="collapse" id="example-timer-component">
+<pre><code class="language-javascript">
+
+import * as React from &#34;react&#34;;
+interface TimerProps {
+    wrapperClass: string
+}
+
+interface TimerState {
+    date: Date
+}
+
+export default class Timer extends React.Component&lt;TimerProps, TimerState&gt; {
+    timerID: any;
+
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            date: new Date()
+        }
+        // let numbers: any = [9, 3, 6, 2];
+        // console.log(...numbers);
+        // console.log(&#34;Min number of this array &#34;, numbers, Math.min.apply(null, numbers));
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        })
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(() =&gt; {
+            this.tick();
+        }, 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    render() {
+        return (
+            &lt;div className={this.props.wrapperClass}&gt;&lt;i className=&#34;fa fa-clock mr-md-2&#34;&gt;&lt;/i&gt;{this.state.date.toLocaleTimeString()}&lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+</div>
+
+<br/></p>
+
+<h3 id="5-state-and-lifecyle"><strong>5.State and Lifecyle</strong></h3>
+
+<blockquote class="important">
+- React events are named using camelCase, rather than lowercase.<br/>
+- With JSX you pass a function as the event handler, rather than a string.
+</blockquote>
+
+<p><strong>Arrow Functions</strong></p>
+
+<pre><code class="language-javascript">// Basic Syntax with Multiple Parameters
+const multiplyES6 = (x, y) =&gt; { return x * y };
+console.log(multiplyES6(2,3));
+// Basic Syntax with One Parameter
+const phraseSplitterEs6 = phrase =&gt; phrase.split(&quot; &quot;);
+console.log(phraseSplitterEs6(&quot;ES6 Awesomeness&quot;));  // [&quot;ES6&quot;, &quot;Awesomeness&quot;]
+// Basic Syntax with No Parameters
+const docLogEs6 = () =&gt; { console.log('hello'); };
+docLogEs6();
+// Object Literal Syntax
+const setNameIdsEs6 = (id, name) =&gt; ({ id: id, name: name });
+console.log(setNameIdsEs6 (4, &quot;Kyle&quot;));   // Object {id: 4, name: &quot;Kyle&quot;}
+</code></pre>
+
+<p><em>Use Cases for Arrow Functions</em></p>
+
+<ul>
+<li><a href="https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/">https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/</a></li>
+<li><a href="https://javascriptplayground.com/real-life-es6-arrow-fn/">https://javascriptplayground.com/real-life-es6-arrow-fn/</a></li>
+<li><a href="https://www.sitepoint.com/es6-let-const/">https://www.sitepoint.com/es6-let-const/</a></li>
+
+<li><p><a href="https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564">https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564</a></p>
+
+<pre><code class="language-javascript">const smartPhones = [
+    { name: 'iphone', price: 649 },
+    { name: 'Galaxy S6', price: 576 },
+    { name: 'Galaxy Note 5', price: 489 }
+];
+console.log(smartPhones.map(smartphone =&gt; smartphone.price));
+console.log(smartPhones.filter(smartphone =&gt; smartphone.price &gt; 500));
+    
+// ES5
+aAsync()
+.then(function () { return bAsync(); })
+.then(function () { return cAsync(); })
+.done(function () { finish(); });    
+
+// ES6
+aAsync()
+.then(() =&gt; return bAsync())
+.then(() =&gt; return cAsync())
+.done(() =&gt; finish)
+</code></pre></li>
+</ul>
+
+<p><strong>Javascript call() &amp; apply() vs bind()?</strong></p>
+
+<ul>
+<li><p><a href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind">https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind</a></p></li>
+
+<li><p>Call invokes the function and allows you to pass in arguments one by one.</p></li>
+
+<li><p>Apply invokes the function and allows you to pass in arguments as an array.</p></li>
+
+<li><p>Bind returns a new function, allowing you to pass in a this array and any number of arguments.</p>
+
+<pre><code class="language-javascript">class MyMath{
+constructor(){
+  this.multipleTwo = this.multiple.bind(this, 2);
+}
+multiple = (x,y) =&gt;{
+return x * y;
+}
+calculateWith2 = () =&gt; {
+for(let i = 1; i &lt;=10;i++){
+  console.log('2*',i, '=',this.multipleTwo(i));
+}
+}
+}
+
+const obj = new MyMath();
+obj.calculateWith2();
+</code></pre></li>
+</ul>
+
+<h3 id="6-conditonal-rendering"><strong>6.Conditonal Rendering</strong></h3>
+
+<blockquote class="important">
+- Conditional rendering<br/>
+- Element Variables<br/>
+- Inline If with Logical && Operator<br/>
+- Preventing Component from Rendering<br/>
+</blockquote>
+
+<p><strong>Conditional rendering</strong></p>
+
+<pre><code class="language-javascript">    render() {
+        const isLogged = this.state.isLogged;
+        let button;
+        if (isLogged) {
+            button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
+        } else {
+            button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
+        }
+        return (
+            button
+        )
+    }
+</code></pre>
+
+<p><strong>Element Variables</strong></p>
+
+<pre><code class="language-javascript">
+render() {
+    const isLogged = this.getLogInState();
+    let button;
+
+    if (isLogged) {
+        button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
+    } else {
+        button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
+    }
+    return (
+        button
+    )
+}
+
+</code></pre>
+
+<p><strong>Inline If with Logical &amp;&amp; Operator</strong></p>
+
+<pre><code class="language-javascript">    const logInBtn = &lt;a href=&quot;#login&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
+    const logOutBtn = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
+    return (
+        isLogged ? logOutBtn : logInBtn
+    )
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">Import &amp; Export modules</a></li>
+<li><a href="https://hackernoon.com/react-components-naming-convention-%EF%B8%8F-b50303551505">Naming Conventions</a></li>
+<li><a href="https://jaketrent.com/post/naming-event-handlers-react/">Event naming</a></li>
+<li><a href="https://web-design-weekly.com/2015/01/29/opinionated-guide-react-js-best-practices-conventions/">Best practice organization</a></li>
+<li><a href="https://unbug.gitbooks.io/react-native-training/content/45_naming_convention.html">Other best practice</a></li>
+</ul>
+
+<h3 id="7-lists-and-keys"><strong>7.Lists and Keys</strong></h3>
+
+<pre><code class="language-javascript">    public createModules(): any {
+        let modules: any = [];
+        this.state.modules.map((module: any, index: any) =&gt; {
+            modules.push((
+                &lt;li key={'module' + index}&gt;
+                    &lt;a href={module.path}&gt;{module.name}&lt;/a&gt;
+                &lt;/li&gt;
+            ))
+        });
+        return modules;
+    }
+</code></pre>
+
+<h3 id="8-form">8.Form</h3>
+
+<ul>
+<li><a href="https://reactjs.org/docs/forms.html">https://reactjs.org/docs/forms.html</a></li>
+<li><a href="https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag">https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag</a></li>
+</ul>
+
+<blockquote class="important">
+In most cases, we recommend using controlled components to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+</blockquote>
+
+<h3 id="9-lifting-state-up">9.Lifting State Up</h3>
+
+<blockquote class="important">
+- Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
+</blockquote>
+
+<blockquote class="important">
+- Lifting state involves writing more “boilerplate” code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.
+</blockquote>
+
+<pre><code class="language-javascript">&lt;Navbar isLogged={this.state.isLogged} handleLoginState={this.handleLoginState} /&gt;
+&lt;main className=&quot;main container&quot;&gt;
+    &lt;div className=&quot;row clearfix&quot;&gt;
+        &lt;div className=&quot;col-md-3&quot;&gt;
+            &lt;Sidebar modules={this.state.modules} /&gt;
+        &lt;/div&gt;
+        &lt;div className=&quot;col-md-9&quot;&gt;
+            { /* HTML tags always use lowercase tag names, while React components start with Uppercase. */}
+            &lt;h1 style={inlineStyles} className=&quot;page-title&quot;&gt;{this.title ? this.title : 'ReactJS Ways'}&lt;/h1&gt;
+            &lt;LoginForm isLogged={this.state.isLogged} handleLoginState={this.handleLoginState} /&gt;
+            &lt;p&gt;
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident magni consequatur libero, eum aut numquam quisquam sunt quod aperiam quo eius, reprehenderit similique ex incidunt blanditiis, veritatis beatae quibusdam.
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+
+<pre><code class="language-javascript">    handleSubmit(event: any) {
+        console.log(this.state.email, this.state.password, this.state.regionID, this.state.stores, this.state.remember ? 'Remember!' : &quot;Dont' remember me!&quot;);
+        this.props.handleLoginState(true);
+        event.preventDefault();
+    }
+
+    render() {
+        let isLogged = this.props.isLogged;
+        if (isLogged) {
+            return null;
+        }
+        return (
+            &lt;form onSubmit={this.handleSubmit}&gt;
+                &lt;div className=&quot;form-group&quot;&gt;
+                    &lt;label&gt;Email address&lt;/label&gt;
+                    &lt;input type=&quot;email&quot; className=&quot;form-control&quot; onChange={this.handleChange} value={this.state.email} name=&quot;email&quot;
+                        aria-describedby=&quot;emailHelp&quot; placeholder=&quot;Enter email&quot; /&gt;
+                    &lt;small id=&quot;emailHelp&quot; className=&quot;form-text text-muted&quot;&gt;We'll never share your email with anyone else.&lt;/small&gt;
+                &lt;/div&gt;
+                &lt;div className=&quot;form-group&quot;&gt;
+                    &lt;label&gt;Password&lt;/label&gt;
+                    &lt;input type=&quot;password&quot; className=&quot;form-control&quot; onChange={this.handleChange} name=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; className=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+            &lt;/form&gt;
+        )
+    }
+</code></pre>
+
+<p><strong>There are several ways to create modal with reactjs. You can take a look into these links:</strong></p>
+
+<ul>
+<li><a href="https://react.semantic-ui.com/usage">https://react.semantic-ui.com/usage</a></li>
+<li><a href="https://medium.com/front-end-hacking/react-redux-no-need-to-component-state-for-modals-73871157b52e">https://medium.com/front-end-hacking/react-redux-no-need-to-component-state-for-modals-73871157b52e</a></li>
+<li><a href="https://hackernoon.com/introducing-reactjs-popup-modals-tooltips-and-menus-all-in-one-227de37766fa">https://hackernoon.com/introducing-reactjs-popup-modals-tooltips-and-menus-all-in-one-227de37766fa</a></li>
+<li><a href="https://reactjs.org/docs/integrating-with-other-libraries.html">https://reactjs.org/docs/integrating-with-other-libraries.html</a></li>
+<li><a href="https://codeburst.io/modals-in-react-f6c3ff9f4701">https://codeburst.io/modals-in-react-f6c3ff9f4701</a></li>
+<li><a href="https://react.rocks/example/react-notification-system">https://react.rocks/example/react-notification-system</a></li>
+<li>V3 bootstrap : <a href="https://react-bootstrap.github.io/">https://react-bootstrap.github.io/</a></li>
+</ul>
+
+<h3 id="10-thinking-in-react">10.Thinking in React</h3>
+
+<ul>
+<li>Start With A Mock</li>
+<li>Break The UI Into A Component Hierarchy</li>
+<li>Build A Static Version in React</li>
+<li>Identify The Minimal (but complete) Representation Of UI State</li>
+<li>Identify Where Your State Should Live</li>
+<li>Add Inverse Data Flow</li>
+</ul>
+
+</article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/note/reactjs-ways-003/">Reactjs Ways - React Router - React Redux</a></li>
+            
+                <li><a href="/note/reactjs-ways-002/">Reactjs Ways - Advanced Solutions</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

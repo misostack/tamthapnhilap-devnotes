@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby 005 Hash | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 005 Hash" />
+    <meta name="description" content="Ruby 005 Hash" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby 005 Hash</h1>
+        
+
+<h2 id="hash">Hash</h2>
+
+<pre><code class="language-html">A hash can be created by:
+- Implicit form
+- With Symbol
+- Or using new method
+</code></pre>
+
+<pre><code class="language-ruby">grades = { &quot;Jane Doe&quot; =&gt; 10, &quot;Jim Doe&quot; =&gt; 6 }
+puts &quot;grades['Jane Done'] = #{grades['Jane Doe']}&quot;
+opts = {:font_size =&gt; 10, :font_family =&gt; 'Arial'}
+puts &quot;opts[:font_size] =  #{opts[:font_size]}&quot;
+new_opts = { font_size: 12, font_family: 'Arial' }
+puts &quot;new_opts[:font_size] = #{new_opts[:font_size]}&quot;
+new_opts[:font_weight] = 'bold'
+puts &quot;new_opts[:font_weight] = #{new_opts[:font_weight]}&quot;
+</code></pre>
+
+<h2 id="important-notes-about-hash">Important notes about hash</h2>
+
+<pre><code class="language-html">Hashes have a default value that is returned when accessing keys that do not exist in the hash.
+If no default is set nil is used. You can set the default value by sending it as an argument to ::new:
+</code></pre>
+
+<pre><code class="language-ruby">grades = Hash.new
+grades[&quot;Dorothy Doe&quot;] = 9
+grades.default = 0 # or grades = Hash.new(0)
+puts grades['anonymous'] # =&gt; 0
+
+class CelestialBody
+	attr_accessor :type, :name
+end
+
+default_body = CelestialBody.new
+default_body.type = 'planet'
+bodies = Hash.new(default_body)
+p bodies.default
+bodies['Mars'].name = 'Mars'
+p bodies['Mars'].name
+p bodies['Mars'].type
+</code></pre>
+
+<h2 id="hash-default-block-call">Hash default block call</h2>
+
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+
+puts 'Sample 1'
+foods = Hash.new([])
+foods['A'] &lt;&lt; &quot;Apple 1&quot;
+foods['A'] &lt;&lt; &quot;Avocado 1&quot;
+foods['B'] &lt;&lt; &quot;Bacon 1&quot;
+foods['B'] &lt;&lt; &quot;Bread 1&quot;
+p foods['A']
+p foods['B']
+p foods
+
+# Array is an object, and &lt;&lt; is a call to an attribute write method. This does not assign to the hash
+puts 'Sample 2'
+foods2 = Hash.new { |hash,key|  []}
+foods2['A'] &lt;&lt; &quot;Apple 2&quot; 
+foods2['A'] &lt;&lt; &quot;Avocado 2&quot;
+foods2['B'] &lt;&lt; &quot;Bacon 2&quot;
+foods2['B'] &lt;&lt; &quot;Bread 2&quot;
+p foods2['A']
+p foods2['B']
+p foods2
+
+puts 'Sample 3 : hash default block'
+foods3 = Hash.new { |hash,key| hash[key] = []}
+foods3['A'] &lt;&lt; &quot;Apple 2&quot;
+foods3['A'] &lt;&lt; &quot;Avocado 2&quot;
+foods3['B'] &lt;&lt; &quot;Bacon 2&quot;
+foods3['B'] &lt;&lt; &quot;Bread 2&quot;
+p foods3['A']
+p foods3['B']
+p foods3
+
+characters = ['a','b','c','a','c','d','e']
+counters = Hash.new(0)
+
+characters.each { |char|
+	counters[char] += 1
+}
+
+p counters
+</code></pre>
+
+<p><strong>Output</strong></p>
+
+<pre><code class="language-bash">Sample 1
+[&quot;Apple 1&quot;, &quot;Avocado 1&quot;, &quot;Bacon 1&quot;, &quot;Bread 1&quot;]
+[&quot;Apple 1&quot;, &quot;Avocado 1&quot;, &quot;Bacon 1&quot;, &quot;Bread 1&quot;]
+{}
+Sample 2
+[]
+[]
+{}
+Sample 3 : hash default block
+[&quot;Apple 2&quot;, &quot;Avocado 2&quot;]
+[&quot;Bacon 2&quot;, &quot;Bread 2&quot;]
+{&quot;A&quot;=&gt;[&quot;Apple 2&quot;, &quot;Avocado 2&quot;], &quot;B&quot;=&gt;[&quot;Bacon 2&quot;, &quot;Bread 2&quot;]}
+{&quot;a&quot;=&gt;2, &quot;b&quot;=&gt;1, &quot;c&quot;=&gt;2, &quot;d&quot;=&gt;1, &quot;e&quot;=&gt;1}
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+<li>if your default value is <strong>a number</strong>, you can use a hash default object</li>
+<li>if your default value is <strong>anything else</strong>, you should use a hash default block</li>
+<li>Variables, arrays, hashes, and other data structures don&rsquo;t contain objects, just references to them</li>
+</ul>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

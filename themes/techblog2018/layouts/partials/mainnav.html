@@ -1,0 +1,26 @@
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                        <li><a href="{{ $taxonomyname | absURL }}">{{  $taxonomyname }}</a></li>
+                    {{ end }}
+                    {{ range $navitem := .Site.Data.navitems }}
+                        <li>
+                            <a href="{{ $navitem.url | absURL }}">{{ $navitem.name }}</a>
+                            {{ if $navitem.childrens }}
+                                <ul class="navbar-sub-menu">                                    
+                                {{ range $sub_navitem := $navitem.childrens }}
+                                    <li><a href="{{ $sub_navitem.url | absURL }}">{{ $sub_navitem.name }}</a></li>
+                                {{ end }}
+                                </ul>
+                            {{ end }}
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+    </div>

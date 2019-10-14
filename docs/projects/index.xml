@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on DevNotes 2019</title>
+    <link>http://devnotes.tamthapnhilap.site/projects/</link>
+    <description>Recent content in Projects on DevNotes 2019</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-VN</language>
+    <copyright>Everything is mine</copyright>
+    <lastBuildDate>Wed, 21 Nov 2018 16:16:13 +0700</lastBuildDate>
+    
+	<atom:link href="http://devnotes.tamthapnhilap.site/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iome</title>
+      <link>http://devnotes.tamthapnhilap.site/projects/iome/</link>
+      <pubDate>Wed, 21 Nov 2018 16:16:13 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/projects/iome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crmexpress</title>
+      <link>http://devnotes.tamthapnhilap.site/projects/crmexpress/</link>
+      <pubDate>Mon, 01 Oct 2018 10:48:28 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/projects/crmexpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs-ways</title>
+      <link>http://devnotes.tamthapnhilap.site/projects/reactjs-ways/</link>
+      <pubDate>Fri, 03 Aug 2018 10:18:06 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/projects/reactjs-ways/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

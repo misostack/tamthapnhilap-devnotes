@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <img src="{{ .Params.Image | absURL }}" class="img-responsive" alt="{{ .Title }}" />
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </article>
+{{ end }}
+{{ define "aside" }}    
+    <div class="sidebar-fixed">
+        <div id="article-scrollpy" class="sidebar-widget">
+            <h3 class="widget-header"><a href="#">Đầu mục bài viết</a></h3>
+            <ul class="sidebar-links article-scrollpy-links">
+            </ul>
+        </div>   
+    </div>
+{{ end }}

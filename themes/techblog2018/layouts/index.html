@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="row clearfix">
+    <section class="row-section col-md-12">
+        <h2 class="row-section-title"><a href="{{ "blog" | absURL }}">Các bài viết chủ đề "Programming STACK"</a></h2>       
+        <div class="row-section-content">                
+            <ul class="clearfix">
+            {{ range first .Site.Params.home_blog_pager ( sort (where .Site.Pages "Params.type" "article") "Date" "desc" ) }}            
+                <li class="row-section-content-item pull-left col-md-6" style="margin:1rem 0!important;">
+                    <a class="row-section-content-item-link" href="{{ .Permalink }}">{{ .Title }} - {{ .PublishDate.Format "02 Jan, 2006" }}</a>
+                    {{ range $subject:= .Params.subjects }}
+                    <a class="category-tag subject-{{ $subject }}" href="{{ (print "subjects/" $subject) | absURL }}">{{ $subject }}</a>
+                    {{ end }}
+                </li>
+            {{ end }}        
+            </ul>
+        </div> 
+    </section>
+</div>
+<div class="row clearfix">
+    <section class="row-section col-md-6">
+        <h2 class="row-section-title"><a href="{{ "note" | absURL }}">Nhật kí dự án</a></h2>
+        <div class="row-section-content">                
+            <ul>
+            {{ range first .Site.Params.home_note_pager ( sort (where .Site.Pages "Params.type" "note") "Date" "desc" ) }}            
+                <li class="row-section-content-item">
+                    <a class="row-section-content-item-link" href="{{ .Permalink }}">{{ .Title }} - {{ .PublishDate.Format "02 Jan, 2006" }}</a>
+                    {{ range $project:= .Params.projects }}
+                    <a class="category-tag project-{{ $project }}" href="{{ (print "projects/" $project) | absURL }}">{{ $project }}</a>
+                    {{ end }}                    
+                </li>
+            {{ end }}        
+            </ul>
+        </div>
+    </section>
+    <section class="row-section col-md-6">
+        <h2 class="row-section-title"><a href="{{ "blog" | absURL }}">Bài viết mới nhất</a></h2>       
+        <div class="row-section-content">                
+            <ul>
+            {{ range first .Site.Params.home_blog_pager ( sort (where .Site.Pages "Params.type" "blog") "Date" "desc" ) }}            
+                <li class="row-section-content-item">
+                    <a class="row-section-content-item-link" href="{{ .Permalink }}">{{ .Title }} - {{ .PublishDate.Format "02 Jan, 2006" }}</a>
+                    {{ range $category:= .Params.categories }}
+                    <a class="category-tag category-{{ $category }}" href="{{ (print "categories/" $category) | absURL }}">{{ $category }}</a>
+                    {{ end }}
+                </li>
+            {{ end }}        
+            </ul>
+        </div> 
+    </section>    
+</div>
+{{ end }}

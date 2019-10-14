@@ -1,0 +1,22 @@
+DefaultContentLanguage = "vi"
+copyright = "Everything is mine"
+baseURL = "http://devnotes.tamthapnhilap.site"
+languageCode = "vi-VN"
+title = "DevNotes 2019"
+theme = "techblog2018"
+publishDir = "docs"
+disableHugoGeneratorInject = true
+[params]
+    name = "MISOSTACK"
+    description = "NHATKIDUAN.MISOSTACK.COM là một blog để lưu lại các kiến thức, kinh nghiệm trong quá trình xây dựng một website hay ứng dụng"
+    keywords = "nhat ki du an"
+    image = "/pages/home/nhat-ki-du-an.jpg"
+    blog_pager = 10
+    note_pager = 10
+    article_pager = 10
+    home_blog_pager = 10
+    home_note_pager = 10
+[taxonomies]
+    category = "categories"
+    project = "projects"
+    subject = "subjects"

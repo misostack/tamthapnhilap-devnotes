@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Nodejs Pros and Cons | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Nodejs Pros and Cons" />
+    <meta name="description" content="Nodejs Pros and Cons" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/posts/nodejs.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <img src="http://devnotes.tamthapnhilap.site/posts/nodejs.jpg" class="img-responsive" alt="Nodejs Pros and Cons" />
+        <h1>Nodejs Pros and Cons</h1>
+        <p>
+            
+            <a class="category-tag category-languages" href="http://devnotes.tamthapnhilap.site/categories/languages">languages</a>
+            
+        </p>
+        
+
+<h2 id="đầu-tiên-nodejs-là-cái-quái-gì-vậy">Đầu tiên nodejs là cái quái gì vậy?</h2>
+
+<pre><code class="language-markdown">Bạn nghĩ sao nếu javascript có thể chạy trên máy chủ?
+</code></pre>
+
+<h2 id="các-đặc-tính-quan-trọng-của-nodejs">Các đặc tính quan trọng của nodejs</h2>
+
+<p><strong>Một điển hình về mô hình truyền thống</strong></p>
+
+<p><img src="/posts/js-client-structure.jpg" alt="js client structure" /></p>
+
+<p><strong>Mô hình mà js ở phía server</strong></p>
+
+<p><img src="/posts/js-server-structure.jpg" alt="js server structure" /></p>
+
+<p>Được sự hậu thuẩn của google</p>
+
+<pre><code class="language-markdown">Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+</code></pre>
+
+<p>Trang chủ download nodejs: <a href="https://nodejs.org/en/">nodejs.org</a></p>
+
+<p>As an <a href="https://www.facebook.com/notes/it-terms-vietnam/synchronous-vs-asynchronous/1774898502589348/">asynchronous</a> event driven JavaScript runtime, Node is designed to build scalable network applications</p>
+
+<p><strong>Blocking IO</strong></p>
+
+<p><img src="/posts/blocking-io.png" alt="Blocking" /></p>
+
+<p><strong>Non Blocking IO</strong></p>
+
+<p><img src="/posts/non-blocking-io.png" alt="Non Blocking" /></p>
+
+<p>Một khái niệm quan trong khác nữa của nodejs là <a href="https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/">blocking vs non-blocking</a></p>
+
+<p><strong>Asynchronous vs Synchronous</strong></p>
+
+<p><img src="/posts/asynchronous-vs-synchronous.png" alt="Asynchronous vs Synchronous" /></p>
+
+<p><strong>Concurrency and Throughput</strong></p>
+
+<p>JavaScript execution in Node.js is single threaded, so concurrency refers to the event loop&rsquo;s capacity to execute JavaScript callback functions after completing other work. Any code that is expected to run in a concurrent manner must allow the event loop to continue running as non-JavaScript operations, like I/O, are occurring.</p>
+
+<p>As an example, let&rsquo;s consider a case where each request to a web server takes 50ms to complete and 45ms of that 50ms is database I/O that can be done asynchronously. Choosing non-blocking asynchronous operations frees up that 45ms per request to handle other requests. This is a significant difference in capacity just by choosing to use non-blocking methods instead of blocking methods.</p>
+
+<p>The event loop is different than models in many other languages where additional threads may be created to handle concurrent work.</p>
+
+<h2 id="related-topics">Related topics</h2>
+
+<ul>
+<li><a href="https://github.com/libuv/libuv">https://github.com/libuv/libuv</a></li>
+<li><a href="https://www.quora.com/What-are-the-pros-and-cons-of-Node-js">https://www.quora.com/What-are-the-pros-and-cons-of-Node-js</a></li>
+<li><a href="https://www.cleveroad.com/blog/node-js-vs-ruby-on-rails--the-power-behind-technologies">https://www.cleveroad.com/blog/node-js-vs-ruby-on-rails--the-power-behind-technologies</a></li>
+<li><a href="https://tech.3si.vn/2017/07/10/nodejs-lua-chon-moi-cho-nen-tang-server-side/">https://tech.3si.vn/2017/07/10/nodejs-lua-chon-moi-cho-nen-tang-server-side/</a></li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<div class="important">
+    <ol>
+        <li>It is single threaded, asynchronous and event-drive which makes it a good choice for real-time apps like messengers and all.</li>
+        <li>The main event loop is single-threaded but most of the I/O works run on separate threads, because the I/O APIs in Node.js are asynchronous/non-blocking by design,in order to accommodate the event loop.</li>
+        <li>Non IO Blocking</li>
+        <li>A good choice for web application development: website, file uploads, realtime webapp:chat,groupchat, Restful API</li>
+</div>
+
+<h2 id="where-can-you-start">Where can you start?</h2>
+
+<ol>
+    <li><a href="https://www.w3schools.com/jS/default.asp">Javascript</a></li>
+    <li><a href="https://freetuts.net/ecmascript-2015-es6-la-gi-603.html">ES6</a></li>
+    <li><a href="https://nodejs.org/en/about/">About NodeJS</a></li>
+    <li><a href="https://expressjs.com/">ExpressJS</a></li>
+    <li><a href="https://koajs.com/">Koajs</a></li>
+</ol>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+    <div class="sidebar-fixed">
+        <div id="article-scrollpy" class="sidebar-widget">
+            <h3 class="widget-header"><a href="#">Đầu mục bài viết</a></h3>
+            <ul class="sidebar-links article-scrollpy-links">
+            </ul>
+        </div>   
+    </div>
+    <div class="sidebar-fixed">    
+        <div class="sidebar-widget">
+            <h3 class="widget-header ucfirst"><span>Bài viết khác</span></h3>
+            
+            
+            
+
+            
+                <ul class="sidebar-links">
+                
+                
+                    <li><a href="/blog/go-pros-and-cons/">Go Pros and Cons</a></li>
+                
+                    <li><a href="/blog/ruby-pros-and-cons/">Ruby Pros and Cons</a></li>
+                
+                    <li><a href="/blog/php-pros-and-cons/">Php Pros and Cons</a></li>
+                
+                </ul>
+                
+        </div>
+        
+    </div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby 016 Web Apps | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 016 Web Apps" />
+    <meta name="description" content="Ruby 016 Web Apps" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby 016 Web Apps</h1>
+        
+
+<h2 id="first-approach">First approach</h2>
+
+<h3 id="set-up-project-directory">&ndash; Set up project directory</h3>
+
+<ul>
+<li>Create your own project directory</li>
+</ul>
+
+<p><img src="/posts/ruby-simple-webapp.png" alt="ruby simple webapp" /></p>
+
+<h3 id="install-sinatra-lib-for-handling-web-requests">&ndash; Install sinatra lib for handling web requests</h3>
+
+<ul>
+<li>Set up routes</li>
+<li>Create first HTML Page</li>
+<li>Set up sinatra to respond with HTML</li>
+</ul>
+
+<p><strong>Overview</strong></p>
+
+<ul>
+<li>The lastest version of sinatra used <strong>thin</strong> as a <strong>web server</strong> instead of WEBrick</li>
+
+<li><p>Refs : <a href="http://code.macournoyer.com/thin/">http://code.macournoyer.com/thin/</a></p>
+
+<pre><code class="language-bash">gem install sinatra
+</code></pre>
+
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+#puts $LOAD_PATH
+require 'sinatra'
+
+get ('/') do
+	'Home Page'
+end
+</code></pre></li>
+</ul>
+
+<h3 id="display-objects-with-html">&ndash; Display objects with HTML</h3>
+
+<ul>
+<li><p>Refs : <a href="https://ruby-doc.org/stdlib-2.5.1/libdoc/erb/rdoc/ERB.html">https://ruby-doc.org/stdlib-2.5.1/libdoc/erb/rdoc/ERB.html</a></p>
+
+<pre><code class="language-ruby">$LOAD_PATH.unshift(File.join(File.dirname(__FILE__),'lib'))
+require 'sinatra'
+require 'todo'
+
+get ('/') do	
+	@paths = $LOAD_PATH
+	erb :&quot;todo/index&quot;
+end
+</code></pre>
+
+<pre><code class="language-erb">&lt;%# @paths %&gt;
+&lt;% @paths.each do |path| %&gt;
+&lt;li class=&quot;list-group-item&quot;&gt;&lt;%= path %&gt;&lt;/li&gt;
+&lt;% end %&gt;
+</code></pre></li>
+</ul>
+
+<h3 id="saving-and-loading-objects">&ndash; Saving and loading objects</h3>
+
+<ul>
+<li>Create a todo object base on form contents</li>
+<li>Save a todo object to a file</li>
+<li>Load the list of todo</li>
+<li>Find todo within file</li>
+<li>Display todo list</li>
+</ul>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

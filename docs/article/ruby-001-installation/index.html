@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Bài 001 : Cài đặt ruby | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 001 Installation" />
+    <meta name="description" content="Ruby 001 Installation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Bài 001 : Cài đặt ruby</h1>
+        
+
+<h2 id="current-ruby-stable-version">Current Ruby stable version</h2>
+
+<p><a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></p>
+
+<pre><code class="language-html">2.5.1
+</code></pre>
+
+<h2 id="1-hướng-dẫn-cài-đặt-ruby-với-rbenv-trên-ubuntu-16-04">1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04)</h2>
+
+<p><strong>Chi tiết các bước thực hiện</strong></p>
+
+<ul>
+<li>Cài đặt các gói ruby dependencies</li>
+<li>Cài đặt rbenv</li>
+<li>Cài đặt ruby</li>
+<li>Kiểm tra version</li>
+<li>Cài đặt gem bundler để quản lí packages</li>
+</ul>
+
+<h3 id="update">Update</h3>
+
+
+<pre><code class="language-bash">
+sudo apt-get update</code></pre>
+
+
+<h3 id="cài-đặt-các-gói-ruby-dependencies">Cài đặt các gói ruby dependencies</h3>
+
+
+<pre><code class="language-bash">
+sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install -y curl gnupg build-essential</code></pre>
+
+
+<h3 id="cài-đặt-rbenv">Cài đặt rbenv</h3>
+
+<ul>
+<li>Link tham khảo : <a href="https://github.com/rbenv/rbenv">https://github.com/rbenv/rbenv</a></li>
+<li>Link su dung : <a href="http://javierjulio.com/rbenv/">http://javierjulio.com/rbenv/</a></li>
+</ul>
+
+<pre class="code-highlight"><code class="language-bash">
+cd ~
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv && src/configure && make -C src
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+~/.rbenv/bin/rbenv init
+</code></pre>
+
+<p><strong>Kiểm tra rbenv root</strong></p>
+
+<pre><code class="language-bash">echo &quot;$(rbenv root)&quot;
+</code></pre>
+
+<p><strong>Cài đặt ruby-build cho rbenv</strong></p>
+
+<ul>
+<li><p>Link tham khảo : <a href="https://github.com/rbenv/ruby-build#readme">https://github.com/rbenv/ruby-build#readme</a></p>
+
+<pre><code class="language-bash">git clone https://github.com/rbenv/ruby-build.git &quot;$(rbenv root)&quot;/plugins/ruby-build
+</code></pre></li>
+</ul>
+
+<p><strong>Cập nhật</strong></p>
+
+<pre><code class="language-bash">cd &quot;$(rbenv root)&quot;/plugins/ruby-build &amp;&amp; git pull
+</code></pre>
+
+<p><strong>Sau khi cài xong chú ý gõ câu lệnh sau để add rbenv vào bashrc(lưu ý nhớ restart bash sau khi add)</strong></p>
+
+<pre><code class="language-bash">echo 'eval &quot;$(rbenv init -)&quot;' &gt;&gt; ~/.bashrc
+</code></pre>
+
+<p><strong>Restart bash sau khi add</strong></p>
+
+<pre><code class="language-bash">source ~/.bashrc
+</code></pre>
+
+<p><strong>Kiểm tra rbenv đã cài đặt thành công chưa</strong></p>
+
+<pre><code class="language-bash">curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+</code></pre>
+
+<h3 id="cài-đặt-ruby">Cài đặt ruby</h3>
+
+<p><strong>Permissions problem when install by other user(not root)</strong></p>
+
+<ul>
+<li><p><a href="https://blakewilliams.me/posts/system-wide-rbenv-install">https://blakewilliams.me/posts/system-wide-rbenv-install</a></p></li>
+
+<li><p><a href="https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied">https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied</a></p></li>
+</ul>
+
+<p><em>As an rbenv plugin</em></p>
+
+<p><strong>Make sure phân quyền chạy ruby thuộc về cùng 1 user</strong></p>
+
+<pre><code class="language-bash">cd ~/.rbenv
+sudo chown -Rf ubuntu:ubuntu versions 
+sudo chown -Rf ubuntu:ubuntu shims
+</code></pre>
+
+<p><strong>Tìm kiếm các gói ruby version</strong></p>
+
+<pre><code class="language-bash">rbenv install --list | grep 2.5
+</code></pre>
+
+<p><strong>Cài đặt gói ruby stable hiện tại</strong></p>
+
+<pre><code class="language-bash">rbenv install 2.5.1 --verbose
+rbenv rehash
+</code></pre>
+
+<p><strong>Set default</strong></p>
+
+<pre><code class="language-bash">rbenv global 2.5.1
+</code></pre>
+
+<h3 id="kiểm-tra-version">Kiểm tra version</h3>
+
+<blockquote>
+<p>gem -v</p>
+</blockquote>
+
+<h3 id="chạy-thử-irb">Chạy thử irb</h3>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby">https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby</a></p>
+
+<pre><code class="language-bash">irb
+</code></pre>
+
+<pre><code class="language-bash">irb(main):001:0&gt; 2 + 2
+=&gt; 4
+</code></pre>
+
+<h3 id="cài-đặt-gem-bundler-để-quản-lí-packages">Cài đặt gem bundler để quản lí packages</h3>
+
+<blockquote>
+<p>gem install bundler</p>
+
+<p>rbenv rehash</p>
+</blockquote>
+
+<h3 id="chạy-thử-hello-world">Chạy thử hello world</h3>
+
+<pre><code class="language-ruby">puts "Welcome to ruby";
+</code></pre>
+
+<blockquote>
+<p>bundler exec ruby hello.rb</p>
+</blockquote>
+
+<h3 id="disable-rbenv">Disable .rbenv</h3>
+
+<pre><code class="language-bash">vi ~/.bashrc
+</code></pre>
+
+<p><strong>Nội dung file</strong></p>
+
+<pre><code class="language-bash"># .rbenv
+# export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
+# eval &quot;$(rbenv init -)&quot;
+</code></pre>
+
+<p><strong>Sau khi edit xong reload lai bashrc</strong></p>
+
+<pre><code class="language-bash">source ~/.bashrc
+</code></pre>
+
+<p><strong>Thoát khỏi phiên đăng nhập để kiểm tra lại</strong></p>
+
+<pre><code class="language-bash">exit
+ssh ...
+ruby -v
+</code></pre>
+
+<h2 id="2-hướng-dẫn-cài-đặt-ruby-với-rvm-trên-ubuntu-16-04">2.Hướng dẫn cài đặt ruby với rvm trên ubuntu(16.04)</h2>
+
+<ul>
+<li><p>Link : <a href="https://github.com/rvm/rvm">https://github.com/rvm/rvm</a></p></li>
+
+<li><p><a href="https://github.com/rvm/ubuntu_rvm">https://github.com/rvm/ubuntu_rvm</a></p></li>
+</ul>
+
+<h3 id="cài-đặt-các-gói-ruby-dependencies-1">Cài đặt các gói ruby dependencies</h3>
+
+
+<pre><code class="language-bash">
+sudo apt-get update
+sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install -y curl gnupg build-essential</code></pre>
+
+
+<h3 id="cài-đặt-rvm">Cài đặt RVM</h3>
+
+<pre><code class="language-bash">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+</code></pre>
+
+<p><strong>Single User Installations</strong></p>
+
+<p><em>Single-User installations (recommended) - For an isolated install within a user&rsquo;s $HOME, not for root.</em></p>
+
+<pre><code class="language-bash">\curl -sSL https://get.rvm.io | bash -s stable
+</code></pre>
+
+<p><strong>Sau khi cài đặt xong hệ thống sẽ hiện câu thông báo sau</strong></p>
+
+<pre><code class="language-bash">Installing RVM to /home/ubuntu/.rvm/
+    Adding rvm PATH line to /home/ubuntu/.profile /home/ubuntu/.mkshrc /home/ubuntu/.bashrc /home/ubuntu/.zshrc.
+    Adding rvm loading line to /home/ubuntu/.profile /home/ubuntu/.bash_profile /home/ubuntu/.zlogin.
+Installation of RVM in /home/ubuntu/.rvm/ is almost complete:
+
+  * To start using RVM you need to run `source /home/ubuntu/.rvm/scripts/rvm`
+    in all your open shell windows, in rare cases you need to reopen all shell windows.
+</code></pre>
+
+<p><strong>Để sử dụng rvm ngay lập tức</strong></p>
+
+<pre><code class="language-bash">source /home/ubuntu/.rvm/scripts/rvm
+</code></pre>
+
+<p><strong>Gỡ bỏ rmv</strong></p>
+
+<pre><code class="language-bash">rvm implode
+</code></pre>
+
+<p><strong>Và chú ý cần remove các dòng PATH đã include sau khi cài</strong></p>
+
+<p>Tham khảo thêm về bashrc, profile tại đây : <a href="https://top.quora.com/What-is-bash_profile-and-what-is-its-use">https://top.quora.com/What-is-bash_profile-and-what-is-its-use</a></p>
+
+<h3 id="cài-đặt-ruby-1">Cài đặt ruby</h3>
+
+<pre><code class="language-bash">rvm install ruby-2.5.1
+rvm list
+rvm install ruby-2.3.0
+rvm list
+</code></pre>
+
+<p><strong>Chuyển đổi giữa các phiên bản</strong></p>
+
+<pre><code class="language-bash">rvm 2.5.1
+</code></pre>
+
+<p><strong>Thiết lập default ruby version</strong></p>
+
+<pre><code class="language-bash">rvm --default use 2.5.1
+</code></pre>
+
+<p><strong>Tạo alias để dễ dàng chuyển đổi hơn</strong></p>
+
+<p>Có 1 alias mặc định là : default</p>
+
+<pre><code class="language-bash">rvm alias list
+rvm alias create alias-name ruby-version
+rvm alias delete alias-name
+</code></pre>
+
+<p><strong>Tạo gemset</strong></p>
+
+<pre><code class="language-bash">rvm 2.3.0
+rvm gemset create example
+rvm gemset list
+rvm gemset use example
+</code></pre>
+
+<p><strong>Ứng dụng rvm cho phép nhiều ứng dụng độc lập chạy các phiên bản ruby khác nhau</strong></p>
+
+<pre><code class="language-html">Giả sử chúng ta có các app như sau
+~/apps/app_a
+~/apps/app_b
+~/apps/app_c
+
+Và mỗi app này sẽ sử dụng các loại gem khác nhau, cũng như phiên bản ruby khác nhau, để làm được điều này,
+trong mỗi app ta sẽ sử dụng 2 file để chỉ định phiên bản ruby, cũng như gemset cho chúng:
+.ruby-version
+2.3.0
+.ruby-gemset
+app_a
+</code></pre>
+
+<p><strong>Install bundler</strong></p>
+
+<pre><code class="language-bash">gem install bundler
+</code></pre>
+
+<pre><code class="language-bash">bundle install
+</code></pre>
+
+<p><strong>Instal node</strong></p>
+
+<pre><code class="language-bash">sudo apt-get install nodejs
+</code></pre>
+
+<p><a href="http://railsapps.github.io/installrubyonrails-ubuntu.html">http://railsapps.github.io/installrubyonrails-ubuntu.html</a></p>
+
+<p><strong>Example puma.service</strong></p>
+
+
+<a class="collapse-trigger" data-toggle="collapse" href="#example-puma-service" role="button" aria-expanded="false" 
+aria-controls="example-puma-service">
+    <strong>puma.service</strong>
+  </a>
+<div class="collapse" id="example-puma-service">
+<pre><code class="language-bash">
+ubuntu@cloud002:~# cat /etc/systemd/system/puma.service
+[Unit]
+Description=Puma HTTP Server
+After=network.target
+
+# Uncomment for socket activation (see below)
+# Requires=puma.socket
+
+[Service]
+# Foreground process (do not use --daemon in ExecStart or config.rb)
+Type=simple
+
+# Preferably configure a non-privileged user
+User=ubuntu
+Group=ubuntu
+
+# The path to the puma application root
+# Also replace the &#34;&lt;WD&gt;&#34; place holders below with this path.
+WorkingDirectory=/home/ubuntu/webs/ror
+
+# Helpful for debugging socket activation, etc.
+# Environment=PUMA_DEBUG=1
+
+# Variant: Use config file with `bind` directives instead:
+ExecStart=/home/ubuntu/.rbenv/shims/bundler exec --keep-file-descriptors puma -C /home/ubuntu/webs/ror/config/puma.rb
+# Variant: Use `bundle exec --keep-file-descriptors puma` instead of binstub
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+</div>
+
+
+<p><strong>Example puma.rb</strong></p>
+
+
+<a class="collapse-trigger" data-toggle="collapse" href="#example-puma-rb" role="button" aria-expanded="false" 
+aria-controls="example-puma-rb">
+    <strong>ror/config/puma.rb</strong>
+  </a>
+<div class="collapse" id="example-puma-rb">
+<pre><code class="language-bash">
+# Puma can serve each request in a thread from an internal thread pool.
+# The `threads` method setting takes two numbers: a minimum and maximum.
+# Any libraries that use thread pools should be configured to match
+# the maximum value specified for Puma. Default is set to 5 threads for minimum
+# and maximum; this matches the default thread size of Active Record.
+#
+threads_count = ENV.fetch(&#34;RAILS_MAX_THREADS&#34;) { 5 }
+threads threads_count, threads_count
+
+# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
+#
+port        ENV.fetch(&#34;PORT&#34;) { 3000 }
+
+# Specifies the `environment` that Puma will run in.
+#
+environment ENV.fetch(&#34;RAILS_ENV&#34;) { &#34;development&#34; }
+
+# Specifies the number of `workers` to boot in clustered mode.
+# Workers are forked webserver processes. If using threads and workers together
+# the concurrency of the application would be max `threads` * `workers`.
+# Workers do not work on JRuby or Windows (both of which do not support
+# processes).
+#
+# workers ENV.fetch(&#34;WEB_CONCURRENCY&#34;) { 2 }
+workers = 1
+
+# Use the `preload_app!` method when specifying a `workers` number.
+# This directive tells Puma to first boot the application and load code
+# before forking the application. This takes advantage of Copy On Write
+# process behavior so workers use less memory. If you use this option
+# you need to make sure to reconnect any threads in the `on_worker_boot`
+# block.
+#
+# preload_app!
+
+# If you are preloading your application and using Active Record, it&#39;s
+# recommended that you close any connections to the database before workers
+# are forked to prevent connection leakage.
+#
+# before_fork do
+#   ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
+# end
+
+# The code in the `on_worker_boot` will be called if you are using
+# clustered mode by specifying a number of `workers`. After each worker
+# process is booted, this block will be run. If you are using the `preload_app!`
+# option, you will want to use this block to reconnect to any threads
+# or connections that may have been created at application boot, as Ruby
+# cannot share connections between processes.
+#
+# on_worker_boot do
+#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+# end
+#
+
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
+
+app_dir = File.expand_path(&#34;../..&#34;, __FILE__)
+shared_dir=&#34;/home/ubuntu/shared&#34;
+
+# Set up socket location
+bind &#34;unix://#{shared_dir}/sockets/puma.sock&#34;
+
+# Set master PID and state locations
+pidfile &#34;#{shared_dir}/pids/puma.pid&#34;
+state_path &#34;#{shared_dir}/pids/puma.state&#34;
+activate_control_app
+
+on_worker_boot do
+  require &#34;active_record&#34;
+  ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
+  ActiveRecord::Base.establish_connection(YAML.load_file(&#34;#{app_dir}/config/database.yml&#34;)[rails_env])
+end</code></pre>
+</div>
+
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

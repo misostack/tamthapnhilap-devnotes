@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby 008 Testing | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 008 Testing" />
+    <meta name="description" content="Ruby 008 Testing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby 008 Testing</h1>
+        
+
+<h2 id="types-of-automated-tests">Types of Automated Tests</h2>
+
+<p><strong>There are actually many different types of automated tests in widespread use. Here are some of the most common:</strong></p>
+
+<ul>
+<li><strong>Performance tests</strong> measure the speed of your program.</li>
+<li><strong>Integration tests</strong> run your entire program, to ensure that all its methods, classes, and other components integrate together successfully.</li>
+<li><strong>Unit tests</strong> run individual components (units) of your program, usually individual methods.</li>
+</ul>
+
+<h3 id="unit-test">&ndash;Unit Test</h3>
+
+<p><strong>Keywords</strong></p>
+
+<ul>
+<li>minitest</li>
+<li>assert_equal</li>
+<li>setup</li>
+
+<li><p>teardown</p>
+
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+
+require 'minitest/autorun'
+
+def function_a(a, b)
+	a + b
+end
+
+def function_b(a, b)
+	a - b
+end
+
+class SampleTest &lt; Minitest::Test
+	def setup #run only once
+		@a = Random.new.rand(1..10)
+		@b = Random.new.rand(5..10)
+		@total = @a + @b
+		@differ = @a - @b
+	end
+	def teardown # run before each test
+		puts &quot;#{@a} + #{@b} = #{@total}&quot;
+		puts &quot;#{@a} - #{@b} = #{@differ}&quot;
+		puts '-'*20
+	end
+	def test_function_a		
+		assert_equal(@total, function_a(@a,@b))
+	end
+	def test_function_b
+		assert_equal(@differ, function_b(@a,@b))
+	end	
+end
+</code></pre></li>
+</ul>
+
+<h2 id="readmore">Readmore</h2>
+
+<ul>
+<li>Read this book : Effective-testing-rspec-3</li>
+<li>Rspec is ruby&rsquo;s testing framework that used for : unit tests, integration tests</li>
+<li>Ruby Benchmark</li>
+</ul>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

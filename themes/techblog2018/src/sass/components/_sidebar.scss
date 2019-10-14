@@ -1,0 +1,46 @@
+.sidebar{
+    position: relative;
+    overflow: hidden;
+    &-fixed{
+        background:#FFF;
+        top:0;
+        bottom:auto;
+        &-active{
+            position: fixed;
+        }
+    }
+    &-widget{
+        margin-bottom: 2rem;
+        .widget-header{
+            margin: 0 0 1rem 0;
+            span, a {
+                font-size:1.2rem;
+                background-color: $primary-color;
+                text-decoration: none;
+                line-height: 2rem;
+                display: block;
+                padding: 7px 12px 4px 12px;
+                color: $primary-color-text;
+            }
+            border-bottom: 1px solid $primary-color-dark;
+        }
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+    }
+    &-links{
+        li {
+            margin: 1rem 0;
+        }
+        h3 a,h4 a, a{
+            font-size: 1rem;
+            font-weight: bold;
+            color: transparentize($primary-text-color, .0);
+            &:hover{
+                color: transparentize($primary-color, .0);
+            }
+        }
+    }
+}

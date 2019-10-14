@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on DevNotes 2019</title>
+    <link>http://devnotes.tamthapnhilap.site/subjects/javascript/</link>
+    <description>Recent content in javascript on DevNotes 2019</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-VN</language>
+    <copyright>Everything is mine</copyright>
+    <lastBuildDate>Fri, 05 Oct 2018 11:42:10 +0700</lastBuildDate>
+    
+	<atom:link href="http://devnotes.tamthapnhilap.site/subjects/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javascript 001</title>
+      <link>http://devnotes.tamthapnhilap.site/article/javascript-001/</link>
+      <pubDate>Fri, 05 Oct 2018 11:42:10 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/article/javascript-001/</guid>
+      <description>General &amp;ndash;You may concern  Head First Javascript  &amp;ndash;Sublime plugin  html5 snippet  &amp;ndash;THe first step with webpack  Official : https://webpack.js.org/
+npm install webpack webpack-cli --save-dev  Assets: https://webpack.js.org/guides/asset-management/
+npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm install --save-dev file-loader npm install --save-dev html-webpack-plugin npm install --save-dev clean-webpack-plugin npm install --save-dev webpack-dev-server npm install --save-dev express webpack-dev-middleware  CLI : https://webpack.js.org/api/cli/#environment-options
+ Hotmodule : https://webpack.</description>
+    </item>
+    
+  </channel>
+</rss>

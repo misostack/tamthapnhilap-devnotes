@@ -1,0 +1,5 @@
+{{ if .Get "th"}}
+    <td class="command-text">{{ .Get "content" }}</td>
+{{ else }}    
+    <td class="command-description">{{ .Get "content" }}</td>
+{{ end }}

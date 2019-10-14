@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Javascript 001 | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Javascript 001" />
+    <meta name="description" content="Javascript 001" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/subjects/javascript.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Javascript 001</h1>
+        
+
+<h1 id="general">General</h1>
+
+<h2 id="you-may-concern">&ndash;You may concern</h2>
+
+<ul>
+<li>Head First Javascript</li>
+</ul>
+
+<h2 id="sublime-plugin">&ndash;Sublime plugin</h2>
+
+<ul>
+<li>html5 snippet</li>
+</ul>
+
+<h2 id="the-first-step-with-webpack">&ndash;THe first step with webpack</h2>
+
+<ul>
+<li><p>Official : <a href="https://webpack.js.org/">https://webpack.js.org/</a></p>
+
+<pre><code class="language-bash">npm install webpack webpack-cli --save-dev
+</code></pre></li>
+
+<li><p>Assets: <a href="https://webpack.js.org/guides/asset-management/">https://webpack.js.org/guides/asset-management/</a></p>
+
+<pre><code class="language-bash">npm install webpack webpack-cli --save-dev
+npm i -D style-loader css-loader
+npm install --save-dev file-loader
+npm install --save-dev html-webpack-plugin
+npm install --save-dev clean-webpack-plugin
+npm install --save-dev webpack-dev-server
+npm install --save-dev express webpack-dev-middleware
+</code></pre></li>
+
+<li><p>CLI : <a href="https://webpack.js.org/api/cli/#environment-options">https://webpack.js.org/api/cli/#environment-options</a></p></li>
+
+<li><p>Hotmodule : <a href="https://webpack.js.org/guides/hot-module-replacement/">https://webpack.js.org/guides/hot-module-replacement/</a></p></li>
+</ul>
+
+<h2 id="service-worker">&ndash;Service worker</h2>
+
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/primers/service-workers/">https://developers.google.com/web/fundamentals/primers/service-workers/</a></li>
+</ul>
+
+<p><strong>Chrome checking:</strong></p>
+
+<pre><code class="language-bash">chrome://inspect/#service-workers
+</code></pre>
+
+<p>Later &hellip;</p>
+
+<h2 id="some-tricks">**Some tricks</h2>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Arguments</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Exceptions</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Event handlers</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> RegExp</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Recursive</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON</label></li>
+
+<li><p>[x] <a href="/article/nodejs-001/">Server Side Javascript</a></p>
+
+<pre><code class="language-javascript">export function someTricks(){
+	printArgs(1,'hai',3, {'a':'1','b':'2'});
+	theExceptions();
+	eventHandles();
+	commonRegex();
+	recursives();
+	jsonSamples();
+}
+
+function printArgs()
+{
+	const appRoot = document.querySelector('#app');
+	const args = document.createElement('ul');
+	args.id = 'args-test';
+	for(let i = 0; i &lt; arguments.length; i++){
+		let arg = document.createElement('li');
+		console.log(arguments[i]);
+		arg.innerHTML = arguments[i].inspect();
+		args.appendChild(arg);
+	}
+	appRoot.prepend(args);
+}
+
+Object.prototype.inspect = function(){	
+	let str = ''
+	if(this instanceof Object){
+		str += '{';
+		let associates = [];
+		for(var key in this){
+			if(this.hasOwnProperty(key)){
+				associates.push(key + ':' + this[key]);	
+			}
+		}
+		str += associates.join(', ');
+		str += '}';
+	}else{
+		str = this.toString();
+	}
+	return str;
+};
+
+function theExceptions(){	
+	try {
+		let sampleNode = document.getElementById('samplenode');
+		samplenode.innerHTML = 'abcxyz';
+	} catch(e) {
+		// statements
+		const appRoot = document.getElementById('app');
+		appRoot.prepend(e);
+	}	
+}
+
+window.addEventListener('load', init, false);
+
+function init(){
+	const appRoot = document.getElementById('app');
+	appRoot.prepend('init');	
+}
+
+function eventHandles(){
+	const appRoot = document.getElementById('app');
+	let sampleBox = document.createElement('div');
+	sampleBox.classList = 'sample-box';
+	sampleBox.innerHTML = 'BOX';
+	appRoot.prepend(sampleBox);
+	let ele = document.createElement('div');
+	ele.innerHTML = '&lt;button&gt;Toggle DIV&lt;/button&gt;';
+	ele.addEventListener('click', eventClick, false);
+	appRoot.prepend(ele);
+}
+
+function eventClick(e){
+	let target = e.target;
+	let p = document.createElement('p');
+	p.innerHTML = 'lorem upsum';
+	target.append(p);
+	target.removeEventListener('click', eventClick, false);
+}
+
+function commonRegex(){
+	const emailRegex = new RegExp(/^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+	let emails = ['exmapl@gmail.com','abc@xyz.domain','asdasd.asd.@123.com','123132','asdads'];
+	const appRoot = document.getElementById('app');
+	emails.forEach( function(email, index) {
+		let ele = document.createElement('div');
+		ele.innerHTML = '&lt;strong&gt;' + email + '&lt;/strong&gt;' + ' is ' + (email.match(emailRegex)? 'valid': 'invalid') + ' email';
+		appRoot.append(ele);
+	});
+}
+
+function recursives(){
+	const appRoot = document.getElementById('app');
+	let ele = document.createElement('div');
+	ele.innerHTML = 'fibonaci(10):&lt;br/&gt; ' + fibonaciArray(10);
+	appRoot.prepend(ele);
+}
+
+function fibonaci(n){
+	if(n &lt;= 0) return 0;
+	if(n == 1) return 1;
+	if(n== 2) return 1;
+	return fibonaci(n-1) + fibonaci(n-2);
+}
+
+function fibonaciArray(n){
+	let arr = [];
+	for(let i = 1; i&lt;= n;i++){
+		arr.push(fibonaci(i));
+	}
+	return arr.join(&quot; &quot;);
+}
+
+function jsonSamples(){
+	let misostack_str = '{&quot;name&quot;: &quot;misostack&quot;, &quot;languages&quot;: [&quot;php&quot;,&quot;javascripts&quot;,&quot;nodejs&quot;,&quot;ruby&quot;,&quot;java&quot;,&quot;go&quot;,&quot;c&quot;,&quot;c#&quot;,&quot;python&quot;]}';
+	let misostack = JSON.parse(misostack_str);
+	console.log(misostack.name, misostack.languages.join(','));
+	console.log(JSON.stringify(misostack));
+}
+</code></pre></li>
+</ul>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+        
+
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

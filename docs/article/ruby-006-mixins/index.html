@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby 006 Mixins | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 006 Mixins" />
+    <meta name="description" content="Ruby 006 Mixins" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby 006 Mixins</h1>
+        
+
+<h2 id="problems">Problems</h2>
+
+<p>Imagine we have an app for sharing videos, musics, and other media.</p>
+
+<p>Musics and videos both need some of same functionality: users need to be able to play songs and videos back,
+as well as leave comments on them. There are some aspects that differ, howerver.Eg:</p>
+
+<p>Songs: we need to track the number of beats per minute(bpm)</p>
+
+<p>Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolution).</p>
+
+<p><img src="/posts/ruby-006-oneclass.png" alt="Oneclass" /></p>
+
+<p>But how about a photo? You can not play a photo.</p>
+
+<p>So in this case you can not interit from one parent class.</p>
+
+<p><img src="/posts/ruby-006-oneclass-copymethod.png" alt="Oneclass Copymethod" /></p>
+
+<p>How about multiple inheritance? It is messy.</p>
+
+<p><img src="/posts/ruby-006-multiple-inherit.png" alt="multiple-inherit" /></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>In this case we use modules and mixins.</p>
+
+<pre><code class="language-ruby">require 'faker'
+
+module Comments
+	def comments
+        @comments = @comments || []
+	end
+	def list_comments
+		puts &quot;Total comments: #{@comments.length}&quot;
+		@comments.each { |comment|
+			puts format(&quot;%s : %s&quot;, comment[:email], comment[:text])
+		}
+	end
+
+	def add_comment(comment)
+		comments &lt;&lt; comment
+	end
+end
+
+class Media
+	include Comments
+	attr_accessor :name, :source
+	def initialize(opts = {})
+		@name = opts[:name]
+		@source = opts[:source]
+	end
+
+	def display
+		puts '-'*20
+		puts &quot;Name : #{@name}&quot;
+		puts &quot;Source: #{@source}&quot;
+		list_comments
+		puts '-'*20
+	end
+end
+
+module Clip
+	def play
+		puts &quot;Play with #{@source}&quot;
+	end
+end
+
+class Picture &lt; Media
+	def show
+		puts &quot;&lt;img src=\&quot;#{@source}\&quot; /&gt;&quot;
+	end
+end
+
+class Video &lt; Media
+	include Clip
+	attr_accessor :resolution
+	def initialize(opts = {})
+		super
+		@resolution = opts[:resolution]
+	end
+
+	def display
+		super
+		puts &quot;Resolution: #{@resolution} px&quot;
+	end
+end
+
+class Song &lt; Media
+	include Clip
+	attr_accessor :bpm	
+	def initialize(opts = {})
+		super
+		@bpm = opts[:bpm]
+	end
+
+	def display
+		super
+		puts &quot;Beats: #{@bpm} bpm&quot;
+	end
+end
+
+pic = Picture.new( name:'VietNam2018', source:'/media/images/vietnam2018.jpg')
+(1..Random.new().rand(5..10)).each { |i|
+	pic.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+}
+pic.show
+pic.display
+
+video = Video.new( name: 'Việt Nam quê hương tôi', source:'/media/videos/VietNam2018.mp4', resolution: '1920x1080')
+(1..Random.new().rand(5..10)).each { |i|
+	video.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+}
+video.play
+video.display
+
+song = Song.new( name: 'Tiến lên Việt Nam', source:'/media/videos/VietNam2018.mp4', bpm: '90' )
+(1..Random.new().rand(5..10)).each { |i|
+	song.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+}
+song.play
+song.display
+</code></pre>
+
+<h2 id="important-notes">Important notes</h2>
+
+<p><strong>Module</strong></p>
+
+<pre><code class="language-html">A module is a collection of methods. The main diffrence between a module and a class is that you can't create instance of a module
+</code></pre>
+
+<p>*<em>Mixins</em></p>
+
+<pre><code class="language-html">- When you mix a module into a class, it's like adding all of the modules's methods to the class as instance methods
+- Although a class can only inherit from one superclass, you can mix any number of modules into a class
+</code></pre>
+
+<h2 id="amazing-comparing-methods">Amazing comparing methods</h2>
+
+<pre><code class="language-ruby">puts 'Amazing comparing method'
+
+class Steak
+	include Comparable
+	# constants
+	GRADE_SCORES = {&quot;Prime&quot; =&gt; 3, &quot;Choice&quot; =&gt; 2, &quot;Select&quot; =&gt; 1}
+
+	attr_accessor :grade
+
+	def &gt;(other)		
+		GRADE_SCORES[grade] &gt; GRADE_SCORES[other.grade]
+	end
+end
+
+first_steak = Steak.new
+first_steak.grade = 'Prime'
+
+second_steak = Steak.new
+second_steak.grade = 'Choice'
+
+if first_steak &gt; second_steak
+	puts &quot;I'll take #{first_steak.inspect}.&quot;
+end
+
+meatA = Steak.new('meatA')
+meatA.grade = &quot;Select&quot;
+
+meatB = Steak.new('MeatB')
+meatB.grade = &quot;Choice&quot;
+
+puts &quot;I will choose #{meatA.name}&quot; if meatA &gt; meatB
+puts &quot;I will choose #{meatB.name}&quot; if meatA &lt; meatB
+meatA.grade = &quot;Choice&quot;
+puts &quot;I will choose #{meatA.name} and #{meatB.name}&quot; if meatA == meatB
+</code></pre>
+
+<h3 id="extend-vs-include">Extend vs Include</h3>
+
+<pre><code class="language-ruby">#!/usr/bin/env ruby
+
+module Food
+	module Cream
+		# def self.extended(base)
+		# 	base.include self
+		# end
+	  def cream?
+	    true
+	  end
+	end
+end
+
+class Cookie
+	def self.extend(parent)
+		self.include parent
+	end
+  # include Cream
+end
+
+Cookie.extend ::Food::Cream
+
+cookie = Cookie.new
+p cookie.cream?
+
+module HackNao
+	class Base
+		def self.extend(expand)
+			self.include expand
+		end
+		def cau_mot
+			puts 'Con ga co truoc qua trung hay trung co truoc con ga?'
+		end
+	end
+end
+
+module HackNaoImprove
+	module HackNao
+		module ToanHoc
+			def cau_hai
+				puts 'Me hon con 22 tuoi, hoi khi nao tuoi me gap doi tuoi con?'
+			end
+		end
+		::HackNao::Base.extend ToanHoc
+	end
+end
+
+::HackNao::Base.new.cau_mot
+::HackNao::Base.new.cau_hai
+</code></pre>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

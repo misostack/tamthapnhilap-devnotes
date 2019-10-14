@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby 009 - Common Libs | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby 009 - Common Libs" />
+    <meta name="description" content="Ruby 009 - Common Libs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby 009 - Common Libs</h1>
+        
+
+<h2 id="common-libs">Common libs</h2>
+
+<ul>
+<li>MVC Framework : Ruby On Rails(ROR)</li>
+<li>dRuby</li>
+<li>CSV</li>
+</ul>
+
+<h2 id="inline-if-and-unless">- Inline if and unless</h2>
+
+<pre><code class="language-ruby">puts 'example' if true
+puts 'example' unless true
+</code></pre>
+
+<h2 id="private-method">- Private method</h2>
+
+<pre><code class="language-ruby">class Sample
+    def hello
+        puts 'hello'
+    end
+
+private
+    def hi
+        puts 'hi'
+    end
+end
+</code></pre>
+
+<h2 id="command-line-arguments">- Command-line arguments</h2>
+
+<pre><code class="language-ruby">puts ARGV[0]
+</code></pre>
+
+<h2 id="regular-expressions">- Regular Expressions</h2>
+
+<h2 id="singleton-methods">- Singleton methods</h2>
+
+<pre><code class="language-ruby">superhero = Person.new
+def superhero.fly
+    puts 'Fly up'
+end
+superhero.fly
+</code></pre>
+
+<h2 id="call-any-method-even-undefined-ones">- Call any method, even undefined ones</h2>
+
+<pre><code class="language-ruby">#!/usr/env/bin ruby
+
+class AskMeAnyThing
+    def method_missing(method_name, args = {})
+        &quot;You called #{method_name.to_s} #{args}&quot;
+    end
+end
+obj = AskMeAnyThing.new
+p obj.an_undefined_method({'arg1' =&gt; 'a','arg2'=&gt;'b'})
+</code></pre>
+
+<h2 id="automating-tasks-with-rake">- Automating tasks with Rake</h2>
+
+<ul>
+<li>Ref1 : <a href="https://github.com/ruby/rake">https://github.com/ruby/rake</a></li>
+<li>Ref2 : <a href="https://jacobswanner.com/development/2013/rake-global-tasks/">https://jacobswanner.com/development/2013/rake-global-tasks/</a></li>
+<li>Ref3 : <a href="http://www.virtuouscode.com/2014/04/21/rake-part-1-basics/">http://www.virtuouscode.com/2014/04/21/rake-part-1-basics/</a></li>
+<li>Cheatsheet : <a href="https://ruby.github.io/rake/doc/rakefile_rdoc.html">https://ruby.github.io/rake/doc/rakefile_rdoc.html</a></li>
+<li>Rakelib: <a href="https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub">https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub</a></li>
+</ul>
+
+<p><strong>Rake commands</strong></p>
+
+<pre><code class="language-bash">rake #run default task
+rake --tasks # list all tasks ( rake -T )
+rake task_nameA # run task_nameA
+rake task_nameA task_nameB # run task_nameA, then task_nameB
+</code></pre>
+
+<p><strong>Where to place tasks?</strong></p>
+
+<ul>
+<li>Global tasks are placed in <strong>Rakefile</strong></li>
+<li>Other tasks are placed in <strong>rakelib</strong> folder</li>
+</ul>
+
+<p><strong>Structures</strong></p>
+
+<pre><code class="language-html">rakelib
+    - task1.rake
+    - task2.rake
+Rakefile
+</code></pre>
+
+<p><strong>Subjects</strong></p>
+
+<h3 id="rake-global-tasks">- Rake Global Tasks</h3>
+
+<pre><code class="language-html">Rake does let you define global tasks, these global tasks can be run from any directory – even those that do not have a Rakefile in their hierarchy.
+</code></pre>
+
+<pre><code class="language-ruby">desc &quot;Default Task&quot;
+task :default do
+    'Default task'
+end
+
+task :prerequisite1 do
+	puts 'prerequisite1'
+end
+
+task :prerequisite2 do
+	puts 'prerequisite2'
+end
+
+desc &quot;The task's description&quot;
+task :task_name =&gt; [:prerequisite1, :prerequisite2] do |task| puts &quot;#{task.name}&quot; end
+</code></pre>
+
+<h3 id="rake-rule-tasks">- Rake Rule Tasks</h3>
+
+<ul>
+<li><a href="https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub">https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub</a></li>
+</ul>
+
+<p><strong>Some files need to be ignored</strong>:</p>
+
+<ul>
+<li>Files that contain tilde(~). Eg: ~$myfile.doc file is a temporary file used to help recover data if a program you are using stops unexpectedly.</li>
+<li>A scratch file is a temporary computer file which you use as a work area or as a store while a program is operating.</li>
+</ul>
+
+<p><strong>Rule tasks don’t need to be about files, as some of the examples above have shown, but if there is a file with the same name as the task’s name, then that task will have the characteristics of a file task</strong></p>
+
+<pre><code class="language-ruby">rule '.yml' =&gt; '.yml.example' do |t|
+	puts &quot;Make a copy of #{t.source} to %s&quot; % t.name
+	cp t.source, t.name
+end
+</code></pre>
+
+<pre><code class="language-bash">rake ./database.yml
+</code></pre>
+
+<pre><code class="language-ruby">file_list = Rake::FileList.new(&quot;26/*.yml.example&quot;) do |fl|
+	fl.exclude(&quot;~*&quot;)
+	fl.exclude(&quot;/^scratch\//&quot;)
+	fl.gsub!(&quot;.example&quot;,&quot;&quot;)
+end
+
+rule '.yml' =&gt; '.yml.example' do |t|
+	puts &quot;Make a copy of #{t.source} to %s&quot; % t.name
+	cp t.source, t.name
+end
+
+desc &quot;Setup&quot;
+task :setup =&gt; file_list do |t|
+	puts t.inspect
+end
+</code></pre>
+
+<pre><code class="language-bash">rake setup
+</code></pre>
+
+<h3 id="rake-file-tasks">- Rake File Tasks</h3>
+
+<h3 id="directory-tasks">- Directory Tasks</h3>
+
+<h3 id="tasks-with-parallel-prerequisites">- Tasks with Parallel Prerequisites</h3>
+
+<h3 id="tasks-with-arguments">- Tasks with Arguments</h3>
+
+<h3 id="namespaces">- Namespaces</h3>
+
+<h2 id="bundler">- Bundler</h2>
+
+<ul>
+<li>Ref : <a href="https://bundler.io/">https://bundler.io/</a></li>
+</ul>
+
+<h2 id="ruby-special-synctax">- Ruby special synctax</h2>
+
+<ul>
+<li><a href="https://cbabhusal.wordpress.com/2015/10/06/ruby-what-is-the-asterix-in-function-param/">Asterisk or &ldquo;*&rdquo;</a></li>
+<li><a href="http://genua.github.io/ruby/2015/03/04/underscores-ampersands-asterisks/">http://genua.github.io/ruby/2015/03/04/underscores-ampersands-asterisks/</a></li>
+<li><a href="http://raysrashmi.com/2013/11/06/splat-operator-as-an-argument/">http://raysrashmi.com/2013/11/06/splat-operator-as-an-argument/</a></li>
+</ul>
+
+<h3 id="asterix">Asterix</h3>
+
+<pre><code class="language-ruby">#!/usr/env/bin ruby
+
+puts 'Asterisk - The flat operator in ruby'
+
+first, last = 1,2
+puts &quot;#{first} - #{last}&quot;
+
+a, *b = [1,2,3,4]
+puts &quot;#{a} - #{b}&quot;
+
+str = 'Just for your information'
+puts str.split.map { |e| e.chr }.join('').upcase!
+puts str.split.map(&amp;:chr).join('').upcase!
+</code></pre>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

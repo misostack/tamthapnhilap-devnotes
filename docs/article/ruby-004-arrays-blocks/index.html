@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ruby Arrays - Blocks | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ruby Arrays Blocks" />
+    <meta name="description" content="Ruby Arrays Blocks" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Ruby Arrays - Blocks</h1>
+        
+
+<h2 id="arrays">Arrays</h2>
+
+<pre><code class="language-ruby">require 'faker'
+
+filepath = './15-votes.txt'
+
+module Votes
+	def self.generate_votes(filepath, numbers = 100)
+		return if File.exist?(filepath)
+		votes = []
+		(1..numbers).each do |num|
+			name = Faker::Name.name
+			(1..Random.new.rand(100)).each do |i|
+				votes &lt;&lt; name
+			end			
+		end
+		File.open(filepath,'w+') { |fh|
+			votes.shuffle.each do |name|				
+				fh.puts format(&quot;%s&quot;, name)
+			end
+		}
+	end
+	def self.read_votes(filepath)
+		votes = {}
+		File.readlines(filepath).each { |line|			
+			name = line.chomp
+			votes[name] += 1 if votes[name]
+			votes[name] = 1 unless votes[name]
+		}
+		final_votes = []
+		votes.each do |name, v|
+			final_votes &lt;&lt; { name: name, votes: v}
+		end
+		final_votes
+	end
+	def self.add_rank(records)
+		records.sort_by{ |item| item[:votes] }.reverse.each_with_index do |record, idx|
+			record[:rank] = idx + 1
+		end
+	end
+end
+
+Votes::generate_votes(filepath)
+# Votes::read_votes(filepath).sort_by{ |item| item[:votes] }.reverse.each { |record|
+# 	puts format(&quot;%s has %s&quot;, record[:name], record[:votes])
+# }
+Votes::add_rank(Votes::read_votes(filepath)).each { |record|
+	puts format(&quot;Name: %s - Votes: %s - Rank: %s&quot;, record[:name], record[:votes], record[:rank])
+}
+</code></pre>
+
+<h2 id="blocks">Blocks</h2>
+
+<pre><code class="language-ruby">def yield_number
+	yield 4
+end
+
+array = [1,2,3]
+yield_number { |number| array &lt;&lt; number }
+p array
+
+sum = 0
+[1,2,3].each{ |number| sum += number }
+p sum
+
+def print_block_value
+	puts yield
+end
+
+def other_method
+	print_block_value { 12 * 12 }
+end
+
+other_method
+</code></pre>
+
+<pre><code class="language-ruby">songs = [
+	{:name =&gt; 'Ngắm hoa lệ rơi', :singer =&gt; 'Châu Khải Phong', :views =&gt; 1500},
+	{:name =&gt; 'Ngắm hoa lệ rơi Offical', :singer =&gt; 'Châu Khải Phong', :views =&gt; 2000},
+	{:name =&gt; 'Ông ngoại tuổi 30', :singer =&gt; 'Trịnh Thăng Bình', :views =&gt; 500},
+	{:name =&gt; 'Nắng ấm xa dần', :singer =&gt; 'Sơn Tùng MTP', :views =&gt; 10000},
+	{:name =&gt; 'Đếm ngày xa em', :singer =&gt; 'Only C', :views =&gt; 1600}
+]
+
+module TopSongs
+	def self.list_songs(songs)
+		matching_songs = []
+		songs.each do |song|
+			if yield(song)
+				matching_songs &lt;&lt; song
+			end
+		end
+		matching_songs
+	end
+
+	def self.print_list(songs)
+		songs.each do |song|
+			yield(song)
+		end
+	end
+
+	def self.reduce(songs)
+		arr = []
+		songs.each do |ele|
+			arr &lt;&lt; yield(ele)
+		end
+		arr.uniq
+	end
+end
+
+TopSongs::print_list TopSongs::reduce(songs) { |song| song[:singer] } do |singer|
+	puts format &quot;Những bài hát hay nhất của %s :&quot;, singer
+	puts ' '*30
+	TopSongs::print_list(TopSongs::list_songs(songs) { |song| song[:singer] == singer}) do |song|
+	puts format &quot;Bài hát: %s&quot;, song[:name]
+	puts format &quot;Lượt xem: %s lượt&quot;, song[:views]
+	puts '-'*30		
+	end
+	puts '*'*30
+end
+</code></pre>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-002-cheatsheets/">Rails 002 - Cheatsheets</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

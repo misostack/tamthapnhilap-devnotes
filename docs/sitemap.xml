@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/</loc>
+    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/projects/iome/</loc>
+    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/iome-001-initialize/</loc>
+    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/</loc>
+    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/projects/</loc>
+    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/</loc>
+    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/rails-003-active-record/</loc>
+    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/ror/</loc>
+    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/</loc>
+    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</loc>
+    <lastmod>2018-10-30T10:17:23+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/rails-001-firststep/</loc>
+    <lastmod>2018-10-05T16:02:51+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/javascript/</loc>
+    <lastmod>2018-10-05T11:42:10+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/javascript-001/</loc>
+    <lastmod>2018-10-05T11:42:10+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/nodejs/</loc>
+    <lastmod>2018-10-01T14:04:46+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/nodejs-001/</loc>
+    <lastmod>2018-10-01T14:04:46+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/projects/crmexpress/</loc>
+    <lastmod>2018-10-01T10:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/ng-crmexpress-001/</loc>
+    <lastmod>2018-10-01T10:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</loc>
+    <lastmod>2018-09-19T14:39:41+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-010-redis/</loc>
+    <lastmod>2018-09-11T10:48:10+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</loc>
+    <lastmod>2018-09-11T10:47:48+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-008-testing/</loc>
+    <lastmod>2018-09-11T10:47:20+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-007-errors/</loc>
+    <lastmod>2018-09-11T10:37:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-006-mixins/</loc>
+    <lastmod>2018-09-11T10:37:08+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-005-hash/</loc>
+    <lastmod>2018-09-11T10:36:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</loc>
+    <lastmod>2018-09-05T16:10:05+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-003-oop/</loc>
+    <lastmod>2018-09-05T13:41:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-002-basic/</loc>
+    <lastmod>2018-08-22T10:52:27+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-001-install/</loc>
+    <lastmod>2018-08-21T14:30:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/backend-roadmap/</loc>
+    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/</loc>
+    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/categories/</loc>
+    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/categories/uncategory/</loc>
+    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/the-api-world/</loc>
+    <lastmod>2018-08-16T16:00:49+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/reactjs-ways-003/</loc>
+    <lastmod>2018-08-03T10:18:06+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/projects/reactjs-ways/</loc>
+    <lastmod>2018-08-03T10:18:06+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/reactjs-ways-002/</loc>
+    <lastmod>2018-07-31T13:56:05+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/note/reactjs-ways-001/</loc>
+    <lastmod>2018-07-31T13:47:58+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/go-pros-and-cons/</loc>
+    <lastmod>2018-07-12T13:47:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/categories/languages/</loc>
+    <lastmod>2018-07-12T13:47:31+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/ruby-pros-and-cons/</loc>
+    <lastmod>2018-07-11T16:16:16+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/php-pros-and-cons/</loc>
+    <lastmod>2018-07-11T15:36:24+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/blog/nodejs-pros-and-cons/</loc>
+    <lastmod>2018-07-11T10:48:10+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-001-installation/</loc>
+    <lastmod>2018-06-05T19:20:17+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/ruby-000-ror/</loc>
+    <lastmod>2018-06-05T13:50:51+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/hugo/</loc>
+    <lastmod>2018-05-24T15:57:54+07:00</lastmod>
+  </url>
+  
+</urlset>

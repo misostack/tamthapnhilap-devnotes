@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reactjs-ways on DevNotes 2019</title>
+    <link>http://devnotes.tamthapnhilap.site/projects/reactjs-ways/</link>
+    <description>Recent content in reactjs-ways on DevNotes 2019</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-VN</language>
+    <copyright>Everything is mine</copyright>
+    <lastBuildDate>Fri, 03 Aug 2018 10:18:06 +0700</lastBuildDate>
+    
+	<atom:link href="http://devnotes.tamthapnhilap.site/projects/reactjs-ways/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reactjs Ways - React Router - React Redux</title>
+      <link>http://devnotes.tamthapnhilap.site/note/reactjs-ways-003/</link>
+      <pubDate>Fri, 03 Aug 2018 10:18:06 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/note/reactjs-ways-003/</guid>
+      <description>1.Install  Refs : https://reacttraining.com/react-router/web/guides/philosophy
+npm install react-router-dom -D   2.Folder Structure Refs: https://engineering.opsgenie.com/how-to-organize-react-files-before-its-messed-up-c85387f691be
+There are several ways, but in summary:
+By File Type
+This is very simple structure which almost use for small application and for learning purpose
+└── src └── actions └── group.js └── user.js └── components └── group-list.js └── group-item.js └── user-avatar.js └── user-box.js └── user-item.js └── containers └── App.js └── group.js └── user.js └── reducers └── group.</description>
+    </item>
+    
+    <item>
+      <title>Reactjs Ways - Advanced Solutions</title>
+      <link>http://devnotes.tamthapnhilap.site/note/reactjs-ways-002/</link>
+      <pubDate>Tue, 31 Jul 2018 13:56:05 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/note/reactjs-ways-002/</guid>
+      <description>1.Accessibility Refs
+ Full of story Checklist
+ WAI-ARIA
+&amp;lt;div className=&amp;quot;form-group&amp;quot;&amp;gt; &amp;lt;label&amp;gt;Email address&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;email&amp;quot; aria-label={`Please enter your email`} aria-required=&amp;quot;true&amp;quot; className=&amp;quot;form-control&amp;quot; onChange={this.handleChange} value={this.state.email} name=&amp;quot;email&amp;quot; aria-describedby=&amp;quot;emailHelp&amp;quot; placeholder=&amp;quot;Enter email&amp;quot; /&amp;gt; &amp;lt;small id=&amp;quot;emailHelp&amp;quot; className=&amp;quot;form-text text-muted&amp;quot;&amp;gt;We&#39;ll never share your email with anyone else.&amp;lt;/small&amp;gt; &amp;lt;/div&amp;gt;  Semantic HTML
+ Accessible Forms
+&amp;lt;div className=&amp;quot;form-group&amp;quot;&amp;gt; &amp;lt;label htmlFor=&amp;quot;email&amp;quot;&amp;gt;Email address&amp;lt;/label&amp;gt; &amp;lt;input id=&amp;quot;email&amp;quot; type=&amp;quot;email&amp;quot; aria-label={`Please enter your email`} aria-required=&amp;quot;true&amp;quot; className=&amp;quot;form-control&amp;quot; onChange={this.handleChange} value={this.state.email} name=&amp;quot;email&amp;quot; aria-describedby=&amp;quot;emailHelp&amp;quot; placeholder=&amp;quot;Enter email&amp;quot; /&amp;gt; &amp;lt;small id=&amp;quot;emailHelp&amp;quot; className=&amp;quot;form-text text-muted&amp;quot;&amp;gt;We&#39;ll never share your email with anyone else.</description>
+    </item>
+    
+    <item>
+      <title>Reactjs Ways - Main Concepts</title>
+      <link>http://devnotes.tamthapnhilap.site/note/reactjs-ways-001/</link>
+      <pubDate>Tue, 31 Jul 2018 13:47:58 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/note/reactjs-ways-001/</guid>
+      <description>1.JSX  javascript syntax extension Since JSX is closer to JavaScript than to HTML, React DOM uses camelCase property naming convention instead of HTML attribute names.   const element = &amp;lt;img src={user.avatarUrl}&amp;gt;&amp;lt;/img&amp;gt;; const element = &amp;lt;h1&amp;gt;Hello, {formatName(user)}!&amp;lt;/h1&amp;gt; const element = React.createElement( &#39;h1&#39;, {className: &#39;greeting&#39;}, &#39;Hello, world!&#39; ); ReactDOM.render(element, document.getElementById(&#39;root&#39;));  2.Render  Elements are the smallest building blocks of React apps. React elements are immutable. Once you create an element, you can’t change its children or attributes React Only Updates What’s Necessary   ReactDOM.</description>
+    </item>
+    
+  </channel>
+</rss>

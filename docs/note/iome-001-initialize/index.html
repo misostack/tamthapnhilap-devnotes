@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Iome 001 Initialize | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Iome 001 Initialize" />
+    <meta name="description" content="Iome 001 Initialize" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+<article class="article article-scrollby" data-target="#article-scrollpy">
+    <img src="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Iome 001 Initialize" />
+    <h1>Iome 001 Initialize</h1>
+    
+
+<h2 id="requirements">Requirements</h2>
+
+<ol>
+<li>Bài toán 1: SimpleAuth - xây dựng chức năng auth đơn giản, ko cần phân quyền theo module</li>
+<li>Bài toán 2: SimpleTodoList: List(Group Of TodoList), Statuses( Backlog, OnGoing, Postponed, ToBeTested, TobeValidated, Closed ), Types(2M, A, B, C, D)</li>
+<li>Bài toán 3: Messages: nhật kí dự án( message, statuses[&lsquo;new&rsquo;,&lsquo;done&rsquo;,&lsquo;inprogress&rsquo;,&lsquo;error&rsquo;,&lsquo;delayed&rsquo;,&lsquo;removed&rsquo;])</li>
+<li>Bài toán 4: Status: system status( status, statuses[&lsquo;up&rsquo;,&lsquo;bug&rsquo;,&lsquo;down&rsquo;])</li>
+</ol>
+
+<h4 id="diễn-giải">Diễn giải</h4>
+
+<p>2M: 2 minutes work: do it now, and the deadline is in 10 mins.
+A: URGENT + IMPORTANT ( DO IT NOW ) : do it now, and the deadline is in a day
+B: NOT URGENT + IMPORTANT ( SCHEDULE A TIME TO DO IT ): set a deadline for it and plan time to start
+C: URGENT + NOT IMPORTANT ( CAN BE DELEGATED or do later )
+D: NOT URGENT + NOT IMPORTANT ( ELIMINATE IT): watching TV,&hellip; ( delete if you have no time for it )</p>
+
+<h4 id="objects-and-dataset">Objects and Dataset</h4>
+
+<p>1.Objects:</p>
+
+<ul>
+<li>User : main auth params - email|phonenumber|username, password</li>
+<li>List: can be kind of : books to read, project a, project b,&hellip;</li>
+<li>PriorityType: 2M(5), A(4), B(3) , C(2), D(1)</li>
+<li>Issue</li>
+<li>Message: nhat ki du</li>
+</ul>
+
+<ol>
+<li>Dataset</li>
+</ol>
+
+<ul>
+<li><p>Ref : <a href="https://moz.com/blog/googles-longer-snippets">https://moz.com/blog/googles-longer-snippets</a></p>
+
+<pre><code class="language-json">[messages]
+id: integer auto_increment primary key,
+content: varchar[180]
+statuses: varchar(20)
+created_at: DateTime
+updated_at: DateTime
+</code></pre></li>
+</ul>
+
+<h2 id="the-first-steps">The first steps</h2>
+
+<h3 id="install-rails">Install rails</h3>
+
+<pre><code class="language-bash">rails new appname --skip-install
+cd appname
+bundle install
+</code></pre>
+
+<h3 id="change-test-framework">Change Test Framework</h3>
+
+<pre><code class="language-bash">bundle add rspec-rails --group=development,test
+</code></pre>
+
+<p><strong>config/application.rb</strong></p>
+
+<pre><code class="language-ruby">
+    config.generators do |g|
+      g.orm             :active_record
+      g.test_framework  :rspec
+    end
+
+ENV['TMP'] = File.join(Rails.root, 'tmp')    
+</code></pre>
+
+<pre><code class="language-bash">rails generate rspec:install
+</code></pre>
+
+<h3 id="change-db-config-and-install-gem">Change DB Config and install gem</h3>
+
+<pre><code class="language-bash">bundle add pg
+</code></pre>
+
+<pre><code class="language-yaml">
+default: &amp;default
+  pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;
+  timeout: 5000
+
+development:
+  &lt;&lt;: *default
+  adapter: postgresql
+  database: iome_dev
+  host: localhost
+  username: postgres
+  password: 123456
+
+# Warning: The database defined as &quot;test&quot; will be erased and
+# re-generated from your development database when you run &quot;rake&quot;.
+# Do not set this db to the same as development or production.
+test:
+  &lt;&lt;: *default
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+production:
+  &lt;&lt;: *default
+  database: iome_prod
+
+</code></pre>
+
+<h3 id="db-manipulation">DB Manipulation</h3>
+
+<pre><code>rake db:setup
+rake db:migrate:status
+RAILS_ENV=development &amp;&amp; rake db:migrate:status
+RAILS_ENV=development &amp;&amp; rake db:migrate
+RAILS_ENV=development &amp;&amp; rake db:rollback
+</code></pre>
+
+<h3 id="model">Model</h3>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Generate</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Add Migration</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Run</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Validate Inputs : <a href="https://guides.rubyonrails.org/active_record_validations.html">https://guides.rubyonrails.org/active_record_validations.html</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Enum : <a href="https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html">https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html</a> , <a href="https://naturaily.com/blog/ruby-on-rails-enum">https://naturaily.com/blog/ruby-on-rails-enum</a></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Never use <strong>&ldquo;new&rdquo;</strong> for enum : <a href="https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model">https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model</a></label></li>
+</ul>
+
+<h4 id="message">Message</h4>
+
+<pre><code class="language-bash">rails generate model Message
+rails destroy model Message
+</code></pre>
+
+<pre><code class="language-ruby">class CreateMessages &lt; ActiveRecord::Migration[5.2]
+  def up
+    create_table :messages do |t|
+      t.string :content, :limit =&gt; 180
+      t.string :status, :limit =&gt; 20, :comments =&gt; &quot;['backlog','done','ongoing','error','delayed','removed']&quot;
+
+      t.timestamps
+    end
+  end
+
+  def down
+    drop_table :messages
+  end
+end
+</code></pre>
+
+<pre><code class="language-bash">rails console
+reload!
+</code></pre>
+
+<pre><code class="language-ruby">msg = Message.new({ :content =&gt; 'initialize project', :status =&gt; 'inprogress' })
+msg.new_record?
+msg.save
+Message.last
+
+Message.create({ :content =&gt; 'sample line', :status =&gt; 'unknown progress' })
+Message.last
+</code></pre>
+
+</article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+        
+
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

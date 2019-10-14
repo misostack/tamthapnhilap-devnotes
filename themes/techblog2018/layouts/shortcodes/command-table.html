@@ -1,0 +1,21 @@
+<table class="table table-commands">
+    <thead>
+        {{ if .Get "thead" }}
+            {{ $columns := .Get "thead"}}
+        <tr>
+            {{ $columns := (split $columns ",") }}
+            {{ range $column := $columns }}
+                <th>{{ $column }}</th>
+            {{ end }}
+        </tr>
+        {{ else }}
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+        {{ end }}
+    </thead>
+    <tbody>
+        {{ .Inner }}        
+    </tbody>
+</table>

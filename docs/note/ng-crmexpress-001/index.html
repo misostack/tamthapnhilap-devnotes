@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Ng CRMExpress 001 | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ng CRMExpress 001" />
+    <meta name="description" content="Ng CRMExpress 001" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+<article class="article article-scrollby" data-target="#article-scrollpy">
+    <img src="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Ng CRMExpress 001" />
+    <h1>Ng CRMExpress 001</h1>
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>Tại sao cần CRM?</strong></p>
+
+<ul>
+<li>Chăm sóc khách hàng ngay từ khi chưa là khách hàng : <a href="https://www.youtube.com/watch?v=6omS6AF4-ww">https://www.youtube.com/watch?v=6omS6AF4-ww</a></li>
+</ul>
+
+<p>Mục tiêu: xây dựng tiềm thức trong khách hàng về brand name.</p>
+
+<p>Đây là phiên bản CRM miễn phí dành cho các doanh nghiệp vừa và nhỏ Việt Nam. Phần mềm được viết dựa trên angular 6.
+Phần mềm sẽ gồm 3 đối tượng: Owner, Users, Customer.
+- Mỗi account Owner được phép tạo 1 tổ chức(company).
+- Mỗi tổ chức chỉ có 1 admin( account Owner đã đăng ký ).
+- Mỗi tổ chức được phép có nhiều Users với phân quyền giới hạn để tương tác với dữ liệu khách hàng trên CRM(xem,thêm,xóa,cập nhật)</p>
+
+<p>Phần mềm sẽ bao gồm các feature chính bên dưới:</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Authen: Đăng ký/Đăng nhập/Đăng Xuất/Khôi phục mật khẩu/OAuth(Facebook hoặc Gmail)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> UserGroupManagement: Quản lí nhóm người dùng( ví dụ: phòng sale, phòng chăm sóc khách hàng, phòng marketing)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> UserGroupPermissions: Quản lí quyền hạn của nhóm người dùng( ví dụ : readonly đối với sale)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> UserManagement: Quản lí người dùng( users )</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> CustomerManagement: Quản lí khách hàng(xem, thêm, xóa, sửa, pickup)</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> YourCustomerList: Danh sách khách hàng cần chăm sóc của bạn(xem, thêm, xóa, sửa)</label></li>
+</ul>
+
+<p>Chức năng đặc biệt:</p>
+
+<ul>
+<li><p>[x] Tìm kiếm khách hàng tiềm năng trên facebook:</p>
+
+<ul>
+<li>Quét uid trong group mở</li>
+<li>Quét uid trong comments</li>
+<li>Quét uid trong danh sách bạn</li>
+<li>Quét uid trong danh sách mở của 1 người dùng( sử dụng uid )</li>
+<li>Quét data chi tiết từ uid</li>
+</ul></li>
+
+<li><p>[x] Pick up khách hàng</p></li>
+</ul>
+
+<p>1 nhân viên của cty tìm được 1 tập khách hàng mới và chuyển cho phòng chăm sóc khách hàng để nhập liệu.
+Lúc này, các nhân viên sẽ tự pick 1 khách hàng vào tập CRM của mình để thực hiện chăm sóc.
+Các nhân viên có thể chia sẽ tập CRM của mình với nhau. Khách hàng được pickup bởi người nào thì chỉ người
+đó thấy.</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Filter khách hàng tiềm năng: tự xây dựng filter để tính point cho khách hàng tiềm năng</label></li>
+</ul>
+
+<p>Ngày hôm này:</p>
+
+<ul>
+<li>Bán cho ai và chăm sóc ai?(WHO)</li>
+<li>Bán và chăm sóc khi nào?(WHEN)</li>
+<li>Bán và chăm sóc ở đâu?(WHERE)</li>
+<li>Bán và chăm sóc thế nào(HOW)</li>
+
+<li><p>Điều kiện gì cần để có thể bán và chăm sóc được?(DO YOU NEED HELP FROM ME OR COMPANY)</p></li>
+
+<li><p>[x] Nhật kí bán hàng : <a href="https://www.youtube.com/watch?v=6xjaGXqmaFI">https://www.youtube.com/watch?v=6xjaGXqmaFI</a></p></li>
+</ul>
+
+<p>Tại sao cần lập kế hoạch:</p>
+
+<ul>
+<li>Giúp nhớ mục tiêu lâu dài</li>
+</ul>
+
+<p><strong>Phễu bán hàng</strong>:</p>
+
+<p>200 khách hàng tiềm năng -&gt; 100 người sẵn sàng nghe máy -&gt; 40 khách hàng đồng ý đến gặp -&gt; 25 người đàm phán chốt hợp đồng,hứa hẹn -&gt; 20 người thật sự mua.</p>
+
+<p>==&gt; 10% thành công</p>
+
+<h2 id="api-portal">API Portal</h2>
+
+<ul>
+<li>Phần mềm sẽ kết nối với biz-portal.misostack.com/api/v1</li>
+</ul>
+
+</article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+        
+
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

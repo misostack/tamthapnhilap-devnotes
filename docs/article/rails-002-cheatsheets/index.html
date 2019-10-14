@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="http://devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Rails 002 - Cheatsheets | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Rails 002 Cheatsheets" />
+    <meta name="description" content="Rails 002 Cheatsheets" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="http://devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="http://devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="http://devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container-fluid main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <h1>Rails 002 - Cheatsheets</h1>
+        
+
+<h2 id="routes-cheatsheet">Routes cheatsheet</h2>
+
+<table class="table table-commands">
+    <thead>
+        
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        
+    <tr>
+    <td class="command-text">root to: &#39;home#index&#39;</td>
+    <td class="command-description">Root URL, should place at the end</td>    
+</tr>
+    <tr>
+    <td class="command-text">TOP to BOTTOM</td>
+    <td class="command-description">route priority is from top to bottom</td>    
+</tr>    
+        
+    </tbody>
+</table>
+
+<pre><code class="language-ruby">Rails.application.routes.draw do
+  get '/ping', {to: 'home#ping'} # run
+  get '/ping', {to: 'home#index'} # never run
+  get '/download/:type', to: 'home#download'
+  get '/fetch(/:type)', to: 'home#fetch'
+  get '/redirect', to: 'home#redirect'
+  namespace :status do
+    get '/messages/ping', to: 'messages#ping'
+    get '/messages/sample-app', to: 'messages#sampleapp'
+    resources :messages
+    root to: 'messages#index'
+  end
+  namespace :auth do
+    get '/basic', to: 'basic#index'
+    get '/digest', to: 'digest#index'
+  end
+  root to: &quot;home#index&quot;
+end
+</code></pre>
+
+<h2 id="rake-tasks">Rake tasks</h2>
+
+<pre><code class="language-ruby">$ rake --tasks
+rake about                              # List versions of all Rails framew...
+rake active_storage:install             # Copy over the migration needed to...
+rake app:template                       # Applies the template supplied by ...
+rake app:update                         # Update configs and some other ini...
+rake assets:clean[keep]                 # Remove old compiled assets
+rake assets:clobber                     # Remove compiled assets
+rake assets:environment                 # Load asset compile environment
+rake assets:precompile                  # Compile all the assets named in c...
+rake cache_digests:dependencies         # Lookup first-level dependencies f...
+rake cache_digests:nested_dependencies  # Lookup nested dependencies for TE...
+rake db:create                          # Creates the database from DATABAS...
+rake db:drop                            # Drops the database from DATABASE_...
+rake db:environment:set                 # Set the environment value for the...
+rake db:fixtures:load                   # Loads fixtures into the current e...
+rake db:migrate                         # Migrate the database (options: VE...
+rake db:migrate:status                  # Display status of migrations
+rake db:rollback                        # Rolls the schema back to the prev...
+rake db:schema:cache:clear              # Clears a db/schema_cache.yml file
+rake db:schema:cache:dump               # Creates a db/schema_cache.yml file
+rake db:schema:dump                     # Creates a db/schema.rb file that ...
+rake db:schema:load                     # Loads a schema.rb file into the d...
+rake db:seed                            # Loads the seed data from db/seeds.rb
+rake db:setup                           # Creates the database, loads the s...
+rake db:structure:dump                  # Dumps the database structure to d...
+rake db:structure:load                  # Recreates the databases from the ...
+rake db:version                         # Retrieves the current schema vers...
+rake dev:cache                          # Toggle development mode caching o...
+rake haml:erb2haml                      # Convert html.erb to html.haml eac...
+rake initializers                       # Print out all defined initializer...
+rake log:clear                          # Truncates all/specified *.log fil...
+rake middleware                         # Prints out your Rack middleware s...
+rake notes                              # Enumerate all annotations (use no...
+rake notes:custom                       # Enumerate a custom annotation, sp...
+rake restart                            # Restart app by touching tmp/resta...
+rake routes                             # Print out all defined routes in m...
+rake secret                             # Generate a cryptographically secu...
+rake spec                               # Run all specs in spec directory (...
+rake spec:models                        # Run the code examples in spec/models
+rake stats                              # Report code statistics (KLOCs, et...
+rake test                               # Runs all tests in test folder exc...
+rake test:db                            # Run tests quickly, but also reset db
+rake test:system                        # Run system tests only
+rake time:zones[country_or_offset]      # List all time zones, list by two-...
+rake tmp:clear                          # Clear cache, socket and screensho...
+rake tmp:create                         # Creates tmp directories for cache...
+rake yarn:install                       # Install all JavaScript dependenci...
+</code></pre>
+
+<h2 id="controller-cheatsheet">Controller cheatsheet</h2>
+
+<h2 id="view-cheatsheet">View cheatsheet</h2>
+
+<h2 id="model-cheatsheet">Model cheatsheet</h2>
+
+<h3 id="activerecord">ActiveRecord</h3>
+
+<ul>
+<li><a href="https://guides.rubyonrails.org/active_record_migrations.html">Official</a></li>
+
+<li><p><a href="https://stackoverflow.com/questions/3928275/in-ruby-on-rails-whats-the-difference-between-datetime-timestamp-time-and-da">Timestamp vs DateTime Story</a></p>
+
+<pre><code class="language-ruby">1.:datetime (8 bytes)
+
+Stores Date and Time formatted YYYY-MM-DD HH:MM:SS
+Useful for columns like birth_date ( Valid ranges go from the year 1000 to the year 9999 )
+
+2.:timestamp (4 bytes)
+Stores number of seconds since 1970-01-01 ( Its valid range goes from 1970 to 2038 )
+Useful for columns like updated_at, created_at
+
+3.:date (3 bytes)
+Stores Date
+
+4.:time (3 bytes)
+Stores Time
+</code></pre></li>
+
+<li><p><a href="https://apidock.com/rails/TimeZone">Timezone</a></p>
+
+<pre><code class="language-ruby">rails console
+TZInfo::Timezone.all
+</code></pre></li>
+
+<li><p><a href="https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/">Naming Convention</a></p></li>
+</ul>
+
+<table class="table table-commands">
+    <thead>
+        
+        <tr>
+            <th>Command</th>
+            <th>Description</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        
+    <tr>
+    <td class="command-text">rails generate migration CreateProducts</td>
+    <td class="command-description">Create new migration</td>    
+</tr>
+    <tr>
+    <td class="command-text">rails generate models game/teams</td>
+    <td class="command-description">Create new model &#43; activecord Lol:Teams</td>    
+</tr>
+    <tr>
+    <td class="command-text">rails destroy models game/teams</td>
+    <td class="command-description">Delete model &#43; activecord Lol:Teams</td>    
+</tr>
+        
+    </tbody>
+</table>
+
+<ul>
+<li>Where to find ? <a href="https://github.com/rails/rails/tree/master/activerecord/lib/active_record/connection_adapters">connection adapter</a></li>
+</ul>
+
+<p><strong>Possible DataTypes in Active Record with Sqlite</strong></p>
+
+<table class="table table-commands">
+    <thead>
+        
+            
+        <tr>
+            
+            
+                <th>ActiveRecord</th>
+            
+                <th>Sqlite</th>
+            
+                <th>Note</th>
+            
+        </tr>
+        
+    </thead>
+    <tbody>
+        
+    <tr>
+        
+    <td class="command-text">primary</td>
+
+            
+    <td class="command-description">integer PRIMARY KEY AUTOINCREMENT NOT NULL</td>
+
+            
+    <td class="command-description"></td>
+
+    </tr>
+    <tr>
+        
+    <td class="command-text">string</td>
+
+            
+    <td class="command-description">varchar(255)</td>
+
+            
+    <td class="command-description">maximum is 255 characters</td>
+
+    </tr>
+    <tr>
+        
+    <td class="command-text">text</td>
+
+            
+    <td class="command-description">text</td>
+
+            
+    <td class="command-description">maximum is 2^16-1 = 65535 characters</td>
+
+    </tr>
+    <tr>
+        
+    <td class="command-text">integer</td>
+
+            
+    <td class="command-description">integer</td>
+
+            
+    <td class="command-description">The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value. MAX: 2^63-1 = 9223372036854775807</td>
+
+    </tr>
+        
+    </tbody>
+</table>
+
+<p><strong>Integer</strong></p>
+
+<pre><code class="language-ruby">def type_to_sql(type, limit = nil, precision = nil, scale = nil)
+  return super unless type.to_s == 'integer'
+
+  case limit
+  when 1; 'tinyint'
+  when 2; 'smallint'
+  when 3; 'mediumint'
+  when nil, 4, 11; 'int(11)'  # compatibility with MySQL default
+  when 5..8; 'bigint'
+  else raise(ActiveRecordError, &quot;No integer type has byte size #{limit}&quot;)
+  end
+end
+
+# ActiveRecord Migrate
+create_table 'example' do |t|
+  t.integer :int                 # int (4 bytes, max 2,147,483,647)
+  t.integer :int1, :limit =&gt; 1   # tinyint (1 byte, -128 to 127)
+  t.integer :int2, :limit =&gt; 2   # smallint (2 bytes, max 32,767)
+  t.integer :int3, :limit =&gt; 3   # mediumint (3 bytes, max 8,388,607)
+  t.integer :int4, :limit =&gt; 4   # int (4 bytes)
+  t.integer :int5, :limit =&gt; 5   # bigint (8 bytes, max 9,223,372,036,854,775,807)
+  t.integer :int8, :limit =&gt; 8   # bigint (8 bytes)
+  t.integer :int11, :limit =&gt; 11 # int (4 bytes)
+end
+</code></pre>
+
+<pre><code class="language-bash">    primary_key:  &quot;integer PRIMARY KEY AUTOINCREMENT NOT NULL&quot;,
+    string:       { name: &quot;varchar&quot; },
+    text:         { name: &quot;text&quot; },
+    integer:      { name: &quot;integer&quot; },
+    float:        { name: &quot;float&quot; },
+    decimal:      { name: &quot;decimal&quot; },
+    datetime:     { name: &quot;datetime&quot; },
+    time:         { name: &quot;time&quot; },
+    date:         { name: &quot;date&quot; },
+    binary:       { name: &quot;blob&quot; },
+    boolean:      { name: &quot;boolean&quot; },
+    json:         { name: &quot;json&quot; },
+</code></pre>
+
+<p><strong>Homework</strong></p>
+
+<pre><code class="language-ruby">Team : {
+    name: &quot;Fnatic League Of Legend&quot;,
+    short_name: &quot;fnatic lol&quot;,
+    introduction: &quot;
+    Once young pups of the black and orange flag, ‘Rekkles’ and the returning warrior, ‘sOAZ’ head up the Fnatic League of Legends squad, leading now as seasoned wolves, still hungry for success after so many years at the top.
+
+    Joined on the Rift by our Jungler, Broxah, promoted from our Challenger Series team and the veteran ‘Jesiz’ taking the reigns at Support, this new look roster is built on pillars of game knowledge, raw talent and experience with 20 years of professional play combined.
+
+    The lineup is completed by Baby Faker himself; the mechanical maestro, 'Caps', starts his rookie year in the Fnatic Mid lane. The exceptionally gifted youngster has already shown his talents, taking down opposition vastly more experienced than himself.
+
+    Fierce, meticulously prepared, and with the right network of support, this fully European roster now mounts its charge back to the summit of the EU LCS.    
+    &quot;,
+    earned_money: 1,190,043,
+    world_ranking: 2,
+    rating: 1,374,
+    win: 290,
+    lose: 154,
+    rematch: 6,
+    win_rate: 0.64  
+    archivements: [
+        {
+            tournament: &quot;EUROPEAN LEAGUE OF LEGENDS CHAMPIONSHIP SERIES&quot;,
+            achievements: [
+                { type: &quot;Split Champions&quot;, season: &quot;Spring&quot;, year: &quot;2013&quot; },
+                { type: &quot;Playoff Champions&quot;, season: &quot;Spring&quot;, year: &quot;2013&quot; },
+                { type: &quot;Split Champions&quot;, season: &quot;Spring&quot;, year: &quot;2014&quot; },
+                { type: &quot;Split Champions&quot;, season: &quot;Summer&quot;, year: &quot;2014&quot; },
+                { type: &quot;Split Champions&quot;, season: &quot;Summer&quot;, year: &quot;2015&quot; }
+            ]
+        },
+        {
+            tournament: &quot;WORLD CHAMPIONSHIPS&quot;,
+            achievements: [
+                { type: &quot;Champion&quot;, season: &quot;&quot;, year: &quot;2011&quot; },
+                { type: &quot;Semi Finalists&quot;, season: &quot;&quot;, year: &quot;2013&quot; },
+                { type: &quot;Semi Finalists&quot;, season: &quot;&quot;, year: &quot;2015&quot; },
+                { type: &quot;Quarter Finalists&quot;, season: &quot;&quot;, year: &quot;2017&quot; },
+            ]
+        },
+        {
+            tournament: &quot;INVITATIONALS&quot;,
+            achievements: [
+                { type: &quot;DreamHack Winter 2012&quot;, season: &quot;Champions&quot;, year: &quot;2012&quot; },
+                { type: &quot;Rift Rivals&quot;, season: &quot;3rd - 4th&quot;, year: &quot;2017&quot; },                
+            ]            
+        }
+    ]
+}
+</code></pre>
+
+<pre><code class="language-ruby">Player : {
+    last_name: &quot;Larsson&quot;,
+    first_name: &quot;Margin&quot;,
+    player_name: &quot;Rekkles&quot;,
+    game: &quot;League Of Legends&quot;,
+    role: &quot;ADC&quot;,
+    country: &quot;Sweden&quot;,
+    hometown: &quot;Göteborg&quot;,
+    games_won: &quot;47&quot;,
+    kills:&quot;267&quot;,
+    deaths:&quot;73&quot;,
+    date_of_birth:&quot;1996-09-20&quot;,
+    image: &quot;binary...&quot;,
+    biography: &quot;Entering the European professional scene as a mechanical prodigy, the former fledgling is now an experienced leader for Fnatic.
+    An iconic AD Carry, Rekkles's relentless determination to win is only matched by calculated domination of the bot lane. With his eyes now fixed on returning to Worlds, he's fully focused on tearing it up on the rift in the 2017.&quot;,
+    team: &quot;lol&quot;,
+    likes: [
+        {&quot;subject&quot;: &quot;food&quot;, 
+            &quot;object&quot;: {
+                &quot;title: &quot;tacos&quot;,
+                &quot;image&quot;:&quot;http://example.com/images/tacos.png&quot;
+            }
+        },
+        {&quot;subject&quot;: &quot;pastime&quot;, 
+            &quot;object&quot;: {
+                &quot;title: &quot;going to gym&quot;,
+                &quot;image&quot;:&quot;http://example.com/images/gym.png&quot;
+            }
+        },
+        {&quot;subject&quot;: &quot;genre&quot;, 
+            &quot;object&quot;: {
+                &quot;title: &quot;sci-fi&quot;,
+                &quot;image&quot;:&quot;http://example.com/images/sci-fi.png&quot;
+            }
+        },
+        {&quot;subject&quot;: &quot;tv show&quot;, 
+            &quot;object&quot;: {
+                &quot;title: &quot;prison break&quot;,
+                &quot;image&quot;:&quot;http://example.com/images/prison-break.png&quot;
+            }
+        },
+        {&quot;subject&quot;: &quot;travel destination&quot;, 
+            &quot;object&quot;: {
+                &quot;title: &quot;Australia&quot;,
+                &quot;image&quot;:&quot;http://example.com/images/australia.png&quot;
+            }
+        },        
+    ]
+}
+</code></pre>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/rails-003-active-record/">Rails 003 - The Powerfull Active Record</a></li>
+            
+                <li><a href="/article/rails-001-firststep/">Rails 001 - MVC</a></li>
+            
+                <li><a href="/article/ruby-016-web-apps/">Ruby 016 Web Apps</a></li>
+            
+                <li><a href="/article/ruby-010-redis/">Ruby 010 - Hướng dẫn sử dụng redis</a></li>
+            
+                <li><a href="/article/ruby-009-common-libs/">Ruby 009 - Common Libs</a></li>
+            
+                <li><a href="/article/ruby-008-testing/">Ruby 008 Testing</a></li>
+            
+                <li><a href="/article/ruby-007-errors/">Ruby 007 Errors</a></li>
+            
+                <li><a href="/article/ruby-006-mixins/">Ruby 006 Mixins</a></li>
+            
+                <li><a href="/article/ruby-005-hash/">Ruby 005 Hash</a></li>
+            
+                <li><a href="/article/ruby-004-arrays-blocks/">Ruby Arrays - Blocks</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+            <div class="container">
+                <div class="text">
+                    Proudly powered by techblog2018 theme from <strong class="yellow"><a href="http://misostack.com">misostack</a></strong>
+                </div>
+            </div>
+        </footer>        
+    </div>
+    <script type="text/javascript" src="http://devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>
