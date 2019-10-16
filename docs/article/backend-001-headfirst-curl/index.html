@@ -9,6 +9,15 @@
     <meta name="generator" content="misostack-seo" />    
     
     
+    <title>Backend 001 Headfirst Curl | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Backend 001 Headfirst Curl" />
+    <meta name="description" content="Backend 001 Headfirst Curl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
 
     
     <link href="http://devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
@@ -74,49 +83,62 @@
             <div class="row">
                 <main class="content col-md-8">
                     
-    <section class="row-section">
-        <h2 class="row-section-title">iome</h2>
-        <p>
-            Tổng hợp các bài viết thuộc chủ đề iome
-        </p>
-        
-        <div class="row-section-content">                
-            <ul>
-            
-                <li class="row-section-content-item">
-                    <a class="row-section-content-item-link" href="http://devnotes.tamthapnhilap.site/note/iome-001-initialize/">Iome 001 Initialize - 21 Nov, 2018</a>
-                    
-                </li>
-                    
-            </ul>
-        </div>
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
+        <h1>Backend 001 Headfirst Curl</h1>        
         
 
+<h2 id="general">General</h2>
 
-    </section>
+<ul>
+<li><a href="https://curl.haxx.se/docs/manual.html">Curl Doc</a></li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="simple-usage">Simple Usage</h3>
+
+<pre><code class="language-bash">curl -v http://devnotes.tamthapnhilap.site
+# Get a web page and store in a local file with a specific name:
+curl -o index.html http://devnotes.tamthapnhilap.site
+# Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail):
+curl -O http://devnotes.tamthapnhilap.site/index.html
+</code></pre>
+
+<h3 id="post-http">POST (HTTP)</h3>
+
+<pre><code class="language-bash">curl -d &quot;user=foobar&amp;pass=12345&amp;id=blablabla&amp;ding=submit&quot;
+  http://api.tamthapnhilap.site/example
+
+# Send multiple files in a single &quot;field&quot; with a single field name:
+curl -F &quot;pictures=@dog.gif,cat.gif&quot; $URL
+Send two fields with two field names
+curl -F &quot;docpicture=@dog.gif&quot; -F &quot;catpicture=@cat.gif&quot; $URL
+</code></pre>
+
+    </article>
 
                 </main>
                 <aside id="primary-sidebar" class="sidebar col-md-4">
                     
 <div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
         
+
         
-        
-        
-        <div class="sidebar-widget">
-            <h3 class="widget-header ucfirst"><span>projects</span></h3>
-            
-                <a class="category-tag crmexpress" href="http://devnotes.tamthapnhilap.site/projects/crmexpress">crmexpress</a>
-            
-                <a class="category-tag iome" href="http://devnotes.tamthapnhilap.site/projects/iome">iome</a>
-            
-                <a class="category-tag reactjs-ways" href="http://devnotes.tamthapnhilap.site/projects/reactjs-ways">reactjs-ways</a>
-                    
-        </div>
-        
-        
-        
-                       
+    </div>
 </div>
 
                 </aside>

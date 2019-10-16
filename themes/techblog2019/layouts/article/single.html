@@ -1,6 +1,7 @@
 {{ define "main" }}
     <article class="article article-scrollby" data-target="#article-scrollpy">
-        <h1>{{ .Title }}</h1>
+        <p class="text-center"><img class="responsive-image" src="{{ .Params.image }}" /></p>
+        <h1>{{ .Title }}</h1>        
         {{ .Content }}
     </article>
 {{ end }}

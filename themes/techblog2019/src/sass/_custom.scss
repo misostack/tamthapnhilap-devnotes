@@ -140,7 +140,11 @@ img.lazy{
         display: block;
     }
     .item-image{
-        border:1px solid #ccc;
+        display:block;
+        width:100%;
+        height: 160px;
+        background: transparent url(~images/no-image-available.jpg) no-repeat center center scroll;
+        background-size: auto 100%;
     }
     .item-post-name{
         color: $primary-color-dark;
@@ -157,7 +161,7 @@ img.lazy{
 .hl-keywords{
     &-rails, &-ruby, 
     &-angular,
-    &-php, &-laravel, &-lumen{
+    &-php, &-laravel, &-lumen, &-backend{
         color: red;
         font-weight: bold;
     }
@@ -165,7 +169,7 @@ img.lazy{
         color: green;
         font-weight: bold;
     }
-    &-javascript, &-reactjs{
+    &-javascript, &-reactjs, &-frontend{
         color:cyan;
         font-weight: bold;
     }

@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/</loc>
+    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/backend/</loc>
+    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</loc>
+    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://devnotes.tamthapnhilap.site/</loc>
-    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
+    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://devnotes.tamthapnhilap.site/subjects/</loc>
+    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
   </url>
   
   <url>
@@ -28,22 +48,12 @@
   </url>
   
   <url>
-    <loc>http://devnotes.tamthapnhilap.site/article/</loc>
-    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://devnotes.tamthapnhilap.site/article/rails-003-active-record/</loc>
     <lastmod>2018-10-31T14:05:30+07:00</lastmod>
   </url>
   
   <url>
     <loc>http://devnotes.tamthapnhilap.site/subjects/ror/</loc>
-    <lastmod>2018-10-31T14:05:30+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://devnotes.tamthapnhilap.site/subjects/</loc>
     <lastmod>2018-10-31T14:05:30+07:00</lastmod>
   </url>
   

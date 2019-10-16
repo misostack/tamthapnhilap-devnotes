@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 31 Oct 2018 14:05:30 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
     
 	<atom:link href="http://devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backend 001 Headfirst Curl</title>
+      <link>http://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</link>
+      <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
+      
+      <guid>http://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
+      <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html  POST (HTTP) curl -d &amp;quot;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;quot; http://api.</description>
+    </item>
     
     <item>
       <title>Rails 003 - The Powerfull Active Record</title>

@@ -48,6 +48,7 @@ var Site = Site || {};
     },
     keywords: function(){
       return [
+        'backend', 'frontend',
         'ruby', 'rails', 'hanabi', 'sinatra',
         'angular', 'reactjs', 'vuejs', 'javascript',
         'nodejs',

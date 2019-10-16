@@ -19,9 +19,9 @@
                 {{ $taxonomy_term := (index $taxonomy_list $value.Name) }}
                     
                     {{ if $taxonomy_term }}
-                    <img class="item-image" src="{{ (printf "%v" $taxonomy_term.image) | absURL }}" alt="{{ $value.Name }}" />
+                    <div class="item-image" style="background-image:url('{{ (printf "%v" $taxonomy_term.image) | absURL }}');" alt="{{ $value.Name }}"></div>
                     {{ else }}
-                    <img class="item-image" src="{{ "common/no-image-available.jpg" | absURL }}" alt="{{ $value.Name }}" />
+                     <div class="item-image" style="background-image:url('{{ "common/no-image-available.jpg" | absURL }}');" alt="{{ $value.Name }}"></div>
                     {{ end }}
                     <span class="item-post-name">{{ $value.Name }}({{ $value.Count }})</span>
                     <span class="item-description">
