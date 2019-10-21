@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on DevNotes 2019</title>
-    <link>http://devnotes.tamthapnhilap.site/article/</link>
+    <link>//devnotes.tamthapnhilap.site/article/</link>
     <description>Recent content in Articles on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
     
-	<atom:link href="http://devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Backend 001 Headfirst Curl</title>
-      <link>http://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</link>
+      <link>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</link>
       <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
       <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html  POST (HTTP) curl -d &amp;quot;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;quot; http://api.</description>
     </item>
     
     <item>
       <title>Rails 003 - The Powerfull Active Record</title>
-      <link>http://devnotes.tamthapnhilap.site/article/rails-003-active-record/</link>
+      <link>//devnotes.tamthapnhilap.site/article/rails-003-active-record/</link>
       <pubDate>Wed, 31 Oct 2018 14:05:30 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/rails-003-active-record/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/rails-003-active-record/</guid>
       <description>In this chapter, you will see how powerfull the Active Record is!
 The Powering of rails console to make your query with active record Game::Team.all Game::Team.first Game::Team.first.class Status::Message.all Status::Message.find(1) Status::Message.find([1,2,3]) Status::Message.where(:status =&amp;gt; 1) Status::Message.where(:status =&amp;gt; 1..3) Status::Message.where(:status =&amp;gt; [1,2]) Status::Message.where(:status =&amp;gt; [1,2]).count Status::Message.where_not(:status =&amp;gt; [1,2]).count Status::Message.where(:status =&amp;gt; 1).or(Status::Message.where(:status =&amp;gt; 2)).count Status::Message.where(&#39;title like ?&#39;, &#39;%doing%&#39;) # prepared statement Status::Message.where(&#39;status = ? or status = ?&#39;, 1,2) Status::Message.where(&#39;status = :active or status = :inactive&#39;, :inactive =&amp;gt; 2, :active =&amp;gt; 1) Status::Message.</description>
     </item>
     
     <item>
       <title>Rails 002 - Cheatsheets</title>
-      <link>http://devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</link>
+      <link>//devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</link>
       <pubDate>Tue, 30 Oct 2018 10:17:23 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</guid>
       <description>Routes cheatsheet CommandDescriptionroot to: &amp;#39;home#index&amp;#39;Root URL, should place at the end TOP to BOTTOMroute priority is from top to bottom   Rails.application.routes.draw do get &#39;/ping&#39;, {to: &#39;home#ping&#39;} # run get &#39;/ping&#39;, {to: &#39;home#index&#39;} # never run get &#39;/download/:type&#39;, to: &#39;home#download&#39; get &#39;/fetch(/:type)&#39;, to: &#39;home#fetch&#39; get &#39;/redirect&#39;, to: &#39;home#redirect&#39; namespace :status do get &#39;/messages/ping&#39;, to: &#39;messages#ping&#39; get &#39;/messages/sample-app&#39;, to: &#39;messages#sampleapp&#39; resources :messages root to: &#39;messages#index&#39; end namespace :auth do get &#39;/basic&#39;, to: &#39;basic#index&#39; get &#39;/digest&#39;, to: &#39;digest#index&#39; end root to: &amp;quot;home#index&amp;quot; end  Rake tasks $ rake --tasks rake about # List versions of all Rails framew.</description>
     </item>
     
     <item>
       <title>Rails 001 - MVC</title>
-      <link>http://devnotes.tamthapnhilap.site/article/rails-001-firststep/</link>
+      <link>//devnotes.tamthapnhilap.site/article/rails-001-firststep/</link>
       <pubDate>Fri, 05 Oct 2018 16:02:51 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/rails-001-firststep/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/rails-001-firststep/</guid>
       <description>All References  Official Routes Generators Mime Web Mime DateTime Routing Controller Self Singed SSL Certificate Rails Server PUma SSL Not Avaible For this Build Layout rendering  New Project Install rails rails new appname --skip-install cd appname bundle install  Change Test Framework bundle add rspec-rails --group=development,test  config/application.rb
 config.generators do |g| g.orm :active_record g.test_framework :rspec end ENV[&#39;TMP&#39;] = File.join(Rails.root, &#39;tmp&#39;)  rails generate rspec:install  Initialize gem install rails rails new webapp -B cd webapp bundler install rails s -b 0.</description>
     </item>
     
     <item>
       <title>Javascript 001</title>
-      <link>http://devnotes.tamthapnhilap.site/article/javascript-001/</link>
+      <link>//devnotes.tamthapnhilap.site/article/javascript-001/</link>
       <pubDate>Fri, 05 Oct 2018 11:42:10 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/javascript-001/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/javascript-001/</guid>
       <description>General &amp;ndash;You may concern  Head First Javascript  &amp;ndash;Sublime plugin  html5 snippet  &amp;ndash;THe first step with webpack  Official : https://webpack.js.org/
 npm install webpack webpack-cli --save-dev  Assets: https://webpack.js.org/guides/asset-management/
 npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm install --save-dev file-loader npm install --save-dev html-webpack-plugin npm install --save-dev clean-webpack-plugin npm install --save-dev webpack-dev-server npm install --save-dev express webpack-dev-middleware  CLI : https://webpack.js.org/api/cli/#environment-options
@@ -64,20 +64,20 @@ npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm 
     
     <item>
       <title>Nodejs 001</title>
-      <link>http://devnotes.tamthapnhilap.site/article/nodejs-001/</link>
+      <link>//devnotes.tamthapnhilap.site/article/nodejs-001/</link>
       <pubDate>Mon, 01 Oct 2018 14:04:46 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/nodejs-001/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/nodejs-001/</guid>
       <description>Refs  Mozilla: https://developer.mozilla.org/en-US/docs/Learn/WebGL  When to use? NodeJS is the best usage for streaming or event-based real-time applications like:
  Chat applications Game servers - fast and high-performance servers that need to processes Good for collaborative enviroment - This is good enviroments which manage documents. In document management env you will have multiple people who post their documents and do constant changes by checking and out and checking in documents Advertisement servers.</description>
     </item>
     
     <item>
       <title>Ruby 016 Web Apps</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</link>
       <pubDate>Wed, 19 Sep 2018 14:39:41 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</guid>
       <description>First approach &amp;ndash; Set up project directory  Create your own project directory  &amp;ndash; Install sinatra lib for handling web requests  Set up routes Create first HTML Page Set up sinatra to respond with HTML  Overview
  The lastest version of sinatra used thin as a web server instead of WEBrick Refs : http://code.macournoyer.com/thin/
 gem install sinatra  #!/usr/bin/env ruby #puts $LOAD_PATH require &#39;sinatra&#39; get (&#39;/&#39;) do &#39;Home Page&#39; end   &amp;ndash; Display objects with HTML  Refs : https://ruby-doc.</description>
@@ -85,10 +85,10 @@ gem install sinatra  #!/usr/bin/env ruby #puts $LOAD_PATH require &#39;sinatra&#
     
     <item>
       <title>Ruby 010 - Hướng dẫn sử dụng redis</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-010-redis/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-010-redis/</link>
       <pubDate>Tue, 11 Sep 2018 10:48:10 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-010-redis/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-010-redis/</guid>
       <description>1.Hướng dẫn cài đặt &amp;ndash; Hướng dẫn cài đặt trên ubuntu 16 Refs
  https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04 https://askubuntu.com/questions/868848/how-to-install-redis-on-ubuntu-16-04  &amp;ndash; Cách đơn giản nhất sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install redis-server  &amp;ndash; Cách cài đặt từ source Install the Build and Test Dependencies
 sudo apt-get update sudo apt-get install build-essential tcl  Download and Extract the Source Code
@@ -97,19 +97,19 @@ cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stab
     
     <item>
       <title>Ruby 009 - Common Libs</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</link>
       <pubDate>Tue, 11 Sep 2018 10:47:48 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</guid>
       <description>Common libs  MVC Framework : Ruby On Rails(ROR) dRuby CSV  - Inline if and unless puts &#39;example&#39; if true puts &#39;example&#39; unless true  - Private method class Sample def hello puts &#39;hello&#39; end private def hi puts &#39;hi&#39; end end  - Command-line arguments puts ARGV[0]  - Regular Expressions - Singleton methods superhero = Person.new def superhero.fly puts &#39;Fly up&#39; end superhero.fly  - Call any method, even undefined ones #!</description>
     </item>
     
     <item>
       <title>Ruby 008 Testing</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-008-testing/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-008-testing/</link>
       <pubDate>Tue, 11 Sep 2018 10:47:20 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-008-testing/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-008-testing/</guid>
       <description>Types of Automated Tests There are actually many different types of automated tests in widespread use. Here are some of the most common:
  Performance tests measure the speed of your program. Integration tests run your entire program, to ensure that all its methods, classes, and other components integrate together successfully. Unit tests run individual components (units) of your program, usually individual methods.  &amp;ndash;Unit Test Keywords
  minitest assert_equal setup teardown</description>
@@ -117,19 +117,19 @@ cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stab
     
     <item>
       <title>Ruby 007 Errors</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-007-errors/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-007-errors/</link>
       <pubDate>Tue, 11 Sep 2018 10:37:16 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-007-errors/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-007-errors/</guid>
       <description>Keywords  rescue ensure raise {ErrorType} =&amp;gt; error error.message CustomError &amp;lt; StandardError  #!/usr/bin/env ruby class GreaterFive &amp;lt; StandardError end class EqualFive &amp;lt; StandardError end def example_errors number begin random_number = Random.new.rand(10) puts &#39;-&#39;*20 puts &amp;quot;Test Case #{number}&amp;quot;	raise GreaterFive, &amp;quot;#{random_number} &amp;gt; 5&amp;quot; if random_number &amp;gt; 5 raise EqualFive, &amp;quot;#{random_number} = 5&amp;quot; if random_number == 5 raise &amp;quot;#{random_number} &amp;lt; 5&amp;quot; rescue GreaterFive =&amp;gt; error puts &amp;quot;GreaterFive: #{error.message}&amp;quot; rescue EqualFive =&amp;gt; error puts &amp;quot;EqualFive: #{error.</description>
     </item>
     
     <item>
       <title>Ruby 006 Mixins</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-006-mixins/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-006-mixins/</link>
       <pubDate>Tue, 11 Sep 2018 10:37:08 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-006-mixins/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-006-mixins/</guid>
       <description>Problems Imagine we have an app for sharing videos, musics, and other media.
 Musics and videos both need some of same functionality: users need to be able to play songs and videos back, as well as leave comments on them. There are some aspects that differ, howerver.Eg:
 Songs: we need to track the number of beats per minute(bpm)
@@ -138,38 +138,38 @@ Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolu
     
     <item>
       <title>Ruby 005 Hash</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-005-hash/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-005-hash/</link>
       <pubDate>Tue, 11 Sep 2018 10:36:58 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-005-hash/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-005-hash/</guid>
       <description>Hash A hash can be created by: - Implicit form - With Symbol - Or using new method  grades = { &amp;quot;Jane Doe&amp;quot; =&amp;gt; 10, &amp;quot;Jim Doe&amp;quot; =&amp;gt; 6 } puts &amp;quot;grades[&#39;Jane Done&#39;] = #{grades[&#39;Jane Doe&#39;]}&amp;quot; opts = {:font_size =&amp;gt; 10, :font_family =&amp;gt; &#39;Arial&#39;} puts &amp;quot;opts[:font_size] = #{opts[:font_size]}&amp;quot; new_opts = { font_size: 12, font_family: &#39;Arial&#39; } puts &amp;quot;new_opts[:font_size] = #{new_opts[:font_size]}&amp;quot; new_opts[:font_weight] = &#39;bold&#39; puts &amp;quot;new_opts[:font_weight] = #{new_opts[:font_weight]}&amp;quot;  Important notes about hash Hashes have a default value that is returned when accessing keys that do not exist in the hash.</description>
     </item>
     
     <item>
       <title>Ruby Arrays - Blocks</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</link>
       <pubDate>Wed, 05 Sep 2018 16:10:05 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</guid>
       <description>Arrays require &#39;faker&#39; filepath = &#39;./15-votes.txt&#39; module Votes def self.generate_votes(filepath, numbers = 100) return if File.exist?(filepath) votes = [] (1..numbers).each do |num| name = Faker::Name.name (1..Random.new.rand(100)).each do |i| votes &amp;lt;&amp;lt; name end	end File.open(filepath,&#39;w+&#39;) { |fh| votes.shuffle.each do |name|	fh.puts format(&amp;quot;%s&amp;quot;, name) end } end def self.read_votes(filepath) votes = {} File.readlines(filepath).each { |line|	name = line.chomp votes[name] += 1 if votes[name] votes[name] = 1 unless votes[name] } final_votes = [] votes.</description>
     </item>
     
     <item>
       <title>Ruby Module and Classes</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-003-oop/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-003-oop/</link>
       <pubDate>Wed, 05 Sep 2018 13:41:28 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-003-oop/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-003-oop/</guid>
       <description>Object Oriented Programming  Data Abstraction Encapsulation Inheritance Polymorphism
 class Animal # symbols : immutable attr_reader :name, :talk	def initialize @name = self.class.name.capitalize	end	def speak puts &amp;quot;#{@name} says &#39;hello&#39;&amp;quot; end end class Dog &amp;lt; Animal def initialize super @talk = &#39;gou gou gou&#39; end end class Cat &amp;lt; Animal def initialize super @talk = &#39;meow meow meow&#39; end	end dog = Dog.new dog.speak puts dog.name cat = Cat.new cat.</description>
     </item>
     
     <item>
       <title>Tổng quan về ruby</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-002-basic/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-002-basic/</link>
       <pubDate>Wed, 22 Aug 2018 10:52:27 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-002-basic/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-002-basic/</guid>
       <description>Lời nói đầu, tổng hợp các keywords cần biết khi học ngôn ngữ ruby.
  First step : https://www.tutorialspoint.com/ruby/index.htm  The Basics Unix shebang  Ref : https://en.wikipedia.org/wiki/Shebang_%28Unix%29 https://en.wikibooks.org/wiki/Ruby_Programming/Hello_world  example.rb
 #!/usr/bin/env ruby puts &#39;Hello world&#39;  Thì khi đó chúng ta có thể thực thi file này chỉ bằng cách
@@ -179,10 +179,10 @@ class Animal # symbols : immutable attr_reader :name, :talk	def initialize @name
     
     <item>
       <title>Cài đặt ruby</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-001-install/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-001-install/</link>
       <pubDate>Tue, 21 Aug 2018 14:30:58 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-001-install/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-001-install/</guid>
       <description>Hướng dẫn cài đặt ruby trên các môi trường. Phiên bản ruby trong bài hướng dẫn hiện tại là 2.5.1.
 Link trang chủ : https://www.ruby-lang.org/en/downloads/
 Cài đặt ruby trên window cho môi trường dev  Link cài đặt : https://rubyinstaller.org/downloads/  Lưu ý trên window cần cài đặt phiên bản ruby có tích hợp DevKit ( tool này tích hợp MSYS2-Devkit - công cụ build gems cho ruby trên window )</description>
@@ -190,10 +190,10 @@ Cài đặt ruby trên window cho môi trường dev  Link cài đặt : https:/
     
     <item>
       <title>Bài 001 : Cài đặt ruby</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-001-installation/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-001-installation/</link>
       <pubDate>Tue, 05 Jun 2018 19:20:17 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-001-installation/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-001-installation/</guid>
       <description>Current Ruby stable version https://www.ruby-lang.org/en/downloads/
 2.5.1  1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04) Chi tiết các bước thực hiện
  Cài đặt các gói ruby dependencies Cài đặt rbenv Cài đặt ruby Kiểm tra version Cài đặt gem bundler để quản lí packages  Update sudo apt-get updateCài đặt các gói ruby dependencies sudo apt-get install -y libssl-dev libreadline-dev zlib1g-devsudo apt-get install -y curl gnupg build-essentialCài đặt rbenv  Link tham khảo : https://github.</description>
@@ -201,10 +201,10 @@ Cài đặt ruby trên window cho môi trường dev  Link cài đặt : https:/
     
     <item>
       <title>Giới thiệu về Ruby On Rails</title>
-      <link>http://devnotes.tamthapnhilap.site/article/ruby-000-ror/</link>
+      <link>//devnotes.tamthapnhilap.site/article/ruby-000-ror/</link>
       <pubDate>Tue, 05 Jun 2018 13:50:51 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/article/ruby-000-ror/</guid>
+      <guid>//devnotes.tamthapnhilap.site/article/ruby-000-ror/</guid>
       <description>Lời nói đầu về Ruby:
  Ruby là một ngôn ngữ của sự cân đối. Nhà phát minh của nó Yukihiro “Matz” Matsumoto Rails là một framework lớn của ruby Rails được tạo ra vào năm 2013 bởi David Heinemeier Hansson trong khi làm việc với dự án Basecamp, và chính thức ra mắt vào năm 2004  Tham khảo thêm tại:
  https://code.tutsplus.com/articles/ruby-on-rails-study-guide-the-history-of-rails--net-29439  1. Backbone : ruby on rails ( ror ) Ruby version : &amp;gt;= 2.</description>

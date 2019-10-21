@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>languages on DevNotes 2019</title>
-    <link>http://devnotes.tamthapnhilap.site/categories/languages/</link>
+    <link>//devnotes.tamthapnhilap.site/categories/languages/</link>
     <description>Recent content in languages on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Thu, 12 Jul 2018 13:47:31 +0700</lastBuildDate>
     
-	<atom:link href="http://devnotes.tamthapnhilap.site/categories/languages/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//devnotes.tamthapnhilap.site/categories/languages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go Pros and Cons</title>
-      <link>http://devnotes.tamthapnhilap.site/blog/go-pros-and-cons/</link>
+      <link>//devnotes.tamthapnhilap.site/blog/go-pros-and-cons/</link>
       <pubDate>Thu, 12 Jul 2018 13:47:31 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/blog/go-pros-and-cons/</guid>
+      <guid>//devnotes.tamthapnhilap.site/blog/go-pros-and-cons/</guid>
       <description>GO là gì Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.  Pros of GO  Fast Easy to learn Readable language Simple, reliable and productive  Cons of GO  No Generics Not suitable for realtime application  Whether to Use Go - Phân phối các network service (dịch vụ mạng) - Go đã được sử dụng để xây dựng một trong những nền tảng phát triển ứng dụng dựa trên cloud-native, ứng dụng hệ thống containerization Docker.</description>
     </item>
     
     <item>
       <title>Ruby Pros and Cons</title>
-      <link>http://devnotes.tamthapnhilap.site/blog/ruby-pros-and-cons/</link>
+      <link>//devnotes.tamthapnhilap.site/blog/ruby-pros-and-cons/</link>
       <pubDate>Wed, 11 Jul 2018 16:16:16 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/blog/ruby-pros-and-cons/</guid>
+      <guid>//devnotes.tamthapnhilap.site/blog/ruby-pros-and-cons/</guid>
       <description>Ruby là gì A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.  Pros of Ruby  Clear syntax Best Industry Standards: MVC, DRY(Don&amp;rsquo;t repeat yourself), TDD ( Rspec ) The leading framework of ruby is Ruby on Rails(ROR) Speed of Development with big community, dozens of open-source lib calls &amp;ldquo;gems&amp;rdquo; As an added bonus, Rails ships with a default ORM system (ActiveRecord) Vibrant RoR Community You can develop MVP very fast on Ruby, it takes less time than on other languages.</description>
     </item>
     
     <item>
       <title>Php Pros and Cons</title>
-      <link>http://devnotes.tamthapnhilap.site/blog/php-pros-and-cons/</link>
+      <link>//devnotes.tamthapnhilap.site/blog/php-pros-and-cons/</link>
       <pubDate>Wed, 11 Jul 2018 15:36:24 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/blog/php-pros-and-cons/</guid>
+      <guid>//devnotes.tamthapnhilap.site/blog/php-pros-and-cons/</guid>
       <description> PHP là gì - PHP is a popular general-purpose scripting language that is especially suited to web development. - Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.  Điểm mạnh  Dễ học, cú pháp cực kì đơn giản Cộng đồng lớn, nhiều framework lớn : Symfony, Laravel Đặc biệt CMS nổi tiếng hiện nay: wordpress Free, nhiều hosting hỗ trợ  Điểm yếu  Là ngôn ngữ thông dịch interpreted Sinh ra để làm web  Bắt đầu  PHP Tutorial : for newbie Wordpress : cms Codeignter : simple mvc php framework Symfony : large and powerful php framework Laravel : hot framework Lumen : build effective REST API  </description>
     </item>
     
     <item>
       <title>Nodejs Pros and Cons</title>
-      <link>http://devnotes.tamthapnhilap.site/blog/nodejs-pros-and-cons/</link>
+      <link>//devnotes.tamthapnhilap.site/blog/nodejs-pros-and-cons/</link>
       <pubDate>Wed, 11 Jul 2018 10:48:10 +0700</pubDate>
       
-      <guid>http://devnotes.tamthapnhilap.site/blog/nodejs-pros-and-cons/</guid>
+      <guid>//devnotes.tamthapnhilap.site/blog/nodejs-pros-and-cons/</guid>
       <description>Đầu tiên nodejs là cái quái gì vậy? Bạn nghĩ sao nếu javascript có thể chạy trên máy chủ?  Các đặc tính quan trọng của nodejs Một điển hình về mô hình truyền thống
 Mô hình mà js ở phía server
 Được sự hậu thuẩn của google

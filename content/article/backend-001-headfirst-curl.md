@@ -35,3 +35,12 @@ curl -F "pictures=@dog.gif,cat.gif" $URL
 Send two fields with two field names
 curl -F "docpicture=@dog.gif" -F "catpicture=@cat.gif" $URL
 ```
+
+### With REST API
+
+```bash
+# HEAD
+curl -I "http://localhost:8080/api/v1/examples/" -H "accept: application/json"
+# GET
+curl -X GET "http://localhost:8080/api/v1/examples/" -H "accept: application/json"
+```
