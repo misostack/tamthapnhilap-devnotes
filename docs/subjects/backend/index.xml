@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>backend on DevNotes 2019</title>
-    <link>//devnotes.tamthapnhilap.site/subjects/backend/</link>
+    <link>https://devnotes.tamthapnhilap.site/subjects/backend/</link>
     <description>Recent content in backend on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
     
-	<atom:link href="//devnotes.tamthapnhilap.site/subjects/backend/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devnotes.tamthapnhilap.site/subjects/backend/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Backend 001 Headfirst Curl</title>
-      <link>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</link>
+      <link>https://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</link>
       <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
       <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html  POST (HTTP) curl -d &amp;quot;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;quot; http://api.</description>
     </item>
     

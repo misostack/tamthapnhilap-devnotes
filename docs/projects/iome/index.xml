@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iome on DevNotes 2019</title>
-    <link>//devnotes.tamthapnhilap.site/projects/iome/</link>
+    <link>https://devnotes.tamthapnhilap.site/projects/iome/</link>
     <description>Recent content in iome on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Wed, 21 Nov 2018 16:16:13 +0700</lastBuildDate>
     
-	<atom:link href="//devnotes.tamthapnhilap.site/projects/iome/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devnotes.tamthapnhilap.site/projects/iome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Iome 001 Initialize</title>
-      <link>//devnotes.tamthapnhilap.site/note/iome-001-initialize/</link>
+      <link>https://devnotes.tamthapnhilap.site/note/iome-001-initialize/</link>
       <pubDate>Wed, 21 Nov 2018 16:16:13 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/note/iome-001-initialize/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/note/iome-001-initialize/</guid>
       <description>Requirements  Bài toán 1: SimpleAuth - xây dựng chức năng auth đơn giản, ko cần phân quyền theo module Bài toán 2: SimpleTodoList: List(Group Of TodoList), Statuses( Backlog, OnGoing, Postponed, ToBeTested, TobeValidated, Closed ), Types(2M, A, B, C, D) Bài toán 3: Messages: nhật kí dự án( message, statuses[&amp;lsquo;new&amp;rsquo;,&amp;lsquo;done&amp;rsquo;,&amp;lsquo;inprogress&amp;rsquo;,&amp;lsquo;error&amp;rsquo;,&amp;lsquo;delayed&amp;rsquo;,&amp;lsquo;removed&amp;rsquo;]) Bài toán 4: Status: system status( status, statuses[&amp;lsquo;up&amp;rsquo;,&amp;lsquo;bug&amp;rsquo;,&amp;lsquo;down&amp;rsquo;])  Diễn giải 2M: 2 minutes work: do it now, and the deadline is in 10 mins.</description>
     </item>
     

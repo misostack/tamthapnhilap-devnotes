@@ -1,6 +1,6 @@
 DefaultContentLanguage = "vi"
 copyright = "Everything is mine"
-baseURL = "//devnotes.tamthapnhilap.site"
+baseURL = "https://devnotes.tamthapnhilap.site"
 languageCode = "vi-VN"
 title = "DevNotes 2019"
 theme = "techblog2019"
@@ -8,7 +8,7 @@ publishDir = "docs"
 disableHugoGeneratorInject = true
 [params]
     name = "Tam Thập Nhi Lập"
-    description = "//devnotes.tamthapnhilap.site là một blog để lưu lại các kiến thức, kinh nghiệm trong quá trình xây dựng một website hay ứng dụng"
+    description = "https://devnotes.tamthapnhilap.site là một blog để lưu lại các kiến thức, kinh nghiệm trong quá trình xây dựng một website hay ứng dụng"
     keywords = "nhat ki du an"
     image = "/pages/home/nhat-ki-du-an.jpg"
     blog_pager = 10

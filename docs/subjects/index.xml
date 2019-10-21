@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Subjects on DevNotes 2019</title>
-    <link>//devnotes.tamthapnhilap.site/subjects/</link>
+    <link>https://devnotes.tamthapnhilap.site/subjects/</link>
     <description>Recent content in Subjects on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
     
-	<atom:link href="//devnotes.tamthapnhilap.site/subjects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devnotes.tamthapnhilap.site/subjects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>backend</title>
-      <link>//devnotes.tamthapnhilap.site/subjects/backend/</link>
+      <link>https://devnotes.tamthapnhilap.site/subjects/backend/</link>
       <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/subjects/backend/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/subjects/backend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ror</title>
-      <link>//devnotes.tamthapnhilap.site/subjects/ror/</link>
+      <link>https://devnotes.tamthapnhilap.site/subjects/ror/</link>
       <pubDate>Wed, 31 Oct 2018 14:05:30 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/subjects/ror/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/subjects/ror/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>//devnotes.tamthapnhilap.site/subjects/javascript/</link>
+      <link>https://devnotes.tamthapnhilap.site/subjects/javascript/</link>
       <pubDate>Fri, 05 Oct 2018 11:42:10 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/subjects/javascript/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/subjects/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>//devnotes.tamthapnhilap.site/subjects/nodejs/</link>
+      <link>https://devnotes.tamthapnhilap.site/subjects/nodejs/</link>
       <pubDate>Mon, 01 Oct 2018 14:04:46 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/subjects/nodejs/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/subjects/nodejs/</guid>
       <description></description>
     </item>
     

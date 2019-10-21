@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>crmexpress on DevNotes 2019</title>
-    <link>//devnotes.tamthapnhilap.site/projects/crmexpress/</link>
+    <link>https://devnotes.tamthapnhilap.site/projects/crmexpress/</link>
     <description>Recent content in crmexpress on DevNotes 2019</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
     <lastBuildDate>Mon, 01 Oct 2018 10:48:28 +0700</lastBuildDate>
     
-	<atom:link href="//devnotes.tamthapnhilap.site/projects/crmexpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devnotes.tamthapnhilap.site/projects/crmexpress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ng CRMExpress 001</title>
-      <link>//devnotes.tamthapnhilap.site/note/ng-crmexpress-001/</link>
+      <link>https://devnotes.tamthapnhilap.site/note/ng-crmexpress-001/</link>
       <pubDate>Mon, 01 Oct 2018 10:48:28 +0700</pubDate>
       
-      <guid>//devnotes.tamthapnhilap.site/note/ng-crmexpress-001/</guid>
+      <guid>https://devnotes.tamthapnhilap.site/note/ng-crmexpress-001/</guid>
       <description>Introduction Tại sao cần CRM?
  Chăm sóc khách hàng ngay từ khi chưa là khách hàng : https://www.youtube.com/watch?v=6omS6AF4-ww  Mục tiêu: xây dựng tiềm thức trong khách hàng về brand name.
 Đây là phiên bản CRM miễn phí dành cho các doanh nghiệp vừa và nhỏ Việt Nam. Phần mềm được viết dựa trên angular 6. Phần mềm sẽ gồm 3 đối tượng: Owner, Users, Customer. - Mỗi account Owner được phép tạo 1 tổ chức(company).</description>
