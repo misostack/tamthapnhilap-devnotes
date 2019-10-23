@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 21 Nov 2018 16:16:13 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 14:18:56 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>monday-api</title>
+      <link>//devnotes.tamthapnhilap.site/projects/monday-api/</link>
+      <pubDate>Wed, 23 Oct 2019 14:18:56 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/projects/monday-api/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>iome</title>

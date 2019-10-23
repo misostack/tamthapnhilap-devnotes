@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="//devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Monday Api 001 Dev | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Monday Api 001 Dev" />
+    <meta name="description" content="Monday Api 001 Dev" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="//devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="//devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://gist.github.com/misostack">Gist Collections</a></li>
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container main-content">                            
+            
+            <div class="row">
+                <main class="content col-md-8">
+                    
+<article class="article article-scrollby" data-target="#article-scrollpy">
+    <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Monday Api 001 Dev" />
+    <h1>Monday Api 001 Dev</h1>
+    
+
+<p>Things need to do:</p>
+
+<ul>
+<li>Design REST API</li>
+<li>Make an example for Example resource</li>
+<li>Secured REST API with JWT</li>
+</ul>
+
+<p>Related things:</p>
+
+<ul>
+<li>Most-common-programming-case-types</li>
+</ul>
+
+<h3 id="manifesto">Manifesto</h3>
+
+<ul>
+<li>Object</li>
+<li>Dataset</li>
+<li>Relation or Associations</li>
+<li>CRUD</li>
+<li>Pagination &amp; Search</li>
+<li>Index</li>
+<li>Elastic search</li>
+<li>Caching</li>
+<li>Choose the right database for your target.</li>
+</ul>
+
+<h3 id="design-rest-api">Design REST API</h3>
+
+<p><strong>Ref</strong>:</p>
+
+<ul>
+<li><a href="https://restfulapi.net/">https://restfulapi.net/</a></li>
+<li><a href="https://blog.octo.com/en/design-a-rest-api/">https://blog.octo.com/en/design-a-rest-api/</a></li>
+<li><a href="https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling">https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling</a></li>
+<li><a href="https://www.moesif.com/blog/api-guide/api-design-guidelines/#general-best-practices">https://www.moesif.com/blog/api-guide/api-design-guidelines/#general-best-practices</a></li>
+<li><a href="https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215">https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215</a></li>
+<li><a href="https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/#security-and-authentication">https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/#security-and-authentication</a></li>
+</ul>
+
+<h4 id="from-requirements-to-specifications">From Requirements to Specifications</h4>
+
+<p><strong>Requirements</strong>:</p>
+
+<p>Imagine you have a lot ebooks in your computer. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.</p>
+
+<p><strong>Specifications</strong>:</p>
+
+<p>Make the new APIs that allow:</p>
+
+<ul>
+<li>Manipulate ebook&rsquo;s data: name, category, author(not mandatory), public_date</li>
+<li>Search ebook by: name, category, author, public time, and other related data. Eg: list all the books that are not readed</li>
+<li>Adjust your reading&rsquo;s plan</li>
+<li>Log your reading&rsquo;s status. Eg: the book A has been read in 3 weeks from dd-mm-yyyy to dd-mm-yyyy</li>
+<li>Analysis your reading&rsquo;s milestone with chart. Eg: number of books i&rsquo;ve readed in this month.</li>
+</ul>
+
+<h3 id="related-things">Related things</h3>
+
+<h4 id="most-common-programming-case-types">Most-common-programming-case-types</h4>
+
+<table class="table table-commands">
+    <thead>
+        
+            
+        <tr>
+            
+            
+                <th>Case Type</th>
+            
+                <th>Example</th>
+            
+        </tr>
+        
+    </thead>
+    <tbody>
+        
+    <tr>
+    <td class="command-text">Original Variable as String</td>
+    <td class="command-description">some awesome var</td>    
+</tr>
+    <tr>
+    <td class="command-text">Camel Case</td>
+    <td class="command-description">someAwesomeVar</td>    
+</tr>
+    <tr>
+    <td class="command-text">Snake Case</td>
+    <td class="command-description">some_awesome_var</td>    
+</tr>
+    <tr>
+    <td class="command-text">Kebab Case</td>
+    <td class="command-description">the-url-endpoint</td>    
+</tr>
+    <tr>
+    <td class="command-text">Pascal Case</td>
+    <td class="command-description">AnyClassName</td>    
+</tr>
+    <tr>
+    <td class="command-text">Upper Case Snake Case</td>
+    <td class="command-description">ANY_CONSTANT</td>    
+</tr>
+    
+        
+    </tbody>
+</table>
+
+<p>&hellip;</p>
+
+<h4 id="naming-conventions-in-database-modelling">Naming Conventions in Database Modelling</h4>
+
+<ul>
+<li><a href="http://www.wilsonmar.com/sql_adventureworks.htm">http://www.wilsonmar.com/sql_adventureworks.htm</a></li>
+<li><a href="https://stackoverflow.com/questions/7662/database-table-and-column-naming-conventions">https://stackoverflow.com/questions/7662/database-table-and-column-naming-conventions</a></li>
+<li><a href="https://www.vertabelo.com/blog/naming-conventions-in-database-modeling/">https://www.vertabelo.com/blog/naming-conventions-in-database-modeling/</a></li>
+<li><a href="https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/">https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/</a></li>
+</ul>
+
+</article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+        
+
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+  <div class="container">
+      <div class="text">
+          Proudly powered by techblog2020 theme from <strong class="yellow"><a href="http://tamthapnhilap.site">tamthapnhilap</a></strong>
+      </div>
+  </div>
+</footer>
+    </div>
+    <script type="text/javascript" src="//devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

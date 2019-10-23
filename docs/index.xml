@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 14:18:56 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Monday Api 001 Dev</title>
+      <link>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</link>
+      <pubDate>Wed, 23 Oct 2019 14:18:56 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</guid>
+      <description>Things need to do:
+ Design REST API Make an example for Example resource Secured REST API with JWT  Related things:
+ Most-common-programming-case-types  Manifesto  Object Dataset Relation or Associations CRUD Pagination &amp;amp; Search Index Elastic search Caching Choose the right database for your target.  Design REST API Ref:
+ https://restfulapi.net/ https://blog.octo.com/en/design-a-rest-api/ https://www.thoughtworks.com/insights/blog/rest-api-design-resource-modeling https://www.moesif.com/blog/api-guide/api-design-guidelines/#general-best-practices https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215 https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/#security-and-authentication  From Requirements to Specifications Requirements:
+Imagine you have a lot ebooks in your computer.</description>
+    </item>
     
     <item>
       <title>Backend 001 Headfirst Curl</title>

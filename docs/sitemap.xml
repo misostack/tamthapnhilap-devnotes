@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>//devnotes.tamthapnhilap.site/</loc>
+    <lastmod>2019-10-23T14:18:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</loc>
+    <lastmod>2019-10-23T14:18:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/projects/monday-api/</loc>
+    <lastmod>2019-10-23T14:18:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/note/</loc>
+    <lastmod>2019-10-23T14:18:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/projects/</loc>
+    <lastmod>2019-10-23T14:18:56+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>//devnotes.tamthapnhilap.site/article/</loc>
     <lastmod>2019-10-16T15:09:59+07:00</lastmod>
   </url>
@@ -18,11 +43,6 @@
   </url>
   
   <url>
-    <loc>//devnotes.tamthapnhilap.site/</loc>
-    <lastmod>2019-10-16T15:09:59+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//devnotes.tamthapnhilap.site/subjects/</loc>
     <lastmod>2019-10-16T15:09:59+07:00</lastmod>
   </url>
@@ -34,16 +54,6 @@
   
   <url>
     <loc>//devnotes.tamthapnhilap.site/note/iome-001-initialize/</loc>
-    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/note/</loc>
-    <lastmod>2018-11-21T16:16:13+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/projects/</loc>
     <lastmod>2018-11-21T16:16:13+07:00</lastmod>
   </url>
   
