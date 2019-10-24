@@ -118,6 +118,15 @@ img.lazy{
         background-color: #771814;
         color:#FFF;
     }
+    &.subject {
+        &-rails, &-ruby, 
+        &-angular,
+        &-php, &-laravel, &-lumen, &-backend,
+        &-postgresql, &-mysql, &-database{
+            background-color: red;
+            color:#FFF;
+        }
+    }
 }
 .category-tag:hover{
     background-color: gray;
@@ -161,11 +170,15 @@ img.lazy{
 .hl-keywords{
     &-rails, &-ruby, 
     &-angular,
-    &-php, &-laravel, &-lumen, &-backend{
+    &-php, &-laravel, &-lumen, &-backend,
+    &-postgresql, &-mysql, &-database,
+    &-api,
+    &-ubuntu, &-centos, &-debian, &-aws
+    {
         color: red;
         font-weight: bold;
     }
-    &-nodejs{
+    &-nodejs, &-mongodb{
         color: green;
         font-weight: bold;
     }

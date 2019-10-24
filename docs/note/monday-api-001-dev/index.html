@@ -111,6 +111,7 @@
 <li>CRUD</li>
 <li>Pagination &amp; Search</li>
 <li>Index</li>
+<li>Evolution</li>
 <li>Elastic search</li>
 <li>Caching</li>
 <li>Choose the right database for your target.</li>
@@ -133,19 +134,67 @@
 
 <p><strong>Requirements</strong>:</p>
 
-<p>Imagine you have a lot ebooks in your computer. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.</p>
+<p>Imagine you have a lot books need to read. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.</p>
 
 <p><strong>Specifications</strong>:</p>
 
 <p>Make the new APIs that allow:</p>
 
 <ul>
-<li>Manipulate ebook&rsquo;s data: name, category, author(not mandatory), public_date</li>
+<li>Manipulate book&rsquo;s data: name, category, author(not mandatory), public_date</li>
 <li>Search ebook by: name, category, author, public time, and other related data. Eg: list all the books that are not readed</li>
 <li>Adjust your reading&rsquo;s plan</li>
 <li>Log your reading&rsquo;s status. Eg: the book A has been read in 3 weeks from dd-mm-yyyy to dd-mm-yyyy</li>
 <li>Analysis your reading&rsquo;s milestone with chart. Eg: number of books i&rsquo;ve readed in this month.</li>
 </ul>
+
+<h4 id="database-modelling">Database Modelling</h4>
+
+<p>1.Objects:</p>
+
+<pre><code class="language-javascript">
+&quot;book&quot;: {
+	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
+	&quot;name&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;required&quot;: true},
+	&quot;categories&quot;: { &quot;type&quot;:  &quot;Array&quot;, &quot;required&quot;: false, &quot;default&quot;: []},// use category id
+	&quot;tags&quot;: { &quot;type&quot;:  &quot;Array&quot;, &quot;required&quot;: false, &quot;default&quot;: []},// use tag id
+	&quot;author&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;required&quot;: false},
+	&quot;public_date&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
+	&quot;type&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;isIn&quot;:[&quot;ebook&quot;, &quot;print&quot;]},
+	&quot;reading_state&quot;: {
+		&quot;type&quot;: &quot;string&quot;,
+		&quot;required&quot;: false,
+		&quot;default&quot;: &quot;unread&quot;,
+		&quot;isIn&quot;: [&quot;unread&quot;, &quot;reading&quot;, &quot;read&quot;, 'stopped', 'skipped']
+	}
+}
+
+&quot;category&quot;: {
+	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
+	&quot;name&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true },
+	&quot;slug&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true, &quot;unique&quot;: true }
+}
+
+&quot;tag&quot;: {
+	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
+	&quot;name&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true },
+	&quot;slug&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true, &quot;unique&quot;: true }
+}
+
+
+&quot;reading_plan&quot;: {
+	&quot;book_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;foreign_key&quot;:&quot;book.id&quot;},
+	&quot;start_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
+	&quot;end_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
+}
+
+&quot;reading_log&quot;: {
+	&quot;book_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;foreign_key&quot;:&quot;book.id&quot;},
+	&quot;record_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: false, &quot;default&quot;: &quot;current_time&quot;},
+	&quot;spent_time&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;required&quot;: true}, // unit: hour
+}
+
+</code></pre>
 
 <h3 id="related-things">Related things</h3>
 

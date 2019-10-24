@@ -54,7 +54,11 @@ var Site = Site || {};
         'nodejs',
         'php','laravel','lumen',
         'python','flask',
-        'go'
+        'go',
+        'postgresql', 'mysql', 'database',
+        'mongodb',
+        'api',
+        'ubuntu','centos','debian','aws'
       ];
     },
     // scrollpy

@@ -9,10 +9,10 @@
     <meta name="generator" content="misostack-seo" />    
     
     
-    <title>Backend 001 Headfirst Curl | DevNotes 2019</title>
+    <title>Postgresql 20191023 Headfirst | DevNotes 2019</title>
     <meta name="robots" content="all" />
-    <meta name="keywords" content="Backend 001 Headfirst Curl" />
-    <meta name="description" content="Backend 001 Headfirst Curl" />
+    <meta name="keywords" content="Postgresql 20191023 Headfirst" />
+    <meta name="description" content="Postgresql 20191023 Headfirst" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -85,44 +85,63 @@
                     
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
-        <h1>Backend 001 Headfirst Curl</h1>        
+        <h1>Postgresql 20191023 Headfirst</h1>        
         
 
-<h2 id="general">General</h2>
+<h2 id="objectives">Objectives</h2>
+
+<ol>
+<li>Install PostgreSQL</li>
+<li>Most common PostgreSQL cli commands</li>
+<li>PostgreSQL Fundamentals</li>
+<li>PostgreSQL Datatypes</li>
+<li>Managing Databases</li>
+<li>Managing Tables</li>
+<li>Database Constraints</li>
+<li>Managing database schemas</li>
+<li>Conditional Expressions &amp; Operators</li>
+</ol>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="windows">Windows</h3>
 
 <ul>
-<li><a href="https://curl.haxx.se/docs/manual.html">Curl Doc</a></li>
+<li><a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows">Download Link</a></li>
 </ul>
 
-<h2 id="usage">Usage</h2>
+<p><strong>Allow Remote Connection</strong></p>
 
-<h3 id="simple-usage">Simple Usage</h3>
-
-<pre><code class="language-bash">curl -v http://devnotes.tamthapnhilap.site
-# Get a web page and store in a local file with a specific name:
-curl -o index.html http://devnotes.tamthapnhilap.site
-# Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail):
-curl -O http://devnotes.tamthapnhilap.site/index.html
+<pre><code class="language-bash">- C:\Program Files\PostgreSQL\{VERSION}\data\pg_hba.conf
+# change config: trust to md5
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+# then restart service and open cmd
+psql -h 127.0.0.1 -U postgres
+# set password
+ALTER USER postgres with password '123456';
+# quit
+\q
+# try logged with password
+psql -h 127.0.0.1 -U postgres
+123456
+# short url
+psql postgresql://postgres:123456@127.0.0.1:5432/postgres
 </code></pre>
 
-<h3 id="post-http">POST (HTTP)</h3>
+<h3 id="ubuntu">Ubuntu</h3>
 
-<pre><code class="language-bash">curl -d &quot;user=foobar&amp;pass=12345&amp;id=blablabla&amp;ding=submit&quot;
-  http://api.tamthapnhilap.site/example
-
-# Send multiple files in a single &quot;field&quot; with a single field name:
-curl -F &quot;pictures=@dog.gif,cat.gif&quot; $URL
-Send two fields with two field names
-curl -F &quot;docpicture=@dog.gif&quot; -F &quot;catpicture=@cat.gif&quot; $URL
+<pre><code class="language-bash">sudo apt-get update
+sudo dpkg --configure -a
+sudo apt-get install postgresql postgresql-contrib
 </code></pre>
 
-<h3 id="with-rest-api">With REST API</h3>
+<h2 id="some-references">Some References</h2>
 
-<pre><code class="language-bash"># HEAD
-curl -I &quot;http://localhost:8080/api/v1/examples/&quot; -H &quot;accept: application/json&quot;
-# GET
-curl -X GET &quot;http://localhost:8080/api/v1/examples/&quot; -H &quot;accept: application/json&quot;
-</code></pre>
+<ul>
+<li><a href="http://www.postgresqltutorial.com/postgresql-cheat-sheet/">http://www.postgresqltutorial.com/postgresql-cheat-sheet/</a></li>
+</ul>
 
     </article>
 
@@ -143,17 +162,8 @@ curl -X GET &quot;http://localhost:8080/api/v1/examples/&quot; -H &quot;accept: 
         <h3 class="widget-header ucfirst">
             <span>Bài viết khác</span>
         </h3>
-         
-            
         
 
-        
-            <ul class="sidebar-links">
-            
-            
-                <li><a href="/article/ubuntu-001-cheatsheet/">Ubuntu 001 Cheatsheet</a></li>
-            
-            </ul>        
         
     </div>
 </div>

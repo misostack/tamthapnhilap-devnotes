@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 15:09:59 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 11:40:50 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu 001 Cheatsheet</title>
+      <link>//devnotes.tamthapnhilap.site/article/ubuntu-001-cheatsheet/</link>
+      <pubDate>Thu, 24 Oct 2019 11:40:50 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/ubuntu-001-cheatsheet/</guid>
+      <description> ##
+APT # Update packages apt update, apt update -y # Upgrade all existing packages apt upgrade # Install/remove package apt install curl, which curl, apt remove curl #Search package apt search curl  APT GET # Install/remove package apt-get install curl, which curl, apt-get remove curl # Download without install apt-get download curl, ls -lth curl*.deb # Update package list apt-get update  </description>
+    </item>
+    
+    <item>
+      <title>Postgresql 20191023 Headfirst</title>
+      <link>//devnotes.tamthapnhilap.site/article/postgresql-20191023-headfirst/</link>
+      <pubDate>Wed, 23 Oct 2019 18:43:05 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/postgresql-20191023-headfirst/</guid>
+      <description>Objectives  Install PostgreSQL Most common PostgreSQL cli commands PostgreSQL Fundamentals PostgreSQL Datatypes Managing Databases Managing Tables Database Constraints Managing database schemas Conditional Expressions &amp;amp; Operators  Installation Windows  Download Link  Allow Remote Connection
+- C:\Program Files\PostgreSQL\{VERSION}\data\pg_hba.conf # change config: trust to md5 host all all 127.0.0.1/32 md5 # IPv6 local connections: host all all ::1/128 md5 # then restart service and open cmd psql -h 127.0.0.1 -U postgres # set password ALTER USER postgres with password &#39;123456&#39;; # quit \q # try logged with password psql -h 127.</description>
+    </item>
     
     <item>
       <title>Backend 001 Headfirst Curl</title>

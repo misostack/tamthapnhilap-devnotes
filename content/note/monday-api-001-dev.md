@@ -26,6 +26,7 @@ Related things:
 - CRUD
 - Pagination & Search
 - Index
+- Evolution
 - Elastic search
 - Caching
 - Choose the right database for your target.
@@ -46,17 +47,66 @@ Related things:
 
 **Requirements**:
 
-Imagine you have a lot ebooks in your computer. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.
+Imagine you have a lot books need to read. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.
 
 **Specifications**:
 
 Make the new APIs that allow:
 
-- Manipulate ebook's data: name, category, author(not mandatory), public_date
+- Manipulate book's data: name, category, author(not mandatory), public_date
 - Search ebook by: name, category, author, public time, and other related data. Eg: list all the books that are not readed
 - Adjust your reading's plan
 - Log your reading's status. Eg: the book A has been read in 3 weeks from dd-mm-yyyy to dd-mm-yyyy
 - Analysis your reading's milestone with chart. Eg: number of books i've readed in this month.
+
+#### Database Modelling
+
+1.Objects:
+
+```javascript
+
+"book": {
+	"id": {"type": "uuid", "primary_key": true},
+	"name": { "type": "string", "required": true},
+	"categories": { "type":  "Array", "required": false, "default": []},// use category id
+	"tags": { "type":  "Array", "required": false, "default": []},// use tag id
+	"author": {"type": "string", "required": false},
+	"public_date": {"type": "number", "required": true}, // UNIX_TIMESTAMP	
+	"type": {"type": "string", "isIn":["ebook", "print"]},
+	"reading_state": {
+		"type": "string",
+		"required": false,
+		"default": "unread",
+		"isIn": ["unread", "reading", "read", 'stopped', 'skipped']
+	}
+}
+
+"category": {
+	"id": {"type": "uuid", "primary_key": true},
+	"name": { "type":"string", "required": true },
+	"slug": { "type":"string", "required": true, "unique": true }
+}
+
+"tag": {
+	"id": {"type": "uuid", "primary_key": true},
+	"name": { "type":"string", "required": true },
+	"slug": { "type":"string", "required": true, "unique": true }
+}
+
+
+"reading_plan": {
+	"book_id": {"type": "string", "foreign_key":"book.id"},
+	"start_at": {"type": "number", "required": true}, // UNIX_TIMESTAMP	
+	"end_at": {"type": "number", "required": true}, // UNIX_TIMESTAMP	
+}
+
+"reading_log": {
+	"book_id": {"type": "string", "foreign_key":"book.id"},
+	"record_at": {"type": "number", "required": false, "default": "current_time"},
+	"spent_time": {"type": "integer", "required": true}, // unit: hour
+}
+
+```
 
 ### Related things
 

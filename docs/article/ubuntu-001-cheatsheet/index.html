@@ -9,6 +9,15 @@
     <meta name="generator" content="misostack-seo" />    
     
     
+    <title>Ubuntu 001 Cheatsheet | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Ubuntu 001 Cheatsheet" />
+    <meta name="description" content="Ubuntu 001 Cheatsheet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
 
     
     <link href="//devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
@@ -71,99 +80,74 @@
     </div>
         <div class="container main-content">                            
             
-                <main class="content">
+            <div class="row">
+                <main class="content col-md-8">
                     
-    <section class="row-section">
-        <h2 class="row-section-title">Subjects</h2>            
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
+        <h1>Ubuntu 001 Cheatsheet</h1>        
         
-        
-        
-        
-                        
-                
-        
-        
-        <div class="list-term-items row">            
-        
-            
-            <div class="list-term-item col-md-4">
-                <a class="item-link" href="//devnotes.tamthapnhilap.site/subjects/backend">                
-                
-                    
-                    
-                    <div class="item-image" style="background-image:url('//devnotes.tamthapnhilap.site/subjects/backend.png');" alt="backend"></div>
-                    
-                    <span class="item-post-name">backend(2)</span>
-                    <span class="item-description">
-                        For backend developer with love
-                    </span>
-                </a>                
-            </div>
-        
-            
-            <div class="list-term-item col-md-4">
-                <a class="item-link" href="//devnotes.tamthapnhilap.site/subjects/javascript">                
-                
-                    
-                    
-                    <div class="item-image" style="background-image:url('//devnotes.tamthapnhilap.site/subjects/javascript.jpg');" alt="javascript"></div>
-                    
-                    <span class="item-post-name">javascript(1)</span>
-                    <span class="item-description">
-                        Các bài viết thuộc chủ đề lập trình dùng javascript
-                    </span>
-                </a>                
-            </div>
-        
-            
-            <div class="list-term-item col-md-4">
-                <a class="item-link" href="//devnotes.tamthapnhilap.site/subjects/nodejs">                
-                
-                    
-                    
-                    <div class="item-image" style="background-image:url('//devnotes.tamthapnhilap.site/subjects/nodejs.jpg');" alt="nodejs"></div>
-                    
-                    <span class="item-post-name">nodejs(1)</span>
-                    <span class="item-description">
-                        Các bài viết thuộc chủ đề lập trình thuộc stack nodejs
-                    </span>
-                </a>                
-            </div>
-        
-            
-            <div class="list-term-item col-md-4">
-                <a class="item-link" href="//devnotes.tamthapnhilap.site/subjects/postgresql">                
-                
-                    
-                    
-                     <div class="item-image" style="background-image:url('//devnotes.tamthapnhilap.site/common/no-image-available.jpg');" alt="postgresql"></div>
-                    
-                    <span class="item-post-name">postgresql(1)</span>
-                    <span class="item-description">
-                        
-                    </span>
-                </a>                
-            </div>
-        
-            
-            <div class="list-term-item col-md-4">
-                <a class="item-link" href="//devnotes.tamthapnhilap.site/subjects/ror">                
-                
-                    
-                    
-                    <div class="item-image" style="background-image:url('//devnotes.tamthapnhilap.site/subjects/ruby-on-rails.jpg');" alt="ror"></div>
-                    
-                    <span class="item-post-name">ror(16)</span>
-                    <span class="item-description">
-                        Các bài viết thuộc chủ đề lập trình thuộc stack ruby on rails
-                    </span>
-                </a>                
-            </div>
-        
-        </div>
-    </section>    
 
-                </main>            
+<p>##</p>
+
+<h2 id="apt">APT</h2>
+
+<pre><code class="language-bash"># Update packages
+apt update, apt update -y
+# Upgrade all existing packages
+apt upgrade
+# Install/remove package
+apt install curl, which curl, apt remove curl
+#Search package
+apt search curl
+</code></pre>
+
+<h2 id="apt-get">APT GET</h2>
+
+<pre><code class="language-bash"># Install/remove package
+apt-get install curl, which curl, apt-get remove curl
+# Download without install
+apt-get download curl, ls -lth curl*.deb
+# Update package list
+apt-get update
+</code></pre>
+
+    </article>
+
+                </main>
+                <aside id="primary-sidebar" class="sidebar col-md-4">
+                    
+<div class="sidebar-fixed">
+    <div id="article-scrollpy" class="sidebar-widget">
+        <h3 class="widget-header">
+            <a href="#">Đầu mục bài viết</a>
+        </h3>
+        <ul class="sidebar-links article-scrollpy-links">
+        </ul>
+    </div>
+</div>
+<div class="sidebar-fixed">
+    <div class="sidebar-widget">
+        <h3 class="widget-header ucfirst">
+            <span>Bài viết khác</span>
+        </h3>
+         
+            
+        
+
+        
+            <ul class="sidebar-links">
+            
+            
+                <li><a href="/article/backend-001-headfirst-curl/">Backend 001 Headfirst Curl</a></li>
+            
+            </ul>        
+        
+    </div>
+</div>
+
+                </aside>
+            </div>
             
         </div>
         <footer id="footer" class="footer footer-default">
