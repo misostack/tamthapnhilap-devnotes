@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Thu, 24 Oct 2019 11:40:50 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2019 14:15:11 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Manifesto</title>
+      <link>//devnotes.tamthapnhilap.site/manifesto/</link>
+      <pubDate>Thu, 24 Oct 2019 14:15:11 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/manifesto/</guid>
+      <description>  &amp;ldquo;Simple is the best&amp;rdquo;
+ I.The Web Develop&amp;rsquo;s Approach Ways  Requirements to Specifications System Design Database modelling Backend Design Frontend Design Best Practice: Generators, DRY, Test Deployment  </description>
+    </item>
     
     <item>
       <title>Ubuntu 001 Cheatsheet</title>

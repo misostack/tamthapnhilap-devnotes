@@ -1,5 +1,6 @@
 [    
     { "name": "Hugo tips", "url": "hugo"},
+    { "name": "Manifesto", "url": "manifesto"},
     { "name": "Links", "url": "#",
         "childrens": [ 
             { "name": "Gist Collections", "url": "https://gist.github.com/misostack", "childrens": []},           
