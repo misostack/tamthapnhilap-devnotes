@@ -18,3 +18,13 @@ date: 2019-10-24T14:15:11+07:00
 5. Frontend Design
 6. Best Practice: Generators, DRY, Test
 7. Deployment
+
+
+### 1.4. Backend Design
+
+#### 1.4.1. REST API
+
+
+#### 1.4.2. Object-relational Mappers( ORMs )
+
+- https://www.fullstackpython.com/object-relational-mappers-orms.html

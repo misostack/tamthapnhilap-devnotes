@@ -20,7 +20,7 @@ image: "/common/no-image-available.jpg"
 9. Managing database schemas
 10. Conditional Expressions & Operators
 
-## Installation
+## I.Installation
 
 ### Windows
 
@@ -54,6 +54,79 @@ psql postgresql://postgres:123456@127.0.0.1:5432/postgres
 sudo apt-get update
 sudo dpkg --configure -a
 sudo apt-get install postgresql postgresql-contrib
+```
+
+## II.Most common PostgreSQL cli commands
+
+```bash
+# access postgres cli ubuntu
+sudo -u postgres psql
+# check version
+SELECT version();
+# connect to specific database
+\c database_name
+# quit
+\q
+# list all databases
+\l
+# list all schemas
+\dn
+# list all stored procedures and functions
+\df
+# list all views
+\dv
+# list all tables in a current database
+\dt or \dt+
+# detail info of table
+\d+ table_name
+# list all users
+\du
+# new role
+CREATE ROLE role_name;
+# Create a new role with a username and password:
+CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
+# Change role for the current session to the new_role:
+SET ROLE new_role;
+#Allow role_1 to set its role as role_2:
+GRANT role_2 TO role_1;
+
+# new user
+CREATE ROLE dbdesign WITH
+	LOGIN
+	NOSUPERUSER
+	CREATEDB
+	NOCREATEROLE
+	INHERIT
+	NOREPLICATION
+	CONNECTION LIMIT -1
+	PASSWORD '123456';
+GRANT postgres TO dbdesign WITH ADMIN OPTION;
+COMMENT ON ROLE dbdesign IS 'dbdesign';
+```
+
+```md
+postgres-# \du
+                                      List of roles
+   Role name    |                         Attributes                         | Member of
+----------------+------------------------------------------------------------+------------
+ dbdesign       | Create DB                                                  | {postgres}
+ medecineonline |                                                            | {}
+ odoo           | Create DB, Cannot login                                    | {}
+ postgres       | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ ubuntu         | Superuser, Create role, Create DB                          | {postgres}
+```
+
+### Managing databases
+
+```bash
+CREATE DATABASE dbdesign
+    WITH 
+    OWNER = dbdesign
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+# Test login
+psql postgresql://dbdesign:123456@127.0.0.1:5432/dbdesign
 ```
 
 ## Some References

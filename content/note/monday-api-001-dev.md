@@ -108,6 +108,10 @@ Make the new APIs that allow:
 
 ```
 
+#### Object-relational Mapping
+
+In this case, my ORM is SQLAlchemy
+
 ### Related things
 
 #### Most-common-programming-case-types
