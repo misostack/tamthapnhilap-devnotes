@@ -10,10 +10,9 @@ image: "/common/no-image-available.jpg"
 
 ## Things need to do:
 
+- [ ] Design Application Structures: REST API, Core Module
 - [ ] Design REST API Endpoints
-- [ ] Design Application Structures
 - [ ] Design Models, Schemas, Services
-- [ ] Design Shared or Core classes, functions
 - [ ] Document REST API Endpoints
 - [ ] Design Data Validations
 - [ ] Design Pagination, Search
@@ -23,7 +22,7 @@ image: "/common/no-image-available.jpg"
 - [ ] Improvement with: Index, Caching, Elastic Search,...
 - [ ] Automation: make generators that generate new resources endpoint from json data
 - [ ] Common Services: Mailer & SMS, Cron, [Task Queues](https://www.fullstackpython.com/task-queues.html)
-- [ ] Deployment: Heroku, VPS, CI & CD with circle ci
+- [ ] Deployment: Heroku, VPS, CI & CD with gitlab, ci
 
 Related things:
 

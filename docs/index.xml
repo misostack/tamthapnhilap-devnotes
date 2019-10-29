@@ -48,7 +48,7 @@ APT # Update packages apt update, apt update -y # Upgrade all existing packages 
       <pubDate>Wed, 23 Oct 2019 14:18:56 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</guid>
-      <description>Things need to do: Design REST API Endpoints Design Application Structures Design Models, Schemas, Services Design Shared or Core classes, functions Document REST API Endpoints Design Data Validations Design Pagination, Search Integrate Services with Related Resources Secured: CORS, JWT Testing API with Postman Improvement with: Index, Caching, Elastic Search,&amp;hellip; Automation: make generators that generate new resources endpoint from json data Common Services: Mailer &amp;amp; SMS, Cron, Task Queues Deployment: Heroku, VPS, CI &amp;amp; CD with circle ci  Related things:</description>
+      <description>Things need to do: Design Application Structures: REST API, Core Module Design REST API Endpoints Design Models, Schemas, Services Document REST API Endpoints Design Data Validations Design Pagination, Search Integrate Services with Related Resources Secured: CORS, JWT Testing API with Postman Improvement with: Index, Caching, Elastic Search,&amp;hellip; Automation: make generators that generate new resources endpoint from json data Common Services: Mailer &amp;amp; SMS, Cron, Task Queues Deployment: Heroku, VPS, CI &amp;amp; CD with gitlab, ci  Related things:</description>
     </item>
     
     <item>
