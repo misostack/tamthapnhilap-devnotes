@@ -111,10 +111,90 @@
 <li><label><input type="checkbox" disabled class="task-list-item"> Deployment: Heroku, VPS, CI &amp; CD with gitlab, ci</label></li>
 </ul>
 
-<p>Related things:</p>
+<h3 id="application-structures">Application Structures</h3>
+
+<pre><code class="language-json">
+{
+  &quot;flaskr&quot;: { 
+    &quot;core&quot;: [
+    	&quot;base&quot;,
+    	&quot;db&quot;,
+    	&quot;helpers&quot;
+    ],
+    &quot;admin&quot;: {
+    	&quot;admin_core&quot;: [
+	    	&quot;controllers&quot;,
+	    	&quot;services&quot;,
+	    	&quot;helpers&quot;    		
+    	],
+    	&quot;admin_auth&quot;: [
+	    	&quot;controllers&quot;,
+	    	&quot;services&quot;,
+	    	&quot;helpers&quot;
+    	]
+    },
+    &quot;templates&quot;: {
+    	&quot;admin&quot;: {
+    		&quot;admin_core&quot;: [
+    			&quot;dashboard&quot;
+    		],
+    		&quot;admin_auth&quot;: [
+    			&quot;auth&quot;,
+    			&quot;auth_login&quot;,
+    			&quot;auth_forget_password&quot;,
+    			&quot;auth_reset_password&quot;
+    		],    		
+    	}
+    },
+    &quot;resources&quot;: {
+    	&quot;users&quot;: [
+    		&quot;controllers&quot;,
+	    	&quot;models&quot;,
+	    	&quot;services&quot;,
+	    	&quot;helpers&quot;
+    	],
+    },
+    &quot;apis&quot;: [
+    	&quot;v1&quot;,
+    	&quot;v2&quot;
+    ],
+    &quot;__init__&quot;
+  },
+  &quot;instance&quot;: [],
+  &quot;tests&quot;: {
+  	&quot;admin&quot;: [
+  		// ...
+  	],
+  	&quot;resources&quot;: [
+  		// ...
+  	]
+  }
+}
+
+</code></pre>
+
+<p><strong>Example</strong></p>
+
+<p>Create admin modules:</p>
 
 <ul>
-<li>Most-common-programming-case-types</li>
+<li>URL: &lsquo;/admin/*&rsquo;</li>
+<li>Webview only</li>
+<li>Auth required</li>
+<li>Some common features: auth, manage users, settings</li>
+<li>Template: Using Bulma as CSS Frameworks</li>
+<li>I18n: Do later with <a href="http://babel.pocoo.org/en/latest/cmdline.html#">pybabel</a></li>
+</ul>
+
+<p>Getting start with blueprint routes first</p>
+
+<h4 id="blueprint-web">Blueprint Web</h4>
+
+<ul>
+<li>Register BluePrint for admin</li>
+<li>Register url</li>
+<li>Create Views</li>
+<li>Admin Bulma CSS Framework</li>
 </ul>
 
 <h3 id="keywords">Keywords</h3>

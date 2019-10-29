@@ -24,9 +24,89 @@ image: "/common/no-image-available.jpg"
 - [ ] Common Services: Mailer & SMS, Cron, [Task Queues](https://www.fullstackpython.com/task-queues.html)
 - [ ] Deployment: Heroku, VPS, CI & CD with gitlab, ci
 
-Related things:
+### Application Structures
 
-- Most-common-programming-case-types
+```json
+
+{
+  "flaskr": { 
+    "core": [
+    	"base",
+    	"db",
+    	"helpers"
+    ],
+    "admin": {
+    	"admin_core": [
+	    	"controllers",
+	    	"services",
+	    	"helpers"    		
+    	],
+    	"admin_auth": [
+	    	"controllers",
+	    	"services",
+	    	"helpers"
+    	]
+    },
+    "templates": {
+    	"admin": {
+    		"admin_core": [
+    			"dashboard"
+    		],
+    		"admin_auth": [
+    			"auth",
+    			"auth_login",
+    			"auth_forget_password",
+    			"auth_reset_password"
+    		],    		
+    	}
+    },
+    "resources": {
+    	"users": [
+    		"controllers",
+	    	"models",
+	    	"services",
+	    	"helpers"
+    	],
+    },
+    "apis": [
+    	"v1",
+    	"v2"
+    ],
+    "__init__"
+  },
+  "instance": [],
+  "tests": {
+  	"admin": [
+  		// ...
+  	],
+  	"resources": [
+  		// ...
+  	]
+  }
+}
+
+```
+
+**Example**
+
+Create admin modules:
+
+- URL: '/admin/*'
+- Webview only
+- Auth required
+- Some common features: auth, manage users, settings
+- Template: Using Bulma as CSS Frameworks
+- I18n: Do later with [pybabel](http://babel.pocoo.org/en/latest/cmdline.html#)
+
+Getting start with blueprint routes first
+
+#### Blueprint Web
+
+- Register BluePrint for admin
+- Register url
+- Create Views
+- Admin Bulma CSS Framework
+
 
 ### Keywords
 
