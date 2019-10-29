@@ -8,27 +8,32 @@ projects: ["monday-api"]
 image: "/common/no-image-available.jpg"
 ---
 
-Things need to do:
+## Things need to do:
 
-- Design REST API
-- Make an example for Example resource
-- Secured REST API with JWT
+- [ ] Design REST API Endpoints
+- [ ] Design Application Structures
+- [ ] Design Models, Schemas, Services
+- [ ] Design Shared or Core classes, functions
+- [ ] Document REST API Endpoints
+- [ ] Design Data Validations
+- [ ] Design Pagination, Search
+- [ ] Integrate Services with Related Resources
+- [ ] Secured: CORS, JWT
+- [ ] Testing API with Postman
+- [ ] Improvement with: Index, Caching, Elastic Search,...
+- [ ] Automation: make generators that generate new resources endpoint from json data
+- [ ] Common Services: Mailer & SMS, Cron, [Task Queues](https://www.fullstackpython.com/task-queues.html)
+- [ ] Deployment: Heroku, VPS, CI & CD with circle ci
 
 Related things:
 
 - Most-common-programming-case-types
 
-### Manifesto
+### Keywords
 
-- Object
-- Dataset
-- Relation or Associations
-- CRUD
-- Pagination & Search
-- Index
-- Evolution
-- Elastic search
-- Caching
+- Object, Dataset, Relation or Associations
+- CRUD, Pagination & Search
+- Evolution: index, caching, elastic search
 - Choose the right database for your target.
 
 
@@ -112,6 +117,10 @@ Make the new APIs that allow:
 
 In this case, my ORM is SQLAlchemy
 
+#### Testing
+
+> Mock an item where it is used, not where it came from.
+
 ### Related things
 
 #### Most-common-programming-case-types
@@ -134,3 +143,16 @@ In this case, my ORM is SQLAlchemy
 - https://stackoverflow.com/questions/7662/database-table-and-column-naming-conventions
 - https://www.vertabelo.com/blog/naming-conventions-in-database-modeling/
 - https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/
+
+#### Must read articles
+
+- https://www.toptal.com/python/an-introduction-to-mocking-in-python
+- https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python
+
+
+#### Tips
+
+```bash
+# https://stackoverflow.com/questions/20006000/install-a-package-and-write-to-requirements-txt-with-pip
+pip install requests && pip freeze | grep -i requests >> requirements.txt
+```
