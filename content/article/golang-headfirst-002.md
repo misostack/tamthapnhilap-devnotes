@@ -16,10 +16,13 @@ image: "/subjects/golang.jpg"
 - Runes: 'A' 'B' '\n'
 - Booleans: true or false
 - Numbers : 42(Integer)
+- Derived types
 
 #### Refs
 
 - https://yourbasic.org/golang/convert-int-to-string/
+- [Bitwise](https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827)
+- [What are stdin-stdout-stderr-on-linux](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)
 
 ```golang
 package main
