@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on DevNotes 2019</title>
+    <link>//devnotes.tamthapnhilap.site/subjects/go/</link>
+    <description>Recent content in go on DevNotes 2019</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-VN</language>
+    <copyright>Everything is mine</copyright>
+    <lastBuildDate>Mon, 16 Dec 2019 11:32:26 +0700</lastBuildDate>
+    
+	<atom:link href="//devnotes.tamthapnhilap.site/subjects/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Headfirst GO] Datatypes</title>
+      <link>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</link>
+      <pubDate>Mon, 16 Dec 2019 11:32:26 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</guid>
+      <description>Case is sensitive
+ Datatypes:  String ( literals ): &amp;ldquo;bla bla&amp;rdquo; Runes: &amp;lsquo;A&amp;rsquo; &amp;lsquo;B&amp;rsquo; &amp;lsquo;\n&amp;rsquo; Booleans: true or false Numbers : 42(Integer)  Refs  https://yourbasic.org/golang/convert-int-to-string/
+package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Headfirst GO&amp;quot;) fmt.Println(&amp;quot;The alphabet&amp;quot;) theAlphabet(true) theAlphabet(false) } func theAlphabet(uppercase bool) { var str = &amp;quot;&amp;quot; if uppercase { for i:= &#39;A&#39;; i&amp;lt;= &#39;Z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; } }else { for i:= &#39;a&#39;; i&amp;lt;= &#39;z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; }	} fmt.</description>
+    </item>
+    
+    <item>
+      <title>[Headfirst GO] The beginning</title>
+      <link>//devnotes.tamthapnhilap.site/article/golang-headfirst-001/</link>
+      <pubDate>Mon, 16 Dec 2019 10:44:52 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-001/</guid>
+      <description>1.Installation  Download binary and creat GOPATH
+ Binaries
+ GOPATH
+wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz which go go version go env   Important
+  GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.</description>
+    </item>
+    
+  </channel>
+</rss>

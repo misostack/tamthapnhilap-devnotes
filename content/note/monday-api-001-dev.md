@@ -60,18 +60,17 @@ image: "/common/no-image-available.jpg"
     		],    		
     	}
     },
-    "resources": {
-    	"users": [
-    		"controllers",
-	    	"models",
-	    	"services",
-	    	"helpers"
-    	],
+    "api": {
+      "v1":[
+        "__init__",
+      	"users",
+        "books",
+        "categories",
+        "tags",
+        "reading-plans",
+        "reading-logs"
+      ]
     },
-    "apis": [
-    	"v1",
-    	"v2"
-    ],
     "__init__"
   },
   "instance": [],
@@ -105,7 +104,18 @@ Getting start with blueprint routes first
 - Register BluePrint for admin
 - Register url
 - Create Views
+- Add Assets: SASS, Javascripts, Images
 - Admin Bulma CSS Framework
+
+```bash
+# Add libsass and configure with flask
+https://sass.github.io/libsass-python/frameworks/flask.html#directory-layout
+# Node12 Ubuntu 18.04
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+
+```
 
 
 ### Keywords

@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Thu, 24 Oct 2019 11:40:50 +0700</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 11:32:26 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Headfirst GO] Datatypes</title>
+      <link>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</link>
+      <pubDate>Mon, 16 Dec 2019 11:32:26 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</guid>
+      <description>Case is sensitive
+ Datatypes:  String ( literals ): &amp;ldquo;bla bla&amp;rdquo; Runes: &amp;lsquo;A&amp;rsquo; &amp;lsquo;B&amp;rsquo; &amp;lsquo;\n&amp;rsquo; Booleans: true or false Numbers : 42(Integer)  Refs  https://yourbasic.org/golang/convert-int-to-string/
+package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Headfirst GO&amp;quot;) fmt.Println(&amp;quot;The alphabet&amp;quot;) theAlphabet(true) theAlphabet(false) } func theAlphabet(uppercase bool) { var str = &amp;quot;&amp;quot; if uppercase { for i:= &#39;A&#39;; i&amp;lt;= &#39;Z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; } }else { for i:= &#39;a&#39;; i&amp;lt;= &#39;z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; }	} fmt.</description>
+    </item>
+    
+    <item>
+      <title>[Headfirst GO] The beginning</title>
+      <link>//devnotes.tamthapnhilap.site/article/golang-headfirst-001/</link>
+      <pubDate>Mon, 16 Dec 2019 10:44:52 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-001/</guid>
+      <description>1.Installation  Download binary and creat GOPATH
+ Binaries
+ GOPATH
+wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz which go go version go env   Important
+  GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.</description>
+    </item>
+    
+    <item>
+      <title>Reactjs 002 React Form Validation</title>
+      <link>//devnotes.tamthapnhilap.site/article/reactjs-002-react-form-validation/</link>
+      <pubDate>Tue, 03 Dec 2019 10:54:42 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/reactjs-002-react-form-validation/</guid>
+      <description> Procedure yarn add react-hook-form  Forms  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation https://devdojo.com/html/form-elements https://www.w3schools.com/html/html_forms.asp https://www.w3schools.com/html/html_form_elements.asp https://www.w3schools.com/html/html_form_input_types.asp https://www.w3schools.com/html/html_form_attributes.asp  Form Components  https://github.com/JedWatson/react-select  Calendar  https://programmingwithmosh.com/react/build-a-react-calendar-component-from-scratch/ https://reactjsexample.com/tag/calendar/ https://fullcalendar.io/docs  Validations  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation  </description>
+    </item>
+    
+    <item>
+      <title>ReactJS 001 - build a mockup</title>
+      <link>//devnotes.tamthapnhilap.site/article/reactjs-001-a-mockup/</link>
+      <pubDate>Wed, 20 Nov 2019 15:32:21 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/reactjs-001-a-mockup/</guid>
+      <description>1. Getting started Getting with &amp;ldquo;create-reactjs-app&amp;rdquo;. After installing and setup your development enviroment
+- Editor  https://create-react-app.dev/docs/setting-up-your-editor  - EsLint  https://alligator.io/react/linting-react/ https://eslint.org/docs/user-guide/getting-started#configuration
+yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D   This project was bootstrapped with Create React App.
+- Styles &amp;amp; Assets  https://css-tricks.com/css-modules-part-1-need/ https://alligator.io/react/react-css/ https://programmingwithmosh.com/react/css-modules-react/  - CSS in React  Global CSS files: the CSS files live completely separately from the component files a la typical HTML and CSS Javascript Stylesheets: each component has a Javascript object representing its styles which lives in the same .</description>
+    </item>
     
     <item>
       <title>Ubuntu 001 Cheatsheet</title>

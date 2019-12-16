@@ -86,7 +86,7 @@
         <div class="container main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">
+                <main class="content col-md-8">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Monday Api 001 Dev" />
@@ -146,18 +146,17 @@
     		],    		
     	}
     },
-    &quot;resources&quot;: {
-    	&quot;users&quot;: [
-    		&quot;controllers&quot;,
-	    	&quot;models&quot;,
-	    	&quot;services&quot;,
-	    	&quot;helpers&quot;
-    	],
+    &quot;api&quot;: {
+      &quot;v1&quot;:[
+        &quot;__init__&quot;,
+      	&quot;users&quot;,
+        &quot;books&quot;,
+        &quot;categories&quot;,
+        &quot;tags&quot;,
+        &quot;reading-plans&quot;,
+        &quot;reading-logs&quot;
+      ]
     },
-    &quot;apis&quot;: [
-    	&quot;v1&quot;,
-    	&quot;v2&quot;
-    ],
     &quot;__init__&quot;
   },
   &quot;instance&quot;: [],
@@ -194,7 +193,18 @@
 <li>Register BluePrint for admin</li>
 <li>Register url</li>
 <li>Create Views</li>
-<li>Admin Bulma CSS Framework</li>
+<li>Add Assets: SASS, Javascripts, Images</li>
+
+<li><p>Admin Bulma CSS Framework</p>
+
+<pre><code class="language-bash"># Add libsass and configure with flask
+https://sass.github.io/libsass-python/frameworks/flask.html#directory-layout
+# Node12 Ubuntu 18.04
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+
+</code></pre></li>
 </ul>
 
 <h3 id="keywords">Keywords</h3>
@@ -370,6 +380,7 @@ pip install requests &amp;&amp; pip freeze | grep -i requests &gt;&gt; requireme
 
 </article>
 
+                    }
                 </main>
                 <aside id="primary-sidebar" class="sidebar col-md-4">
                     

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="//devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>[Headfirst GO] The beginning | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Golang Headfirst 001" />
+    <meta name="description" content="Golang Headfirst 001" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="//devnotes.tamthapnhilap.site/subjects/golang.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="//devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="//devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site/manifesto">Manifesto</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://gist.github.com/misostack">Gist Collections</a></li>
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container main-content">                            
+            
+                <div class="row">
+                    <main class="content col-md-12 full-content">
+                        
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <p class="text-center"><img class="responsive-image" src="/subjects/golang.jpg" /></p>
+        <h1>[Headfirst GO] The beginning</h1>        
+        
+
+<h3 id="1-installation">1.Installation</h3>
+
+<ul>
+<li><p>Download binary and creat GOPATH</p></li>
+
+<li><p><a href="https://golang.org/dl/">Binaries</a></p></li>
+
+<li><p><a href="https://github.com/golang/go/wiki/SettingGOPATH">GOPATH</a></p>
+
+<pre><code class="language-bash">wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz
+which go
+go version
+go env
+</code></pre></li>
+</ul>
+
+<p><strong>Important</strong></p>
+
+<blockquote>
+<blockquote>
+<p>GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.</p>
+</blockquote>
+</blockquote>
+
+<h3 id="2-first-build">2.First build</h3>
+
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func main() {
+	fmt.Printf(&quot;hello, world\n&quot;)
+}
+</code></pre>
+
+<pre><code class="language-json">- hello
+		hello.go
+cd $HOME/hello/
+go build
+./hello
+</code></pre>
+
+<h3 id="3-workspace">3.Workspace</h3>
+
+<ul>
+<li><p><a href="https://golang.org/doc/code.html#Workspaces">https://golang.org/doc/code.html#Workspaces</a></p>
+
+<pre><code class="language-md">bin/
+hello                           # command executable
+src/
+github.com/golang/example/
+				.git/                       # Git repository metadata
+    hello/
+        hello.go                # command source
+    stringutil/
+        reverse.go              # package source
+        reverse_test.go         # test source
+github.com/user/
+    hello/
+        hello.go                # command source
+    stringutil/
+        reverse.go              # package source
+        reverse_test.go         # test source
+</code></pre></li>
+
+<li><p><a href="https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a">https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a</a></p></li>
+
+<li><p><a href="https://code.visualstudio.com/docs/languages/go">https://code.visualstudio.com/docs/languages/go</a></p></li>
+
+<li><p><a href="https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php">https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php</a></p></li>
+</ul>
+
+<h3 id="4-install-a-package">4.Install a package</h3>
+
+<pre><code class="language-bash">go get [packagepath]
+</code></pre>
+
+<h3 id="5-editor-vs-code">5.Editor ( VS Code )</h3>
+
+<pre><code class="language-bash">  gocode
+  gopkgs
+  go-outline
+  go-symbols
+  guru
+  gorename
+  gotests
+  gomodifytags
+  impl
+  fillstruct
+  goplay
+  godoctor
+  dlv
+  gocode-gomod
+  godef
+  goreturns
+  golint
+</code></pre>
+
+<ul>
+<li><p>Install Go tools : <a href="https://go.googlesource.com/tools">https://go.googlesource.com/tools</a></p>
+
+<pre><code class="language-bash">go install github.com/mdempsky/gocode
+go install github.com/ramya-rao-a/go-outline
+go install github.com/acroca/go-symbols
+go install golang.org/x/tools/cmd/guru
+go install golang.org/x/tools/cmd/gorename
+go install github.com/stamblerre/gocode
+go install github.com/ianthehat/godef
+go install github.com/sqs/goreturns
+go install golang.org/x/lint/golint
+</code></pre></li>
+</ul>
+
+<h3 id="6-references">6. References:</h3>
+
+<ul>
+<li><a href="https://github.com/golang/go/wiki/Learn">https://github.com/golang/go/wiki/Learn</a></li>
+<li><a href="https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php">https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php</a></li>
+<li><a href="https://www.golangprograms.com/go-language/constants.html">https://www.golangprograms.com/go-language/constants.html</a></li>
+<li><a href="https://forum.golangbridge.org/">Golang Forum</a></li>
+</ul>
+
+<h3 id="7-some-ideas-for-headfirst-projects">7. Some ideas for headfirst projects</h3>
+
+<h4 id="7-1-sprint-projects">7.1. Sprint Projects</h4>
+
+<blockquote>
+<p>Less 01 : Print alphabet</p>
+</blockquote>
+
+<h4 id="7-2-final-projects">7.2. Final Projects</h4>
+
+<blockquote>
+<p>Xay dung REST API quan li data cho du an thucan bang beego</p>
+
+<p><a href="https://beego.me/">https://beego.me/</a></p>
+
+<p>Xay-dung-chatbot-telegram-bang-golang</p>
+
+<p><a href="https://telegram.org/">https://telegram.org/</a></p>
+</blockquote>
+
+    </article>
+
+                    </main>                    
+                </div>                
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+  <div class="container">
+      <div class="text">
+          Proudly powered by techblog2020 theme from <strong class="yellow"><a href="http://tamthapnhilap.site">tamthapnhilap</a></strong>
+      </div>
+  </div>
+</footer>
+    </div>
+    <script type="text/javascript" src="//devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

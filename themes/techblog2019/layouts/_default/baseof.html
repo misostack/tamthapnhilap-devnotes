@@ -30,10 +30,17 @@
                         {{ block "main" . }}{{ end }}
                     </main>                    
                 </div>
+            {{ else if eq .Type "article" }}
+                <div class="row">
+                    <main class="content col-md-12 full-content">
+                        {{ block "main" . }}{{ end }}
+                    </main>                    
+                </div>                
             {{ else }}
             <div class="row">
-                <main class="content col-md-8">
+                <main class="content col-md-8">                    
                     {{ block "main" . }}{{ end }}
+                    }
                 </main>
                 <aside id="primary-sidebar" class="sidebar col-md-4">
                     {{ block "aside" . }}{{ end }}
