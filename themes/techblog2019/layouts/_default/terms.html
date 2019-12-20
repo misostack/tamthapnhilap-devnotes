@@ -17,7 +17,6 @@
             <div class="list-term-item col-md-4">
                 <a class="item-link" href="{{ $combine | absURL }}">                
                 {{ $taxonomy_term := (index $taxonomy_list $value.Name) }}
-                    
                     {{ if $taxonomy_term }}
                     <div class="item-image" style="background-image:url('{{ (printf "%v" $taxonomy_term.image) | absURL }}');" alt="{{ $value.Name }}"></div>
                     {{ else }}
@@ -29,6 +28,9 @@
                     </span>
                 </a>                
             </div>
+            {{ if eq (mod $key 3) 2 }}
+            <div class="break"></div>
+            {{ end }}            
         {{ end }}
         </div>
     </section>    

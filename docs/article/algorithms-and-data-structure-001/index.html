@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="home" href="//devnotes.tamthapnhilap.site" />
+    <meta name="generator" content="misostack-seo" />    
+    
+    
+    <title>Algorithms Analysis | DevNotes 2019</title>
+    <meta name="robots" content="all" />
+    <meta name="keywords" content="Algorithms Analysis" />
+    <meta name="description" content="Algorithms a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="300" />
+
+    
+    <link href="//devnotes.tamthapnhilap.site/dist/styles.css" rel="stylesheet" />    
+</head>
+<body class="body-default">
+    <div class="wrapper">        
+        <header class="header">
+    <div class="container">
+        <a class="technical-blog-logo" href="//devnotes.tamthapnhilap.site">DevNotes 2019</a>
+    </div>
+</header>
+<div class="mainnav">
+        <nav id="navBar" class="navbar navbar-default navbar-fixed clearfix">
+            <a href="/" class="navbar-branch">
+                Home
+            </a>
+            <div class="navbar-menu-wrap">
+                <ul class="navbar-menu">
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/categories">categories</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/projects">projects</a></li>
+                    
+                        <li><a href="//devnotes.tamthapnhilap.site/subjects">subjects</a></li>
+                    
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site/hugo">Hugo tips</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site/manifesto">Manifesto</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <a href="//devnotes.tamthapnhilap.site">Links</a>
+                            
+                                <ul class="navbar-sub-menu">                                    
+                                
+                                    <li><a href="https://gist.github.com/misostack">Gist Collections</a></li>
+                                
+                                    <li><a href="https://smtebooks.us/">Free ebooks</a></li>
+                                
+                                    <li><a href="https://behappyisenough.wordpress.com/2018/05/21/sharing-ebooks-and-free-tools/">Shared Data</a></li>
+                                
+                                    <li><a href="https://regex101.com/">Online Regex</a></li>
+                                
+                                    <li><a href="http://www.bashoneliners.com/">Bash Online</a></li>
+                                
+                                    <li><a href="https://www.epochconverter.com/">Unix Timestamp Conversion</a></li>
+                                
+                                    <li><a href="https://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting</a></li>
+                                
+                                    <li><a href="https://explainshell.com/">Explain Shell</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+        <div class="container main-content">                            
+            
+                <div class="row">
+                    <main class="content col-md-12 full-content">
+                        
+    <article class="article article-scrollby" data-target="#article-scrollpy">
+        <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
+        <h1>Algorithms Analysis</h1>        
+        
+
+<h3 id="the-most-important-properties-of-an-algorithm-are">The most important properties of an algorithm are:</h3>
+
+<ol>
+<li><p><strong>Correctness</strong>: The algorithm should be correct. It should be able to process all the given
+inputs and provide correct output.</p></li>
+
+<li><p><strong>Efficiency:</strong> The algorithm should be efficient in solving problems. Efficiency is measured in
+two parameters. First is Time-Complexity, how quick result is provided by an algorithm.
+And the second is Space-Complexity, how much RAM that an algorithm is going to consume
+to give desired result.</p></li>
+</ol>
+
+<ul>
+<li><p><em>Time-Complexity</em> is represented by function T(n) - time versus the input size n.</p></li>
+
+<li><p><em>Space-Complexity</em> is represented by function S(n) - memory used versus the input size n</p></li>
+</ul>
+
+<h3 id="asymptotic-analysis">Asymptotic analysis</h3>
+
+<p>Asymptotic analysis is used to compare the efficiency of algorithm independently of any
+particular data set or programming language.</p>
+
+<p>We are generally interested in the order of growth of some algorithm and not interested in the
+exact time required for running an algorithm. This time is also called Asymptotic-running time.</p>
+
+<h3 id="big-o-notation">Big-O Notation</h3>
+
+<p>Definition: “f(n) is big-O of g(n)” or f(n) = O(g(n)), if there are two +ve constants c and n0 such
+that</p>
+
+<p>f(n) ≤ c g(n) for all n ≥ n0,In other words, c g(n) is an upper bound for f(n) for all n ≥ n0</p>
+
+<p>The function f(n) growth is slower than c g(n)</p>
+
+<p>We can simply say that after a sufficient large value of input N the (c.g(n)) will always be
+greater than f(n).</p>
+
+<blockquote>
+<p>n<sup>2</sup> + n = O(n<sup>2</sup>)</p>
+</blockquote>
+
+<h3 id="omega-ω-notation">Omega-Ω Notation</h3>
+
+<p>Definition: “f(n) is omega of g(n).” or f(n) = Ω(g(n)) if there are two +ve constants c and n0
+such that</p>
+
+<p>c g(n) ≤ f(n) for all n ≥ n0</p>
+
+<p>In other words, c g(n) is lower bound for f(n)</p>
+
+<p>Function f(n) growth is faster than c g(n)</p>
+
+<p>Find relationship of f(n) = nc and g(n) = cn</p>
+
+<blockquote>
+<p>f(n) = Ω(g(n))</p>
+</blockquote>
+
+<h3 id="complexity-analysis-of-algorithms">Complexity analysis of algorithms</h3>
+
+<ol>
+<li><p><strong>Worst Case complexity</strong>: It is the complexity of solving the problem for the worst input of
+size n. It provides the upper bound for the algorithm. This is the most common analysis used.</p></li>
+
+<li><p><strong>Average Case complexity</strong>: It is the complexity of solving the problem on an average. We
+calculate the time for all the possible inputs and then take an average of it.</p></li>
+
+<li><p><strong>Best Case complexity</strong>: It is the complexity of solving the problem for the best input of size
+n.</p></li>
+</ol>
+
+<h3 id="time-complexity-order">Time Complexity Order</h3>
+
+<p>A list of commonly occurring algorithm Time Complexity in increasing order:</p>
+
+<ul>
+<li>Constant O(1)</li>
+<li>Logarithmic O(log n)</li>
+<li>Linear O(n)</li>
+<li>N-LogN O(n log n)</li>
+<li>Quadratic O(n2)</li>
+<li>Polynomial O(nc) c is a constant &amp; c&gt;1</li>
+<li>Exponential O(cm) c is a constant &amp; c&gt;1</li>
+<li>Factorial or N-power-N O(n!) or O(nn)</li>
+</ul>
+
+<h4 id="constant-time-o-1">Constant Time: O(1)</h4>
+
+<p>An algorithm is said to run in constant time if the output is produced in constant time regardless
+of the input size.</p>
+
+<p>Examples:</p>
+
+<ol>
+<li>Accessing n<sup>th</sup> element of an array</li>
+<li>Push and pop of a stack.</li>
+<li>Enqueue and remove of a queue.</li>
+<li>Accessing an element of Hash-Table.</li>
+</ol>
+
+<h4 id="linear-time-o-n">Linear Time: O(n)</h4>
+
+<p>An algorithm is said to run in linear time if the execution time of the algorithm is directly
+proportional to the input size.</p>
+
+<p>Examples:</p>
+
+<ol>
+<li>Array operations like search element, find min, find max etc.</li>
+<li>Linked list operations like traversal, find min, find max etc.</li>
+</ol>
+
+<p><strong>Note</strong>: when we need to see/ traverse all the nodes of a data-structure for some task then
+complexity is no less than O(n)</p>
+
+<h4 id="logarithmic-time-o-logn">Logarithmic Time: O(logn)</h4>
+
+<p>An algorithm is said to run in logarithmic time if the execution time of the algorithm is
+proportional to the logarithm of the input size. Each step of an algorithm, a significant portion of the input is pruned out without traversing it.</p>
+
+<p>Example: Binary search, we will read about these algorithms in this book.</p>
+
+<h4 id="n-logn-time-o-nlog-n">N-LogN Time: O(nlog(n))</h4>
+
+<p>An algorithm is said to run in logarithmic time if the execution time of an algorithm is
+proportional to the product of input size and logarithm of the input size.</p>
+
+<p>Example:</p>
+
+<ol>
+<li>Merge-Sort</li>
+<li>Quick-Sort (Average case)</li>
+<li>Heap-Sort</li>
+</ol>
+
+<p><strong>Note:</strong> Quicksort is a special kind of algorithm to sort an array of numbers. Its worst-case
+complexity is O(n<sup>2</sup>) and average case complexity is O(n log n).</p>
+
+<h4 id="quadratic-time-o-n-sup-2-sup">Quadratic Time: O(n<sup>2</sup>)</h4>
+
+<p>An algorithm is said to run in quadratic time if the execution time of an algorithm is
+proportional to the square of the input size.</p>
+
+<p>Examples:</p>
+
+<ol>
+<li>Bubble-Sort</li>
+<li>Selection-Sort</li>
+<li>Insertion-Sort</li>
+</ol>
+
+<h4 id="time-complexity-examples">Time Complexity Examples</h4>
+
+    </article>
+
+                    </main>                    
+                </div>                
+            
+        </div>
+        <footer id="footer" class="footer footer-default">
+  <div class="container">
+      <div class="text">
+          Proudly powered by techblog2020 theme from <strong class="yellow"><a href="http://tamthapnhilap.site">tamthapnhilap</a></strong>
+      </div>
+  </div>
+</footer>
+    </div>
+    <script type="text/javascript" src="//devnotes.tamthapnhilap.site/dist/app.bundle.js"></script></body>
+</html>

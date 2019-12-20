@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</loc>
+    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/article/</loc>
+    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/subjects/backend/</loc>
+    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/</loc>
+    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/subjects/</loc>
+    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</loc>
     <lastmod>2019-12-16T11:32:26+07:00</lastmod>
   </url>
   
   <url>
-    <loc>//devnotes.tamthapnhilap.site/article/</loc>
-    <lastmod>2019-12-16T11:32:26+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/</loc>
-    <lastmod>2019-12-16T11:32:26+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>//devnotes.tamthapnhilap.site/subjects/go/</loc>
-    <lastmod>2019-12-16T11:32:26+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/subjects/</loc>
     <lastmod>2019-12-16T11:32:26+07:00</lastmod>
   </url>
   
@@ -50,11 +60,6 @@
   <url>
     <loc>//devnotes.tamthapnhilap.site/manifesto/</loc>
     <lastmod>2019-10-24T14:15:11+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/subjects/backend/</loc>
-    <lastmod>2019-10-24T11:40:50+07:00</lastmod>
   </url>
   
   <url>

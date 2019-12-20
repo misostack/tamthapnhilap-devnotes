@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Mon, 16 Dec 2019 11:32:26 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2019 12:08:18 +0700</lastBuildDate>
     
 	<atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Algorithms Analysis</title>
+      <link>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</link>
+      <pubDate>Fri, 20 Dec 2019 12:08:18 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</guid>
+      <description>The most important properties of an algorithm are:  Correctness: The algorithm should be correct. It should be able to process all the given inputs and provide correct output.
+ Efficiency: The algorithm should be efficient in solving problems. Efficiency is measured in two parameters. First is Time-Complexity, how quick result is provided by an algorithm. And the second is Space-Complexity, how much RAM that an algorithm is going to consume to give desired result.</description>
+    </item>
     
     <item>
       <title>[Headfirst GO] Datatypes</title>
