@@ -122,6 +122,7 @@ go install golang.org/x/lint/golint
 - https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php
 - https://www.golangprograms.com/go-language/constants.html
 - [Golang Forum](https://forum.golangbridge.org/)
+- https://yourbasic.org/golang/
 
 ### 7. Some ideas for headfirst projects
 

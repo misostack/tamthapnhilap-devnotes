@@ -94,3 +94,6 @@ func main() {
 	fmt.Println(STOCK)
 }
 ```
+
+> The for ... range loop processes map keys and values in a random order because a map is
+an unordered collection of keys and values
