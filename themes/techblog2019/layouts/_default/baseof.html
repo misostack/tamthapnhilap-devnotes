@@ -10,9 +10,26 @@
     {{ block "meta" . }}
     {{ partial "meta.html" . }}
     {{ end }}
-    <link href="{{ "dist/styles.css" | absURL }}" rel="stylesheet" />    
+    <link href="{{ "dist/styles.css" | absURL }}" rel="stylesheet" />
+    <script type="text/javascript">
+    var GTM_KEY = 'GTM-5258TVZ';
+    console.group('GTM');
+    console.log('GTM-DEMO');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer', GTM_KEY);
+    // using dataLayer :  https://developers.google.com/tag-manager/devguide#datalayer
+    dataLayer = [];
+    console.groupEnd();
+    </script>    
 </head>
 <body class="body-default">
+<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5258TVZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->    
     <div class="wrapper">        
         {{ partial "header.html" . }}
         <div class="container main-content">                            
@@ -49,5 +66,5 @@
         </div>
         {{ partial "footer.html" . }}
     </div>
-    <script type="text/javascript" src="{{ "dist/app.bundle.js" | absURL }}"></script></body>
+    <script type="text/javascript" src="{{ "dist/app.bundle.js" | absURL }}"></script></script>></body>
 </html>
