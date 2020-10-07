@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>//devnotes.tamthapnhilap.site/blog/</loc>
+    <lastmod>2020-10-07T16:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/categories/</loc>
+    <lastmod>2020-10-07T16:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/</loc>
+    <lastmod>2020-10-07T16:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/blog/links/</loc>
+    <lastmod>2020-10-07T16:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//devnotes.tamthapnhilap.site/categories/uncategory/</loc>
+    <lastmod>2020-10-07T16:28:00+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</loc>
     <lastmod>2019-12-20T12:08:18+07:00</lastmod>
   </url>
@@ -14,11 +39,6 @@
   
   <url>
     <loc>//devnotes.tamthapnhilap.site/subjects/backend/</loc>
-    <lastmod>2019-12-20T12:08:18+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/</loc>
     <lastmod>2019-12-20T12:08:18+07:00</lastmod>
   </url>
   
@@ -219,21 +239,6 @@
   
   <url>
     <loc>//devnotes.tamthapnhilap.site/blog/backend-roadmap/</loc>
-    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/blog/</loc>
-    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/categories/</loc>
-    <lastmod>2018-08-17T14:20:36+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>//devnotes.tamthapnhilap.site/categories/uncategory/</loc>
     <lastmod>2018-08-17T14:20:36+07:00</lastmod>
   </url>
   

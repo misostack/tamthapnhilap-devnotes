@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Fri, 17 Aug 2018 14:20:36 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/categories/uncategory/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2020 16:28:00 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/categories/uncategory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links</title>
+      <link>//devnotes.tamthapnhilap.site/blog/links/</link>
+      <pubDate>Wed, 07 Oct 2020 16:28:00 +0700</pubDate>
+      
+      <guid>//devnotes.tamthapnhilap.site/blog/links/</guid>
+      <description>Docker 1.Docker Tuts 1</description>
+    </item>
+    
     <item>
       <title>Backend Roadmap</title>
       <link>//devnotes.tamthapnhilap.site/blog/backend-roadmap/</link>
