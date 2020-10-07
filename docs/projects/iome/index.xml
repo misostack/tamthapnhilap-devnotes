@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iome on DevNotes 2019</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 21 Nov 2018 16:16:13 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/projects/iome/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Nov 2018 16:16:13 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/projects/iome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Iome 001 Initialize</title>
       <link>//devnotes.tamthapnhilap.site/note/iome-001-initialize/</link>

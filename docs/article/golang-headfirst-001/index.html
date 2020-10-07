@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,89 +108,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/subjects/golang.jpg" /></p>
         <h1>[Headfirst GO] The beginning</h1>        
-        
-
-<h3 id="1-installation">1.Installation</h3>
-
+        <h3 id="1installation">1.Installation</h3>
 <ul>
-<li><p>Download binary and creat GOPATH</p></li>
-
-<li><p><a href="https://golang.org/dl/">Binaries</a></p></li>
-
-<li><p><a href="https://github.com/golang/go/wiki/SettingGOPATH">GOPATH</a></p>
-
-<pre><code class="language-bash">wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
+<li>
+<p>Download binary and creat GOPATH</p>
+</li>
+<li>
+<p><a href="https://golang.org/dl/">Binaries</a></p>
+</li>
+<li>
+<p><a href="https://github.com/golang/go/wiki/SettingGOPATH">GOPATH</a></p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz
 which go
 go version
 go env
-</code></pre></li>
-</ul>
-
-<p><strong>Important</strong></p>
-
+</code></pre></div><p><strong>Important</strong></p>
 <blockquote>
 <blockquote>
 <p>GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.</p>
 </blockquote>
 </blockquote>
+<h3 id="2first-build">2.First build</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<h3 id="2-first-build">2.First build</h3>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
-<pre><code class="language-go">package main
-
-import &quot;fmt&quot;
-
-func main() {
-	fmt.Printf(&quot;hello, world\n&quot;)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;hello, world\n&#34;</span>)
 }
-</code></pre>
-
-<pre><code class="language-json">- hello
-		hello.go
-cd $HOME/hello/
-go build
-./hello
-</code></pre>
-
-<h3 id="3-workspace">3.Workspace</h3>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">hello</span>
+		<span style="color:#960050;background-color:#1e0010">hello.go</span>
+<span style="color:#960050;background-color:#1e0010">cd</span> <span style="color:#960050;background-color:#1e0010">$HOME/hello/</span>
+<span style="color:#960050;background-color:#1e0010">go</span> <span style="color:#960050;background-color:#1e0010">build</span>
+<span style="color:#960050;background-color:#1e0010">./hello</span>
+</code></pre></div><h3 id="3workspace">3.Workspace</h3>
 <ul>
-<li><p><a href="https://golang.org/doc/code.html#Workspaces">https://golang.org/doc/code.html#Workspaces</a></p>
-
-<pre><code class="language-md">bin/
-hello                           # command executable
-src/
-github.com/golang/example/
-				.git/                       # Git repository metadata
-    hello/
-        hello.go                # command source
-    stringutil/
-        reverse.go              # package source
-        reverse_test.go         # test source
-github.com/user/
-    hello/
-        hello.go                # command source
-    stringutil/
-        reverse.go              # package source
-        reverse_test.go         # test source
-</code></pre></li>
-
-<li><p><a href="https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a">https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a</a></p></li>
-
-<li><p><a href="https://code.visualstudio.com/docs/languages/go">https://code.visualstudio.com/docs/languages/go</a></p></li>
-
-<li><p><a href="https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php">https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php</a></p></li>
+<li><a href="https://golang.org/doc/code.html#Workspaces">https://golang.org/doc/code.html#Workspaces</a></li>
 </ul>
-
-<h3 id="4-install-a-package">4.Install a package</h3>
-
-<pre><code class="language-bash">go get [packagepath]
-</code></pre>
-
-<h3 id="5-editor-vs-code">5.Editor ( VS Code )</h3>
-
-<pre><code class="language-bash">  gocode
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">bin/
+    hello                           # command executable
+src/
+    github.com/golang/example/
+				.git/                       # Git repository metadata
+        hello/
+            hello.go                # command source
+        stringutil/
+            reverse.go              # package source
+            reverse_test.go         # test source
+    github.com/user/
+        hello/
+            hello.go                # command source
+        stringutil/
+            reverse.go              # package source
+            reverse_test.go         # test source
+</code></pre></div><ul>
+<li><a href="https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a">https://rominirani.com/setup-go-development-environment-with-visual-studio-code-7ea5d643a51a</a></li>
+<li><a href="https://code.visualstudio.com/docs/languages/go">https://code.visualstudio.com/docs/languages/go</a></li>
+<li><a href="https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php">https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php</a></li>
+</ul>
+<h3 id="4install-a-package">4.Install a package</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get <span style="color:#f92672">[</span>packagepath<span style="color:#f92672">]</span>
+</code></pre></div><h3 id="5editor--vs-code-">5.Editor ( VS Code )</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  gocode
   gopkgs
   go-outline
   go-symbols
@@ -207,12 +189,10 @@ github.com/user/
   godef
   goreturns
   golint
-</code></pre>
-
-<ul>
-<li><p>Install Go tools : <a href="https://go.googlesource.com/tools">https://go.googlesource.com/tools</a></p>
-
-<pre><code class="language-bash">go install github.com/mdempsky/gocode
+</code></pre></div><ul>
+<li>Install Go tools : <a href="https://go.googlesource.com/tools">https://go.googlesource.com/tools</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install github.com/mdempsky/gocode
 go install github.com/ramya-rao-a/go-outline
 go install github.com/acroca/go-symbols
 go install golang.org/x/tools/cmd/guru
@@ -221,11 +201,7 @@ go install github.com/stamblerre/gocode
 go install github.com/ianthehat/godef
 go install github.com/sqs/goreturns
 go install golang.org/x/lint/golint
-</code></pre></li>
-</ul>
-
-<h3 id="6-references">6. References:</h3>
-
+</code></pre></div><h3 id="6-references">6. References:</h3>
 <ul>
 <li><a href="https://github.com/golang/go/wiki/Learn">https://github.com/golang/go/wiki/Learn</a></li>
 <li><a href="https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php">https://www.bogotobogo.com/GoLang/GoLang_Visual_Studio_Code.php</a></li>
@@ -233,24 +209,18 @@ go install golang.org/x/lint/golint
 <li><a href="https://forum.golangbridge.org/">Golang Forum</a></li>
 <li><a href="https://yourbasic.org/golang/">https://yourbasic.org/golang/</a></li>
 </ul>
-
 <h3 id="7-some-ideas-for-headfirst-projects">7. Some ideas for headfirst projects</h3>
-
-<h4 id="7-1-sprint-projects">7.1. Sprint Projects</h4>
-
+<h4 id="71-sprint-projects">7.1. Sprint Projects</h4>
 <blockquote>
 <p>Less 01 : Print alphabet</p>
 </blockquote>
-
-<h4 id="7-2-final-projects">7.2. Final Projects</h4>
-
+<h4 id="72-final-projects">7.2. Final Projects</h4>
 <blockquote>
 <p>Xay dung REST API quan li data cho du an thucan bang beego</p>
-
 <p><a href="https://beego.me/">https://beego.me/</a></p>
-
+</blockquote>
+<blockquote>
 <p>Xay-dung-chatbot-telegram-bang-golang</p>
-
 <p><a href="https://telegram.org/">https://telegram.org/</a></p>
 </blockquote>
 

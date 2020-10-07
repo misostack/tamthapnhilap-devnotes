@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,130 +108,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby Arrays - Blocks</h1>        
-        
+        <h2 id="arrays">Arrays</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;faker&#39;</span>
 
-<h2 id="arrays">Arrays</h2>
+filepath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;./15-votes.txt&#39;</span>
 
-<pre><code class="language-ruby">require 'faker'
-
-filepath = './15-votes.txt'
-
-module Votes
-	def self.generate_votes(filepath, numbers = 100)
-		return if File.exist?(filepath)
-		votes = []
-		(1..numbers).each do |num|
-			name = Faker::Name.name
-			(1..Random.new.rand(100)).each do |i|
-				votes &lt;&lt; name
-			end			
-		end
-		File.open(filepath,'w+') { |fh|
-			votes.shuffle.each do |name|				
-				fh.puts format(&quot;%s&quot;, name)
-			end
+<span style="color:#66d9ef">module</span> Votes
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">generate_votes</span>(filepath, numbers <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>)
+		<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>exist?(filepath)
+		votes <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+		(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span>numbers)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>num<span style="color:#f92672">|</span>
+			name <span style="color:#f92672">=</span> <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Name</span><span style="color:#f92672">.</span>name
+			(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>))<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+				votes <span style="color:#f92672">&lt;&lt;</span> name
+			<span style="color:#66d9ef">end</span>			
+		<span style="color:#66d9ef">end</span>
+		<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(filepath,<span style="color:#e6db74">&#39;w+&#39;</span>) { <span style="color:#f92672">|</span>fh<span style="color:#f92672">|</span>
+			votes<span style="color:#f92672">.</span>shuffle<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>name<span style="color:#f92672">|</span>				
+				fh<span style="color:#f92672">.</span>puts format(<span style="color:#e6db74">&#34;%s&#34;</span>, name)
+			<span style="color:#66d9ef">end</span>
 		}
-	end
-	def self.read_votes(filepath)
-		votes = {}
-		File.readlines(filepath).each { |line|			
-			name = line.chomp
-			votes[name] += 1 if votes[name]
-			votes[name] = 1 unless votes[name]
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">read_votes</span>(filepath)
+		votes <span style="color:#f92672">=</span> {}
+		<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>readlines(filepath)<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>line<span style="color:#f92672">|</span>			
+			name <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>chomp
+			votes<span style="color:#f92672">[</span>name<span style="color:#f92672">]</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> votes<span style="color:#f92672">[</span>name<span style="color:#f92672">]</span>
+			votes<span style="color:#f92672">[</span>name<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">unless</span> votes<span style="color:#f92672">[</span>name<span style="color:#f92672">]</span>
 		}
-		final_votes = []
-		votes.each do |name, v|
-			final_votes &lt;&lt; { name: name, votes: v}
-		end
+		final_votes <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+		votes<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>name, v<span style="color:#f92672">|</span>
+			final_votes <span style="color:#f92672">&lt;&lt;</span> { name: name, <span style="color:#e6db74">votes</span>: v}
+		<span style="color:#66d9ef">end</span>
 		final_votes
-	end
-	def self.add_rank(records)
-		records.sort_by{ |item| item[:votes] }.reverse.each_with_index do |record, idx|
-			record[:rank] = idx + 1
-		end
-	end
-end
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add_rank</span>(records)
+		records<span style="color:#f92672">.</span>sort_by{ <span style="color:#f92672">|</span>item<span style="color:#f92672">|</span> item<span style="color:#f92672">[</span><span style="color:#e6db74">:votes</span><span style="color:#f92672">]</span> }<span style="color:#f92672">.</span>reverse<span style="color:#f92672">.</span>each_with_index <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>record, idx<span style="color:#f92672">|</span>
+			record<span style="color:#f92672">[</span><span style="color:#e6db74">:rank</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> idx <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+		<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-Votes::generate_votes(filepath)
-# Votes::read_votes(filepath).sort_by{ |item| item[:votes] }.reverse.each { |record|
-# 	puts format(&quot;%s has %s&quot;, record[:name], record[:votes])
-# }
-Votes::add_rank(Votes::read_votes(filepath)).each { |record|
-	puts format(&quot;Name: %s - Votes: %s - Rank: %s&quot;, record[:name], record[:votes], record[:rank])
+<span style="color:#66d9ef">Votes</span><span style="color:#f92672">::</span>generate_votes(filepath)
+<span style="color:#75715e"># Votes::read_votes(filepath).sort_by{ |item| item[:votes] }.reverse.each { |record|</span>
+<span style="color:#75715e"># 	puts format(&#34;%s has %s&#34;, record[:name], record[:votes])</span>
+<span style="color:#75715e"># }</span>
+<span style="color:#66d9ef">Votes</span><span style="color:#f92672">::</span>add_rank(<span style="color:#66d9ef">Votes</span><span style="color:#f92672">::</span>read_votes(filepath))<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>record<span style="color:#f92672">|</span>
+	puts format(<span style="color:#e6db74">&#34;Name: %s - Votes: %s - Rank: %s&#34;</span>, record<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>, record<span style="color:#f92672">[</span><span style="color:#e6db74">:votes</span><span style="color:#f92672">]</span>, record<span style="color:#f92672">[</span><span style="color:#e6db74">:rank</span><span style="color:#f92672">]</span>)
 }
-</code></pre>
+</code></pre></div><h2 id="blocks">Blocks</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">yield_number</span>
+	<span style="color:#66d9ef">yield</span> <span style="color:#ae81ff">4</span>
+<span style="color:#66d9ef">end</span>
 
-<h2 id="blocks">Blocks</h2>
-
-<pre><code class="language-ruby">def yield_number
-	yield 4
-end
-
-array = [1,2,3]
-yield_number { |number| array &lt;&lt; number }
+array <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>
+yield_number { <span style="color:#f92672">|</span>number<span style="color:#f92672">|</span> array <span style="color:#f92672">&lt;&lt;</span> number }
 p array
 
-sum = 0
-[1,2,3].each{ |number| sum += number }
+sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">].</span>each{ <span style="color:#f92672">|</span>number<span style="color:#f92672">|</span> sum <span style="color:#f92672">+=</span> number }
 p sum
 
-def print_block_value
-	puts yield
-end
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_block_value</span>
+	puts <span style="color:#66d9ef">yield</span>
+<span style="color:#66d9ef">end</span>
 
-def other_method
-	print_block_value { 12 * 12 }
-end
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">other_method</span>
+	print_block_value { <span style="color:#ae81ff">12</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">12</span> }
+<span style="color:#66d9ef">end</span>
 
 other_method
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">songs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+	{<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Ngắm hoa lệ rơi&#39;</span>, <span style="color:#e6db74">:singer</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Châu Khải Phong&#39;</span>, <span style="color:#e6db74">:views</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1500</span>},
+	{<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Ngắm hoa lệ rơi Offical&#39;</span>, <span style="color:#e6db74">:singer</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Châu Khải Phong&#39;</span>, <span style="color:#e6db74">:views</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2000</span>},
+	{<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Ông ngoại tuổi 30&#39;</span>, <span style="color:#e6db74">:singer</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Trịnh Thăng Bình&#39;</span>, <span style="color:#e6db74">:views</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">500</span>},
+	{<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Nắng ấm xa dần&#39;</span>, <span style="color:#e6db74">:singer</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Sơn Tùng MTP&#39;</span>, <span style="color:#e6db74">:views</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">10000</span>},
+	{<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Đếm ngày xa em&#39;</span>, <span style="color:#e6db74">:singer</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Only C&#39;</span>, <span style="color:#e6db74">:views</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1600</span>}
+<span style="color:#f92672">]</span>
 
-<pre><code class="language-ruby">songs = [
-	{:name =&gt; 'Ngắm hoa lệ rơi', :singer =&gt; 'Châu Khải Phong', :views =&gt; 1500},
-	{:name =&gt; 'Ngắm hoa lệ rơi Offical', :singer =&gt; 'Châu Khải Phong', :views =&gt; 2000},
-	{:name =&gt; 'Ông ngoại tuổi 30', :singer =&gt; 'Trịnh Thăng Bình', :views =&gt; 500},
-	{:name =&gt; 'Nắng ấm xa dần', :singer =&gt; 'Sơn Tùng MTP', :views =&gt; 10000},
-	{:name =&gt; 'Đếm ngày xa em', :singer =&gt; 'Only C', :views =&gt; 1600}
-]
-
-module TopSongs
-	def self.list_songs(songs)
-		matching_songs = []
-		songs.each do |song|
-			if yield(song)
-				matching_songs &lt;&lt; song
-			end
-		end
+<span style="color:#66d9ef">module</span> TopSongs
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">list_songs</span>(songs)
+		matching_songs <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+		songs<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>song<span style="color:#f92672">|</span>
+			<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">yield</span>(song)
+				matching_songs <span style="color:#f92672">&lt;&lt;</span> song
+			<span style="color:#66d9ef">end</span>
+		<span style="color:#66d9ef">end</span>
 		matching_songs
-	end
+	<span style="color:#66d9ef">end</span>
 
-	def self.print_list(songs)
-		songs.each do |song|
-			yield(song)
-		end
-	end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print_list</span>(songs)
+		songs<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>song<span style="color:#f92672">|</span>
+			<span style="color:#66d9ef">yield</span>(song)
+		<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
 
-	def self.reduce(songs)
-		arr = []
-		songs.each do |ele|
-			arr &lt;&lt; yield(ele)
-		end
-		arr.uniq
-	end
-end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">reduce</span>(songs)
+		arr <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+		songs<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>ele<span style="color:#f92672">|</span>
+			arr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#66d9ef">yield</span>(ele)
+		<span style="color:#66d9ef">end</span>
+		arr<span style="color:#f92672">.</span>uniq
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-TopSongs::print_list TopSongs::reduce(songs) { |song| song[:singer] } do |singer|
-	puts format &quot;Những bài hát hay nhất của %s :&quot;, singer
-	puts ' '*30
-	TopSongs::print_list(TopSongs::list_songs(songs) { |song| song[:singer] == singer}) do |song|
-	puts format &quot;Bài hát: %s&quot;, song[:name]
-	puts format &quot;Lượt xem: %s lượt&quot;, song[:views]
-	puts '-'*30		
-	end
-	puts '*'*30
-end
-</code></pre>
-
+<span style="color:#66d9ef">TopSongs</span><span style="color:#f92672">::</span>print_list <span style="color:#66d9ef">TopSongs</span><span style="color:#f92672">::</span>reduce(songs) { <span style="color:#f92672">|</span>song<span style="color:#f92672">|</span> song<span style="color:#f92672">[</span><span style="color:#e6db74">:singer</span><span style="color:#f92672">]</span> } <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>singer<span style="color:#f92672">|</span>
+	puts format <span style="color:#e6db74">&#34;Những bài hát hay nhất của %s :&#34;</span>, singer
+	puts <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>
+	<span style="color:#66d9ef">TopSongs</span><span style="color:#f92672">::</span>print_list(<span style="color:#66d9ef">TopSongs</span><span style="color:#f92672">::</span>list_songs(songs) { <span style="color:#f92672">|</span>song<span style="color:#f92672">|</span> song<span style="color:#f92672">[</span><span style="color:#e6db74">:singer</span><span style="color:#f92672">]</span> <span style="color:#f92672">==</span> singer}) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>song<span style="color:#f92672">|</span>
+	puts format <span style="color:#e6db74">&#34;Bài hát: %s&#34;</span>, song<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>
+	puts format <span style="color:#e6db74">&#34;Lượt xem: %s lượt&#34;</span>, song<span style="color:#f92672">[</span><span style="color:#e6db74">:views</span><span style="color:#f92672">]</span>
+	puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>		
+	<span style="color:#66d9ef">end</span>
+	puts <span style="color:#e6db74">&#39;*&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div>
     </article>
 
                     </main>                    

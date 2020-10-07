@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>reactjs on DevNotes 2019</title>
@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Tue, 03 Dec 2019 10:54:42 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/subjects/reactjs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 03 Dec 2019 10:54:42 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/subjects/reactjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reactjs 002 React Form Validation</title>
       <link>//devnotes.tamthapnhilap.site/article/reactjs-002-react-form-validation/</link>
       <pubDate>Tue, 03 Dec 2019 10:54:42 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/reactjs-002-react-form-validation/</guid>
-      <description> Procedure yarn add react-hook-form  Forms  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation https://devdojo.com/html/form-elements https://www.w3schools.com/html/html_forms.asp https://www.w3schools.com/html/html_form_elements.asp https://www.w3schools.com/html/html_form_input_types.asp https://www.w3schools.com/html/html_form_attributes.asp  Form Components  https://github.com/JedWatson/react-select  Calendar  https://programmingwithmosh.com/react/build-a-react-calendar-component-from-scratch/ https://reactjsexample.com/tag/calendar/ https://fullcalendar.io/docs  Validations  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation  </description>
+      <description>Procedure yarn add react-hook-form Forms  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation https://devdojo.com/html/form-elements https://www.w3schools.com/html/html_forms.asp https://www.w3schools.com/html/html_form_elements.asp https://www.w3schools.com/html/html_form_input_types.asp https://www.w3schools.com/html/html_form_attributes.asp  Form Components  https://github.com/JedWatson/react-select  Calendar  https://programmingwithmosh.com/react/build-a-react-calendar-component-from-scratch/ https://reactjsexample.com/tag/calendar/ https://fullcalendar.io/docs  Validations  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation  </description>
     </item>
     
     <item>
@@ -28,8 +24,7 @@
       
       <guid>//devnotes.tamthapnhilap.site/article/reactjs-001-a-mockup/</guid>
       <description>1. Getting started Getting with &amp;ldquo;create-reactjs-app&amp;rdquo;. After installing and setup your development enviroment
-- Editor  https://create-react-app.dev/docs/setting-up-your-editor  - EsLint  https://alligator.io/react/linting-react/ https://eslint.org/docs/user-guide/getting-started#configuration
-yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D   This project was bootstrapped with Create React App.
+- Editor  https://create-react-app.dev/docs/setting-up-your-editor  - EsLint  https://alligator.io/react/linting-react/ https://eslint.org/docs/user-guide/getting-started#configuration  yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D This project was bootstrapped with Create React App.
 - Styles &amp;amp; Assets  https://css-tricks.com/css-modules-part-1-need/ https://alligator.io/react/react-css/ https://programmingwithmosh.com/react/css-modules-react/  - CSS in React  Global CSS files: the CSS files live completely separately from the component files a la typical HTML and CSS Javascript Stylesheets: each component has a Javascript object representing its styles which lives in the same .</description>
     </item>
     

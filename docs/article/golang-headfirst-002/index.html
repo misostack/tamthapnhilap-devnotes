@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,14 +108,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/subjects/golang.jpg" /></p>
         <h1>[Headfirst GO] Datatypes</h1>        
-        
-
-<blockquote>
+        <blockquote>
 <p>Case is sensitive</p>
 </blockquote>
-
 <h4 id="datatypes">Datatypes:</h4>
-
 <ul>
 <li>String ( literals ): &ldquo;bla bla&rdquo;</li>
 <li>Runes: &lsquo;A&rsquo; &lsquo;B&rsquo; &lsquo;\n&rsquo;</li>
@@ -123,86 +119,78 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Numbers : 42(Integer)</li>
 <li>Derived types</li>
 </ul>
-
 <h4 id="refs">Refs</h4>
-
 <ul>
 <li><a href="https://yourbasic.org/golang/convert-int-to-string/">https://yourbasic.org/golang/convert-int-to-string/</a></li>
 <li><a href="https://medium.com/learning-the-go-programming-language/bit-hacking-with-go-e0acee258827">Bitwise</a></li>
+<li><a href="https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/">What are stdin-stdout-stderr-on-linux</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<li><p><a href="https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/">What are stdin-stdout-stderr-on-linux</a></p>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
-<pre><code class="language-golang">package main
-
-import &quot;fmt&quot;
-
-func main() {
-	fmt.Println(&quot;Headfirst GO&quot;)
-	fmt.Println(&quot;The alphabet&quot;)
-	theAlphabet(true)
-	theAlphabet(false)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Headfirst GO&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The alphabet&#34;</span>)
+	<span style="color:#a6e22e">theAlphabet</span>(<span style="color:#66d9ef">true</span>)
+	<span style="color:#a6e22e">theAlphabet</span>(<span style="color:#66d9ef">false</span>)
 }
 
-func theAlphabet(uppercase bool) {
-	var str = &quot;&quot;
-	if uppercase {
-		for i:= 'A'; i&lt;= 'Z'; i++ {
-			str += string(i) + &quot; &quot;
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">theAlphabet</span>(<span style="color:#a6e22e">uppercase</span> <span style="color:#66d9ef">bool</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> = <span style="color:#e6db74">&#34;&#34;</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">uppercase</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;A&#39;</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;Z&#39;</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> string(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
 		}
-	}else {
-		for i:= 'a'; i&lt;= 'z'; i++ {
-			str += string(i) + &quot; &quot;
+	}<span style="color:#66d9ef">else</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;a&#39;</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span> <span style="color:#e6db74">&#39;z&#39;</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+			<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> string(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
 		}		
 	}
-	fmt.Println(str)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">str</span>)
 }
 
-func theEvenNumbers(start int, end int) {
-	theNumbers(start, end, false)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">theEvenNumbers</span>(<span style="color:#a6e22e">start</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">end</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">theNumbers</span>(<span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span>, <span style="color:#66d9ef">false</span>)
 }
 
-func theOddNumbers(start int, end int) {
-	theNumbers(start, end, true)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">theOddNumbers</span>(<span style="color:#a6e22e">start</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">end</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">theNumbers</span>(<span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span>, <span style="color:#66d9ef">true</span>)
 }
 
-func theNumbers(start int, end int, isOdd bool) {
-	var str = &quot;\n&quot;
-	if isOdd { str += &quot;The odd numbers:\n&quot; }
-	if !isOdd{ str += &quot;The even numbers:\n&quot; }
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">theNumbers</span>(<span style="color:#a6e22e">start</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">end</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">isOdd</span> <span style="color:#66d9ef">bool</span>) {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">str</span> = <span style="color:#e6db74">&#34;\n&#34;</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">isOdd</span> { <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;The odd numbers:\n&#34;</span> }
+	<span style="color:#66d9ef">if</span> !<span style="color:#a6e22e">isOdd</span>{ <span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;The even numbers:\n&#34;</span> }
 
-	for i:= start; i&lt;= end; i++ {
-		if(isOdd &amp;&amp; i % 2 != 0) {
-			str += strconv.Itoa(i) + &quot; &quot;
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">:=</span> <span style="color:#a6e22e">start</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">end</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+		<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isOdd</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+			<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
 		}
-		if(!isOdd &amp;&amp; i % 2 == 0) {
-			str += strconv.Itoa(i) + &quot; &quot;
+		<span style="color:#66d9ef">if</span>(!<span style="color:#a6e22e">isOdd</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+			<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">strconv</span>.<span style="color:#a6e22e">Itoa</span>(<span style="color:#a6e22e">i</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span>
 		}
 	}
-	fmt.Println(str)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">str</span>)
 }
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
-<pre><code class="language-golang">package main
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
 
-import &quot;fmt&quot;
-
-const (
-	PRODUCT  = &quot;Mobile&quot;
-	QUANTITY = 50
-	PRICE    = 50.50
-	STOCK  = true
+<span style="color:#66d9ef">const</span> (
+	<span style="color:#a6e22e">PRODUCT</span>  = <span style="color:#e6db74">&#34;Mobile&#34;</span>
+	<span style="color:#a6e22e">QUANTITY</span> = <span style="color:#ae81ff">50</span>
+	<span style="color:#a6e22e">PRICE</span>    = <span style="color:#ae81ff">50.50</span>
+	<span style="color:#a6e22e">STOCK</span>  = <span style="color:#66d9ef">true</span>
 )
 
-func main() {
-	fmt.Println(QUANTITY)
-	fmt.Println(PRICE)
-	fmt.Println(PRODUCT)
-	fmt.Println(STOCK)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">QUANTITY</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">PRICE</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">PRODUCT</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">STOCK</span>)
 }
-</code></pre></li>
-</ul>
-
-<blockquote>
+</code></pre></div><blockquote>
 <p>The for &hellip; range loop processes map keys and values in a random order because a map is
 an unordered collection of keys and values</p>
 </blockquote>

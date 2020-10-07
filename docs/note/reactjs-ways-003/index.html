@@ -100,36 +100,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Reactjs Ways - React Router - React Redux" />
     <h1>Reactjs Ways - React Router - React Redux</h1>
-    
-
-<h3 id="1-install">1.Install</h3>
-
+    <h3 id="1install">1.Install</h3>
 <ul>
-<li><p>Refs : <a href="https://reacttraining.com/react-router/web/guides/philosophy">https://reacttraining.com/react-router/web/guides/philosophy</a></p>
-
-<pre><code class="language-javascript">npm install react-router-dom -D
-</code></pre></li>
+<li>Refs : <a href="https://reacttraining.com/react-router/web/guides/philosophy">https://reacttraining.com/react-router/web/guides/philosophy</a></li>
 </ul>
-
-<h3 id="2-folder-structure">2.Folder Structure</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">router</span><span style="color:#f92672">-</span><span style="color:#a6e22e">dom</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">D</span>
+</code></pre></div><h3 id="2folder-structure">2.Folder Structure</h3>
 <p>Refs: <a href="https://engineering.opsgenie.com/how-to-organize-react-files-before-its-messed-up-c85387f691be">https://engineering.opsgenie.com/how-to-organize-react-files-before-its-messed-up-c85387f691be</a></p>
-
 <p>There are several ways, but in summary:</p>
-
 <p><strong>By File Type</strong></p>
-
 <p>This is very simple structure which almost use for small application and for learning purpose</p>
-
-<pre><code class="language-html">└── src
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">└── src
     └── actions
         └── group.js
         └── user.js
@@ -149,13 +138,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         └── user.js
     └── index.js
     └── Routes.js
-</code></pre>
-
-<p><strong>By Features</strong></p>
-
+</code></pre></div><p><strong>By Features</strong></p>
 <p>We can also group files by their domain</p>
-
-<pre><code class="language-html">└── src
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">└── src
     └── app
         └── layout
             └── footer.js
@@ -175,112 +160,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         └── constants/
         └── containers/
         └── reducers/
-</code></pre>
-
-<div class="important">
-However, as your application grows you’ll have directories which are very deep and you’ll lose your way in the jungle.
-</div>
-
-<pre><code class="language-html">└── src
+</code></pre></div><!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">└── src
     └── user
         └── components
             └── important-user-component.js
                 └── components
                     └── important-user-component-has-component.js
                         └── some-where-over-the-rainbow.js
-</code></pre>
-
-<ul>
-<li><p>A kind of best practice structure : <a href="https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e">https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e</a></p>
-
-<pre><code class="language-html">└── src
-└── modules
-    └── reducers.js
-    └── users
-        └── constants.js
-        └── actions
-            └── user_fetch.js
-            └── user_login.js
-            └── permissions_fetch.js
-        └── reducers
-            └── index.js
-            └── user.js
-            └── permission.js
-    └──projects/
-└── routes
-    └── login
-        └── index.js
-        └── containers
-            └── login.js
-        └── components
-            └── login.js
-    └── logged_in/
-    └── project_list/
-    └── project_view/
-</code></pre></li>
-
-<li><p>Routing v4: <a href="https://css-tricks.com/react-router-4/">https://css-tricks.com/react-router-4/</a></p></li>
-
-<li><p>Redux : <a href="https://medium.com/@resir014/a-type-safe-approach-to-redux-stores-in-typescript-6474e012b81e">https://medium.com/@resir014/a-type-safe-approach-to-redux-stores-in-typescript-6474e012b81e</a></p></li>
+</code></pre></div><ul>
+<li>A kind of best practice structure : <a href="https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e">https://medium.com/lexical-labs-engineering/redux-best-practices-64d59775802e</a></li>
 </ul>
-
-<p><strong>Full redux with typescript</strong>
-- Super simple example : <a href="http://blog.tylerbuchea.com/super-simple-react-redux-application-example/">http://blog.tylerbuchea.com/super-simple-react-redux-application-example/</a>
-- <a href="https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092">https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092</a>
-- <a href="https://dev.to/resir014/redux-4--typescript-29-a-type-safe-approach-2lf4">https://dev.to/resir014/redux-4--typescript-29-a-type-safe-approach-2lf4</a>
-- <a href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions-todo-app">https://codesandbox.io/s/github/piotrwitek/typesafe-actions-todo-app</a></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">└── src
+    └── modules
+        └── reducers.js
+        └── users
+            └── constants.js
+            └── actions
+                └── user_fetch.js
+                └── user_login.js
+                └── permissions_fetch.js
+            └── reducers
+                └── index.js
+                └── user.js
+                └── permission.js
+        └──projects/
+    └── routes
+        └── login
+            └── index.js
+            └── containers
+                └── login.js
+            └── components
+                └── login.js
+        └── logged_in/
+        └── project_list/
+        └── project_view/
+</code></pre></div><ul>
+<li>Routing v4: <a href="https://css-tricks.com/react-router-4/">https://css-tricks.com/react-router-4/</a></li>
+<li>Redux : <a href="https://medium.com/@resir014/a-type-safe-approach-to-redux-stores-in-typescript-6474e012b81e">https://medium.com/@resir014/a-type-safe-approach-to-redux-stores-in-typescript-6474e012b81e</a></li>
+</ul>
+<p><strong>Full redux with typescript</strong></p>
+<ul>
+<li>Super simple example : <a href="http://blog.tylerbuchea.com/super-simple-react-redux-application-example/">http://blog.tylerbuchea.com/super-simple-react-redux-application-example/</a></li>
+<li><a href="https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092">https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092</a></li>
+<li><a href="https://dev.to/resir014/redux-4--typescript-29-a-type-safe-approach-2lf4">https://dev.to/resir014/redux-4--typescript-29-a-type-safe-approach-2lf4</a></li>
+<li><a href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions-todo-app">https://codesandbox.io/s/github/piotrwitek/typesafe-actions-todo-app</a></li>
+</ul>
 <p><strong>Single Page Application</strong></p>
-
 <p>Let&rsquo;s imagine, your application will be a big component called App. In this App component,
 We&rsquo;ll configure a router or switcher to switch between screens( other components called container ).
 We also use redux to manage states.
-Three principles:
-- Single source of truth: the state of your application is stored in an object tree within a single store
-- State is readonly : the only way to change the state is to emit an action
-- Changes are made with pure functions</p>
-
+Three principles:</p>
+<ul>
+<li>Single source of truth: the state of your application is stored in an object tree within a single store</li>
+<li>State is readonly : the only way to change the state is to emit an action</li>
+<li>Changes are made with pure functions</li>
+</ul>
 <p><strong>Extends the Single Page Application</strong></p>
-
 <p>Let say we have a cms system</p>
 
 </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-<div class="sidebar-fixed">
-    <div id="article-scrollpy" class="sidebar-widget">
-        <h3 class="widget-header">
-            <a href="#">Đầu mục bài viết</a>
-        </h3>
-        <ul class="sidebar-links article-scrollpy-links">
-        </ul>
-    </div>
-</div>
-<div class="sidebar-fixed">
-    <div class="sidebar-widget">
-        <h3 class="widget-header ucfirst">
-            <span>Bài viết khác</span>
-        </h3>
-         
-            
-        
-
-        
-            <ul class="sidebar-links">
-            
-            
-                <li><a href="/note/reactjs-ways-002/">Reactjs Ways - Advanced Solutions</a></li>
-            
-                <li><a href="/note/reactjs-ways-001/">Reactjs Ways - Main Concepts</a></li>
-            
-            </ul>        
-        
-    </div>
-</div>
-
-                </aside>
             </div>
             
         </div>

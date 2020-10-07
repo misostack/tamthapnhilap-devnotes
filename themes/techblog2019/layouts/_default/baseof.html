@@ -32,7 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- End Google Tag Manager (noscript) -->    
     <div class="wrapper">        
         {{ partial "header.html" . }}
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             {{ if .IsHome }}
                 <main class="content">
                     {{ block "main" . }}{{ end }}
@@ -55,12 +55,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>                
             {{ else }}
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     {{ block "main" . }}{{ end }}                    
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    {{ block "aside" . }}{{ end }}
-                </aside>
             </div>
             {{ end }}
         </div>

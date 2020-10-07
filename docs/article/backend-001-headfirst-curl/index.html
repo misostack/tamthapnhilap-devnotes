@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,44 +108,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Backend 001 Headfirst Curl</h1>        
-        
-
-<h2 id="general">General</h2>
-
+        <h2 id="general">General</h2>
 <ul>
 <li><a href="https://curl.haxx.se/docs/manual.html">Curl Doc</a></li>
 </ul>
-
 <h2 id="usage">Usage</h2>
-
 <h3 id="simple-usage">Simple Usage</h3>
-
-<pre><code class="language-bash">curl -v http://devnotes.tamthapnhilap.site
-# Get a web page and store in a local file with a specific name:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -v http://devnotes.tamthapnhilap.site
+<span style="color:#75715e"># Get a web page and store in a local file with a specific name:</span>
 curl -o index.html http://devnotes.tamthapnhilap.site
-# Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail):
+<span style="color:#75715e"># Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail):</span>
 curl -O http://devnotes.tamthapnhilap.site/index.html
-</code></pre>
-
-<h3 id="post-http">POST (HTTP)</h3>
-
-<pre><code class="language-bash">curl -d &quot;user=foobar&amp;pass=12345&amp;id=blablabla&amp;ding=submit&quot;
+</code></pre></div><h3 id="post-http">POST (HTTP)</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -d <span style="color:#e6db74">&#34;user=foobar&amp;pass=12345&amp;id=blablabla&amp;ding=submit&#34;</span>
   http://api.tamthapnhilap.site/example
 
-# Send multiple files in a single &quot;field&quot; with a single field name:
-curl -F &quot;pictures=@dog.gif,cat.gif&quot; $URL
+<span style="color:#75715e"># Send multiple files in a single &#34;field&#34; with a single field name:</span>
+curl -F <span style="color:#e6db74">&#34;pictures=@dog.gif,cat.gif&#34;</span> $URL
 Send two fields with two field names
-curl -F &quot;docpicture=@dog.gif&quot; -F &quot;catpicture=@cat.gif&quot; $URL
-</code></pre>
-
-<h3 id="with-rest-api">With REST API</h3>
-
-<pre><code class="language-bash"># HEAD
-curl -I &quot;http://localhost:8080/api/v1/examples/&quot; -H &quot;accept: application/json&quot;
-# GET
-curl -X GET &quot;http://localhost:8080/api/v1/examples/&quot; -H &quot;accept: application/json&quot;
-</code></pre>
-
+curl -F <span style="color:#e6db74">&#34;docpicture=@dog.gif&#34;</span> -F <span style="color:#e6db74">&#34;catpicture=@cat.gif&#34;</span> $URL
+</code></pre></div><h3 id="with-rest-api">With REST API</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># HEAD</span>
+curl -I <span style="color:#e6db74">&#34;http://localhost:8080/api/v1/examples/&#34;</span> -H <span style="color:#e6db74">&#34;accept: application/json&#34;</span>
+<span style="color:#75715e"># GET</span>
+curl -X GET <span style="color:#e6db74">&#34;http://localhost:8080/api/v1/examples/&#34;</span> -H <span style="color:#e6db74">&#34;accept: application/json&#34;</span>
+</code></pre></div>
     </article>
 
                     </main>                    

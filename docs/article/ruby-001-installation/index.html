@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,19 +108,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Bài 001 : Cài đặt ruby</h1>        
-        
-
-<h2 id="current-ruby-stable-version">Current Ruby stable version</h2>
-
+        <h2 id="current-ruby-stable-version">Current Ruby stable version</h2>
 <p><a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></p>
-
-<pre><code class="language-html">2.5.1
-</code></pre>
-
-<h2 id="1-hướng-dẫn-cài-đặt-ruby-với-rbenv-trên-ubuntu-16-04">1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04)</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">2.5.1
+</code></pre></div><h2 id="1hướng-dẫn-cài-đặt-ruby-với-rbenv-trên-ubuntu1604">1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04)</h2>
 <p><strong>Chi tiết các bước thực hiện</strong></p>
-
 <ul>
 <li>Cài đặt các gói ruby dependencies</li>
 <li>Cài đặt rbenv</li>
@@ -128,256 +120,146 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Kiểm tra version</li>
 <li>Cài đặt gem bundler để quản lí packages</li>
 </ul>
-
 <h3 id="update">Update</h3>
 
-
-<pre><code class="language-bash">
-sudo apt-get update</code></pre>
-
+<pre><code class="language-bash">sudo apt-get update</code></pre>
 
 <h3 id="cài-đặt-các-gói-ruby-dependencies">Cài đặt các gói ruby dependencies</h3>
 
-
-<pre><code class="language-bash">
-sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
-sudo apt-get install -y curl gnupg build-essential</code></pre>
-
+<pre><code class="language-bash">sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+sudo apt-get install -y curl gnupg build-essential</code></pre>
 
 <h3 id="cài-đặt-rbenv">Cài đặt rbenv</h3>
-
 <ul>
 <li>Link tham khảo : <a href="https://github.com/rbenv/rbenv">https://github.com/rbenv/rbenv</a></li>
 <li>Link su dung : <a href="http://javierjulio.com/rbenv/">http://javierjulio.com/rbenv/</a></li>
 </ul>
-
-<pre class="code-highlight"><code class="language-bash">
-cd ~
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv && src/configure && make -C src
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-~/.rbenv/bin/rbenv init
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p><strong>Kiểm tra rbenv root</strong></p>
-
-<pre><code class="language-bash">echo &quot;$(rbenv root)&quot;
-</code></pre>
-
-<p><strong>Cài đặt ruby-build cho rbenv</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>rbenv root<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p><strong>Cài đặt ruby-build cho rbenv</strong></p>
 <ul>
-<li><p>Link tham khảo : <a href="https://github.com/rbenv/ruby-build#readme">https://github.com/rbenv/ruby-build#readme</a></p>
-
-<pre><code class="language-bash">git clone https://github.com/rbenv/ruby-build.git &quot;$(rbenv root)&quot;/plugins/ruby-build
-</code></pre></li>
+<li>Link tham khảo : <a href="https://github.com/rbenv/ruby-build#readme">https://github.com/rbenv/ruby-build#readme</a></li>
 </ul>
-
-<p><strong>Cập nhật</strong></p>
-
-<pre><code class="language-bash">cd &quot;$(rbenv root)&quot;/plugins/ruby-build &amp;&amp; git pull
-</code></pre>
-
-<p><strong>Sau khi cài xong chú ý gõ câu lệnh sau để add rbenv vào bashrc(lưu ý nhớ restart bash sau khi add)</strong></p>
-
-<pre><code class="language-bash">echo 'eval &quot;$(rbenv init -)&quot;' &gt;&gt; ~/.bashrc
-</code></pre>
-
-<p><strong>Restart bash sau khi add</strong></p>
-
-<pre><code class="language-bash">source ~/.bashrc
-</code></pre>
-
-<p><strong>Kiểm tra rbenv đã cài đặt thành công chưa</strong></p>
-
-<pre><code class="language-bash">curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-</code></pre>
-
-<h3 id="cài-đặt-ruby">Cài đặt ruby</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/rbenv/ruby-build.git <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>rbenv root<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>/plugins/ruby-build
+</code></pre></div><p><strong>Cập nhật</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>rbenv root<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>/plugins/ruby-build <span style="color:#f92672">&amp;&amp;</span> git pull
+</code></pre></div><p><strong>Sau khi cài xong chú ý gõ câu lệnh sau để add rbenv vào bashrc(lưu ý nhớ restart bash sau khi add)</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</code></pre></div><p><strong>Restart bash sau khi add</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bashrc
+</code></pre></div><p><strong>Kiểm tra rbenv đã cài đặt thành công chưa</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+</code></pre></div><h3 id="cài-đặt-ruby">Cài đặt ruby</h3>
 <p><strong>Permissions problem when install by other user(not root)</strong></p>
-
 <ul>
-<li><p><a href="https://blakewilliams.me/posts/system-wide-rbenv-install">https://blakewilliams.me/posts/system-wide-rbenv-install</a></p></li>
-
-<li><p><a href="https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied">https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied</a></p></li>
+<li>
+<p><a href="https://blakewilliams.me/posts/system-wide-rbenv-install">https://blakewilliams.me/posts/system-wide-rbenv-install</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied">https://stackoverflow.com/questions/31588604/rbenv-installation-permission-denied</a></p>
+</li>
 </ul>
-
 <p><em>As an rbenv plugin</em></p>
-
 <p><strong>Make sure phân quyền chạy ruby thuộc về cùng 1 user</strong></p>
-
-<pre><code class="language-bash">cd ~/.rbenv
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/.rbenv
 sudo chown -Rf ubuntu:ubuntu versions 
 sudo chown -Rf ubuntu:ubuntu shims
-</code></pre>
-
-<p><strong>Tìm kiếm các gói ruby version</strong></p>
-
-<pre><code class="language-bash">rbenv install --list | grep 2.5
-</code></pre>
-
-<p><strong>Cài đặt gói ruby stable hiện tại</strong></p>
-
-<pre><code class="language-bash">rbenv install 2.5.1 --verbose
+</code></pre></div><p><strong>Tìm kiếm các gói ruby version</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rbenv install --list | grep 2.5
+</code></pre></div><p><strong>Cài đặt gói ruby stable hiện tại</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rbenv install 2.5.1 --verbose
 rbenv rehash
-</code></pre>
-
-<p><strong>Set default</strong></p>
-
-<pre><code class="language-bash">rbenv global 2.5.1
-</code></pre>
-
-<h3 id="kiểm-tra-version">Kiểm tra version</h3>
-
+</code></pre></div><p><strong>Set default</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rbenv global 2.5.1
+</code></pre></div><h3 id="kiểm-tra-version">Kiểm tra version</h3>
 <blockquote>
 <p>gem -v</p>
 </blockquote>
-
 <h3 id="chạy-thử-irb">Chạy thử irb</h3>
-
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby">https://www.digitalocean.com/community/tutorials/how-to-use-irb-to-explore-ruby</a></p>
-
-<pre><code class="language-bash">irb
-</code></pre>
-
-<pre><code class="language-bash">irb(main):001:0&gt; 2 + 2
-=&gt; 4
-</code></pre>
-
-<h3 id="cài-đặt-gem-bundler-để-quản-lí-packages">Cài đặt gem bundler để quản lí packages</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">irb
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">irb<span style="color:#f92672">(</span>main<span style="color:#f92672">)</span>:001:0&gt; <span style="color:#ae81ff">2</span> + 2
+<span style="color:#f92672">=</span>&gt; <span style="color:#ae81ff">4</span>
+</code></pre></div><h3 id="cài-đặt-gem-bundler-để-quản-lí-packages">Cài đặt gem bundler để quản lí packages</h3>
 <blockquote>
 <p>gem install bundler</p>
-
 <p>rbenv rehash</p>
 </blockquote>
-
 <h3 id="chạy-thử-hello-world">Chạy thử hello world</h3>
-
-<pre><code class="language-ruby">puts "Welcome to ruby";
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <blockquote>
 <p>bundler exec ruby hello.rb</p>
 </blockquote>
-
 <h3 id="disable-rbenv">Disable .rbenv</h3>
-
-<pre><code class="language-bash">vi ~/.bashrc
-</code></pre>
-
-<p><strong>Nội dung file</strong></p>
-
-<pre><code class="language-bash"># .rbenv
-# export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
-# eval &quot;$(rbenv init -)&quot;
-</code></pre>
-
-<p><strong>Sau khi edit xong reload lai bashrc</strong></p>
-
-<pre><code class="language-bash">source ~/.bashrc
-</code></pre>
-
-<p><strong>Thoát khỏi phiên đăng nhập để kiểm tra lại</strong></p>
-
-<pre><code class="language-bash">exit
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi ~/.bashrc
+</code></pre></div><p><strong>Nội dung file</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># .rbenv</span>
+<span style="color:#75715e"># export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;</span>
+<span style="color:#75715e"># eval &#34;$(rbenv init -)&#34;</span>
+</code></pre></div><p><strong>Sau khi edit xong reload lai bashrc</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.bashrc
+</code></pre></div><p><strong>Thoát khỏi phiên đăng nhập để kiểm tra lại</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exit
 ssh ...
 ruby -v
-</code></pre>
-
-<h2 id="2-hướng-dẫn-cài-đặt-ruby-với-rvm-trên-ubuntu-16-04">2.Hướng dẫn cài đặt ruby với rvm trên ubuntu(16.04)</h2>
-
+</code></pre></div><h2 id="2hướng-dẫn-cài-đặt-ruby-với-rvm-trên-ubuntu1604">2.Hướng dẫn cài đặt ruby với rvm trên ubuntu(16.04)</h2>
 <ul>
-<li><p>Link : <a href="https://github.com/rvm/rvm">https://github.com/rvm/rvm</a></p></li>
-
-<li><p><a href="https://github.com/rvm/ubuntu_rvm">https://github.com/rvm/ubuntu_rvm</a></p></li>
+<li>
+<p>Link : <a href="https://github.com/rvm/rvm">https://github.com/rvm/rvm</a></p>
+</li>
+<li>
+<p><a href="https://github.com/rvm/ubuntu_rvm">https://github.com/rvm/ubuntu_rvm</a></p>
+</li>
 </ul>
-
 <h3 id="cài-đặt-các-gói-ruby-dependencies-1">Cài đặt các gói ruby dependencies</h3>
 
-
-<pre><code class="language-bash">
-sudo apt-get update
+<pre><code class="language-bash">sudo apt-get update
 sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
-sudo apt-get install -y curl gnupg build-essential</code></pre>
-
+sudo apt-get install -y curl gnupg build-essential</code></pre>
 
 <h3 id="cài-đặt-rvm">Cài đặt RVM</h3>
-
-<pre><code class="language-bash">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-</code></pre>
-
-<p><strong>Single User Installations</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+</code></pre></div><p><strong>Single User Installations</strong></p>
 <p><em>Single-User installations (recommended) - For an isolated install within a user&rsquo;s $HOME, not for root.</em></p>
-
-<pre><code class="language-bash">\curl -sSL https://get.rvm.io | bash -s stable
-</code></pre>
-
-<p><strong>Sau khi cài đặt xong hệ thống sẽ hiện câu thông báo sau</strong></p>
-
-<pre><code class="language-bash">Installing RVM to /home/ubuntu/.rvm/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">\c</span>url -sSL https://get.rvm.io | bash -s stable
+</code></pre></div><p><strong>Sau khi cài đặt xong hệ thống sẽ hiện câu thông báo sau</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Installing RVM to /home/ubuntu/.rvm/
     Adding rvm PATH line to /home/ubuntu/.profile /home/ubuntu/.mkshrc /home/ubuntu/.bashrc /home/ubuntu/.zshrc.
     Adding rvm loading line to /home/ubuntu/.profile /home/ubuntu/.bash_profile /home/ubuntu/.zlogin.
 Installation of RVM in /home/ubuntu/.rvm/ is almost complete:
 
-  * To start using RVM you need to run `source /home/ubuntu/.rvm/scripts/rvm`
+  * To start using RVM you need to run <span style="color:#e6db74">`</span>source /home/ubuntu/.rvm/scripts/rvm<span style="color:#e6db74">`</span>
     in all your open shell windows, in rare cases you need to reopen all shell windows.
-</code></pre>
-
-<p><strong>Để sử dụng rvm ngay lập tức</strong></p>
-
-<pre><code class="language-bash">source /home/ubuntu/.rvm/scripts/rvm
-</code></pre>
-
-<p><strong>Gỡ bỏ rmv</strong></p>
-
-<pre><code class="language-bash">rvm implode
-</code></pre>
-
-<p><strong>Và chú ý cần remove các dòng PATH đã include sau khi cài</strong></p>
-
+</code></pre></div><p><strong>Để sử dụng rvm ngay lập tức</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source /home/ubuntu/.rvm/scripts/rvm
+</code></pre></div><p><strong>Gỡ bỏ rmv</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm implode
+</code></pre></div><p><strong>Và chú ý cần remove các dòng PATH đã include sau khi cài</strong></p>
 <p>Tham khảo thêm về bashrc, profile tại đây : <a href="https://top.quora.com/What-is-bash_profile-and-what-is-its-use">https://top.quora.com/What-is-bash_profile-and-what-is-its-use</a></p>
-
 <h3 id="cài-đặt-ruby-1">Cài đặt ruby</h3>
-
-<pre><code class="language-bash">rvm install ruby-2.5.1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm install ruby-2.5.1
 rvm list
 rvm install ruby-2.3.0
 rvm list
-</code></pre>
-
-<p><strong>Chuyển đổi giữa các phiên bản</strong></p>
-
-<pre><code class="language-bash">rvm 2.5.1
-</code></pre>
-
-<p><strong>Thiết lập default ruby version</strong></p>
-
-<pre><code class="language-bash">rvm --default use 2.5.1
-</code></pre>
-
-<p><strong>Tạo alias để dễ dàng chuyển đổi hơn</strong></p>
-
+</code></pre></div><p><strong>Chuyển đổi giữa các phiên bản</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm 2.5.1
+</code></pre></div><p><strong>Thiết lập default ruby version</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm --default use 2.5.1
+</code></pre></div><p><strong>Tạo alias để dễ dàng chuyển đổi hơn</strong></p>
 <p>Có 1 alias mặc định là : default</p>
-
-<pre><code class="language-bash">rvm alias list
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm alias list
 rvm alias create alias-name ruby-version
 rvm alias delete alias-name
-</code></pre>
-
-<p><strong>Tạo gemset</strong></p>
-
-<pre><code class="language-bash">rvm 2.3.0
+</code></pre></div><p><strong>Tạo gemset</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm 2.3.0
 rvm gemset create example
 rvm gemset list
 rvm gemset use example
-</code></pre>
-
-<p><strong>Ứng dụng rvm cho phép nhiều ứng dụng độc lập chạy các phiên bản ruby khác nhau</strong></p>
-
-<pre><code class="language-html">Giả sử chúng ta có các app như sau
+</code></pre></div><p><strong>Ứng dụng rvm cho phép nhiều ứng dụng độc lập chạy các phiên bản ruby khác nhau</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Giả sử chúng ta có các app như sau
 ~/apps/app_a
 ~/apps/app_b
 ~/apps/app_c
@@ -388,33 +270,20 @@ trong mỗi app ta sẽ sử dụng 2 file để chỉ định phiên bản ruby
 2.3.0
 .ruby-gemset
 app_a
-</code></pre>
-
-<p><strong>Install bundler</strong></p>
-
-<pre><code class="language-bash">gem install bundler
-</code></pre>
-
-<pre><code class="language-bash">bundle install
-</code></pre>
-
-<p><strong>Instal node</strong></p>
-
-<pre><code class="language-bash">sudo apt-get install nodejs
-</code></pre>
-
-<p><a href="http://railsapps.github.io/installrubyonrails-ubuntu.html">http://railsapps.github.io/installrubyonrails-ubuntu.html</a></p>
-
+</code></pre></div><p><strong>Install bundler</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install bundler
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle install
+</code></pre></div><p><strong>Instal node</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install nodejs
+</code></pre></div><p><a href="http://railsapps.github.io/installrubyonrails-ubuntu.html">http://railsapps.github.io/installrubyonrails-ubuntu.html</a></p>
 <p><strong>Example puma.service</strong></p>
-
 
 <a class="collapse-trigger" data-toggle="collapse" href="#example-puma-service" role="button" aria-expanded="false" 
 aria-controls="example-puma-service">
     <strong>puma.service</strong>
   </a>
 <div class="collapse" id="example-puma-service">
-<pre><code class="language-bash">
-ubuntu@cloud002:~# cat /etc/systemd/system/puma.service
+<pre><code class="language-bash">ubuntu@cloud002:~# cat /etc/systemd/system/puma.service
 [Unit]
 Description=Puma HTTP Server
 After=network.target
@@ -444,20 +313,17 @@ ExecStart=/home/ubuntu/.rbenv/shims/bundler exec --keep-file-descriptors puma -C
 Restart=always
 
 [Install]
-WantedBy=multi-user.target</code></pre>
+WantedBy=multi-user.target</code></pre>
 </div>
 
-
 <p><strong>Example puma.rb</strong></p>
-
 
 <a class="collapse-trigger" data-toggle="collapse" href="#example-puma-rb" role="button" aria-expanded="false" 
 aria-controls="example-puma-rb">
     <strong>ror/config/puma.rb</strong>
   </a>
 <div class="collapse" id="example-puma-rb">
-<pre><code class="language-bash">
-# Puma can serve each request in a thread from an internal thread pool.
+<pre><code class="language-bash"># Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
@@ -530,7 +396,7 @@ on_worker_boot do
   require &#34;active_record&#34;
   ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
   ActiveRecord::Base.establish_connection(YAML.load_file(&#34;#{app_dir}/config/database.yml&#34;)[rails_env])
-end</code></pre>
+end</code></pre>
 </div>
 
 

@@ -100,37 +100,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Iome 001 Initialize" />
     <h1>Iome 001 Initialize</h1>
-    
-
-<h2 id="requirements">Requirements</h2>
-
+    <h2 id="requirements">Requirements</h2>
 <ol>
 <li>Bài toán 1: SimpleAuth - xây dựng chức năng auth đơn giản, ko cần phân quyền theo module</li>
 <li>Bài toán 2: SimpleTodoList: List(Group Of TodoList), Statuses( Backlog, OnGoing, Postponed, ToBeTested, TobeValidated, Closed ), Types(2M, A, B, C, D)</li>
 <li>Bài toán 3: Messages: nhật kí dự án( message, statuses[&lsquo;new&rsquo;,&lsquo;done&rsquo;,&lsquo;inprogress&rsquo;,&lsquo;error&rsquo;,&lsquo;delayed&rsquo;,&lsquo;removed&rsquo;])</li>
 <li>Bài toán 4: Status: system status( status, statuses[&lsquo;up&rsquo;,&lsquo;bug&rsquo;,&lsquo;down&rsquo;])</li>
 </ol>
-
 <h4 id="diễn-giải">Diễn giải</h4>
-
 <p>2M: 2 minutes work: do it now, and the deadline is in 10 mins.
 A: URGENT + IMPORTANT ( DO IT NOW ) : do it now, and the deadline is in a day
 B: NOT URGENT + IMPORTANT ( SCHEDULE A TIME TO DO IT ): set a deadline for it and plan time to start
 C: URGENT + NOT IMPORTANT ( CAN BE DELEGATED or do later )
 D: NOT URGENT + NOT IMPORTANT ( ELIMINATE IT): watching TV,&hellip; ( delete if you have no time for it )</p>
-
 <h4 id="objects-and-dataset">Objects and Dataset</h4>
-
 <p>1.Objects:</p>
-
 <ul>
 <li>User : main auth params - email|phonenumber|username, password</li>
 <li>List: can be kind of : books to read, project a, project b,&hellip;</li>
@@ -138,164 +130,106 @@ D: NOT URGENT + NOT IMPORTANT ( ELIMINATE IT): watching TV,&hellip; ( delete if 
 <li>Issue</li>
 <li>Message: nhat ki du</li>
 </ul>
-
-<ol>
+<ol start="2">
 <li>Dataset</li>
 </ol>
-
 <ul>
-<li><p>Ref : <a href="https://moz.com/blog/googles-longer-snippets">https://moz.com/blog/googles-longer-snippets</a></p>
-
-<pre><code class="language-json">[messages]
-id: integer auto_increment primary key,
-content: varchar[180]
-statuses: varchar(20)
-created_at: DateTime
-updated_at: DateTime
-</code></pre></li>
+<li>Ref : <a href="https://moz.com/blog/googles-longer-snippets">https://moz.com/blog/googles-longer-snippets</a></li>
 </ul>
-
-<h2 id="the-first-steps">The first steps</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#960050;background-color:#1e0010">messages</span>]
+<span style="color:#960050;background-color:#1e0010">id:</span> <span style="color:#960050;background-color:#1e0010">integer</span> <span style="color:#960050;background-color:#1e0010">auto_increment</span> <span style="color:#960050;background-color:#1e0010">primary</span> <span style="color:#960050;background-color:#1e0010">key,</span>
+<span style="color:#960050;background-color:#1e0010">content:</span> <span style="color:#960050;background-color:#1e0010">varchar</span>[<span style="color:#ae81ff">180</span>]
+<span style="color:#960050;background-color:#1e0010">statuses:</span> <span style="color:#960050;background-color:#1e0010">varchar(</span><span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">)</span>
+<span style="color:#960050;background-color:#1e0010">created_at:</span> <span style="color:#960050;background-color:#1e0010">DateTime</span>
+<span style="color:#960050;background-color:#1e0010">updated_at:</span> <span style="color:#960050;background-color:#1e0010">DateTime</span>
+</code></pre></div><h2 id="the-first-steps">The first steps</h2>
 <h3 id="install-rails">Install rails</h3>
-
-<pre><code class="language-bash">rails new appname --skip-install
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails new appname --skip-install
 cd appname
 bundle install
-</code></pre>
+</code></pre></div><h3 id="change-test-framework">Change Test Framework</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle add rspec-rails --group<span style="color:#f92672">=</span>development,test
+</code></pre></div><p><strong>config/application.rb</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">
+    config<span style="color:#f92672">.</span>generators <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>g<span style="color:#f92672">|</span>
+      g<span style="color:#f92672">.</span>orm             <span style="color:#e6db74">:active_record</span>
+      g<span style="color:#f92672">.</span>test_framework  <span style="color:#e6db74">:rspec</span>
+    <span style="color:#66d9ef">end</span>
 
-<h3 id="change-test-framework">Change Test Framework</h3>
+<span style="color:#66d9ef">ENV</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;TMP&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>join(<span style="color:#66d9ef">Rails</span><span style="color:#f92672">.</span>root, <span style="color:#e6db74">&#39;tmp&#39;</span>)    
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails generate rspec:install
+</code></pre></div><h3 id="change-db-config-and-install-gem">Change DB Config and install gem</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle add pg
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<span style="color:#f92672">default</span>: <span style="color:#75715e">&amp;default</span>
+  <span style="color:#f92672">pool</span>: <span style="color:#ae81ff">&lt;%= ENV.fetch(&#34;RAILS_MAX_THREADS&#34;) { 5 } %&gt;</span>
+  <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">5000</span>
 
-<pre><code class="language-bash">bundle add rspec-rails --group=development,test
-</code></pre>
+<span style="color:#f92672">development</span>:
+  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*default</span>
+  <span style="color:#f92672">adapter</span>: <span style="color:#ae81ff">postgresql</span>
+  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">iome_dev</span>
+  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">localhost</span>
+  <span style="color:#f92672">username</span>: <span style="color:#ae81ff">postgres</span>
+  <span style="color:#f92672">password</span>: <span style="color:#ae81ff">123456</span>
 
-<p><strong>config/application.rb</strong></p>
+<span style="color:#75715e"># Warning: The database defined as &#34;test&#34; will be erased and</span>
+<span style="color:#75715e"># re-generated from your development database when you run &#34;rake&#34;.</span>
+<span style="color:#75715e"># Do not set this db to the same as development or production.</span>
+<span style="color:#f92672">test</span>:
+  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*default</span>
+  <span style="color:#f92672">adapter</span>: <span style="color:#ae81ff">sqlite3</span>
+  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">db/test.sqlite3</span>
 
-<pre><code class="language-ruby">
-    config.generators do |g|
-      g.orm             :active_record
-      g.test_framework  :rspec
-    end
+<span style="color:#f92672">production</span>:
+  <span style="color:#f92672">&lt;&lt;</span>: <span style="color:#75715e">*default</span>
+  <span style="color:#f92672">database</span>: <span style="color:#ae81ff">iome_prod</span>
 
-ENV['TMP'] = File.join(Rails.root, 'tmp')    
-</code></pre>
-
-<pre><code class="language-bash">rails generate rspec:install
-</code></pre>
-
-<h3 id="change-db-config-and-install-gem">Change DB Config and install gem</h3>
-
-<pre><code class="language-bash">bundle add pg
-</code></pre>
-
-<pre><code class="language-yaml">
-default: &amp;default
-  pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;
-  timeout: 5000
-
-development:
-  &lt;&lt;: *default
-  adapter: postgresql
-  database: iome_dev
-  host: localhost
-  username: postgres
-  password: 123456
-
-# Warning: The database defined as &quot;test&quot; will be erased and
-# re-generated from your development database when you run &quot;rake&quot;.
-# Do not set this db to the same as development or production.
-test:
-  &lt;&lt;: *default
-  adapter: sqlite3
-  database: db/test.sqlite3
-
-production:
-  &lt;&lt;: *default
-  database: iome_prod
-
-</code></pre>
-
-<h3 id="db-manipulation">DB Manipulation</h3>
-
+</code></pre></div><h3 id="db-manipulation">DB Manipulation</h3>
 <pre><code>rake db:setup
 rake db:migrate:status
 RAILS_ENV=development &amp;&amp; rake db:migrate:status
 RAILS_ENV=development &amp;&amp; rake db:migrate
 RAILS_ENV=development &amp;&amp; rake db:rollback
-</code></pre>
-
-<h3 id="model">Model</h3>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Generate</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Add Migration</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Run</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Validate Inputs : <a href="https://guides.rubyonrails.org/active_record_validations.html">https://guides.rubyonrails.org/active_record_validations.html</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Enum : <a href="https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html">https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html</a> , <a href="https://naturaily.com/blog/ruby-on-rails-enum">https://naturaily.com/blog/ruby-on-rails-enum</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Never use <strong>&ldquo;new&rdquo;</strong> for enum : <a href="https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model">https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model</a></label></li>
+</code></pre><h3 id="model">Model</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Generate</li>
+<li><input checked="" disabled="" type="checkbox"> Add Migration</li>
+<li><input checked="" disabled="" type="checkbox"> Run</li>
+<li><input checked="" disabled="" type="checkbox"> Validate Inputs : <a href="https://guides.rubyonrails.org/active_record_validations.html">https://guides.rubyonrails.org/active_record_validations.html</a></li>
+<li><input checked="" disabled="" type="checkbox"> Enum : <a href="https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html">https://api.rubyonrails.org/v5.1.3/classes/ActiveRecord/Enum.html</a> , <a href="https://naturaily.com/blog/ruby-on-rails-enum">https://naturaily.com/blog/ruby-on-rails-enum</a></li>
+<li><input checked="" disabled="" type="checkbox"> Never use <strong>&ldquo;new&rdquo;</strong> for enum : <a href="https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model">https://stackoverflow.com/questions/24854203/using-activerecord-enum-give-error-about-generating-new-class-method-on-model</a></li>
 </ul>
-
 <h4 id="message">Message</h4>
-
-<pre><code class="language-bash">rails generate model Message
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails generate model Message
 rails destroy model Message
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreateMessages</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Migration</span><span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">up</span>
+    create_table <span style="color:#e6db74">:messages</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+      t<span style="color:#f92672">.</span>string <span style="color:#e6db74">:content</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">180</span>
+      t<span style="color:#f92672">.</span>string <span style="color:#e6db74">:status</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">:comments</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;[&#39;backlog&#39;,&#39;done&#39;,&#39;ongoing&#39;,&#39;error&#39;,&#39;delayed&#39;,&#39;removed&#39;]&#34;</span>
 
-<pre><code class="language-ruby">class CreateMessages &lt; ActiveRecord::Migration[5.2]
-  def up
-    create_table :messages do |t|
-      t.string :content, :limit =&gt; 180
-      t.string :status, :limit =&gt; 20, :comments =&gt; &quot;['backlog','done','ongoing','error','delayed','removed']&quot;
+      t<span style="color:#f92672">.</span>timestamps
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
 
-      t.timestamps
-    end
-  end
-
-  def down
-    drop_table :messages
-  end
-end
-</code></pre>
-
-<pre><code class="language-bash">rails console
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">down</span>
+    drop_table <span style="color:#e6db74">:messages</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails console
 reload!
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">msg <span style="color:#f92672">=</span> <span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>new({ <span style="color:#e6db74">:content</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;initialize project&#39;</span>, <span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;inprogress&#39;</span> })
+msg<span style="color:#f92672">.</span>new_record?
+msg<span style="color:#f92672">.</span>save
+<span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>last
 
-<pre><code class="language-ruby">msg = Message.new({ :content =&gt; 'initialize project', :status =&gt; 'inprogress' })
-msg.new_record?
-msg.save
-Message.last
-
-Message.create({ :content =&gt; 'sample line', :status =&gt; 'unknown progress' })
-Message.last
-</code></pre>
-
+<span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>create({ <span style="color:#e6db74">:content</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;sample line&#39;</span>, <span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;unknown progress&#39;</span> })
+<span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>last
+</code></pre></div>
 </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-<div class="sidebar-fixed">
-    <div id="article-scrollpy" class="sidebar-widget">
-        <h3 class="widget-header">
-            <a href="#">Đầu mục bài viết</a>
-        </h3>
-        <ul class="sidebar-links article-scrollpy-links">
-        </ul>
-    </div>
-</div>
-<div class="sidebar-fixed">
-    <div class="sidebar-widget">
-        <h3 class="widget-header ucfirst">
-            <span>Bài viết khác</span>
-        </h3>
-        
-
-        
-    </div>
-</div>
-
-                </aside>
             </div>
             
         </div>

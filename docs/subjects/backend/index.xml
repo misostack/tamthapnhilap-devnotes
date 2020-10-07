@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>backend on DevNotes 2019</title>
@@ -7,19 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Fri, 20 Dec 2019 12:08:18 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/subjects/backend/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 Dec 2019 12:08:18 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/subjects/backend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithms Analysis</title>
       <link>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</link>
       <pubDate>Fri, 20 Dec 2019 12:08:18 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</guid>
-      <description>The most important properties of an algorithm are:  Correctness: The algorithm should be correct. It should be able to process all the given inputs and provide correct output.
- Efficiency: The algorithm should be efficient in solving problems. Efficiency is measured in two parameters. First is Time-Complexity, how quick result is provided by an algorithm. And the second is Space-Complexity, how much RAM that an algorithm is going to consume to give desired result.</description>
+      <description>The most important properties of an algorithm are:   Correctness: The algorithm should be correct. It should be able to process all the given inputs and provide correct output.
+  Efficiency: The algorithm should be efficient in solving problems. Efficiency is measured in two parameters. First is Time-Complexity, how quick result is provided by an algorithm. And the second is Space-Complexity, how much RAM that an algorithm is going to consume to give desired result.</description>
     </item>
     
     <item>
@@ -28,8 +24,7 @@
       <pubDate>Thu, 24 Oct 2019 11:40:50 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ubuntu-001-cheatsheet/</guid>
-      <description> ##
-APT # Update packages apt update, apt update -y # Upgrade all existing packages apt upgrade # Install/remove package apt install curl, which curl, apt remove curl #Search package apt search curl  APT GET # Install/remove package apt-get install curl, which curl, apt-get remove curl # Download without install apt-get download curl, ls -lth curl*.deb # Update package list apt-get update  </description>
+      <description> APT # Update packages apt update, apt update -y # Upgrade all existing packages apt upgrade # Install/remove package apt install curl, which curl, apt remove curl #Search package apt search curl APT GET # Install/remove package apt-get install curl, which curl, apt-get remove curl # Download without install apt-get download curl, ls -lth curl*.deb # Update package list apt-get update </description>
     </item>
     
     <item>
@@ -38,7 +33,7 @@ APT # Update packages apt update, apt update -y # Upgrade all existing packages 
       <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
-      <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html  POST (HTTP) curl -d &amp;quot;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;quot; http://api.</description>
+      <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html POST (HTTP) curl -d &amp;#34;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;#34; http://api.</description>
     </item>
     
   </channel>

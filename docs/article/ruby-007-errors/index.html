@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,10 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby 007 Errors</h1>        
-        
-
-<h2 id="keywords">Keywords</h2>
-
+        <h2 id="keywords">Keywords</h2>
 <ul>
 <li>rescue</li>
 <li>ensure</li>
@@ -119,37 +116,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>error.message</li>
 <li>CustomError &lt; StandardError</li>
 </ul>
+<p><img src="/posts/ruby-exceptions.png" alt="r"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/bin/env ruby</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreaterFive</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">StandardError</span>
+<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EqualFive</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">StandardError</span>
+<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">example_errors</span> number
+	<span style="color:#66d9ef">begin</span>
+		random_number <span style="color:#f92672">=</span> <span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">10</span>)
+		puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>
+		puts <span style="color:#e6db74">&#34;Test Case </span><span style="color:#e6db74">#{</span>number<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>		
+		<span style="color:#66d9ef">raise</span> <span style="color:#66d9ef">GreaterFive</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>random_number<span style="color:#e6db74">}</span><span style="color:#e6db74"> &gt; 5&#34;</span> <span style="color:#66d9ef">if</span> random_number <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>
+		<span style="color:#66d9ef">raise</span> <span style="color:#66d9ef">EqualFive</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>random_number<span style="color:#e6db74">}</span><span style="color:#e6db74"> = 5&#34;</span> <span style="color:#66d9ef">if</span> random_number <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>
+		<span style="color:#66d9ef">raise</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>random_number<span style="color:#e6db74">}</span><span style="color:#e6db74"> &lt; 5&#34;</span>
+	<span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">GreaterFive</span> <span style="color:#f92672">=&gt;</span> error
+		puts <span style="color:#e6db74">&#34;GreaterFive: </span><span style="color:#e6db74">#{</span>error<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#66d9ef">rescue</span> <span style="color:#66d9ef">EqualFive</span> <span style="color:#f92672">=&gt;</span> error
+		puts <span style="color:#e6db74">&#34;EqualFive: </span><span style="color:#e6db74">#{</span>error<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#66d9ef">rescue</span> <span style="color:#f92672">=&gt;</span> error	
+		puts <span style="color:#e6db74">&#34;LesserFive: </span><span style="color:#e6db74">#{</span>error<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">!&#34;</span>
+	<span style="color:#66d9ef">ensure</span>
+		puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-<p><img src="/posts/ruby-exceptions.png" alt="r" /></p>
+(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span> example_errors(i) }
 
-<pre><code class="language-ruby">#!/usr/bin/env ruby
-class GreaterFive &lt; StandardError
-end
-class EqualFive &lt; StandardError
-end
-def example_errors number
-	begin
-		random_number = Random.new.rand(10)
-		puts '-'*20
-		puts &quot;Test Case #{number}&quot;		
-		raise GreaterFive, &quot;#{random_number} &gt; 5&quot; if random_number &gt; 5
-		raise EqualFive, &quot;#{random_number} = 5&quot; if random_number == 5
-		raise &quot;#{random_number} &lt; 5&quot;
-	rescue GreaterFive =&gt; error
-		puts &quot;GreaterFive: #{error.message}&quot;
-	rescue EqualFive =&gt; error
-		puts &quot;EqualFive: #{error.message}&quot;
-	rescue =&gt; error	
-		puts &quot;LesserFive: #{error.message}!&quot;
-	ensure
-		puts '-'*20
-	end
-end
-
-(1..10).each { |i| example_errors(i) }
-
-</code></pre>
-
+</code></pre></div>
     </article>
 
                     </main>                    

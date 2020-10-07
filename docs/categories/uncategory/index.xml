@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>uncategory on DevNotes 2019</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Fri, 17 Aug 2018 14:20:36 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/categories/uncategory/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 17 Aug 2018 14:20:36 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/categories/uncategory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backend Roadmap</title>
       <link>//devnotes.tamthapnhilap.site/blog/backend-roadmap/</link>
@@ -32,7 +28,7 @@
 One server is not enough
  We use load balancer? Where to stored memory?  =&amp;gt; This will lead us to shared cache ==&amp;gt; not works with a overloading connections =&amp;gt; Distributed cache ( but complicated )
  Sticky sessions in load balancer?  ==&amp;gt; Sticky sessions + distributed cache
- Manage this in client side: JSON + WEB + TOKEN ( JWT )  JWT vs SessionID</description>
+Manage this in client side: JSON + WEB + TOKEN ( JWT )  JWT vs SessionID</description>
     </item>
     
   </channel>

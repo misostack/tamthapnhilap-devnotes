@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,133 +108,92 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/subjects/reactjs.jpg" /></p>
         <h1>ReactJS 001 - build a mockup</h1>        
-        
-
-<h2 id="1-getting-started">1. Getting started</h2>
-
+        <h2 id="1-getting-started">1. Getting started</h2>
 <p>Getting with <a href="https://create-react-app.dev/docs/getting-started">&ldquo;create-reactjs-app&rdquo;</a>.
 After installing and setup your development enviroment</p>
-
-<h4 id="editor">- Editor</h4>
-
+<h4 id="--editor">- Editor</h4>
 <ul>
 <li><a href="https://create-react-app.dev/docs/setting-up-your-editor">https://create-react-app.dev/docs/setting-up-your-editor</a></li>
 </ul>
-
-<h4 id="eslint">- EsLint</h4>
-
+<h4 id="--eslint">- EsLint</h4>
 <ul>
 <li><a href="https://alligator.io/react/linting-react/">https://alligator.io/react/linting-react/</a></li>
-
-<li><p><a href="https://eslint.org/docs/user-guide/getting-started#configuration">https://eslint.org/docs/user-guide/getting-started#configuration</a></p>
-
-<pre><code class="language-bash">yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D
-</code></pre></li>
+<li><a href="https://eslint.org/docs/user-guide/getting-started#configuration">https://eslint.org/docs/user-guide/getting-started#configuration</a></li>
 </ul>
-
-<p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.</p>
-
-<h4 id="styles-assets">- Styles &amp; Assets</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D
+</code></pre></div><p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.</p>
+<h4 id="--styles--assets">- Styles &amp; Assets</h4>
 <ul>
 <li><a href="https://css-tricks.com/css-modules-part-1-need/">https://css-tricks.com/css-modules-part-1-need/</a></li>
 <li><a href="https://alligator.io/react/react-css/">https://alligator.io/react/react-css/</a></li>
 <li><a href="https://programmingwithmosh.com/react/css-modules-react/">https://programmingwithmosh.com/react/css-modules-react/</a></li>
 </ul>
-
-<h4 id="css-in-react">- CSS in React</h4>
-
+<h4 id="--css-in-react">- CSS in React</h4>
 <ol>
 <li>Global CSS files: the CSS files live completely separately from the component files a la typical HTML and CSS</li>
 <li>Javascript Stylesheets: each component has a Javascript object representing its styles which lives in the same .js component file and is applied in the styles attribute</li>
 <li>Modular Stylesheets: each component gets its own .css file which lives alongside and is imported into the .js component file and applied in the className attribute to allow for scoped class names</li>
-
-<li><p>Stylized Components: using frameworks such as <strong>glamorous</strong>, <strong>emotion</strong>, or <strong>styled-components</strong> to create clean, modular, and re-usable building blocks</p>
-
-<pre><code class="language-javascript">import styles from &quot;./styles.css&quot;;
-
-element.innerHTML = 
-`&lt;h1 class=&quot;${styles.title}&quot;&gt;
- An example heading
-&lt;/h1&gt;`;
-</code></pre>
-
-<pre><code class="language-html">&lt;h1 class=&quot;_styles__title_309571057&quot;&gt;
-An example heading
-&lt;/h1&gt;
-</code></pre>
-
-<pre><code class="language-css">._styles__title_309571057 {
-background-color: red;
-}
-</code></pre></li>
+<li>Stylized Components: using frameworks such as <strong>glamorous</strong>, <strong>emotion</strong>, or <strong>styled-components</strong> to create clean, modular, and re-usable building blocks</li>
 </ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">styles</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./styles.css&#34;</span>;
 
-<h4 id="component">- Component</h4>
-
+<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> 
+  <span style="color:#e6db74">`&lt;h1 class=&#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">styles</span>.<span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;&gt;
+</span><span style="color:#e6db74">     An example heading
+</span><span style="color:#e6db74">   &lt;/h1&gt;`</span>;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_styles__title_309571057&#34;</span>&gt;
+  An example heading
+&lt;/<span style="color:#f92672">h1</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">_styles__title_309571057</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">red</span>;
+}
+</code></pre></div><h4 id="--component">- Component</h4>
 <p>Conceptually, components are like Javascript functions. They accept arbitary inputs( called &ldquo;props&rdquo;) and return React elements describing what should appear on the screen</p>
-
-<p>In this lession, we only recommend about SPA. The root component of the app will be <App> component</p>
-
+<p>In this lession, we only recommend about SPA. The root component of the app will be <!-- raw HTML omitted --> component</p>
 <p>Read more about:</p>
-
 <ul>
 <li><a href="https://reactjs.org/docs/introducing-jsx.html">JSX</a></li>
-
-<li><p><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">Sematic Elements</a></p>
-
-<pre><code class="language-javascript">import React from &quot;react&quot;;
-import ReactDOM from &quot;react-dom&quot;;
-const App = () =&gt; {
-return (
-&lt;Fragment&gt;
-  &lt;header&gt;Header&lt;/header&gt;
-  &lt;nav&gt;Nav&lt;/nav&gt;
-  &lt;main&gt;
-    &lt;aside&gt;Aside&lt;/aside&gt;
-    &lt;section&gt;Section&lt;/section&gt;
-    &lt;article&gt;Article&lt;/article&gt;
-  &lt;/main&gt;
-  &lt;footer&gt;Footer&lt;/footer&gt;
-&lt;/Fragment&gt;
-)
+<li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">Sematic Elements</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">ReactDOM</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">App</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Fragment</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">header</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Header</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/header&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">nav</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Nav</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/nav&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">main</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">aside</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Aside</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/aside&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">section</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Section</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/section&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">article</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Article</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/article&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/main&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">footer</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Footer</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/footer&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Fragment&gt;</span>
+  )
 }
 
-ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));
-</code></pre></li>
-</ul>
-
-<h4 id="styles-and-assets">Styles and Assets</h4>
-
-<ul class="task-list">
+<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">App</span> <span style="color:#f92672">/&gt;</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</code></pre></div><h4 id="styles-and-assets">Styles and Assets</h4>
+<ul>
 <li><a href="https://create-react-app.dev/docs/adding-a-sass-stylesheet">Adding Sass Stylesheets</a></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Adding Stylesheets</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Adding CSS Modules</label></li>
+<li><input disabled="" type="checkbox"> Adding Stylesheets</li>
+<li><input disabled="" type="checkbox"> Adding CSS Modules</li>
+<li><a href="https://create-react-app.dev/docs/adding-css-reset">Adding Reset CSS</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yarn add node-sass
 
-<li><p><a href="https://create-react-app.dev/docs/adding-css-reset">Adding Reset CSS</a></p>
-
-<pre><code class="language-bash">yarn add node-sass
-
-# App.scss
+<span style="color:#75715e"># App.scss</span>
 @import-normalize; /* bring in normalize.css styles */
 /* rest of app styles */
-</code></pre></li>
-</ul>
-
-<h4 id="layout">Layout</h4>
-
+</code></pre></div><h4 id="layout">Layout</h4>
 <ul>
 <li><a href="https://www.quackit.com/css/flexbox/examples/flexbox_website_layout_examples.cfm">Flex</a></li>
 </ul>
-
 <h4 id="code-splitting">Code Splitting</h4>
-
 <ul>
 <li><a href="https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html">Code Splitting</a></li>
 </ul>
-
 <h4 id="json-server">JSON SERVER</h4>
-
 <ul>
 <li><a href="https://github.com/typicode/json-server">json-server</a></li>
 <li><a href="https://expressjs.com/en/resources/middleware/cors.html">CORS</a></li>

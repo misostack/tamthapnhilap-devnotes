@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,192 +108,174 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/subjects/javascript.jpg" /></p>
         <h1>Javascript 001</h1>        
-        
-
-<h1 id="general">General</h1>
-
-<h2 id="you-may-concern">&ndash;You may concern</h2>
-
+        <h1 id="general">General</h1>
+<h2 id="--you-may-concern">&ndash;You may concern</h2>
 <ul>
 <li>Head First Javascript</li>
 </ul>
-
-<h2 id="sublime-plugin">&ndash;Sublime plugin</h2>
-
+<h2 id="--sublime-plugin">&ndash;Sublime plugin</h2>
 <ul>
 <li>html5 snippet</li>
 </ul>
-
-<h2 id="the-first-step-with-webpack">&ndash;THe first step with webpack</h2>
-
+<h2 id="--the-first-step-with-webpack">&ndash;THe first step with webpack</h2>
 <ul>
-<li><p>Official : <a href="https://webpack.js.org/">https://webpack.js.org/</a></p>
-
-<pre><code class="language-bash">npm install webpack webpack-cli --save-dev
-</code></pre></li>
-
-<li><p>Assets: <a href="https://webpack.js.org/guides/asset-management/">https://webpack.js.org/guides/asset-management/</a></p>
-
-<pre><code class="language-bash">npm install webpack webpack-cli --save-dev
+<li>Official : <a href="https://webpack.js.org/">https://webpack.js.org/</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install webpack webpack-cli --save-dev
+</code></pre></div><ul>
+<li>Assets: <a href="https://webpack.js.org/guides/asset-management/">https://webpack.js.org/guides/asset-management/</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install webpack webpack-cli --save-dev
 npm i -D style-loader css-loader
 npm install --save-dev file-loader
 npm install --save-dev html-webpack-plugin
 npm install --save-dev clean-webpack-plugin
 npm install --save-dev webpack-dev-server
 npm install --save-dev express webpack-dev-middleware
-</code></pre></li>
-
-<li><p>CLI : <a href="https://webpack.js.org/api/cli/#environment-options">https://webpack.js.org/api/cli/#environment-options</a></p></li>
-
-<li><p>Hotmodule : <a href="https://webpack.js.org/guides/hot-module-replacement/">https://webpack.js.org/guides/hot-module-replacement/</a></p></li>
+</code></pre></div><ul>
+<li>
+<p>CLI : <a href="https://webpack.js.org/api/cli/#environment-options">https://webpack.js.org/api/cli/#environment-options</a></p>
+</li>
+<li>
+<p>Hotmodule : <a href="https://webpack.js.org/guides/hot-module-replacement/">https://webpack.js.org/guides/hot-module-replacement/</a></p>
+</li>
 </ul>
-
-<h2 id="service-worker">&ndash;Service worker</h2>
-
+<h2 id="--service-worker">&ndash;Service worker</h2>
 <ul>
 <li><a href="https://developers.google.com/web/fundamentals/primers/service-workers/">https://developers.google.com/web/fundamentals/primers/service-workers/</a></li>
 </ul>
-
 <p><strong>Chrome checking:</strong></p>
-
-<pre><code class="language-bash">chrome://inspect/#service-workers
-</code></pre>
-
-<p>Later &hellip;</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chrome://inspect/#service-workers
+</code></pre></div><p>Later &hellip;</p>
 <h2 id="some-tricks">**Some tricks</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Arguments</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Exceptions</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Event handlers</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> RegExp</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Recursive</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON</label></li>
-
-<li><p>[x] <a href="/article/nodejs-001/">Server Side Javascript</a></p>
-
-<pre><code class="language-javascript">export function someTricks(){
-	printArgs(1,'hai',3, {'a':'1','b':'2'});
-	theExceptions();
-	eventHandles();
-	commonRegex();
-	recursives();
-	jsonSamples();
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Arguments</li>
+<li><input checked="" disabled="" type="checkbox"> Exceptions</li>
+<li><input checked="" disabled="" type="checkbox"> Event handlers</li>
+<li><input checked="" disabled="" type="checkbox"> RegExp</li>
+<li><input checked="" disabled="" type="checkbox"> Recursive</li>
+<li><input checked="" disabled="" type="checkbox"> JSON</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/nodejs-001/">Server Side Javascript</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">someTricks</span>(){
+	<span style="color:#a6e22e">printArgs</span>(<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;hai&#39;</span>,<span style="color:#ae81ff">3</span>, {<span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;2&#39;</span>});
+	<span style="color:#a6e22e">theExceptions</span>();
+	<span style="color:#a6e22e">eventHandles</span>();
+	<span style="color:#a6e22e">commonRegex</span>();
+	<span style="color:#a6e22e">recursives</span>();
+	<span style="color:#a6e22e">jsonSamples</span>();
 }
 
-function printArgs()
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printArgs</span>()
 {
-	const appRoot = document.querySelector('#app');
-	const args = document.createElement('ul');
-	args.id = 'args-test';
-	for(let i = 0; i &lt; arguments.length; i++){
-		let arg = document.createElement('li');
-		console.log(arguments[i]);
-		arg.innerHTML = arguments[i].inspect();
-		args.appendChild(arg);
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;#app&#39;</span>);
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">args</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;ul&#39;</span>);
+	<span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;args-test&#39;</span>;
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+		<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arg</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;li&#39;</span>);
+		<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arguments</span>[<span style="color:#a6e22e">i</span>]);
+		<span style="color:#a6e22e">arg</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arguments</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">inspect</span>();
+		<span style="color:#a6e22e">args</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">arg</span>);
 	}
-	appRoot.prepend(args);
+	<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#a6e22e">args</span>);
 }
 
-Object.prototype.inspect = function(){	
-	let str = ''
-	if(this instanceof Object){
-		str += '{';
-		let associates = [];
-		for(var key in this){
-			if(this.hasOwnProperty(key)){
-				associates.push(key + ':' + this[key]);	
+Object.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">inspect</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){	
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+	<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> Object){
+		<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;{&#39;</span>;
+		<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">associates</span> <span style="color:#f92672">=</span> [];
+		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">this</span>){
+			<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#a6e22e">key</span>)){
+				<span style="color:#a6e22e">associates</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">key</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;:&#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>[<span style="color:#a6e22e">key</span>]);	
 			}
 		}
-		str += associates.join(', ');
-		str += '}';
-	}else{
-		str = this.toString();
+		<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">associates</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;, &#39;</span>);
+		<span style="color:#a6e22e">str</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;}&#39;</span>;
+	}<span style="color:#66d9ef">else</span>{
+		<span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toString</span>();
 	}
-	return str;
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>;
 };
 
-function theExceptions(){	
-	try {
-		let sampleNode = document.getElementById('samplenode');
-		samplenode.innerHTML = 'abcxyz';
-	} catch(e) {
-		// statements
-		const appRoot = document.getElementById('app');
-		appRoot.prepend(e);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">theExceptions</span>(){	
+	<span style="color:#66d9ef">try</span> {
+		<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sampleNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;samplenode&#39;</span>);
+		<span style="color:#a6e22e">samplenode</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abcxyz&#39;</span>;
+	} <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>) {
+		<span style="color:#75715e">// statements
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+		<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#a6e22e">e</span>);
 	}	
 }
 
-window.addEventListener('load', init, false);
+window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;load&#39;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
 
-function init(){
-	const appRoot = document.getElementById('app');
-	appRoot.prepend('init');	
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init</span>(){
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+	<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#e6db74">&#39;init&#39;</span>);	
 }
 
-function eventHandles(){
-	const appRoot = document.getElementById('app');
-	let sampleBox = document.createElement('div');
-	sampleBox.classList = 'sample-box';
-	sampleBox.innerHTML = 'BOX';
-	appRoot.prepend(sampleBox);
-	let ele = document.createElement('div');
-	ele.innerHTML = '&lt;button&gt;Toggle DIV&lt;/button&gt;';
-	ele.addEventListener('click', eventClick, false);
-	appRoot.prepend(ele);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">eventHandles</span>(){
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sampleBox</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+	<span style="color:#a6e22e">sampleBox</span>.<span style="color:#a6e22e">classList</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;sample-box&#39;</span>;
+	<span style="color:#a6e22e">sampleBox</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;BOX&#39;</span>;
+	<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#a6e22e">sampleBox</span>);
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+	<span style="color:#a6e22e">ele</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;button&gt;Toggle DIV&lt;/button&gt;&#39;</span>;
+	<span style="color:#a6e22e">ele</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">eventClick</span>, <span style="color:#66d9ef">false</span>);
+	<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#a6e22e">ele</span>);
 }
 
-function eventClick(e){
-	let target = e.target;
-	let p = document.createElement('p');
-	p.innerHTML = 'lorem upsum';
-	target.append(p);
-	target.removeEventListener('click', eventClick, false);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">eventClick</span>(<span style="color:#a6e22e">e</span>){
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>;
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;p&#39;</span>);
+	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;lorem upsum&#39;</span>;
+	<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">p</span>);
+	<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">eventClick</span>, <span style="color:#66d9ef">false</span>);
 }
 
-function commonRegex(){
-	const emailRegex = new RegExp(/^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-	let emails = ['exmapl@gmail.com','abc@xyz.domain','asdasd.asd.@123.com','123132','asdads'];
-	const appRoot = document.getElementById('app');
-	emails.forEach( function(email, index) {
-		let ele = document.createElement('div');
-		ele.innerHTML = '&lt;strong&gt;' + email + '&lt;/strong&gt;' + ' is ' + (email.match(emailRegex)? 'valid': 'invalid') + ' email';
-		appRoot.append(ele);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">commonRegex</span>(){
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">emailRegex</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#e6db74">/^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/</span>);
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">emails</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;exmapl@gmail.com&#39;</span>,<span style="color:#e6db74">&#39;abc@xyz.domain&#39;</span>,<span style="color:#e6db74">&#39;asdasd.asd.@123.com&#39;</span>,<span style="color:#e6db74">&#39;123132&#39;</span>,<span style="color:#e6db74">&#39;asdads&#39;</span>];
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+	<span style="color:#a6e22e">emails</span>.<span style="color:#a6e22e">forEach</span>( <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">email</span>, <span style="color:#a6e22e">index</span>) {
+		<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+		<span style="color:#a6e22e">ele</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;strong&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">email</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;/strong&gt;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; is &#39;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">email</span>.<span style="color:#a6e22e">match</span>(<span style="color:#a6e22e">emailRegex</span>)<span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;valid&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;invalid&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; email&#39;</span>;
+		<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">ele</span>);
 	});
 }
 
-function recursives(){
-	const appRoot = document.getElementById('app');
-	let ele = document.createElement('div');
-	ele.innerHTML = 'fibonaci(10):&lt;br/&gt; ' + fibonaciArray(10);
-	appRoot.prepend(ele);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">recursives</span>(){
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appRoot</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>);
+	<span style="color:#a6e22e">ele</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fibonaci(10):&lt;br/&gt; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">fibonaciArray</span>(<span style="color:#ae81ff">10</span>);
+	<span style="color:#a6e22e">appRoot</span>.<span style="color:#a6e22e">prepend</span>(<span style="color:#a6e22e">ele</span>);
 }
 
-function fibonaci(n){
-	if(n &lt;= 0) return 0;
-	if(n == 1) return 1;
-	if(n== 2) return 1;
-	return fibonaci(n-1) + fibonaci(n-2);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fibonaci</span>(<span style="color:#a6e22e">n</span>){
+	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">n</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fibonaci</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">fibonaci</span>(<span style="color:#a6e22e">n</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
 }
 
-function fibonaciArray(n){
-	let arr = [];
-	for(let i = 1; i&lt;= n;i++){
-		arr.push(fibonaci(i));
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fibonaciArray</span>(<span style="color:#a6e22e">n</span>){
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+		<span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">fibonaci</span>(<span style="color:#a6e22e">i</span>));
 	}
-	return arr.join(&quot; &quot;);
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#34; &#34;</span>);
 }
 
-function jsonSamples(){
-	let misostack_str = '{&quot;name&quot;: &quot;misostack&quot;, &quot;languages&quot;: [&quot;php&quot;,&quot;javascripts&quot;,&quot;nodejs&quot;,&quot;ruby&quot;,&quot;java&quot;,&quot;go&quot;,&quot;c&quot;,&quot;c#&quot;,&quot;python&quot;]}';
-	let misostack = JSON.parse(misostack_str);
-	console.log(misostack.name, misostack.languages.join(','));
-	console.log(JSON.stringify(misostack));
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">jsonSamples</span>(){
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">misostack_str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{&#34;name&#34;: &#34;misostack&#34;, &#34;languages&#34;: [&#34;php&#34;,&#34;javascripts&#34;,&#34;nodejs&#34;,&#34;ruby&#34;,&#34;java&#34;,&#34;go&#34;,&#34;c&#34;,&#34;c#&#34;,&#34;python&#34;]}&#39;</span>;
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">misostack</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">misostack_str</span>);
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">misostack</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">misostack</span>.<span style="color:#a6e22e">languages</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39;,&#39;</span>));
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">misostack</span>));
 }
-</code></pre></li>
-</ul>
-
+</code></pre></div>
     </article>
 
                     </main>                    

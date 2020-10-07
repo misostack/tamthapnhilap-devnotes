@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,84 +108,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Algorithms Analysis</h1>        
-        
-
-<h3 id="the-most-important-properties-of-an-algorithm-are">The most important properties of an algorithm are:</h3>
-
+        <h3 id="the-most-important-properties-of-an-algorithm-are">The most important properties of an algorithm are:</h3>
 <ol>
-<li><p><strong>Correctness</strong>: The algorithm should be correct. It should be able to process all the given
-inputs and provide correct output.</p></li>
-
-<li><p><strong>Efficiency:</strong> The algorithm should be efficient in solving problems. Efficiency is measured in
+<li>
+<p><strong>Correctness</strong>: The algorithm should be correct. It should be able to process all the given
+inputs and provide correct output.</p>
+</li>
+<li>
+<p><strong>Efficiency:</strong> The algorithm should be efficient in solving problems. Efficiency is measured in
 two parameters. First is Time-Complexity, how quick result is provided by an algorithm.
 And the second is Space-Complexity, how much RAM that an algorithm is going to consume
-to give desired result.</p></li>
+to give desired result.</p>
+</li>
 </ol>
-
 <ul>
-<li><p><em>Time-Complexity</em> is represented by function T(n) - time versus the input size n.</p></li>
-
-<li><p><em>Space-Complexity</em> is represented by function S(n) - memory used versus the input size n</p></li>
+<li>
+<p><em>Time-Complexity</em> is represented by function T(n) - time versus the input size n.</p>
+</li>
+<li>
+<p><em>Space-Complexity</em> is represented by function S(n) - memory used versus the input size n</p>
+</li>
 </ul>
-
 <h3 id="asymptotic-analysis">Asymptotic analysis</h3>
-
 <p>Asymptotic analysis is used to compare the efficiency of algorithm independently of any
 particular data set or programming language.</p>
-
 <p>We are generally interested in the order of growth of some algorithm and not interested in the
 exact time required for running an algorithm. This time is also called Asymptotic-running time.</p>
-
 <h3 id="big-o-notation">Big-O Notation</h3>
-
 <p>Definition: “f(n) is big-O of g(n)” or f(n) = O(g(n)), if there are two +ve constants c and n0 such
 that</p>
-
 <p>f(n) ≤ c g(n) for all n ≥ n0,In other words, c g(n) is an upper bound for f(n) for all n ≥ n0</p>
-
 <p>The function f(n) growth is slower than c g(n)</p>
-
 <p>We can simply say that after a sufficient large value of input N the (c.g(n)) will always be
 greater than f(n).</p>
-
 <blockquote>
-<p>n<sup>2</sup> + n = O(n<sup>2</sup>)</p>
+<p>n<!-- raw HTML omitted -->2<!-- raw HTML omitted --> + n = O(n<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)</p>
 </blockquote>
-
 <h3 id="omega-ω-notation">Omega-Ω Notation</h3>
-
 <p>Definition: “f(n) is omega of g(n).” or f(n) = Ω(g(n)) if there are two +ve constants c and n0
 such that</p>
-
 <p>c g(n) ≤ f(n) for all n ≥ n0</p>
-
 <p>In other words, c g(n) is lower bound for f(n)</p>
-
 <p>Function f(n) growth is faster than c g(n)</p>
-
 <p>Find relationship of f(n) = nc and g(n) = cn</p>
-
 <blockquote>
 <p>f(n) = Ω(g(n))</p>
 </blockquote>
-
 <h3 id="complexity-analysis-of-algorithms">Complexity analysis of algorithms</h3>
-
 <ol>
-<li><p><strong>Worst Case complexity</strong>: It is the complexity of solving the problem for the worst input of
-size n. It provides the upper bound for the algorithm. This is the most common analysis used.</p></li>
-
-<li><p><strong>Average Case complexity</strong>: It is the complexity of solving the problem on an average. We
-calculate the time for all the possible inputs and then take an average of it.</p></li>
-
-<li><p><strong>Best Case complexity</strong>: It is the complexity of solving the problem for the best input of size
-n.</p></li>
+<li>
+<p><strong>Worst Case complexity</strong>: It is the complexity of solving the problem for the worst input of
+size n. It provides the upper bound for the algorithm. This is the most common analysis used.</p>
+</li>
+<li>
+<p><strong>Average Case complexity</strong>: It is the complexity of solving the problem on an average. We
+calculate the time for all the possible inputs and then take an average of it.</p>
+</li>
+<li>
+<p><strong>Best Case complexity</strong>: It is the complexity of solving the problem for the best input of size
+n.</p>
+</li>
 </ol>
-
 <h3 id="time-complexity-order">Time Complexity Order</h3>
-
 <p>A list of commonly occurring algorithm Time Complexity in increasing order:</p>
-
 <ul>
 <li>Constant O(1)</li>
 <li>Logarithmic O(log n)</li>
@@ -196,72 +181,50 @@ n.</p></li>
 <li>Exponential O(cm) c is a constant &amp; c&gt;1</li>
 <li>Factorial or N-power-N O(n!) or O(nn)</li>
 </ul>
-
-<h4 id="constant-time-o-1">Constant Time: O(1)</h4>
-
+<h4 id="constant-time-o1">Constant Time: O(1)</h4>
 <p>An algorithm is said to run in constant time if the output is produced in constant time regardless
 of the input size.</p>
-
 <p>Examples:</p>
-
 <ol>
-<li>Accessing n<sup>th</sup> element of an array</li>
+<li>Accessing n<!-- raw HTML omitted -->th<!-- raw HTML omitted --> element of an array</li>
 <li>Push and pop of a stack.</li>
 <li>Enqueue and remove of a queue.</li>
 <li>Accessing an element of Hash-Table.</li>
 </ol>
-
-<h4 id="linear-time-o-n">Linear Time: O(n)</h4>
-
+<h4 id="linear-time-on">Linear Time: O(n)</h4>
 <p>An algorithm is said to run in linear time if the execution time of the algorithm is directly
 proportional to the input size.</p>
-
 <p>Examples:</p>
-
 <ol>
 <li>Array operations like search element, find min, find max etc.</li>
 <li>Linked list operations like traversal, find min, find max etc.</li>
 </ol>
-
 <p><strong>Note</strong>: when we need to see/ traverse all the nodes of a data-structure for some task then
 complexity is no less than O(n)</p>
-
-<h4 id="logarithmic-time-o-logn">Logarithmic Time: O(logn)</h4>
-
+<h4 id="logarithmic-time-ologn">Logarithmic Time: O(logn)</h4>
 <p>An algorithm is said to run in logarithmic time if the execution time of the algorithm is
 proportional to the logarithm of the input size. Each step of an algorithm, a significant portion of the input is pruned out without traversing it.</p>
-
 <p>Example: Binary search, we will read about these algorithms in this book.</p>
-
-<h4 id="n-logn-time-o-nlog-n">N-LogN Time: O(nlog(n))</h4>
-
+<h4 id="n-logn-time-onlogn">N-LogN Time: O(nlog(n))</h4>
 <p>An algorithm is said to run in logarithmic time if the execution time of an algorithm is
 proportional to the product of input size and logarithm of the input size.</p>
-
 <p>Example:</p>
-
 <ol>
 <li>Merge-Sort</li>
 <li>Quick-Sort (Average case)</li>
 <li>Heap-Sort</li>
 </ol>
-
 <p><strong>Note:</strong> Quicksort is a special kind of algorithm to sort an array of numbers. Its worst-case
-complexity is O(n<sup>2</sup>) and average case complexity is O(n log n).</p>
-
-<h4 id="quadratic-time-o-n-sup-2-sup">Quadratic Time: O(n<sup>2</sup>)</h4>
-
+complexity is O(n<!-- raw HTML omitted -->2<!-- raw HTML omitted -->) and average case complexity is O(n log n).</p>
+<h4 id="quadratic-time-onsup2sup">Quadratic Time: O(n<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)</h4>
 <p>An algorithm is said to run in quadratic time if the execution time of an algorithm is
 proportional to the square of the input size.</p>
-
 <p>Examples:</p>
-
 <ol>
 <li>Bubble-Sort</li>
 <li>Selection-Sort</li>
 <li>Insertion-Sort</li>
 </ol>
-
 <h4 id="time-complexity-examples">Time Complexity Examples</h4>
 
     </article>

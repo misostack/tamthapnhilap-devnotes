@@ -100,127 +100,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Reactjs Ways - Main Concepts" />
     <h1>Reactjs Ways - Main Concepts</h1>
-    
+    <h3 id="1jsx"><strong>1.JSX</strong></h3>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">avatarUrl</span>}<span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/img&gt;;</span>
 
-<h3 id="1-jsx"><strong>1.JSX</strong></h3>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">formatName</span>(<span style="color:#a6e22e">user</span>)}<span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
 
-<blockquote class="important">
-<ul>
-    <li>javascript syntax extension</li>
-    <li>Since JSX is closer to JavaScript than to HTML, React DOM uses camelCase property naming convention instead of HTML attribute names.</li>
-</ul>
-</blockquote>
-
-<pre><code class="language-javascript">const element = &lt;img src={user.avatarUrl}&gt;&lt;/img&gt;;
-
-const element = &lt;h1&gt;Hello, {formatName(user)}!&lt;/h1&gt;
-
-const element = React.createElement(
-  'h1',
-  {className: 'greeting'},
-  'Hello, world!'
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createElement</span>(
+  <span style="color:#e6db74">&#39;h1&#39;</span>,
+  {<span style="color:#a6e22e">className</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;greeting&#39;</span>},
+  <span style="color:#e6db74">&#39;Hello, world!&#39;</span>
 );
 
-ReactDOM.render(element, document.getElementById('root'));
-</code></pre>
-
-<h3 id="2-render"><strong>2.Render</strong></h3>
-
-<blockquote class="important">
-<ol>
-<li>Elements are the smallest building blocks of React apps.</li>
-<li>React elements are immutable. Once you create an element, you can’t change its children or attributes</li>
-<li>React Only Updates What’s Necessary</li>
-</ol>
-</blockquote>
-
-<pre><code class="language-javascript">ReactDOM.render(element, document.getElementById('root'));
-</code></pre>
-
-<p><strong><a href="https://en.wikipedia.org/wiki/Immutable_object">https://en.wikipedia.org/wiki/Immutable_object</a></strong></p>
-
-<h3 id="3-components-and-props"><strong>3.Components and Props</strong></h3>
-
+<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">element</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</code></pre></div><h3 id="2render"><strong>2.Render</strong></h3>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">element</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>));
+</code></pre></div><p><strong><a href="https://en.wikipedia.org/wiki/Immutable_object">https://en.wikipedia.org/wiki/Immutable_object</a></strong></p>
+<h3 id="3components-and-props"><strong>3.Components and Props</strong></h3>
 <ul>
 <li>Rendering a Component</li>
 <li>Composing Components</li>
 <li>Extracting Components</li>
 <li>Props are Read-Only</li>
 </ul>
-
-<blockquote class="important">
-- Conceptually, components are like JavaScript functions. <br/>
-- They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.<br/>
-- All React components must act like <strong>pure functions</strong> with respect to their props.
-</blockquote>
-
+<!-- raw HTML omitted -->
 <p><strong>The simplest way to define a component is to write a JavaScript function:</strong></p>
-
-<pre><code class="language-javascript">function Welcome(props) {
-  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Welcome</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
 }
-</code></pre>
-
-<p><strong>Common way to define a component(ES6 class):</strong></p>
-
-<pre><code class="language-javascript">class Welcome extends React.Component {
-  render() {
-    return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+</code></pre></div><p><strong>Common way to define a component(ES6 class):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Welcome</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
   }
 }
 
-function Welcome(props) {
-  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Welcome</span>(<span style="color:#a6e22e">props</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;;</span>
 }
 
-const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Welcome</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Sara&#34;</span> <span style="color:#f92672">/&gt;</span>;
+<span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(
+  <span style="color:#a6e22e">element</span>,
+  document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;root&#39;</span>)
 );
-</code></pre>
-
-<p><strong>Note:</strong></p>
-
+</code></pre></div><p><strong>Note:</strong></p>
 <ul>
 <li><a href="https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized">https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized</a></li>
 </ul>
-
-<blockquote class="important">
-- Always start component names with a capital letter.<br>
-- React treats components starting with lowercase letters as DOM tags
-</blockquote>
-
-<h3 id="4-state-and-lifecyle"><strong>4.State and Lifecyle</strong></h3>
-
-<blockquote class="important">
-- State is similar to props, but it is private and fully controlled by the component. <br/>
-- Do Not Modify State Directly<br/>
-- State Updates May Be Asynchronous<br/>
-- State Updates are Merged<br/>
-- The Data Flows Down
-</blockquote>
-
+<!-- raw HTML omitted -->
+<h3 id="4state-and-lifecyle"><strong>4.State and Lifecyle</strong></h3>
+<!-- raw HTML omitted -->
 <ul>
 <li>Because this.props and this.state may be updated asynchronously, you should not rely on their values for calculating the next state.</li>
 </ul>
-
 <p>
 <a class="collapse-trigger" data-toggle="collapse" href="#example-sample-component" role="button" aria-expanded="false" 
 aria-controls="example-sample-component">
     <strong>sample-component</strong>
   </a>
 <div class="collapse" id="example-sample-component">
-<pre><code class="language-javascript">
-// Wrong
+<pre><code class="language-javascript">// Wrong
 this.setState({
   counter: this.state.counter &#43; this.props.increment,
 });
@@ -249,20 +198,17 @@ componentDidMount() {
         comments: response.comments
       });
     });
-  }
-</code></pre>
+  }</code></pre>
 </div>
 
-<br/>
+<!-- raw HTML omitted -->
 
 <a class="collapse-trigger" data-toggle="collapse" href="#example-timer-component" role="button" aria-expanded="false" 
 aria-controls="example-timer-component">
     <strong>timer-component</strong>
   </a>
 <div class="collapse" id="example-timer-component">
-<pre><code class="language-javascript">
-
-import * as React from &#34;react&#34;;
+<pre><code class="language-javascript">import * as React from &#34;react&#34;;
 interface TimerProps {
     wrapperClass: string
 }
@@ -305,151 +251,120 @@ export default class Timer extends React.Component&lt;TimerProps, TimerState&gt;
             &lt;div className={this.props.wrapperClass}&gt;&lt;i className=&#34;fa fa-clock mr-md-2&#34;&gt;&lt;/i&gt;{this.state.date.toLocaleTimeString()}&lt;/div&gt;
         )
     }
-}
-</code></pre>
+}</code></pre>
 </div>
 
-<br/></p>
-
-<h3 id="5-state-and-lifecyle"><strong>5.State and Lifecyle</strong></h3>
-
-<blockquote class="important">
-- React events are named using camelCase, rather than lowercase.<br/>
-- With JSX you pass a function as the event handler, rather than a string.
-</blockquote>
-
+<!-- raw HTML omitted --></p>
+<h3 id="5state-and-lifecyle"><strong>5.State and Lifecyle</strong></h3>
+<!-- raw HTML omitted -->
 <p><strong>Arrow Functions</strong></p>
-
-<pre><code class="language-javascript">// Basic Syntax with Multiple Parameters
-const multiplyES6 = (x, y) =&gt; { return x * y };
-console.log(multiplyES6(2,3));
-// Basic Syntax with One Parameter
-const phraseSplitterEs6 = phrase =&gt; phrase.split(&quot; &quot;);
-console.log(phraseSplitterEs6(&quot;ES6 Awesomeness&quot;));  // [&quot;ES6&quot;, &quot;Awesomeness&quot;]
-// Basic Syntax with No Parameters
-const docLogEs6 = () =&gt; { console.log('hello'); };
-docLogEs6();
-// Object Literal Syntax
-const setNameIdsEs6 = (id, name) =&gt; ({ id: id, name: name });
-console.log(setNameIdsEs6 (4, &quot;Kyle&quot;));   // Object {id: 4, name: &quot;Kyle&quot;}
-</code></pre>
-
-<p><em>Use Cases for Arrow Functions</em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Basic Syntax with Multiple Parameters
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">multiplyES6</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) =&gt; { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y</span> };
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">multiplyES6</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>));
+<span style="color:#75715e">// Basic Syntax with One Parameter
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">phraseSplitterEs6</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">phrase</span> =&gt; <span style="color:#a6e22e">phrase</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34; &#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">phraseSplitterEs6</span>(<span style="color:#e6db74">&#34;ES6 Awesomeness&#34;</span>));  <span style="color:#75715e">// [&#34;ES6&#34;, &#34;Awesomeness&#34;]
+</span><span style="color:#75715e">// Basic Syntax with No Parameters
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">docLogEs6</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;hello&#39;</span>); };
+<span style="color:#a6e22e">docLogEs6</span>();
+<span style="color:#75715e">// Object Literal Syntax
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">setNameIdsEs6</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">name</span>) =&gt; ({ <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">name</span> });
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">setNameIdsEs6</span> (<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#34;Kyle&#34;</span>));   <span style="color:#75715e">// Object {id: 4, name: &#34;Kyle&#34;}
+</span></code></pre></div><p><em>Use Cases for Arrow Functions</em></p>
 <ul>
 <li><a href="https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/">https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/</a></li>
 <li><a href="https://javascriptplayground.com/real-life-es6-arrow-fn/">https://javascriptplayground.com/real-life-es6-arrow-fn/</a></li>
 <li><a href="https://www.sitepoint.com/es6-let-const/">https://www.sitepoint.com/es6-let-const/</a></li>
-
-<li><p><a href="https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564">https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564</a></p>
-
-<pre><code class="language-javascript">const smartPhones = [
-    { name: 'iphone', price: 649 },
-    { name: 'Galaxy S6', price: 576 },
-    { name: 'Galaxy Note 5', price: 489 }
-];
-console.log(smartPhones.map(smartphone =&gt; smartphone.price));
-console.log(smartPhones.filter(smartphone =&gt; smartphone.price &gt; 500));
+<li><a href="https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564">https://medium.com/@owenyangg/javascript-call-apply-and-bind-explained-to-a-total-noob-63f146684564</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">smartPhones</span> <span style="color:#f92672">=</span> [
+        { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;iphone&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">649</span> },
+        { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Galaxy S6&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">576</span> },
+        { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Galaxy Note 5&#39;</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">489</span> }
+    ];
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">smartPhones</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">smartphone</span> =&gt; <span style="color:#a6e22e">smartphone</span>.<span style="color:#a6e22e">price</span>));
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">smartPhones</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">smartphone</span> =&gt; <span style="color:#a6e22e">smartphone</span>.<span style="color:#a6e22e">price</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">500</span>));
     
-// ES5
-aAsync()
-.then(function () { return bAsync(); })
-.then(function () { return cAsync(); })
-.done(function () { finish(); });    
+    <span style="color:#75715e">// ES5
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">aAsync</span>()
+    .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bAsync</span>(); })
+    .<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cAsync</span>(); })
+    .<span style="color:#a6e22e">done</span>(<span style="color:#66d9ef">function</span> () { <span style="color:#a6e22e">finish</span>(); });    
 
-// ES6
-aAsync()
-.then(() =&gt; return bAsync())
-.then(() =&gt; return cAsync())
-.done(() =&gt; finish)
-</code></pre></li>
-</ul>
-
-<p><strong>Javascript call() &amp; apply() vs bind()?</strong></p>
-
+    <span style="color:#75715e">// ES6
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">aAsync</span>()
+    .<span style="color:#a6e22e">then</span>(() =&gt; <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bAsync</span>())
+    .<span style="color:#a6e22e">then</span>(() =&gt; <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cAsync</span>())
+    .<span style="color:#a6e22e">done</span>(() =&gt; <span style="color:#a6e22e">finish</span>)
+</code></pre></div><p><strong>Javascript call() &amp; apply() vs bind()?</strong></p>
 <ul>
-<li><p><a href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind">https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind</a></p></li>
-
-<li><p>Call invokes the function and allows you to pass in arguments one by one.</p></li>
-
-<li><p>Apply invokes the function and allows you to pass in arguments as an array.</p></li>
-
-<li><p>Bind returns a new function, allowing you to pass in a this array and any number of arguments.</p>
-
-<pre><code class="language-javascript">class MyMath{
-constructor(){
-  this.multipleTwo = this.multiple.bind(this, 2);
-}
-multiple = (x,y) =&gt;{
-return x * y;
-}
-calculateWith2 = () =&gt; {
-for(let i = 1; i &lt;=10;i++){
-  console.log('2*',i, '=',this.multipleTwo(i));
-}
-}
-}
-
-const obj = new MyMath();
-obj.calculateWith2();
-</code></pre></li>
+<li>
+<p><a href="https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind">https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind</a></p>
+</li>
+<li>
+<p>Call invokes the function and allows you to pass in arguments one by one.</p>
+</li>
+<li>
+<p>Apply invokes the function and allows you to pass in arguments as an array.</p>
+</li>
+<li>
+<p>Bind returns a new function, allowing you to pass in a this array and any number of arguments.</p>
+</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyMath</span>{
+  <span style="color:#a6e22e">constructor</span>(){
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multipleTwo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiple</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>, <span style="color:#ae81ff">2</span>);
+  }
+  <span style="color:#a6e22e">multiple</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>,<span style="color:#a6e22e">y</span>) =&gt;{
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">y</span>;
+  }
+  <span style="color:#a6e22e">calculateWith2</span> <span style="color:#f92672">=</span> () =&gt; {
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">10</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;2*&#39;</span>,<span style="color:#a6e22e">i</span>, <span style="color:#e6db74">&#39;=&#39;</span>,<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multipleTwo</span>(<span style="color:#a6e22e">i</span>));
+    }
+  }
+}
 
-<h3 id="6-conditonal-rendering"><strong>6.Conditonal Rendering</strong></h3>
-
-<blockquote class="important">
-- Conditional rendering<br/>
-- Element Variables<br/>
-- Inline If with Logical && Operator<br/>
-- Preventing Component from Rendering<br/>
-</blockquote>
-
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MyMath</span>();
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">calculateWith2</span>();
+</code></pre></div><h3 id="6conditonal-rendering"><strong>6.Conditonal Rendering</strong></h3>
+<!-- raw HTML omitted -->
 <p><strong>Conditional rendering</strong></p>
-
-<pre><code class="language-javascript">    render() {
-        const isLogged = this.state.isLogged;
-        let button;
-        if (isLogged) {
-            button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
-        } else {
-            button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">render</span>() {
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isLogged</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">isLogged</span>;
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">button</span>;
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isLogged</span>) {
+            <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#logout&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogout</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Logout</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#logout&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogin</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
         }
-        return (
-            button
+        <span style="color:#66d9ef">return</span> (
+            <span style="color:#a6e22e">button</span>
         )
     }
-</code></pre>
+</code></pre></div><p><strong>Element Variables</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">isLogged</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">getLogInState</span>();
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">button</span>;
 
-<p><strong>Element Variables</strong></p>
-
-<pre><code class="language-javascript">
-render() {
-    const isLogged = this.getLogInState();
-    let button;
-
-    if (isLogged) {
-        button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
-    } else {
-        button = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isLogged</span>) {
+        <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#logout&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogout</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Logout</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#logout&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogin</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
     }
-    return (
-        button
+    <span style="color:#66d9ef">return</span> (
+        <span style="color:#a6e22e">button</span>
     )
 }
 
-</code></pre>
-
-<p><strong>Inline If with Logical &amp;&amp; Operator</strong></p>
-
-<pre><code class="language-javascript">    const logInBtn = &lt;a href=&quot;#login&quot; className=&quot;btn btn-primary&quot; onClick={this.handleLogin}&gt;Login&lt;/a&gt;
-    const logOutBtn = &lt;a href=&quot;#logout&quot; className=&quot;btn btn-danger&quot; onClick={this.handleLogout}&gt;Logout&lt;/a&gt;
-    return (
-        isLogged ? logOutBtn : logInBtn
+</code></pre></div><p><strong>Inline If with Logical &amp;&amp; Operator</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logInBtn</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#login&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogin</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logOutBtn</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#logout&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-danger&#34;</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLogout</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Logout</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+    <span style="color:#66d9ef">return</span> (
+        <span style="color:#a6e22e">isLogged</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">logOutBtn</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">logInBtn</span>
     )
-</code></pre>
-
-<h2 id="references">References</h2>
-
+</code></pre></div><h2 id="references">References</h2>
 <ul>
 <li><a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">Import &amp; Export modules</a></li>
@@ -458,92 +373,71 @@ render() {
 <li><a href="https://web-design-weekly.com/2015/01/29/opinionated-guide-react-js-best-practices-conventions/">Best practice organization</a></li>
 <li><a href="https://unbug.gitbooks.io/react-native-training/content/45_naming_convention.html">Other best practice</a></li>
 </ul>
-
-<h3 id="7-lists-and-keys"><strong>7.Lists and Keys</strong></h3>
-
-<pre><code class="language-javascript">    public createModules(): any {
-        let modules: any = [];
-        this.state.modules.map((module: any, index: any) =&gt; {
-            modules.push((
-                &lt;li key={'module' + index}&gt;
-                    &lt;a href={module.path}&gt;{module.name}&lt;/a&gt;
-                &lt;/li&gt;
+<h3 id="7lists-and-keys"><strong>7.Lists and Keys</strong></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">createModules</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span> {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">modules</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span> <span style="color:#f92672">=</span> [];
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">modules</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">module</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>, <span style="color:#a6e22e">index</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) =&gt; {
+            <span style="color:#a6e22e">modules</span>.<span style="color:#a6e22e">push</span>((
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;module&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">index</span>}<span style="color:#f92672">&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">path</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
             ))
         });
-        return modules;
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">modules</span>;
     }
-</code></pre>
-
-<h3 id="8-form">8.Form</h3>
-
+</code></pre></div><h3 id="8form">8.Form</h3>
 <ul>
 <li><a href="https://reactjs.org/docs/forms.html">https://reactjs.org/docs/forms.html</a></li>
 <li><a href="https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag">https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag</a></li>
 </ul>
-
-<blockquote class="important">
-In most cases, we recommend using controlled components to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
-</blockquote>
-
-<h3 id="9-lifting-state-up">9.Lifting State Up</h3>
-
-<blockquote class="important">
-- Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
-</blockquote>
-
-<blockquote class="important">
-- Lifting state involves writing more “boilerplate” code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.
-</blockquote>
-
-<pre><code class="language-javascript">&lt;Navbar isLogged={this.state.isLogged} handleLoginState={this.handleLoginState} /&gt;
-&lt;main className=&quot;main container&quot;&gt;
-    &lt;div className=&quot;row clearfix&quot;&gt;
-        &lt;div className=&quot;col-md-3&quot;&gt;
-            &lt;Sidebar modules={this.state.modules} /&gt;
-        &lt;/div&gt;
-        &lt;div className=&quot;col-md-9&quot;&gt;
-            { /* HTML tags always use lowercase tag names, while React components start with Uppercase. */}
-            &lt;h1 style={inlineStyles} className=&quot;page-title&quot;&gt;{this.title ? this.title : 'ReactJS Ways'}&lt;/h1&gt;
-            &lt;LoginForm isLogged={this.state.isLogged} handleLoginState={this.handleLoginState} /&gt;
-            &lt;p&gt;
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum provident magni consequatur libero, eum aut numquam quisquam sunt quod aperiam quo eius, reprehenderit similique ex incidunt blanditiis, veritatis beatae quibusdam.
-            &lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/main&gt;
-</code></pre>
-
-<pre><code class="language-javascript">    handleSubmit(event: any) {
-        console.log(this.state.email, this.state.password, this.state.regionID, this.state.stores, this.state.remember ? 'Remember!' : &quot;Dont' remember me!&quot;);
-        this.props.handleLoginState(true);
-        event.preventDefault();
+<!-- raw HTML omitted -->
+<h3 id="9lifting-state-up">9.Lifting State Up</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Navbar</span> <span style="color:#a6e22e">isLogged</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">isLogged</span>} <span style="color:#a6e22e">handleLoginState</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLoginState</span>} <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main container&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row clearfix&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-3&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Sidebar</span> <span style="color:#a6e22e">modules</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">modules</span>} <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col-md-9&#34;</span><span style="color:#f92672">&gt;</span>
+            { <span style="color:#75715e">/* HTML tags always use lowercase tag names, while React components start with Uppercase. */</span>}
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">inlineStyles</span>} <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page-title&#34;</span><span style="color:#f92672">&gt;</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;ReactJS Ways&#39;</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">LoginForm</span> <span style="color:#a6e22e">isLogged</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">isLogged</span>} <span style="color:#a6e22e">handleLoginState</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleLoginState</span>} <span style="color:#f92672">/&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span>
+                <span style="color:#a6e22e">Lorem</span> <span style="color:#a6e22e">ipsum</span>, <span style="color:#a6e22e">dolor</span> <span style="color:#a6e22e">sit</span> <span style="color:#a6e22e">amet</span> <span style="color:#a6e22e">consectetur</span> <span style="color:#a6e22e">adipisicing</span> <span style="color:#a6e22e">elit</span>. <span style="color:#a6e22e">Voluptatum</span> <span style="color:#a6e22e">provident</span> <span style="color:#a6e22e">magni</span> <span style="color:#a6e22e">consequatur</span> <span style="color:#a6e22e">libero</span>, <span style="color:#a6e22e">eum</span> <span style="color:#a6e22e">aut</span> <span style="color:#a6e22e">numquam</span> <span style="color:#a6e22e">quisquam</span> <span style="color:#a6e22e">sunt</span> <span style="color:#a6e22e">quod</span> <span style="color:#a6e22e">aperiam</span> <span style="color:#a6e22e">quo</span> <span style="color:#a6e22e">eius</span>, <span style="color:#a6e22e">reprehenderit</span> <span style="color:#a6e22e">similique</span> <span style="color:#a6e22e">ex</span> <span style="color:#a6e22e">incidunt</span> <span style="color:#a6e22e">blanditiis</span>, <span style="color:#a6e22e">veritatis</span> <span style="color:#a6e22e">beatae</span> <span style="color:#a6e22e">quibusdam</span>.
+            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/main&gt;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">handleSubmit</span>(<span style="color:#a6e22e">event</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">any</span>) {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">email</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">password</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">regionID</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">stores</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">remember</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;Remember!&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Dont&#39; remember me!&#34;</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">handleLoginState</span>(<span style="color:#66d9ef">true</span>);
+        <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">preventDefault</span>();
     }
 
-    render() {
-        let isLogged = this.props.isLogged;
-        if (isLogged) {
-            return null;
+    <span style="color:#a6e22e">render</span>() {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isLogged</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">isLogged</span>;
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isLogged</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
         }
-        return (
-            &lt;form onSubmit={this.handleSubmit}&gt;
-                &lt;div className=&quot;form-group&quot;&gt;
-                    &lt;label&gt;Email address&lt;/label&gt;
-                    &lt;input type=&quot;email&quot; className=&quot;form-control&quot; onChange={this.handleChange} value={this.state.email} name=&quot;email&quot;
-                        aria-describedby=&quot;emailHelp&quot; placeholder=&quot;Enter email&quot; /&gt;
-                    &lt;small id=&quot;emailHelp&quot; className=&quot;form-text text-muted&quot;&gt;We'll never share your email with anyone else.&lt;/small&gt;
-                &lt;/div&gt;
-                &lt;div className=&quot;form-group&quot;&gt;
-                    &lt;label&gt;Password&lt;/label&gt;
-                    &lt;input type=&quot;password&quot; className=&quot;form-control&quot; onChange={this.handleChange} name=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
-                &lt;/div&gt;
-                &lt;button type=&quot;submit&quot; className=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
-            &lt;/form&gt;
+        <span style="color:#66d9ef">return</span> (
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span> <span style="color:#a6e22e">onSubmit</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleSubmit</span>}<span style="color:#f92672">&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span><span style="color:#f92672">&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">label</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Email</span> <span style="color:#a6e22e">address</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/label&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">email</span>} <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span>
+                        <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">describedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter email&#34;</span> <span style="color:#f92672">/&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">small</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-text text-muted&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">We</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">ll</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">share</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">email</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">anyone</span> <span style="color:#66d9ef">else</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/small&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span><span style="color:#f92672">&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">label</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Password</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/label&gt;</span>
+                    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password&#34;</span> <span style="color:#f92672">/&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Submit</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/form&gt;</span>
         )
     }
-</code></pre>
-
-<p><strong>There are several ways to create modal with reactjs. You can take a look into these links:</strong></p>
-
+</code></pre></div><p><strong>There are several ways to create modal with reactjs. You can take a look into these links:</strong></p>
 <ul>
 <li><a href="https://react.semantic-ui.com/usage">https://react.semantic-ui.com/usage</a></li>
 <li><a href="https://medium.com/front-end-hacking/react-redux-no-need-to-component-state-for-modals-73871157b52e">https://medium.com/front-end-hacking/react-redux-no-need-to-component-state-for-modals-73871157b52e</a></li>
@@ -553,9 +447,7 @@ In most cases, we recommend using controlled components to implement forms. In a
 <li><a href="https://react.rocks/example/react-notification-system">https://react.rocks/example/react-notification-system</a></li>
 <li>V3 bootstrap : <a href="https://react-bootstrap.github.io/">https://react-bootstrap.github.io/</a></li>
 </ul>
-
-<h3 id="10-thinking-in-react">10.Thinking in React</h3>
-
+<h3 id="10thinking-in-react">10.Thinking in React</h3>
 <ul>
 <li>Start With A Mock</li>
 <li>Break The UI Into A Component Hierarchy</li>
@@ -568,40 +460,6 @@ In most cases, we recommend using controlled components to implement forms. In a
 </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-<div class="sidebar-fixed">
-    <div id="article-scrollpy" class="sidebar-widget">
-        <h3 class="widget-header">
-            <a href="#">Đầu mục bài viết</a>
-        </h3>
-        <ul class="sidebar-links article-scrollpy-links">
-        </ul>
-    </div>
-</div>
-<div class="sidebar-fixed">
-    <div class="sidebar-widget">
-        <h3 class="widget-header ucfirst">
-            <span>Bài viết khác</span>
-        </h3>
-         
-            
-        
-
-        
-            <ul class="sidebar-links">
-            
-            
-                <li><a href="/note/reactjs-ways-003/">Reactjs Ways - React Router - React Redux</a></li>
-            
-                <li><a href="/note/reactjs-ways-002/">Reactjs Ways - Advanced Solutions</a></li>
-            
-            </ul>        
-        
-    </div>
-</div>
-
-                </aside>
             </div>
             
         </div>

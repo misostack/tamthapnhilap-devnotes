@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,66 +108,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Tổng quan về ruby</h1>        
-        
-
-<p>Lời nói đầu, tổng hợp các keywords cần biết khi học ngôn ngữ ruby.</p>
-
+        <p>Lời nói đầu, tổng hợp các keywords cần biết khi học ngôn ngữ ruby.</p>
 <ul>
 <li>First step : <a href="https://www.tutorialspoint.com/ruby/index.htm">https://www.tutorialspoint.com/ruby/index.htm</a></li>
 </ul>
-
 <h2 id="the-basics">The Basics</h2>
-
 <h3 id="unix-shebang">Unix shebang</h3>
-
 <ul>
 <li>Ref : <a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">https://en.wikipedia.org/wiki/Shebang_%28Unix%29</a></li>
 <li><a href="https://en.wikibooks.org/wiki/Ruby_Programming/Hello_world">https://en.wikibooks.org/wiki/Ruby_Programming/Hello_world</a></li>
 </ul>
-
 <p>example.rb</p>
-
-<pre><code class="language-ruby">#!/usr/bin/env ruby
-puts 'Hello world'
-</code></pre>
-
-<p>Thì khi đó chúng ta có thể thực thi file này chỉ bằng cách</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/bin/env ruby</span>
+puts <span style="color:#e6db74">&#39;Hello world&#39;</span>
+</code></pre></div><p>Thì khi đó chúng ta có thể thực thi file này chỉ bằng cách</p>
 <pre><code>./example.rb
-</code></pre>
-
-<h3 id="the-io-class">The IO class</h3>
-
+</code></pre><h3 id="the-io-class">The IO class</h3>
 <ul>
 <li>Official : <a href="https://ruby-doc.org/core-2.5.1/IO.html">https://ruby-doc.org/core-2.5.1/IO.html</a></li>
 <li>Ref : <a href="http://zetcode.com/lang/rubytutorial/io/">http://zetcode.com/lang/rubytutorial/io/</a></li>
 </ul>
-
 <p><strong>Unix Commands:</strong></p>
-
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux">https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux</a></li>
 <li><a href="https://linux.101hacks.com/unix/bind/">https://linux.101hacks.com/unix/bind/</a></li>
 <li><a href="https://www.linux.org/threads/file-permissions-chmod.4124/">https://www.linux.org/threads/file-permissions-chmod.4124/</a></li>
 </ul>
-
 <p><strong>Exercises</strong></p>
-
 <ul>
 <li><a href="https://www.w3resource.com/c-programming-exercises/file-handling/">https://www.w3resource.com/c-programming-exercises/file-handling/</a></li>
 </ul>
-
 <p><strong>Summary</strong></p>
-
 <h3 id="string-manipulation">String manipulation</h3>
-
 <ul>
 <li>Official : <a href="https://ruby-doc.org/core-2.5.1/String.html#method-i-chomp">https://ruby-doc.org/core-2.5.1/String.html#method-i-chomp</a></li>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-string-methods-in-ruby">https://www.digitalocean.com/community/tutorials/how-to-work-with-string-methods-in-ruby</a></li>
 </ul>
-
 <h3 id="file-io">File IO</h3>
-
 <ul>
 <li>File mode : <a href="https://ruby-doc.org/core-2.5.1/IO.html#method-c-new">https://ruby-doc.org/core-2.5.1/IO.html#method-c-new</a></li>
 <li>Official : <a href="https://ruby-doc.org/core-2.5.1/File.html#method-c-open">https://ruby-doc.org/core-2.5.1/File.html#method-c-open</a></li>
@@ -181,9 +158,7 @@ puts 'Hello world'
 <li><a href="https://blog.bigbinary.com/2011/07/20/ruby-pack-unpack.html">https://blog.bigbinary.com/2011/07/20/ruby-pack-unpack.html</a></li>
 <li><a href="http://arduino.vn/reference/bit-math-cac-phep-toan-thao-tac-tren-bit">http://arduino.vn/reference/bit-math-cac-phep-toan-thao-tac-tren-bit</a></li>
 </ul>
-
 <h3 id="blocks-interators">Blocks, Interators</h3>
-
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)#Blocks_and_iterators">https://en.wikipedia.org/wiki/Ruby_(programming_language)#Blocks_and_iterators</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Anonymous_function#Ruby">https://en.wikipedia.org/wiki/Anonymous_function#Ruby</a></li>

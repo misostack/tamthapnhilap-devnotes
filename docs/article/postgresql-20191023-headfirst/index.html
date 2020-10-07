@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,10 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Postgresql 20191023 Headfirst</h1>        
-        
-
-<h2 id="objectives">Objectives</h2>
-
+        <h2 id="objectives">Objectives</h2>
 <ol>
 <li>Install PostgreSQL</li>
 <li>Most common PostgreSQL cli commands</li>
@@ -123,76 +120,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Managing database schemas</li>
 <li>Conditional Expressions &amp; Operators</li>
 </ol>
-
-<h2 id="i-installation">I.Installation</h2>
-
+<h2 id="iinstallation">I.Installation</h2>
 <h3 id="windows">Windows</h3>
-
 <ul>
 <li><a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows">Download Link</a></li>
 </ul>
-
 <p><strong>Allow Remote Connection</strong></p>
-
-<pre><code class="language-bash">- C:\Program Files\PostgreSQL\{VERSION}\data\pg_hba.conf
-# change config: trust to md5
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- C:<span style="color:#ae81ff">\P</span>rogram Files<span style="color:#ae81ff">\P</span>ostgreSQL<span style="color:#ae81ff">\{</span>VERSION<span style="color:#f92672">}</span><span style="color:#ae81ff">\d</span>ata<span style="color:#ae81ff">\p</span>g_hba.conf
+<span style="color:#75715e"># change config: trust to md5</span>
 host    all             all             127.0.0.1/32            md5
-# IPv6 local connections:
+<span style="color:#75715e"># IPv6 local connections:</span>
 host    all             all             ::1/128                 md5
-# then restart service and open cmd
+<span style="color:#75715e"># then restart service and open cmd</span>
 psql -h 127.0.0.1 -U postgres
-# set password
-ALTER USER postgres with password '123456';
-# quit
-\q
-# try logged with password
+<span style="color:#75715e"># set password</span>
+ALTER USER postgres with password <span style="color:#e6db74">&#39;123456&#39;</span>;
+<span style="color:#75715e"># quit</span>
+<span style="color:#ae81ff">\q</span>
+<span style="color:#75715e"># try logged with password</span>
 psql -h 127.0.0.1 -U postgres
-123456
-# short url
+<span style="color:#ae81ff">123456</span>
+<span style="color:#75715e"># short url</span>
 psql postgresql://postgres:123456@127.0.0.1:5432/postgres
-</code></pre>
-
-<h3 id="ubuntu">Ubuntu</h3>
-
-<pre><code class="language-bash">sudo apt-get update
+</code></pre></div><h3 id="ubuntu">Ubuntu</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo dpkg --configure -a
 sudo apt-get install postgresql postgresql-contrib
-</code></pre>
-
-<h2 id="ii-most-common-postgresql-cli-commands">II.Most common PostgreSQL cli commands</h2>
-
-<pre><code class="language-bash"># access postgres cli ubuntu
+</code></pre></div><h2 id="iimost-common-postgresql-cli-commands">II.Most common PostgreSQL cli commands</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># access postgres cli ubuntu</span>
 sudo -u postgres psql
-# check version
-SELECT version();
-# connect to specific database
-\c database_name
-# quit
-\q
-# list all databases
-\l
-# list all schemas
-\dn
-# list all stored procedures and functions
-\df
-# list all views
-\dv
-# list all tables in a current database
-\dt or \dt+
-# detail info of table
-\d+ table_name
-# list all users
-\du
-# new role
+<span style="color:#75715e"># check version</span>
+SELECT version<span style="color:#f92672">()</span>;
+<span style="color:#75715e"># connect to specific database</span>
+<span style="color:#ae81ff">\c</span> database_name
+<span style="color:#75715e"># quit</span>
+<span style="color:#ae81ff">\q</span>
+<span style="color:#75715e"># list all databases</span>
+<span style="color:#ae81ff">\l</span>
+<span style="color:#75715e"># list all schemas</span>
+<span style="color:#ae81ff">\d</span>n
+<span style="color:#75715e"># list all stored procedures and functions</span>
+<span style="color:#ae81ff">\d</span>f
+<span style="color:#75715e"># list all views</span>
+<span style="color:#ae81ff">\d</span>v
+<span style="color:#75715e"># list all tables in a current database</span>
+<span style="color:#ae81ff">\d</span>t or <span style="color:#ae81ff">\d</span>t+
+<span style="color:#75715e"># detail info of table</span>
+<span style="color:#ae81ff">\d</span>+ table_name
+<span style="color:#75715e"># list all users</span>
+<span style="color:#ae81ff">\d</span>u
+<span style="color:#75715e"># new role</span>
 CREATE ROLE role_name;
-# Create a new role with a username and password:
+<span style="color:#75715e"># Create a new role with a username and password:</span>
 CREATE ROLE username NOINHERIT LOGIN PASSWORD password;
-# Change role for the current session to the new_role:
+<span style="color:#75715e"># Change role for the current session to the new_role:</span>
 SET ROLE new_role;
-#Allow role_1 to set its role as role_2:
+<span style="color:#75715e">#Allow role_1 to set its role as role_2:</span>
 GRANT role_2 TO role_1;
 
-# new user
+<span style="color:#75715e"># new user</span>
 CREATE ROLE dbdesign WITH
 	LOGIN
 	NOSUPERUSER
@@ -201,12 +187,10 @@ CREATE ROLE dbdesign WITH
 	INHERIT
 	NOREPLICATION
 	CONNECTION LIMIT -1
-	PASSWORD '123456';
+	PASSWORD <span style="color:#e6db74">&#39;123456&#39;</span>;
 GRANT postgres TO dbdesign WITH ADMIN OPTION;
-COMMENT ON ROLE dbdesign IS 'dbdesign';
-</code></pre>
-
-<pre><code class="language-md">postgres-# \du
+COMMENT ON ROLE dbdesign IS <span style="color:#e6db74">&#39;dbdesign&#39;</span>;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">postgres-# \du
                                       List of roles
    Role name    |                         Attributes                         | Member of
 ----------------+------------------------------------------------------------+------------
@@ -215,22 +199,16 @@ COMMENT ON ROLE dbdesign IS 'dbdesign';
  odoo           | Create DB, Cannot login                                    | {}
  postgres       | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
  ubuntu         | Superuser, Create role, Create DB                          | {postgres}
-</code></pre>
-
-<h3 id="managing-databases">Managing databases</h3>
-
-<pre><code class="language-bash">CREATE DATABASE dbdesign
+</code></pre></div><h3 id="managing-databases">Managing databases</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CREATE DATABASE dbdesign
     WITH 
-    OWNER = dbdesign
-    ENCODING = 'UTF8'
-    CONNECTION LIMIT = -1;
+    OWNER <span style="color:#f92672">=</span> dbdesign
+    ENCODING <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;UTF8&#39;</span>
+    CONNECTION LIMIT <span style="color:#f92672">=</span> -1;
 
-# Test login
+<span style="color:#75715e"># Test login</span>
 psql postgresql://dbdesign:123456@127.0.0.1:5432/dbdesign
-</code></pre>
-
-<h2 id="some-references">Some References</h2>
-
+</code></pre></div><h2 id="some-references">Some References</h2>
 <ul>
 <li><a href="http://www.postgresqltutorial.com/postgresql-cheat-sheet/">http://www.postgresqltutorial.com/postgresql-cheat-sheet/</a></li>
 </ul>

@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,65 +108,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby 008 Testing</h1>        
-        
-
-<h2 id="types-of-automated-tests">Types of Automated Tests</h2>
-
+        <h2 id="types-of-automated-tests">Types of Automated Tests</h2>
 <p><strong>There are actually many different types of automated tests in widespread use. Here are some of the most common:</strong></p>
-
 <ul>
 <li><strong>Performance tests</strong> measure the speed of your program.</li>
 <li><strong>Integration tests</strong> run your entire program, to ensure that all its methods, classes, and other components integrate together successfully.</li>
 <li><strong>Unit tests</strong> run individual components (units) of your program, usually individual methods.</li>
 </ul>
-
-<h3 id="unit-test">&ndash;Unit Test</h3>
-
+<h3 id="--unit-test">&ndash;Unit Test</h3>
 <p><strong>Keywords</strong></p>
-
 <ul>
 <li>minitest</li>
 <li>assert_equal</li>
 <li>setup</li>
-
-<li><p>teardown</p>
-
-<pre><code class="language-ruby">#!/usr/bin/env ruby
-
-require 'minitest/autorun'
-
-def function_a(a, b)
-	a + b
-end
-
-def function_b(a, b)
-	a - b
-end
-
-class SampleTest &lt; Minitest::Test
-	def setup #run only once
-		@a = Random.new.rand(1..10)
-		@b = Random.new.rand(5..10)
-		@total = @a + @b
-		@differ = @a - @b
-	end
-	def teardown # run before each test
-		puts &quot;#{@a} + #{@b} = #{@total}&quot;
-		puts &quot;#{@a} - #{@b} = #{@differ}&quot;
-		puts '-'*20
-	end
-	def test_function_a		
-		assert_equal(@total, function_a(@a,@b))
-	end
-	def test_function_b
-		assert_equal(@differ, function_b(@a,@b))
-	end	
-end
-</code></pre></li>
+<li>teardown</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/bin/env ruby</span>
 
-<h2 id="readmore">Readmore</h2>
+require <span style="color:#e6db74">&#39;minitest/autorun&#39;</span>
 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function_a</span>(a, b)
+	a <span style="color:#f92672">+</span> b
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">function_b</span>(a, b)
+	a <span style="color:#f92672">-</span> b
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SampleTest</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Minitest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Test</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">setup</span> <span style="color:#75715e">#run only once</span>
+		@a <span style="color:#f92672">=</span> <span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>)
+		@b <span style="color:#f92672">=</span> <span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">5</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>)
+		@total <span style="color:#f92672">=</span> @a <span style="color:#f92672">+</span> @b
+		@differ <span style="color:#f92672">=</span> @a <span style="color:#f92672">-</span> @b
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">teardown</span> <span style="color:#75715e"># run before each test</span>
+		puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>@a<span style="color:#e6db74">}</span><span style="color:#e6db74"> + </span><span style="color:#e6db74">#{</span>@b<span style="color:#e6db74">}</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">#{</span>@total<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>@a<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">#{</span>@b<span style="color:#e6db74">}</span><span style="color:#e6db74"> = </span><span style="color:#e6db74">#{</span>@differ<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function_a</span>		
+		assert_equal(@total, function_a(@a,@b))
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_function_b</span>
+		assert_equal(@differ, function_b(@a,@b))
+	<span style="color:#66d9ef">end</span>	
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="readmore">Readmore</h2>
 <ul>
 <li>Read this book : Effective-testing-rspec-3</li>
 <li>Rspec is ruby&rsquo;s testing framework that used for : unit tests, integration tests</li>

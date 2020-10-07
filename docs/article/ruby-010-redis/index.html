@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,127 +108,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby 010 - Hướng dẫn sử dụng redis</h1>        
-        
-
-<h2 id="1-hướng-dẫn-cài-đặt">1.Hướng dẫn cài đặt</h2>
-
-<h3 id="hướng-dẫn-cài-đặt-trên-ubuntu-16">&ndash; Hướng dẫn cài đặt trên ubuntu 16</h3>
-
+        <h2 id="1hướng-dẫn-cài-đặt">1.Hướng dẫn cài đặt</h2>
+<h3 id="---hướng-dẫn-cài-đặt-trên-ubuntu-16">&ndash; Hướng dẫn cài đặt trên ubuntu 16</h3>
 <p><strong>Refs</strong></p>
-
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04</a></li>
 <li><a href="https://askubuntu.com/questions/868848/how-to-install-redis-on-ubuntu-16-04">https://askubuntu.com/questions/868848/how-to-install-redis-on-ubuntu-16-04</a></li>
 </ul>
-
-<h4 id="cách-đơn-giản-nhất">&ndash; Cách đơn giản nhất</h4>
-
-<pre><code class="language-bash">sudo add-apt-repository ppa:chris-lea/redis-server
+<h4 id="---cách-đơn-giản-nhất">&ndash; Cách đơn giản nhất</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:chris-lea/redis-server
 sudo apt-get update
 sudo apt-get install redis-server
-</code></pre>
-
-<h4 id="cách-cài-đặt-từ-source">&ndash; Cách cài đặt từ source</h4>
-
+</code></pre></div><h4 id="---cách-cài-đặt-từ-source">&ndash; Cách cài đặt từ source</h4>
 <p><strong>Install the Build and Test Dependencies</strong></p>
-
-<pre><code class="language-bash">sudo apt-get update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo apt-get install build-essential tcl
-</code></pre>
-
-<p><strong>Download and Extract the Source Code</strong></p>
-
-<pre><code class="language-bash">cd /tmp
+</code></pre></div><p><strong>Download and Extract the Source Code</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /tmp
 curl -O http://download.redis.io/redis-stable.tar.gz
 tar xzvf redis-stable.tar.gz
 cd redis-stable
-</code></pre>
-
-<p><strong>Build và Install Redis</strong></p>
-
-<pre><code class="language-bash">make
+</code></pre></div><p><strong>Build và Install Redis</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make
 make test
 sudo make install -j
 cd utils
 sudo ./install_server.sh
-</code></pre>
-
-<p><strong>Configure Redis</strong></p>
-
-<pre><code class="language-bash">sudo mkdir /etc/redis
+</code></pre></div><p><strong>Configure Redis</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo mkdir /etc/redis
 sudo cp /tmp/redis-stable/redis.conf /etc/redis
 sudo nano /etc/redis/redis.conf
-</code></pre>
-
-<p>Edit the file:</p>
-
-<pre><code class="language-bash">sudo nano /etc/redis/redis.conf
-</code></pre>
-
-<p>Make two changes there:</p>
-
-<pre><code class="language-bash">supervised systemd
+</code></pre></div><p>Edit the file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano /etc/redis/redis.conf
+</code></pre></div><p>Make two changes there:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">supervised systemd
 dir /var/lib/redis
-</code></pre>
+</code></pre></div><p><strong>Create a Redis systemd Unit File</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo nano /etc/systemd/system/redis.service
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
+Description<span style="color:#f92672">=</span>Redis In-Memory Data Store
+After<span style="color:#f92672">=</span>network.target
 
-<p><strong>Create a Redis systemd Unit File</strong></p>
+<span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+User<span style="color:#f92672">=</span>redis
+Group<span style="color:#f92672">=</span>redis
+ExecStart<span style="color:#f92672">=</span>/usr/local/bin/redis-server /etc/redis/redis.conf
+ExecStop<span style="color:#f92672">=</span>/usr/local/bin/redis-cli shutdown
+Restart<span style="color:#f92672">=</span>always
 
-<pre><code class="language-bash">sudo nano /etc/systemd/system/redis.service
-</code></pre>
-
-<pre><code class="language-bash">[Unit]
-Description=Redis In-Memory Data Store
-After=network.target
-
-[Service]
-User=redis
-Group=redis
-ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf
-ExecStop=/usr/local/bin/redis-cli shutdown
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-
-<p><strong>Create the Redis User, Group and Directories</strong></p>
-
-<pre><code class="language-bash">sudo adduser --system --group --no-create-home redis
+<span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
+WantedBy<span style="color:#f92672">=</span>multi-user.target
+</code></pre></div><p><strong>Create the Redis User, Group and Directories</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo adduser --system --group --no-create-home redis
 sudo mkdir /var/lib/redis
 sudo chown redis:redis /var/lib/redis
-sudo chmod 770 /var/lib/redis
-</code></pre>
-
-<p><strong>Start and test</strong></p>
-
-<pre><code class="language-bash">sudo systemctl start redis
+sudo chmod <span style="color:#ae81ff">770</span> /var/lib/redis
+</code></pre></div><p><strong>Start and test</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl start redis
 sudo systemctl status redis
-</code></pre>
-
-<pre><code class="language-bash">redis-cli
-</code></pre>
-
-<p><strong>Enable Redis to Start at Boot</strong></p>
-
-<pre><code class="language-bash">sudo systemctl enable redis
-</code></pre>
-
-<h2 id="2-công-cụ-quản-lí">2.Công cụ quản lí</h2>
-
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">redis-cli
+</code></pre></div><p><strong>Enable Redis to Start at Boot</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo systemctl enable redis
+</code></pre></div><h2 id="2công-cụ-quản-lí">2.Công cụ quản lí</h2>
 <ul>
 <li>Redis Desktop Manager</li>
 </ul>
-
-<h2 id="3-bảo-mật">3.Bảo mật</h2>
-
+<h2 id="3bảo-mật">3.Bảo mật</h2>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-secure-your-redis-installation-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-secure-your-redis-installation-on-ubuntu-14-04</a></li>
 </ul>
-
-<h2 id="4-hướng-dẫn-sử-dụng-ruby-và-redis">4.Hướng dẫn sử dụng ruby và redis</h2>
-
-<h2 id="5-3rd-party-services">5.3rd party services</h2>
-
+<h2 id="4hướng-dẫn-sử-dụng-ruby-và-redis">4.Hướng dẫn sử dụng ruby và redis</h2>
+<h2 id="53rd-party-services">5.3rd party services</h2>
 <ul>
 <li>Amazon</li>
 <li>Heroku</li>

@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,308 +108,271 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby Module and Classes</h1>        
-        
-
-<h2 id="object-oriented-programming">Object Oriented Programming</h2>
-
+        <h2 id="object-oriented-programming">Object Oriented Programming</h2>
 <ul>
 <li>Data Abstraction</li>
 <li>Encapsulation</li>
 <li>Inheritance</li>
-
-<li><p>Polymorphism</p>
-
-<pre><code class="language-ruby">class Animal
-	# symbols : immutable
-	attr_reader :name, :talk	
-	def initialize
-		@name = self.class.name.capitalize		
-	end	
-	def speak
-		puts &quot;#{@name} says 'hello'&quot;
-	end
-end
-
-class Dog &lt; Animal
-	def initialize
-		super
-		@talk = 'gou gou gou'
-	end
-end
-
-class Cat &lt; Animal
-	def initialize
-		super
-		@talk = 'meow meow meow'
-	end	
-end
-
-dog = Dog.new
-dog.speak
-puts dog.name
-cat = Cat.new
-cat.speak
-puts cat.name
-</code></pre></li>
+<li>Polymorphism</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>
+	<span style="color:#75715e"># symbols : immutable</span>
+	<span style="color:#66d9ef">attr_reader</span> <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">:talk</span>	
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
+		@name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>capitalize		
+	<span style="color:#66d9ef">end</span>	
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>
+		puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>@name<span style="color:#e6db74">}</span><span style="color:#e6db74"> says &#39;hello&#39;&#34;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-<h2 id="symbol">Symbol</h2>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Animal</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
+		<span style="color:#66d9ef">super</span>
+		@talk <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;gou gou gou&#39;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Animal</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>
+		<span style="color:#66d9ef">super</span>
+		@talk <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;meow meow meow&#39;</span>
+	<span style="color:#66d9ef">end</span>	
+<span style="color:#66d9ef">end</span>
+
+dog <span style="color:#f92672">=</span> <span style="color:#66d9ef">Dog</span><span style="color:#f92672">.</span>new
+dog<span style="color:#f92672">.</span>speak
+puts dog<span style="color:#f92672">.</span>name
+cat <span style="color:#f92672">=</span> <span style="color:#66d9ef">Cat</span><span style="color:#f92672">.</span>new
+cat<span style="color:#f92672">.</span>speak
+puts cat<span style="color:#f92672">.</span>name
+</code></pre></div><h2 id="symbol">Symbol</h2>
 <ul>
-<li><p><a href="https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/">https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/</a></p></li>
-
-<li><p>A Symbol is basically the same as a String, but with one important difference.</p></li>
-
-<li><p>A Symbol is <strong>immutable</strong>.</p></li>
-
-<li><p>Symbols are better for performance</p>
-
-<pre><code class="language-html">When you create two String objects with the same value, those two objects are treated as two different objects. When you create a Symbol, referencing the Symbol will always use the same object.
+<li>
+<p><a href="https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/">https://www.culttt.com/2015/04/22/what-are-symbols-in-ruby/</a></p>
+</li>
+<li>
+<p>A Symbol is basically the same as a String, but with one important difference.</p>
+</li>
+<li>
+<p>A Symbol is <strong>immutable</strong>.</p>
+</li>
+<li>
+<p>Symbols are better for performance</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">When you create two String objects with the same value, those two objects are treated as two different objects. When you create a Symbol, referencing the Symbol will always use the same object.
 
 This is much better for performance because the same String object will be created and destroyed over and over again when in reality the same object can just be reused each time.
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#e6db74">:hello</span><span style="color:#f92672">.</span>class  
+<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Symbol</span>
 
-<pre><code class="language-ruby">:hello.class  
-=&gt; Symbol
+<span style="color:#e6db74">&#34;hello&#34;</span><span style="color:#f92672">.</span>class  
+<span style="color:#f92672">=&gt;</span> String  
 
-&quot;hello&quot;.class  
-=&gt; String  
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Philip&#34;</span>  
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;Philip&#34;</span>
 
-name = &quot;Philip&quot;  
-=&gt; &quot;Philip&quot;
+name<span style="color:#f92672">.</span>freeze  
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;Philip&#34;</span>
 
-name.freeze  
-=&gt; &quot;Philip&quot;
+name <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Jim&#34;</span>  
+<span style="color:#e6db74">RuntimeError</span>: can<span style="color:#960050;background-color:#1e0010">’</span>t modify frozen String  
 
-name &lt;&lt; &quot;Jim&quot;  
-RuntimeError: can’t modify frozen String  
+<span style="color:#e6db74">&#34;philip&#34;</span><span style="color:#f92672">.</span>object_id  
+<span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">70288511587360</span>  
+<span style="color:#e6db74">&#34;philip&#34;</span><span style="color:#f92672">.</span>object_id  
+<span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">70288504327720</span>
 
-&quot;philip&quot;.object_id  
-=&gt; 70288511587360  
-&quot;philip&quot;.object_id  
-=&gt; 70288504327720
-
-:philip.object_id  
-=&gt; 539368  
-:philip.object_id  
-=&gt; 539368  
-</code></pre></li>
-</ul>
-
-<p><strong>When should you use Symbols?</strong></p>
-
+<span style="color:#e6db74">:philip</span><span style="color:#f92672">.</span>object_id  
+<span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">539368</span>  
+<span style="color:#e6db74">:philip</span><span style="color:#f92672">.</span>object_id  
+<span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">539368</span>  
+</code></pre></div><p><strong>When should you use Symbols?</strong></p>
 <ul>
-<li><p>Identifying things</p>
-
-<pre><code class="language-ruby">person = {:name =&gt; &quot;Philip&quot;} # Symbol
-person = {&quot;name&quot; =&gt; &quot;Philip&quot;} # String
-person = {name: &quot;Philip&quot;}  # Symbol
-</code></pre></li>
-
-<li><p>Used in method calls</p>
-
-<pre><code class="language-ruby">people = [&quot;Marty&quot;, &quot;Emmett&quot;, &quot;Bif&quot;]  
-=&gt; [&quot;Marty&quot;, &quot;Emmett&quot;, &quot;Bif&quot;]
-
-people.send(:pop) # execute method pop of array
-=&gt; &quot;Bif&quot;
-
-people.respond_to?(:map) # Check to see if the map method is available on this object.
-
-class Dog  
-attr_accessor :name
-end
-
-dog1 = Dog.new  
-dog1.name = &quot;Einstein&quot;
-</code></pre></li>
-
-<li><p>When you want to set the status of something?(Same as Enums)</p>
-
-<pre><code class="language-ruby">module IkariamUnit
-	class Unit
-		attr_reader :name, :description, :hitpoints, :armour, :size, :type, :speed, :cost, :barracks, :status
-		def initialize(unit_type)
-			@name = unit_type
-			@status = :inactive if(unit_type == 'Hoptile')
-			@status = :active unless(unit_type == 'Hoptile')
-			Object.const_get( self.class.name.split('::')[0] + &quot;::#{unit_type}&quot;)
-		end
-
-		def display			
-			puts prepare_display
-		end
-
-		protected
-
-		def prepare_display
-			'-' * 20
-			&quot;Name: #{name}\n&quot; +
-			&quot;Description: #{description}\n&quot;.capitalize +
-			&quot;hitpoints: #{hitpoints}\n&quot;.capitalize +
-			&quot;armour: #{armour}\n&quot;.capitalize +
-			&quot;size: #{size}\n&quot;.capitalize +
-			&quot;type: #{type}\n&quot;.capitalize +
-			&quot;speed: #{speed}\n&quot;.capitalize +
-			&quot;cost: #{cost}\n&quot;.capitalize +
-			&quot;barracks: #{barracks}\n&quot;.capitalize +
-			&quot;status: #{status}\n&quot;.capitalize +
-			'-' * 20
-		end
-	end
-
-	class Hoptile &lt; Unit
-	end
-
-	class SteamGiant &lt; Unit
-	end
-
-	class Swordman &lt; Unit
-	end
-
-	class Spearman &lt; Unit
-	end
-
-	class SulphurCarabineer &lt; Unit
-	end
-
-	def self.show_all_units
-		['Hoptile','SteamGiant','Swordman','Spearman','SulphurCarabineer'].each do |u|
-			unit_obj = Unit.new(u)
-			unit_obj.display
-		end
-	end
-end
-
-IkariamUnit.show_all_units
-</code></pre></li>
+<li>Identifying things</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">person <span style="color:#f92672">=</span> {<span style="color:#e6db74">:name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;Philip&#34;</span>} <span style="color:#75715e"># Symbol</span>
+person <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;Philip&#34;</span>} <span style="color:#75715e"># String</span>
+person <span style="color:#f92672">=</span> {name: <span style="color:#e6db74">&#34;Philip&#34;</span>}  <span style="color:#75715e"># Symbol</span>
+</code></pre></div><ul>
+<li>Used in method calls</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">people <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;Marty&#34;</span>, <span style="color:#e6db74">&#34;Emmett&#34;</span>, <span style="color:#e6db74">&#34;Bif&#34;</span><span style="color:#f92672">]</span>  
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;Marty&#34;</span>, <span style="color:#e6db74">&#34;Emmett&#34;</span>, <span style="color:#e6db74">&#34;Bif&#34;</span><span style="color:#f92672">]</span>
 
-<h3 id="a-payroll-system">A Payroll System</h3>
+people<span style="color:#f92672">.</span>send(<span style="color:#e6db74">:pop</span>) <span style="color:#75715e"># execute method pop of array</span>
+<span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;Bif&#34;</span>
 
+people<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">:map</span>) <span style="color:#75715e"># Check to see if the map method is available on this object.</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>  
+<span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:name</span>
+<span style="color:#66d9ef">end</span>
+
+dog1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">Dog</span><span style="color:#f92672">.</span>new  
+dog1<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Einstein&#34;</span>
+</code></pre></div><ul>
+<li>When you want to set the status of something?(Same as Enums)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">module</span> IkariamUnit
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Unit</span>
+		<span style="color:#66d9ef">attr_reader</span> <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">:description</span>, <span style="color:#e6db74">:hitpoints</span>, <span style="color:#e6db74">:armour</span>, <span style="color:#e6db74">:size</span>, <span style="color:#e6db74">:type</span>, <span style="color:#e6db74">:speed</span>, <span style="color:#e6db74">:cost</span>, <span style="color:#e6db74">:barracks</span>, <span style="color:#e6db74">:status</span>
+		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(unit_type)
+			@name <span style="color:#f92672">=</span> unit_type
+			@status <span style="color:#f92672">=</span> <span style="color:#e6db74">:inactive</span> <span style="color:#66d9ef">if</span>(unit_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Hoptile&#39;</span>)
+			@status <span style="color:#f92672">=</span> <span style="color:#e6db74">:active</span> <span style="color:#66d9ef">unless</span>(unit_type <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Hoptile&#39;</span>)
+			<span style="color:#66d9ef">Object</span><span style="color:#f92672">.</span>const_get( self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>name<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;::&#39;</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;::</span><span style="color:#e6db74">#{</span>unit_type<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+		<span style="color:#66d9ef">end</span>
+
+		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>			
+			puts prepare_display
+		<span style="color:#66d9ef">end</span>
+
+		<span style="color:#66d9ef">protected</span>
+
+		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">prepare_display</span>
+			<span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>
+			<span style="color:#e6db74">&#34;Name: </span><span style="color:#e6db74">#{</span>name<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;Description: </span><span style="color:#e6db74">#{</span>description<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;hitpoints: </span><span style="color:#e6db74">#{</span>hitpoints<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;armour: </span><span style="color:#e6db74">#{</span>armour<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;size: </span><span style="color:#e6db74">#{</span>size<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;type: </span><span style="color:#e6db74">#{</span>type<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;speed: </span><span style="color:#e6db74">#{</span>speed<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;cost: </span><span style="color:#e6db74">#{</span>cost<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;barracks: </span><span style="color:#e6db74">#{</span>barracks<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#34;status: </span><span style="color:#e6db74">#{</span>status<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>capitalize <span style="color:#f92672">+</span>
+			<span style="color:#e6db74">&#39;-&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">20</span>
+		<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hoptile</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Unit</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SteamGiant</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Unit</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Unit</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Spearman</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Unit</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SulphurCarabineer</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Unit</span>
+	<span style="color:#66d9ef">end</span>
+
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">show_all_units</span>
+		<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Hoptile&#39;</span>,<span style="color:#e6db74">&#39;SteamGiant&#39;</span>,<span style="color:#e6db74">&#39;Swordman&#39;</span>,<span style="color:#e6db74">&#39;Spearman&#39;</span>,<span style="color:#e6db74">&#39;SulphurCarabineer&#39;</span><span style="color:#f92672">].</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>u<span style="color:#f92672">|</span>
+			unit_obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">Unit</span><span style="color:#f92672">.</span>new(u)
+			unit_obj<span style="color:#f92672">.</span>display
+		<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">IkariamUnit</span><span style="color:#f92672">.</span>show_all_units
+</code></pre></div><h3 id="a-payroll-system">A Payroll System</h3>
 <p><strong>Fixnum and Float</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">puts <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+puts <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+puts Float(<span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0</span>) <span style="color:#e6db74">/2
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">class Employee
+</span><span style="color:#e6db74">	attr_reader :name, :salary
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	def initialize(name = &#39;Anonymous&#39;, salary = 0.0)
+</span><span style="color:#e6db74">		@name = name
+</span><span style="color:#e6db74">		@salary = salary
+</span><span style="color:#e6db74">	end
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	def name=(name)
+</span><span style="color:#e6db74">		raise &#39;Name can not be blank&#39; if name == &#39;&#39;
+</span><span style="color:#e6db74">		@name = name
+</span><span style="color:#e6db74">	end
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	def salary=(salary)
+</span><span style="color:#e6db74">		raise &#34;A salary of </span><span style="color:#e6db74">#{</span>salary<span style="color:#e6db74">}</span><span style="color:#e6db74"> is not valid!&#34; if salary &lt; 0
+</span><span style="color:#e6db74">		puts salary.class
+</span><span style="color:#e6db74">		@salary = salary * 1.0
+</span><span style="color:#e6db74">		puts @salary.class
+</span><span style="color:#e6db74">	end
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">	def print_pay_stub
+</span><span style="color:#e6db74">		puts format(&#34;The %s &#39;s pay period is $%0.2f&#34;, @name, @salary/</span><span style="color:#ae81ff">365</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">14</span>)
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-ruby">puts 1/2
-puts 1.0/ 2
-puts Float(1.0) /2
+jack <span style="color:#f92672">=</span> <span style="color:#66d9ef">Employee</span><span style="color:#f92672">.</span>new <span style="color:#e6db74">&#39;Jack&#39;</span>, <span style="color:#ae81ff">100000</span>
+<span style="color:#75715e"># jack.name = &#34;Jack&#34;</span>
+<span style="color:#75715e"># jack.salary = 100000</span>
+jack<span style="color:#f92672">.</span>print_pay_stub
 
-class Employee
-	attr_reader :name, :salary
-
-	def initialize(name = 'Anonymous', salary = 0.0)
-		@name = name
-		@salary = salary
-	end
-
-	def name=(name)
-		raise 'Name can not be blank' if name == ''
-		@name = name
-	end
-
-	def salary=(salary)
-		raise &quot;A salary of #{salary} is not valid!&quot; if salary &lt; 0
-		puts salary.class
-		@salary = salary * 1.0
-		puts @salary.class
-	end
-
-	def print_pay_stub
-		puts format(&quot;The %s 's pay period is $%0.2f&quot;, @name, @salary/365 * 14)
-	end
-end
-
-jack = Employee.new 'Jack', 100000
-# jack.name = &quot;Jack&quot;
-# jack.salary = 100000
-jack.print_pay_stub
-
-</code></pre>
-
-<h3 id="modules-and-its-useful">Modules and its useful</h3>
-
+</code></pre></div><h3 id="modules-and-its-useful">Modules and its useful</h3>
 <p><strong>Ruby Object Model (ROM)</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">module</span> Cream
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cream?</span>
+    <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-ruby">module Cream
-  def cream?
-    true
-  end
-end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cookie</span>
+  <span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Cream</span>
+<span style="color:#66d9ef">end</span>
 
-class Cookie
-  include Cream
-end
+cookie <span style="color:#f92672">=</span> <span style="color:#66d9ef">Cookie</span><span style="color:#f92672">.</span>new
+p cookie<span style="color:#f92672">.</span>cream?
+</code></pre></div><p><strong>Look this sample</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;digest&#39;</span>
 
-cookie = Cookie.new
-p cookie.cream?
-</code></pre>
+<span style="color:#66d9ef">module</span> Encryption
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt</span>(string)
+		<span style="color:#66d9ef">Digest</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SHA2</span><span style="color:#f92672">.</span>hexdigest(string)
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-<p><strong>Look this sample</strong></p>
-
-<pre><code class="language-ruby">require 'digest'
-
-module Encryption
-	def encrypt(string)
-		Digest::SHA2.hexdigest(string)
-	end
-end
-
-class User
-	include Encryption
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span>
+	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Encryption</span>
 	
-	def login(username,password)
-		@hashed_password = encrypt_password(password)
-		p &quot;#{username} - #{@hashed_password}&quot;
-	end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">login</span>(username,password)
+		@hashed_password <span style="color:#f92672">=</span> encrypt_password(password)
+		p <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">#{</span>@hashed_password<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#66d9ef">end</span>
 
-	def encrypt_password(password, salt = '')
-		encrypt(password.to_s + (salt.empty? ? '123456' : salt).to_s )
-	end
-end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">encrypt_password</span>(password, salt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+		encrypt(password<span style="color:#f92672">.</span>to_s <span style="color:#f92672">+</span> (salt<span style="color:#f92672">.</span>empty? ? <span style="color:#e6db74">&#39;123456&#39;</span> : salt)<span style="color:#f92672">.</span>to_s )
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-u = User.new
-u.login 'username', '123456'
-</code></pre>
-
-<p>Có 3 điều chúng ta có thể làm với một module:</p>
-
+u <span style="color:#f92672">=</span> <span style="color:#66d9ef">User</span><span style="color:#f92672">.</span>new
+u<span style="color:#f92672">.</span>login <span style="color:#e6db74">&#39;username&#39;</span>, <span style="color:#e6db74">&#39;123456&#39;</span>
+</code></pre></div><p>Có 3 điều chúng ta có thể làm với một module:</p>
 <ol>
 <li>Include nó trong class-objects</li>
 <li>Prepend nó trong class-objects</li>
 <li>Extend nó trong class objects hoặc tạo objects với nó</li>
 </ol>
-
 <p><strong>The Helicopter Rule</strong></p>
+<p><img src="/posts/ruby-module.png" alt="ruby-module.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">module</span> A; <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">module</span> B; <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">module</span> C; <span style="color:#66d9ef">end</span>
 
-<p><img src="/posts/ruby-module.png" alt="ruby-module.png" /></p>
-
-<pre><code class="language-ruby">module A; end
-module B; end
-module C; end
-
-class MyClass
-    include A
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+    <span style="color:#66d9ef">include</span> A
     prepend B
-    extend C
-end
+    <span style="color:#66d9ef">extend</span> C
+<span style="color:#66d9ef">end</span>
 
-MyClass.ancestors
-=&gt; [B, MyClass, A, Object, Kernel, BasicObject] 
-MyClass.singleton_class.ancestors
-=&gt; [#&lt;Class:MyClass&gt;, C, #&lt;Class:Object&gt;, #&lt;Class:BasicObject&gt;, Class, Module, Object, Kernel, BasicObject]
-</code></pre>
-
-<h3 id="build-method">Build Method</h3>
-
-<pre><code class="language-bash">build won't &quot;create&quot; a record in database, just create a new object in memory so that the view can take this object and display something, especially for a form.
-</code></pre>
-
-<pre><code class="language-ruby">params = {name: 'A'}
-obj = objAType.send(:build, params)
-obj.displayName
-</code></pre>
-
-<p><strong>You wanna read more?</strong></p>
-
+<span style="color:#66d9ef">MyClass</span><span style="color:#f92672">.</span>ancestors
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span>B, <span style="color:#66d9ef">MyClass</span>, A, <span style="color:#66d9ef">Object</span>, <span style="color:#66d9ef">Kernel</span>, <span style="color:#66d9ef">BasicObject</span><span style="color:#f92672">]</span> 
+<span style="color:#66d9ef">MyClass</span><span style="color:#f92672">.</span>singleton_class<span style="color:#f92672">.</span>ancestors
+<span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#75715e">#&lt;Class:MyClass&gt;, C, #&lt;Class:Object&gt;, #&lt;Class:BasicObject&gt;, Class, Module, Object, Kernel, BasicObject]</span>
+</code></pre></div><h3 id="build-method">Build Method</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">build won<span style="color:#960050;background-color:#1e0010">&#39;</span>t <span style="color:#e6db74">&#34;create&#34;</span> a record in database, just create a new object in memory so that the view can take this object and display something, especially <span style="color:#66d9ef">for</span> a form.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">params <span style="color:#f92672">=</span> {name: <span style="color:#e6db74">&#39;A&#39;</span>}
+obj <span style="color:#f92672">=</span> objAType<span style="color:#f92672">.</span>send(<span style="color:#e6db74">:build</span>, params)
+obj<span style="color:#f92672">.</span>displayName
+</code></pre></div><p><strong>You wanna read more?</strong></p>
 <ul>
 <li><a href="http://ruby-for-beginners.rubymonstas.org/advanced/modules.html">http://ruby-for-beginners.rubymonstas.org/advanced/modules.html</a></li>
 <li><a href="https://learnrubythehardway.org/book/ex40.html">https://learnrubythehardway.org/book/ex40.html</a></li>

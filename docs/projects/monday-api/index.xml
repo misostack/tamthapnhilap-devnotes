@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>monday-api on DevNotes 2019</title>
@@ -7,18 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Wed, 23 Oct 2019 14:18:56 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/projects/monday-api/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 23 Oct 2019 14:18:56 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/projects/monday-api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Monday Api 001 Dev</title>
       <link>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</link>
       <pubDate>Wed, 23 Oct 2019 14:18:56 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/note/monday-api-001-dev/</guid>
-      <description>Things need to do: Design Application Structures: REST API, Core Module Design REST API Endpoints Design Models, Schemas, Services Document REST API Endpoints Design Data Validations Design Pagination, Search Integrate Services with Related Resources Secured: CORS, JWT Testing API with Postman Improvement with: Index, Caching, Elastic Search,&amp;hellip; Automation: make generators that generate new resources endpoint from json data Common Services: Mailer &amp;amp; SMS, Cron, Task Queues Deployment: Heroku, VPS, CI &amp;amp; CD with gitlab, ci  Application Structures { &amp;quot;flaskr&amp;quot;: { &amp;quot;core&amp;quot;: [ &amp;quot;base&amp;quot;, &amp;quot;db&amp;quot;, &amp;quot;helpers&amp;quot; ], &amp;quot;admin&amp;quot;: { &amp;quot;admin_core&amp;quot;: [ &amp;quot;controllers&amp;quot;, &amp;quot;services&amp;quot;, &amp;quot;helpers&amp;quot; ], &amp;quot;admin_auth&amp;quot;: [ &amp;quot;controllers&amp;quot;, &amp;quot;services&amp;quot;, &amp;quot;helpers&amp;quot; ] }, &amp;quot;templates&amp;quot;: { &amp;quot;admin&amp;quot;: { &amp;quot;admin_core&amp;quot;: [ &amp;quot;dashboard&amp;quot; ], &amp;quot;admin_auth&amp;quot;: [ &amp;quot;auth&amp;quot;, &amp;quot;auth_login&amp;quot;, &amp;quot;auth_forget_password&amp;quot;, &amp;quot;auth_reset_password&amp;quot; ], } }, &amp;quot;api&amp;quot;: { &amp;quot;v1&amp;quot;:[ &amp;quot;__init__&amp;quot;, &amp;quot;users&amp;quot;, &amp;quot;books&amp;quot;, &amp;quot;categories&amp;quot;, &amp;quot;tags&amp;quot;, &amp;quot;reading-plans&amp;quot;, &amp;quot;reading-logs&amp;quot; ] }, &amp;quot;__init__&amp;quot; }, &amp;quot;instance&amp;quot;: [], &amp;quot;tests&amp;quot;: { &amp;quot;admin&amp;quot;: [ // .</description>
+      <description>Things need to do:  Design Application Structures: REST API, Core Module Design REST API Endpoints Design Models, Schemas, Services Document REST API Endpoints Design Data Validations Design Pagination, Search Integrate Services with Related Resources Secured: CORS, JWT Testing API with Postman Improvement with: Index, Caching, Elastic Search,&amp;hellip; Automation: make generators that generate new resources endpoint from json data Common Services: Mailer &amp;amp; SMS, Cron, Task Queues Deployment: Heroku, VPS, CI &amp;amp; CD with gitlab, ci  Application Structures { &amp;#34;flaskr&amp;#34;: { &amp;#34;core&amp;#34;: [ &amp;#34;base&amp;#34;, &amp;#34;db&amp;#34;, &amp;#34;helpers&amp;#34; ], &amp;#34;admin&amp;#34;: { &amp;#34;admin_core&amp;#34;: [ &amp;#34;controllers&amp;#34;, &amp;#34;services&amp;#34;, &amp;#34;helpers&amp;#34; ], &amp;#34;admin_auth&amp;#34;: [ &amp;#34;controllers&amp;#34;, &amp;#34;services&amp;#34;, &amp;#34;helpers&amp;#34; ] }, &amp;#34;templates&amp;#34;: { &amp;#34;admin&amp;#34;: { &amp;#34;admin_core&amp;#34;: [ &amp;#34;dashboard&amp;#34; ], &amp;#34;admin_auth&amp;#34;: [ &amp;#34;auth&amp;#34;, &amp;#34;auth_login&amp;#34;, &amp;#34;auth_forget_password&amp;#34;, &amp;#34;auth_reset_password&amp;#34; ], } }, &amp;#34;api&amp;#34;: { &amp;#34;v1&amp;#34;:[ &amp;#34;__init__&amp;#34;, &amp;#34;users&amp;#34;, &amp;#34;books&amp;#34;, &amp;#34;categories&amp;#34;, &amp;#34;tags&amp;#34;, &amp;#34;reading-plans&amp;#34;, &amp;#34;reading-logs&amp;#34; ] }, &amp;#34;__init__&amp;#34; }, &amp;#34;instance&amp;#34;: [], &amp;#34;tests&amp;#34;: { &amp;#34;admin&amp;#34;: [ // .</description>
     </item>
     
   </channel>

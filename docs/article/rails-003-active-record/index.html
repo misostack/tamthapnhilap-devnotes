@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,106 +108,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Rails 003 - The Powerfull Active Record</h1>        
-        
-
-<p><strong>In this chapter, you will see how powerfull the Active Record is!</strong></p>
-
+        <p><strong>In this chapter, you will see how powerfull the Active Record is!</strong></p>
 <h2 id="the-powering-of-rails-console-to-make-your-query-with-active-record">The Powering of rails console to make your query with active record</h2>
-
-<pre><code class="language-ruby">Game::Team.all
-Game::Team.first
-Game::Team.first.class
-Status::Message.all
-Status::Message.find(1)
-Status::Message.find([1,2,3])
-Status::Message.where(:status =&gt; 1)
-Status::Message.where(:status =&gt; 1..3)
-Status::Message.where(:status =&gt; [1,2])
-Status::Message.where(:status =&gt; [1,2]).count
-Status::Message.where_not(:status =&gt; [1,2]).count
-Status::Message.where(:status =&gt; 1).or(Status::Message.where(:status =&gt; 2)).count
-Status::Message.where('title like ?', '%doing%') # prepared statement
-Status::Message.where('status = ? or status = ?', 1,2)
-Status::Message.where('status = :active or status = :inactive', :inactive =&gt; 2, :active =&gt; 1)
-Status::Message.order(:status).reverse_order.first
-Status::Message.order(:id).limit(5).offset(0) #page 1
-Status::Message.order(:id).limit(5).offset(1) #page 2
-Status::Message.group(:status).limit(-1).count # {-1=&gt;2000, 0=&gt;2042, 1=&gt;1992, 2=&gt;2002, 3=&gt;1974}
-Status::Message.order(:title).limit(2).offset(0).pluck(:id, :title)# return an array like [[123, &quot;example mssage&quot;],[&quot;124&quot;,&quot;eample 2&quot;]]
-Status::Message.select(:id, :title).order(:title).limit(2).offset(0) # return array object like Status::Message id: 35, title: &quot;A little trick for achieving the proper competitiv...&quot;
-Status::Message.where(:title =&gt; 'Sample First Or Create', :status =&gt; -1).first_or_create # // will find and create if not exists.
-m = Status::Message.where(:title =&gt; 'Sample First Or Initialize', :status =&gt; -1).first_or_initialize # // will find and init object if not exists
-m.new_record?
-m.save
-# calculation
-Status::Message.average(:status)# AVG(status). Eg: calculate average annual income or expenses
-Status::Message.group(:status).sum(:status)# . Eg: sum annual income or expenses by month or year
-maximum|minimum # MAX, MIN. Eg: highest and lowest income or expenses
-#lazyload
-m = Status::Message.all
-m.find(1)
-m.where(:status =&gt; 1)
-m.order(:title)
-m.limit(3)
-m.order('id DESC').first
-m.order(:id).first
-#clear
-system('cls')
-</code></pre>
-
-<h2 id="in-some-case-you-wanna-use-raw-sql-query">In some case, you wanna use raw sql query</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Game</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Team</span><span style="color:#f92672">.</span>all
+<span style="color:#66d9ef">Game</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Team</span><span style="color:#f92672">.</span>first
+<span style="color:#66d9ef">Game</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Team</span><span style="color:#f92672">.</span>first<span style="color:#f92672">.</span>class
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>all
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>find(<span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>find(<span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">3</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>count
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where_not(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">]</span>)<span style="color:#f92672">.</span>count
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>or(<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>))<span style="color:#f92672">.</span>count
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#39;title like ?&#39;</span>, <span style="color:#e6db74">&#39;%doing%&#39;</span>) <span style="color:#75715e"># prepared statement</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#39;status = ? or status = ?&#39;</span>, <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">&#39;status = :active or status = :inactive&#39;</span>, <span style="color:#e6db74">:inactive</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">:active</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>order(<span style="color:#e6db74">:status</span>)<span style="color:#f92672">.</span>reverse_order<span style="color:#f92672">.</span>first
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>order(<span style="color:#e6db74">:id</span>)<span style="color:#f92672">.</span>limit(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>offset(<span style="color:#ae81ff">0</span>) <span style="color:#75715e">#page 1</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>order(<span style="color:#e6db74">:id</span>)<span style="color:#f92672">.</span>limit(<span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>offset(<span style="color:#ae81ff">1</span>) <span style="color:#75715e">#page 2</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>group(<span style="color:#e6db74">:status</span>)<span style="color:#f92672">.</span>limit(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>count <span style="color:#75715e"># {-1=&gt;2000, 0=&gt;2042, 1=&gt;1992, 2=&gt;2002, 3=&gt;1974}</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>order(<span style="color:#e6db74">:title</span>)<span style="color:#f92672">.</span>limit(<span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>offset(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>pluck(<span style="color:#e6db74">:id</span>, <span style="color:#e6db74">:title</span>)<span style="color:#75715e"># return an array like [[123, &#34;example mssage&#34;],[&#34;124&#34;,&#34;eample 2&#34;]]</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>select(<span style="color:#e6db74">:id</span>, <span style="color:#e6db74">:title</span>)<span style="color:#f92672">.</span>order(<span style="color:#e6db74">:title</span>)<span style="color:#f92672">.</span>limit(<span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>offset(<span style="color:#ae81ff">0</span>) <span style="color:#75715e"># return array object like Status::Message id: 35, title: &#34;A little trick for achieving the proper competitiv...&#34;</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:title</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Sample First Or Create&#39;</span>, <span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>first_or_create <span style="color:#75715e"># // will find and create if not exists.</span>
+m <span style="color:#f92672">=</span> <span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">:title</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Sample First Or Initialize&#39;</span>, <span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>first_or_initialize <span style="color:#75715e"># // will find and init object if not exists</span>
+m<span style="color:#f92672">.</span>new_record?
+m<span style="color:#f92672">.</span>save
+<span style="color:#75715e"># calculation</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>average(<span style="color:#e6db74">:status</span>)<span style="color:#75715e"># AVG(status). Eg: calculate average annual income or expenses</span>
+<span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>group(<span style="color:#e6db74">:status</span>)<span style="color:#f92672">.</span>sum(<span style="color:#e6db74">:status</span>)<span style="color:#75715e"># . Eg: sum annual income or expenses by month or year</span>
+maximum<span style="color:#f92672">|</span>minimum <span style="color:#75715e"># MAX, MIN. Eg: highest and lowest income or expenses</span>
+<span style="color:#75715e">#lazyload</span>
+m <span style="color:#f92672">=</span> <span style="color:#66d9ef">Status</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Message</span><span style="color:#f92672">.</span>all
+m<span style="color:#f92672">.</span>find(<span style="color:#ae81ff">1</span>)
+m<span style="color:#f92672">.</span>where(<span style="color:#e6db74">:status</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>)
+m<span style="color:#f92672">.</span>order(<span style="color:#e6db74">:title</span>)
+m<span style="color:#f92672">.</span>limit(<span style="color:#ae81ff">3</span>)
+m<span style="color:#f92672">.</span>order(<span style="color:#e6db74">&#39;id DESC&#39;</span>)<span style="color:#f92672">.</span>first
+m<span style="color:#f92672">.</span>order(<span style="color:#e6db74">:id</span>)<span style="color:#f92672">.</span>first
+<span style="color:#75715e">#clear</span>
+system(<span style="color:#e6db74">&#39;cls&#39;</span>)
+</code></pre></div><h2 id="in-some-case-you-wanna-use-raw-sql-query">In some case, you wanna use raw sql query</h2>
 <ul>
-<li><p><a href="https://rubyplus.com/articles/3251-How-to-use-ActiveRecord-to-Execute-SQL-Query">https://rubyplus.com/articles/3251-How-to-use-ActiveRecord-to-Execute-SQL-Query</a></p>
-
-<pre><code class="language-bash">cpool = ActiveRecord::Base.establish_connection
-cpool.class # ActiveRecord::ConnectionAdapters::ConnectionPool
-c = cpool.connection
-results = c.execute('select m.status, count(m.status) as total from messages m group by m.status;')
-results = c.execute('select m.* from messages m order by m.status LIMIT 10 OFFSET 0')
-</code></pre></li>
+<li><a href="https://rubyplus.com/articles/3251-How-to-use-ActiveRecord-to-Execute-SQL-Query">https://rubyplus.com/articles/3251-How-to-use-ActiveRecord-to-Execute-SQL-Query</a></li>
 </ul>
-
-<h2 id="query-from-multiple-table">Query from multiple table</h2>
-
-<pre><code class="language-sql">Product.count_by_sql &quot;SELECT COUNT(*) FROM sales s, customers c WHERE s.customer_id = c.id&quot;
-Post.find_by_sql &quot;SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id&quot;
-Post.find_by_sql [&quot;SELECT title FROM posts WHERE author = ? AND created &gt; ?&quot;, author_id, start_date]
-Post.find_by_sql [&quot;SELECT body FROM comments WHERE author = :user_id OR approved_by = :user_id&quot;, { :user_id =&gt; user_id }]
-</code></pre>
-
-<h2 id="debugging">Debugging</h2>
-
-<pre><code class="language-sql">EXPLAIN for: SELECT &quot;albums&quot;.* FROM &quot;albums&quot; WHERE (&quot;albums&quot;.&quot;release_year&quot;
-BETWEEN 1960 AND 1969)
-</code></pre>
-
-<h2 id="batch">Batch</h2>
-
-<pre><code class="language-html">Imagine, the cart have ten types of products, and you have to store it in order details table.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cpool <span style="color:#f92672">=</span> ActiveRecord::Base.establish_connection
+cpool.class <span style="color:#75715e"># ActiveRecord::ConnectionAdapters::ConnectionPool</span>
+c <span style="color:#f92672">=</span> cpool.connection
+results <span style="color:#f92672">=</span> c.execute<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;select m.status, count(m.status) as total from messages m group by m.status;&#39;</span><span style="color:#f92672">)</span>
+results <span style="color:#f92672">=</span> c.execute<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;select m.* from messages m order by m.status LIMIT 10 OFFSET 0&#39;</span><span style="color:#f92672">)</span>
+</code></pre></div><h2 id="query-from-multiple-table">Query from multiple table</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">Product.count_by_sql <span style="color:#e6db74">&#34;SELECT COUNT(*) FROM sales s, customers c WHERE s.customer_id = c.id&#34;</span>
+Post.find_by_sql <span style="color:#e6db74">&#34;SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id&#34;</span>
+Post.find_by_sql [<span style="color:#e6db74">&#34;SELECT title FROM posts WHERE author = ? AND created &gt; ?&#34;</span>, author_id, start_date]
+Post.find_by_sql [<span style="color:#e6db74">&#34;SELECT body FROM comments WHERE author = :user_id OR approved_by = :user_id&#34;</span>, <span style="color:#960050;background-color:#1e0010">{</span> :user_id <span style="color:#f92672">=&gt;</span> user_id <span style="color:#960050;background-color:#1e0010">}</span>]
+</code></pre></div><h2 id="debugging">Debugging</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">EXPLAIN</span> <span style="color:#66d9ef">for</span>: <span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#34;albums&#34;</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;albums&#34;</span> <span style="color:#66d9ef">WHERE</span> (<span style="color:#e6db74">&#34;albums&#34;</span>.<span style="color:#e6db74">&#34;release_year&#34;</span>
+<span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">1960</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">1969</span>)
+</code></pre></div><h2 id="batch">Batch</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Imagine, the cart have ten types of products, and you have to store it in order details table.
 If for each type, you make a query, it would become a nightmare later.
 So the solution here is batch insert.
-</code></pre>
-
-<h3 id="find-in-batches">Find in batches</h3>
-
+</code></pre></div><h3 id="find-in-batches">Find in batches</h3>
 <ul>
 <li><a href="https://api.rubyonrails.org/classes/ActiveRecord/Batches.html#method-i-find_in_batches">https://api.rubyonrails.org/classes/ActiveRecord/Batches.html#method-i-find_in_batches</a></li>
 <li><a href="http://docs.w3cub.com/rails~5.1/activerecord/batches/">http://docs.w3cub.com/rails~5.1/activerecord/batches/</a></li>
 </ul>
-
 <h3 id="insert-batch">Insert batch</h3>
-
-<pre><code class="language-bash">INSERT INTO messages(title, created_at, status) VALUES
-('Custom message ' + strftime('%s', 'now'), strftime('%s', 'now'), 0),
-('Custom message ' + strftime('%s', 'now'), strftime('%s', 'now'), 1),
-('Custom message ' + strftime('%s', 'now'), strftime('%s', 'now'), 2),
-('Custom message ' + strftime('%s', 'now'), strftime('%s', 'now'), 3),
-('Custom message ' + strftime('%s', 'now'), strftime('%s', 'now'), 1);
-</code></pre>
-
-<h2 id="design-schema-and-tests">Design schema and tests</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">INSERT INTO messages<span style="color:#f92672">(</span>title, created_at, status<span style="color:#f92672">)</span> VALUES
+<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Custom message &#39;</span> + strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, 0<span style="color:#f92672">)</span>,
+<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Custom message &#39;</span> + strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, 1<span style="color:#f92672">)</span>,
+<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Custom message &#39;</span> + strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, 2<span style="color:#f92672">)</span>,
+<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Custom message &#39;</span> + strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, 3<span style="color:#f92672">)</span>,
+<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Custom message &#39;</span> + strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, strftime<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;%s&#39;</span>, <span style="color:#e6db74">&#39;now&#39;</span><span style="color:#f92672">)</span>, 1<span style="color:#f92672">)</span>;
+</code></pre></div><h2 id="design-schema-and-tests">Design schema and tests</h2>
 <ul>
 <li>Object</li>
 <li>Dataset</li>
@@ -219,9 +194,7 @@ So the solution here is batch insert.
 <li>Caching</li>
 <li>Choose the right database for your target.</li>
 </ul>
-
 <h3 id="ví-dụ-và-hướng-dẫn-chi-tiết">Ví dụ và hướng dẫn chi tiết</h3>
-
 <p>(IOME Application)[./note/iome-001-initialize]</p>
 
     </article>

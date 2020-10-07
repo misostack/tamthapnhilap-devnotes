@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,10 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Rails 002 - Cheatsheets</h1>        
-        
-
-<h2 id="routes-cheatsheet">Routes cheatsheet</h2>
-
+        <h2 id="routes-cheatsheet">Routes cheatsheet</h2>
 <table class="table table-commands">
     <thead>
         
@@ -134,116 +131,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
     </tbody>
 </table>
-
-<pre><code class="language-ruby">Rails.application.routes.draw do
-  get '/ping', {to: 'home#ping'} # run
-  get '/ping', {to: 'home#index'} # never run
-  get '/download/:type', to: 'home#download'
-  get '/fetch(/:type)', to: 'home#fetch'
-  get '/redirect', to: 'home#redirect'
-  namespace :status do
-    get '/messages/ping', to: 'messages#ping'
-    get '/messages/sample-app', to: 'messages#sampleapp'
-    resources :messages
-    root to: 'messages#index'
-  end
-  namespace :auth do
-    get '/basic', to: 'basic#index'
-    get '/digest', to: 'digest#index'
-  end
-  root to: &quot;home#index&quot;
-end
-</code></pre>
-
-<h2 id="rake-tasks">Rake tasks</h2>
-
-<pre><code class="language-ruby">$ rake --tasks
-rake about                              # List versions of all Rails framew...
-rake active_storage:install             # Copy over the migration needed to...
-rake app:template                       # Applies the template supplied by ...
-rake app:update                         # Update configs and some other ini...
-rake assets:clean[keep]                 # Remove old compiled assets
-rake assets:clobber                     # Remove compiled assets
-rake assets:environment                 # Load asset compile environment
-rake assets:precompile                  # Compile all the assets named in c...
-rake cache_digests:dependencies         # Lookup first-level dependencies f...
-rake cache_digests:nested_dependencies  # Lookup nested dependencies for TE...
-rake db:create                          # Creates the database from DATABAS...
-rake db:drop                            # Drops the database from DATABASE_...
-rake db:environment:set                 # Set the environment value for the...
-rake db:fixtures:load                   # Loads fixtures into the current e...
-rake db:migrate                         # Migrate the database (options: VE...
-rake db:migrate:status                  # Display status of migrations
-rake db:rollback                        # Rolls the schema back to the prev...
-rake db:schema:cache:clear              # Clears a db/schema_cache.yml file
-rake db:schema:cache:dump               # Creates a db/schema_cache.yml file
-rake db:schema:dump                     # Creates a db/schema.rb file that ...
-rake db:schema:load                     # Loads a schema.rb file into the d...
-rake db:seed                            # Loads the seed data from db/seeds.rb
-rake db:setup                           # Creates the database, loads the s...
-rake db:structure:dump                  # Dumps the database structure to d...
-rake db:structure:load                  # Recreates the databases from the ...
-rake db:version                         # Retrieves the current schema vers...
-rake dev:cache                          # Toggle development mode caching o...
-rake haml:erb2haml                      # Convert html.erb to html.haml eac...
-rake initializers                       # Print out all defined initializer...
-rake log:clear                          # Truncates all/specified *.log fil...
-rake middleware                         # Prints out your Rack middleware s...
-rake notes                              # Enumerate all annotations (use no...
-rake notes:custom                       # Enumerate a custom annotation, sp...
-rake restart                            # Restart app by touching tmp/resta...
-rake routes                             # Print out all defined routes in m...
-rake secret                             # Generate a cryptographically secu...
-rake spec                               # Run all specs in spec directory (...
-rake spec:models                        # Run the code examples in spec/models
-rake stats                              # Report code statistics (KLOCs, et...
-rake test                               # Runs all tests in test folder exc...
-rake test:db                            # Run tests quickly, but also reset db
-rake test:system                        # Run system tests only
-rake time:zones[country_or_offset]      # List all time zones, list by two-...
-rake tmp:clear                          # Clear cache, socket and screensho...
-rake tmp:create                         # Creates tmp directories for cache...
-rake yarn:install                       # Install all JavaScript dependenci...
-</code></pre>
-
-<h2 id="controller-cheatsheet">Controller cheatsheet</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Rails</span><span style="color:#f92672">.</span>application<span style="color:#f92672">.</span>routes<span style="color:#f92672">.</span>draw <span style="color:#66d9ef">do</span>
+  get <span style="color:#e6db74">&#39;/ping&#39;</span>, {<span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#ping&#39;</span>} <span style="color:#75715e"># run</span>
+  get <span style="color:#e6db74">&#39;/ping&#39;</span>, {<span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#index&#39;</span>} <span style="color:#75715e"># never run</span>
+  get <span style="color:#e6db74">&#39;/download/:type&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#download&#39;</span>
+  get <span style="color:#e6db74">&#39;/fetch(/:type)&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#fetch&#39;</span>
+  get <span style="color:#e6db74">&#39;/redirect&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#redirect&#39;</span>
+  namespace <span style="color:#e6db74">:status</span> <span style="color:#66d9ef">do</span>
+    get <span style="color:#e6db74">&#39;/messages/ping&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;messages#ping&#39;</span>
+    get <span style="color:#e6db74">&#39;/messages/sample-app&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;messages#sampleapp&#39;</span>
+    resources <span style="color:#e6db74">:messages</span>
+    root <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;messages#index&#39;</span>
+  <span style="color:#66d9ef">end</span>
+  namespace <span style="color:#e6db74">:auth</span> <span style="color:#66d9ef">do</span>
+    get <span style="color:#e6db74">&#39;/basic&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;basic#index&#39;</span>
+    get <span style="color:#e6db74">&#39;/digest&#39;</span>, <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;digest#index&#39;</span>
+  <span style="color:#66d9ef">end</span>
+  root <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#34;home#index&#34;</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="rake-tasks">Rake tasks</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#960050;background-color:#1e0010">$</span> rake <span style="color:#f92672">--</span>tasks
+rake about                              <span style="color:#75715e"># List versions of all Rails framew...</span>
+rake <span style="color:#e6db74">active_storage</span>:install             <span style="color:#75715e"># Copy over the migration needed to...</span>
+rake <span style="color:#e6db74">app</span>:template                       <span style="color:#75715e"># Applies the template supplied by ...</span>
+rake <span style="color:#e6db74">app</span>:update                         <span style="color:#75715e"># Update configs and some other ini...</span>
+rake <span style="color:#e6db74">assets</span>:clean<span style="color:#f92672">[</span>keep<span style="color:#f92672">]</span>                 <span style="color:#75715e"># Remove old compiled assets</span>
+rake <span style="color:#e6db74">assets</span>:clobber                     <span style="color:#75715e"># Remove compiled assets</span>
+rake <span style="color:#e6db74">assets</span>:environment                 <span style="color:#75715e"># Load asset compile environment</span>
+rake <span style="color:#e6db74">assets</span>:precompile                  <span style="color:#75715e"># Compile all the assets named in c...</span>
+rake <span style="color:#e6db74">cache_digests</span>:dependencies         <span style="color:#75715e"># Lookup first-level dependencies f...</span>
+rake <span style="color:#e6db74">cache_digests</span>:nested_dependencies  <span style="color:#75715e"># Lookup nested dependencies for TE...</span>
+rake <span style="color:#e6db74">db</span>:create                          <span style="color:#75715e"># Creates the database from DATABAS...</span>
+rake <span style="color:#e6db74">db</span>:drop                            <span style="color:#75715e"># Drops the database from DATABASE_...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">environment</span>:set                 <span style="color:#75715e"># Set the environment value for the...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">fixtures</span>:load                   <span style="color:#75715e"># Loads fixtures into the current e...</span>
+rake <span style="color:#e6db74">db</span>:migrate                         <span style="color:#75715e"># Migrate the database (options: VE...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">migrate</span>:status                  <span style="color:#75715e"># Display status of migrations</span>
+rake <span style="color:#e6db74">db</span>:rollback                        <span style="color:#75715e"># Rolls the schema back to the prev...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">schema</span>:<span style="color:#e6db74">cache</span>:clear              <span style="color:#75715e"># Clears a db/schema_cache.yml file</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">schema</span>:<span style="color:#e6db74">cache</span>:dump               <span style="color:#75715e"># Creates a db/schema_cache.yml file</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">schema</span>:dump                     <span style="color:#75715e"># Creates a db/schema.rb file that ...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">schema</span>:load                     <span style="color:#75715e"># Loads a schema.rb file into the d...</span>
+rake <span style="color:#e6db74">db</span>:seed                            <span style="color:#75715e"># Loads the seed data from db/seeds.rb</span>
+rake <span style="color:#e6db74">db</span>:setup                           <span style="color:#75715e"># Creates the database, loads the s...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">structure</span>:dump                  <span style="color:#75715e"># Dumps the database structure to d...</span>
+rake <span style="color:#e6db74">db</span>:<span style="color:#e6db74">structure</span>:load                  <span style="color:#75715e"># Recreates the databases from the ...</span>
+rake <span style="color:#e6db74">db</span>:version                         <span style="color:#75715e"># Retrieves the current schema vers...</span>
+rake <span style="color:#e6db74">dev</span>:cache                          <span style="color:#75715e"># Toggle development mode caching o...</span>
+rake <span style="color:#e6db74">haml</span>:erb2haml                      <span style="color:#75715e"># Convert html.erb to html.haml eac...</span>
+rake initializers                       <span style="color:#75715e"># Print out all defined initializer...</span>
+rake <span style="color:#e6db74">log</span>:clear                          <span style="color:#75715e"># Truncates all/specified *.log fil...</span>
+rake middleware                         <span style="color:#75715e"># Prints out your Rack middleware s...</span>
+rake notes                              <span style="color:#75715e"># Enumerate all annotations (use no...</span>
+rake <span style="color:#e6db74">notes</span>:custom                       <span style="color:#75715e"># Enumerate a custom annotation, sp...</span>
+rake restart                            <span style="color:#75715e"># Restart app by touching tmp/resta...</span>
+rake routes                             <span style="color:#75715e"># Print out all defined routes in m...</span>
+rake secret                             <span style="color:#75715e"># Generate a cryptographically secu...</span>
+rake spec                               <span style="color:#75715e"># Run all specs in spec directory (...</span>
+rake <span style="color:#e6db74">spec</span>:models                        <span style="color:#75715e"># Run the code examples in spec/models</span>
+rake stats                              <span style="color:#75715e"># Report code statistics (KLOCs, et...</span>
+rake test                               <span style="color:#75715e"># Runs all tests in test folder exc...</span>
+rake test<span style="color:#e6db74">:db</span>                            <span style="color:#75715e"># Run tests quickly, but also reset db</span>
+rake test<span style="color:#e6db74">:system</span>                        <span style="color:#75715e"># Run system tests only</span>
+rake <span style="color:#e6db74">time</span>:zones<span style="color:#f92672">[</span>country_or_offset<span style="color:#f92672">]</span>      <span style="color:#75715e"># List all time zones, list by two-...</span>
+rake <span style="color:#e6db74">tmp</span>:clear                          <span style="color:#75715e"># Clear cache, socket and screensho...</span>
+rake <span style="color:#e6db74">tmp</span>:create                         <span style="color:#75715e"># Creates tmp directories for cache...</span>
+rake <span style="color:#e6db74">yarn</span>:install                       <span style="color:#75715e"># Install all JavaScript dependenci...</span>
+</code></pre></div><h2 id="controller-cheatsheet">Controller cheatsheet</h2>
 <h2 id="view-cheatsheet">View cheatsheet</h2>
-
 <h2 id="model-cheatsheet">Model cheatsheet</h2>
-
 <h3 id="activerecord">ActiveRecord</h3>
-
 <ul>
 <li><a href="https://guides.rubyonrails.org/active_record_migrations.html">Official</a></li>
-
-<li><p><a href="https://stackoverflow.com/questions/3928275/in-ruby-on-rails-whats-the-difference-between-datetime-timestamp-time-and-da">Timestamp vs DateTime Story</a></p>
-
-<pre><code class="language-ruby">1.:datetime (8 bytes)
-
-Stores Date and Time formatted YYYY-MM-DD HH:MM:SS
-Useful for columns like birth_date ( Valid ranges go from the year 1000 to the year 9999 )
-
-2.:timestamp (4 bytes)
-Stores number of seconds since 1970-01-01 ( Its valid range goes from 1970 to 2038 )
-Useful for columns like updated_at, created_at
-
-3.:date (3 bytes)
-Stores Date
-
-4.:time (3 bytes)
-Stores Time
-</code></pre></li>
-
-<li><p><a href="https://apidock.com/rails/TimeZone">Timezone</a></p>
-
-<pre><code class="language-ruby">rails console
-TZInfo::Timezone.all
-</code></pre></li>
-
-<li><p><a href="https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/">Naming Convention</a></p></li>
+<li><a href="https://stackoverflow.com/questions/3928275/in-ruby-on-rails-whats-the-difference-between-datetime-timestamp-time-and-da">Timestamp vs DateTime Story</a></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#e6db74">:datetime</span> (<span style="color:#ae81ff">8</span> bytes)
 
+<span style="color:#66d9ef">Stores</span> <span style="color:#66d9ef">Date</span> <span style="color:#f92672">and</span> <span style="color:#66d9ef">Time</span> formatted <span style="color:#66d9ef">YYYY</span><span style="color:#f92672">-</span><span style="color:#66d9ef">MM</span><span style="color:#f92672">-</span><span style="color:#66d9ef">DD</span> <span style="color:#e6db74">HH</span>:<span style="color:#e6db74">MM</span>:<span style="color:#66d9ef">SS</span>
+<span style="color:#66d9ef">Useful</span> <span style="color:#66d9ef">for</span> columns like birth_date ( <span style="color:#66d9ef">Valid</span> ranges go from the year <span style="color:#ae81ff">1000</span> to the year <span style="color:#ae81ff">9999</span> )
+
+<span style="color:#ae81ff">2</span><span style="color:#f92672">.</span><span style="color:#e6db74">:timestamp</span> (<span style="color:#ae81ff">4</span> bytes)
+<span style="color:#66d9ef">Stores</span> number of seconds since <span style="color:#ae81ff">1970</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span><span style="color:#f92672">-</span><span style="color:#ae81ff">01</span> ( <span style="color:#66d9ef">Its</span> valid range goes from <span style="color:#ae81ff">1970</span> to <span style="color:#ae81ff">2038</span> )
+<span style="color:#66d9ef">Useful</span> <span style="color:#66d9ef">for</span> columns like updated_at, created_at
+
+<span style="color:#ae81ff">3</span><span style="color:#f92672">.</span><span style="color:#e6db74">:date</span> (<span style="color:#ae81ff">3</span> bytes)
+<span style="color:#66d9ef">Stores</span> <span style="color:#66d9ef">Date</span>
+
+<span style="color:#ae81ff">4</span><span style="color:#f92672">.</span><span style="color:#e6db74">:time</span> (<span style="color:#ae81ff">3</span> bytes)
+<span style="color:#66d9ef">Stores</span> <span style="color:#66d9ef">Time</span>
+</code></pre></div><ul>
+<li><a href="https://apidock.com/rails/TimeZone">Timezone</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">rails console
+<span style="color:#66d9ef">TZInfo</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Timezone</span><span style="color:#f92672">.</span>all
+</code></pre></div><ul>
+<li><a href="https://launchbylunch.com/posts/2014/Feb/16/sql-naming-conventions/">Naming Convention</a></li>
+</ul>
 <table class="table table-commands">
     <thead>
         
@@ -270,13 +253,10 @@ TZInfo::Timezone.all
         
     </tbody>
 </table>
-
 <ul>
 <li>Where to find ? <a href="https://github.com/rails/rails/tree/master/activerecord/lib/active_record/connection_adapters">connection adapter</a></li>
 </ul>
-
 <p><strong>Possible DataTypes in Active Record with Sqlite</strong></p>
-
 <table class="table table-commands">
     <thead>
         
@@ -342,152 +322,142 @@ TZInfo::Timezone.all
         
     </tbody>
 </table>
-
 <p><strong>Integer</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">type_to_sql</span>(type, limit <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>, precision <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>, scale <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>)
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span> <span style="color:#66d9ef">unless</span> type<span style="color:#f92672">.</span>to_s <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;integer&#39;</span>
 
-<pre><code class="language-ruby">def type_to_sql(type, limit = nil, precision = nil, scale = nil)
-  return super unless type.to_s == 'integer'
+  <span style="color:#66d9ef">case</span> limit
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">1</span>; <span style="color:#e6db74">&#39;tinyint&#39;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">2</span>; <span style="color:#e6db74">&#39;smallint&#39;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">3</span>; <span style="color:#e6db74">&#39;mediumint&#39;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#66d9ef">nil</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">11</span>; <span style="color:#e6db74">&#39;int(11)&#39;</span>  <span style="color:#75715e"># compatibility with MySQL default</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">..</span><span style="color:#ae81ff">8</span>; <span style="color:#e6db74">&#39;bigint&#39;</span>
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">raise</span>(<span style="color:#66d9ef">ActiveRecordError</span>, <span style="color:#e6db74">&#34;No integer type has byte size </span><span style="color:#e6db74">#{</span>limit<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-  case limit
-  when 1; 'tinyint'
-  when 2; 'smallint'
-  when 3; 'mediumint'
-  when nil, 4, 11; 'int(11)'  # compatibility with MySQL default
-  when 5..8; 'bigint'
-  else raise(ActiveRecordError, &quot;No integer type has byte size #{limit}&quot;)
-  end
-end
-
-# ActiveRecord Migrate
-create_table 'example' do |t|
-  t.integer :int                 # int (4 bytes, max 2,147,483,647)
-  t.integer :int1, :limit =&gt; 1   # tinyint (1 byte, -128 to 127)
-  t.integer :int2, :limit =&gt; 2   # smallint (2 bytes, max 32,767)
-  t.integer :int3, :limit =&gt; 3   # mediumint (3 bytes, max 8,388,607)
-  t.integer :int4, :limit =&gt; 4   # int (4 bytes)
-  t.integer :int5, :limit =&gt; 5   # bigint (8 bytes, max 9,223,372,036,854,775,807)
-  t.integer :int8, :limit =&gt; 8   # bigint (8 bytes)
-  t.integer :int11, :limit =&gt; 11 # int (4 bytes)
-end
-</code></pre>
-
-<pre><code class="language-bash">    primary_key:  &quot;integer PRIMARY KEY AUTOINCREMENT NOT NULL&quot;,
-    string:       { name: &quot;varchar&quot; },
-    text:         { name: &quot;text&quot; },
-    integer:      { name: &quot;integer&quot; },
-    float:        { name: &quot;float&quot; },
-    decimal:      { name: &quot;decimal&quot; },
-    datetime:     { name: &quot;datetime&quot; },
-    time:         { name: &quot;time&quot; },
-    date:         { name: &quot;date&quot; },
-    binary:       { name: &quot;blob&quot; },
-    boolean:      { name: &quot;boolean&quot; },
-    json:         { name: &quot;json&quot; },
-</code></pre>
-
-<p><strong>Homework</strong></p>
-
-<pre><code class="language-ruby">Team : {
-    name: &quot;Fnatic League Of Legend&quot;,
-    short_name: &quot;fnatic lol&quot;,
-    introduction: &quot;
-    Once young pups of the black and orange flag, ‘Rekkles’ and the returning warrior, ‘sOAZ’ head up the Fnatic League of Legends squad, leading now as seasoned wolves, still hungry for success after so many years at the top.
-
-    Joined on the Rift by our Jungler, Broxah, promoted from our Challenger Series team and the veteran ‘Jesiz’ taking the reigns at Support, this new look roster is built on pillars of game knowledge, raw talent and experience with 20 years of professional play combined.
-
-    The lineup is completed by Baby Faker himself; the mechanical maestro, 'Caps', starts his rookie year in the Fnatic Mid lane. The exceptionally gifted youngster has already shown his talents, taking down opposition vastly more experienced than himself.
-
-    Fierce, meticulously prepared, and with the right network of support, this fully European roster now mounts its charge back to the summit of the EU LCS.    
-    &quot;,
-    earned_money: 1,190,043,
-    world_ranking: 2,
-    rating: 1,374,
-    win: 290,
-    lose: 154,
-    rematch: 6,
-    win_rate: 0.64  
-    archivements: [
+<span style="color:#75715e"># ActiveRecord Migrate</span>
+create_table <span style="color:#e6db74">&#39;example&#39;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int</span>                 <span style="color:#75715e"># int (4 bytes, max 2,147,483,647)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int1</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>   <span style="color:#75715e"># tinyint (1 byte, -128 to 127)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int2</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>   <span style="color:#75715e"># smallint (2 bytes, max 32,767)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int3</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">3</span>   <span style="color:#75715e"># mediumint (3 bytes, max 8,388,607)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int4</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">4</span>   <span style="color:#75715e"># int (4 bytes)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int5</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">5</span>   <span style="color:#75715e"># bigint (8 bytes, max 9,223,372,036,854,775,807)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int8</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">8</span>   <span style="color:#75715e"># bigint (8 bytes)</span>
+  t<span style="color:#f92672">.</span>integer <span style="color:#e6db74">:int11</span>, <span style="color:#e6db74">:limit</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">11</span> <span style="color:#75715e"># int (4 bytes)</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    primary_key:  <span style="color:#e6db74">&#34;integer PRIMARY KEY AUTOINCREMENT NOT NULL&#34;</span>,
+    string:       <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;varchar&#34;</span> <span style="color:#f92672">}</span>,
+    text:         <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#f92672">}</span>,
+    integer:      <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;integer&#34;</span> <span style="color:#f92672">}</span>,
+    float:        <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;float&#34;</span> <span style="color:#f92672">}</span>,
+    decimal:      <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;decimal&#34;</span> <span style="color:#f92672">}</span>,
+    datetime:     <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;datetime&#34;</span> <span style="color:#f92672">}</span>,
+    time:         <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;time&#34;</span> <span style="color:#f92672">}</span>,
+    date:         <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#f92672">}</span>,
+    binary:       <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;blob&#34;</span> <span style="color:#f92672">}</span>,
+    boolean:      <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;boolean&#34;</span> <span style="color:#f92672">}</span>,
+    json:         <span style="color:#f92672">{</span> name: <span style="color:#e6db74">&#34;json&#34;</span> <span style="color:#f92672">}</span>,
+</code></pre></div><p><strong>Homework</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Team</span> : {
+    name: <span style="color:#e6db74">&#34;Fnatic League Of Legend&#34;</span>,
+    <span style="color:#e6db74">short_name</span>: <span style="color:#e6db74">&#34;fnatic lol&#34;</span>,
+    <span style="color:#e6db74">introduction</span>: <span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">    Once young pups of the black and orange flag, ‘Rekkles’ and the returning warrior, ‘sOAZ’ head up the Fnatic League of Legends squad, leading now as seasoned wolves, still hungry for success after so many years at the top.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Joined on the Rift by our Jungler, Broxah, promoted from our Challenger Series team and the veteran ‘Jesiz’ taking the reigns at Support, this new look roster is built on pillars of game knowledge, raw talent and experience with 20 years of professional play combined.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    The lineup is completed by Baby Faker himself; the mechanical maestro, &#39;Caps&#39;, starts his rookie year in the Fnatic Mid lane. The exceptionally gifted youngster has already shown his talents, taking down opposition vastly more experienced than himself.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Fierce, meticulously prepared, and with the right network of support, this fully European roster now mounts its charge back to the summit of the EU LCS.    
+</span><span style="color:#e6db74">    &#34;</span>,
+    <span style="color:#e6db74">earned_money</span>: <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">190</span>,<span style="color:#ae81ff">043</span>,
+    <span style="color:#e6db74">world_ranking</span>: <span style="color:#ae81ff">2</span>,
+    <span style="color:#e6db74">rating</span>: <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">374</span>,
+    <span style="color:#e6db74">win</span>: <span style="color:#ae81ff">290</span>,
+    <span style="color:#e6db74">lose</span>: <span style="color:#ae81ff">154</span>,
+    <span style="color:#e6db74">rematch</span>: <span style="color:#ae81ff">6</span>,
+    <span style="color:#e6db74">win_rate</span>: <span style="color:#ae81ff">0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">64</span>  
+    <span style="color:#e6db74">archivements</span>: <span style="color:#f92672">[</span>
         {
-            tournament: &quot;EUROPEAN LEAGUE OF LEGENDS CHAMPIONSHIP SERIES&quot;,
-            achievements: [
-                { type: &quot;Split Champions&quot;, season: &quot;Spring&quot;, year: &quot;2013&quot; },
-                { type: &quot;Playoff Champions&quot;, season: &quot;Spring&quot;, year: &quot;2013&quot; },
-                { type: &quot;Split Champions&quot;, season: &quot;Spring&quot;, year: &quot;2014&quot; },
-                { type: &quot;Split Champions&quot;, season: &quot;Summer&quot;, year: &quot;2014&quot; },
-                { type: &quot;Split Champions&quot;, season: &quot;Summer&quot;, year: &quot;2015&quot; }
-            ]
+            <span style="color:#e6db74">tournament</span>: <span style="color:#e6db74">&#34;EUROPEAN LEAGUE OF LEGENDS CHAMPIONSHIP SERIES&#34;</span>,
+            <span style="color:#e6db74">achievements</span>: <span style="color:#f92672">[</span>
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Split Champions&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Spring&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2013&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Playoff Champions&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Spring&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2013&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Split Champions&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Spring&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2014&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Split Champions&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Summer&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2014&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Split Champions&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Summer&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2015&#34;</span> }
+            <span style="color:#f92672">]</span>
         },
         {
-            tournament: &quot;WORLD CHAMPIONSHIPS&quot;,
-            achievements: [
-                { type: &quot;Champion&quot;, season: &quot;&quot;, year: &quot;2011&quot; },
-                { type: &quot;Semi Finalists&quot;, season: &quot;&quot;, year: &quot;2013&quot; },
-                { type: &quot;Semi Finalists&quot;, season: &quot;&quot;, year: &quot;2015&quot; },
-                { type: &quot;Quarter Finalists&quot;, season: &quot;&quot;, year: &quot;2017&quot; },
-            ]
+            <span style="color:#e6db74">tournament</span>: <span style="color:#e6db74">&#34;WORLD CHAMPIONSHIPS&#34;</span>,
+            <span style="color:#e6db74">achievements</span>: <span style="color:#f92672">[</span>
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Champion&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2011&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Semi Finalists&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2013&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Semi Finalists&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2015&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Quarter Finalists&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2017&#34;</span> },
+            <span style="color:#f92672">]</span>
         },
         {
-            tournament: &quot;INVITATIONALS&quot;,
-            achievements: [
-                { type: &quot;DreamHack Winter 2012&quot;, season: &quot;Champions&quot;, year: &quot;2012&quot; },
-                { type: &quot;Rift Rivals&quot;, season: &quot;3rd - 4th&quot;, year: &quot;2017&quot; },                
-            ]            
+            <span style="color:#e6db74">tournament</span>: <span style="color:#e6db74">&#34;INVITATIONALS&#34;</span>,
+            <span style="color:#e6db74">achievements</span>: <span style="color:#f92672">[</span>
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;DreamHack Winter 2012&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;Champions&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2012&#34;</span> },
+                { <span style="color:#e6db74">type</span>: <span style="color:#e6db74">&#34;Rift Rivals&#34;</span>, <span style="color:#e6db74">season</span>: <span style="color:#e6db74">&#34;3rd - 4th&#34;</span>, <span style="color:#e6db74">year</span>: <span style="color:#e6db74">&#34;2017&#34;</span> },                
+            <span style="color:#f92672">]</span>            
         }
-    ]
+    <span style="color:#f92672">]</span>
 }
-</code></pre>
-
-<pre><code class="language-ruby">Player : {
-    last_name: &quot;Larsson&quot;,
-    first_name: &quot;Margin&quot;,
-    player_name: &quot;Rekkles&quot;,
-    game: &quot;League Of Legends&quot;,
-    role: &quot;ADC&quot;,
-    country: &quot;Sweden&quot;,
-    hometown: &quot;Göteborg&quot;,
-    games_won: &quot;47&quot;,
-    kills:&quot;267&quot;,
-    deaths:&quot;73&quot;,
-    date_of_birth:&quot;1996-09-20&quot;,
-    image: &quot;binary...&quot;,
-    biography: &quot;Entering the European professional scene as a mechanical prodigy, the former fledgling is now an experienced leader for Fnatic.
-    An iconic AD Carry, Rekkles's relentless determination to win is only matched by calculated domination of the bot lane. With his eyes now fixed on returning to Worlds, he's fully focused on tearing it up on the rift in the 2017.&quot;,
-    team: &quot;lol&quot;,
-    likes: [
-        {&quot;subject&quot;: &quot;food&quot;, 
-            &quot;object&quot;: {
-                &quot;title: &quot;tacos&quot;,
-                &quot;image&quot;:&quot;http://example.com/images/tacos.png&quot;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Player</span> : {
+    <span style="color:#e6db74">last_name</span>: <span style="color:#e6db74">&#34;Larsson&#34;</span>,
+    <span style="color:#e6db74">first_name</span>: <span style="color:#e6db74">&#34;Margin&#34;</span>,
+    <span style="color:#e6db74">player_name</span>: <span style="color:#e6db74">&#34;Rekkles&#34;</span>,
+    <span style="color:#e6db74">game</span>: <span style="color:#e6db74">&#34;League Of Legends&#34;</span>,
+    <span style="color:#e6db74">role</span>: <span style="color:#e6db74">&#34;ADC&#34;</span>,
+    <span style="color:#e6db74">country</span>: <span style="color:#e6db74">&#34;Sweden&#34;</span>,
+    <span style="color:#e6db74">hometown</span>: <span style="color:#e6db74">&#34;Göteborg&#34;</span>,
+    <span style="color:#e6db74">games_won</span>: <span style="color:#e6db74">&#34;47&#34;</span>,
+    <span style="color:#e6db74">kills</span>:<span style="color:#e6db74">&#34;267&#34;</span>,
+    <span style="color:#e6db74">deaths</span>:<span style="color:#e6db74">&#34;73&#34;</span>,
+    <span style="color:#e6db74">date_of_birth</span>:<span style="color:#e6db74">&#34;1996-09-20&#34;</span>,
+    <span style="color:#e6db74">image</span>: <span style="color:#e6db74">&#34;binary...&#34;</span>,
+    <span style="color:#e6db74">biography</span>: <span style="color:#e6db74">&#34;Entering the European professional scene as a mechanical prodigy, the former fledgling is now an experienced leader for Fnatic.
+</span><span style="color:#e6db74">    An iconic AD Carry, Rekkles&#39;s relentless determination to win is only matched by calculated domination of the bot lane. With his eyes now fixed on returning to Worlds, he&#39;s fully focused on tearing it up on the rift in the 2017.&#34;</span>,
+    <span style="color:#e6db74">team</span>: <span style="color:#e6db74">&#34;lol&#34;</span>,
+    <span style="color:#e6db74">likes</span>: <span style="color:#f92672">[</span>
+        {<span style="color:#e6db74">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;food&#34;</span>, 
+            <span style="color:#e6db74">&#34;object&#34;</span>: {
+                <span style="color:#e6db74">&#34;title: &#34;</span>tacos<span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">                &#34;</span>image<span style="color:#e6db74">&#34;:&#34;</span><span style="color:#e6db74">http</span>:<span style="color:#e6db74">//ex</span>ample<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>images<span style="color:#f92672">/</span>tacos<span style="color:#f92672">.</span>png<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">            }
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        {&#34;</span>subject<span style="color:#e6db74">&#34;: &#34;</span>pastime<span style="color:#e6db74">&#34;, 
+</span><span style="color:#e6db74">            &#34;</span>object<span style="color:#e6db74">&#34;: {
+</span><span style="color:#e6db74">                &#34;</span><span style="color:#e6db74">title</span>: <span style="color:#e6db74">&#34;going to gym&#34;</span>,
+                <span style="color:#e6db74">&#34;image&#34;</span><span style="color:#e6db74">:&#34;http://example.com/images/gym.png&#34;</span>
             }
         },
-        {&quot;subject&quot;: &quot;pastime&quot;, 
-            &quot;object&quot;: {
-                &quot;title: &quot;going to gym&quot;,
-                &quot;image&quot;:&quot;http://example.com/images/gym.png&quot;
+        {<span style="color:#e6db74">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;genre&#34;</span>, 
+            <span style="color:#e6db74">&#34;object&#34;</span>: {
+                <span style="color:#e6db74">&#34;title: &#34;</span>sci<span style="color:#f92672">-</span>fi<span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">                &#34;</span>image<span style="color:#e6db74">&#34;:&#34;</span><span style="color:#e6db74">http</span>:<span style="color:#e6db74">//ex</span>ample<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>images<span style="color:#f92672">/</span>sci<span style="color:#f92672">-</span>fi<span style="color:#f92672">.</span>png<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">            }
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        {&#34;</span>subject<span style="color:#e6db74">&#34;: &#34;</span>tv show<span style="color:#e6db74">&#34;, 
+</span><span style="color:#e6db74">            &#34;</span>object<span style="color:#e6db74">&#34;: {
+</span><span style="color:#e6db74">                &#34;</span><span style="color:#e6db74">title</span>: <span style="color:#e6db74">&#34;prison break&#34;</span>,
+                <span style="color:#e6db74">&#34;image&#34;</span><span style="color:#e6db74">:&#34;http://example.com/images/prison-break.png&#34;</span>
             }
         },
-        {&quot;subject&quot;: &quot;genre&quot;, 
-            &quot;object&quot;: {
-                &quot;title: &quot;sci-fi&quot;,
-                &quot;image&quot;:&quot;http://example.com/images/sci-fi.png&quot;
-            }
-        },
-        {&quot;subject&quot;: &quot;tv show&quot;, 
-            &quot;object&quot;: {
-                &quot;title: &quot;prison break&quot;,
-                &quot;image&quot;:&quot;http://example.com/images/prison-break.png&quot;
-            }
-        },
-        {&quot;subject&quot;: &quot;travel destination&quot;, 
-            &quot;object&quot;: {
-                &quot;title: &quot;Australia&quot;,
-                &quot;image&quot;:&quot;http://example.com/images/australia.png&quot;
-            }
-        },        
-    ]
-}
-</code></pre>
-
+        {<span style="color:#e6db74">&#34;subject&#34;</span>: <span style="color:#e6db74">&#34;travel destination&#34;</span>, 
+            <span style="color:#e6db74">&#34;object&#34;</span>: {
+                <span style="color:#e6db74">&#34;title: &#34;</span><span style="color:#66d9ef">Australia</span><span style="color:#e6db74">&#34;,
+</span><span style="color:#e6db74">                &#34;</span>image<span style="color:#e6db74">&#34;:&#34;</span><span style="color:#e6db74">http</span>:<span style="color:#e6db74">//ex</span>ample<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>images<span style="color:#f92672">/</span>australia<span style="color:#f92672">.</span>png<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">            }
+</span><span style="color:#e6db74">        },        
+</span><span style="color:#e6db74">    ]
+</span><span style="color:#e6db74">}
+</span></code></pre></div>
     </article>
 
                     </main>                    

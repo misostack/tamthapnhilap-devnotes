@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,236 +108,207 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby 006 Mixins</h1>        
-        
-
-<h2 id="problems">Problems</h2>
-
+        <h2 id="problems">Problems</h2>
 <p>Imagine we have an app for sharing videos, musics, and other media.</p>
-
 <p>Musics and videos both need some of same functionality: users need to be able to play songs and videos back,
 as well as leave comments on them. There are some aspects that differ, howerver.Eg:</p>
-
 <p>Songs: we need to track the number of beats per minute(bpm)</p>
-
 <p>Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolution).</p>
-
-<p><img src="/posts/ruby-006-oneclass.png" alt="Oneclass" /></p>
-
+<p><img src="/posts/ruby-006-oneclass.png" alt="Oneclass"></p>
 <p>But how about a photo? You can not play a photo.</p>
-
 <p>So in this case you can not interit from one parent class.</p>
-
-<p><img src="/posts/ruby-006-oneclass-copymethod.png" alt="Oneclass Copymethod" /></p>
-
+<p><img src="/posts/ruby-006-oneclass-copymethod.png" alt="Oneclass Copymethod"></p>
 <p>How about multiple inheritance? It is messy.</p>
-
-<p><img src="/posts/ruby-006-multiple-inherit.png" alt="multiple-inherit" /></p>
-
+<p><img src="/posts/ruby-006-multiple-inherit.png" alt="multiple-inherit"></p>
 <h2 id="solution">Solution</h2>
-
 <p>In this case we use modules and mixins.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;faker&#39;</span>
 
-<pre><code class="language-ruby">require 'faker'
-
-module Comments
-	def comments
-        @comments = @comments || []
-	end
-	def list_comments
-		puts &quot;Total comments: #{@comments.length}&quot;
-		@comments.each { |comment|
-			puts format(&quot;%s : %s&quot;, comment[:email], comment[:text])
+<span style="color:#66d9ef">module</span> Comments
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">comments</span>
+        @comments <span style="color:#f92672">=</span> @comments <span style="color:#f92672">||</span> <span style="color:#f92672">[]</span>
+	<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_comments</span>
+		puts <span style="color:#e6db74">&#34;Total comments: </span><span style="color:#e6db74">#{</span>@comments<span style="color:#f92672">.</span>length<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		@comments<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>comment<span style="color:#f92672">|</span>
+			puts format(<span style="color:#e6db74">&#34;%s : %s&#34;</span>, comment<span style="color:#f92672">[</span><span style="color:#e6db74">:email</span><span style="color:#f92672">]</span>, comment<span style="color:#f92672">[</span><span style="color:#e6db74">:text</span><span style="color:#f92672">]</span>)
 		}
-	end
+	<span style="color:#66d9ef">end</span>
 
-	def add_comment(comment)
-		comments &lt;&lt; comment
-	end
-end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add_comment</span>(comment)
+		comments <span style="color:#f92672">&lt;&lt;</span> comment
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class Media
-	include Comments
-	attr_accessor :name, :source
-	def initialize(opts = {})
-		@name = opts[:name]
-		@source = opts[:source]
-	end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Media</span>
+	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Comments</span>
+	<span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:name</span>, <span style="color:#e6db74">:source</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
+		@name <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:name</span><span style="color:#f92672">]</span>
+		@source <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:source</span><span style="color:#f92672">]</span>
+	<span style="color:#66d9ef">end</span>
 
-	def display
-		puts '-'*20
-		puts &quot;Name : #{@name}&quot;
-		puts &quot;Source: #{@source}&quot;
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>
+		puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>
+		puts <span style="color:#e6db74">&#34;Name : </span><span style="color:#e6db74">#{</span>@name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+		puts <span style="color:#e6db74">&#34;Source: </span><span style="color:#e6db74">#{</span>@source<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 		list_comments
-		puts '-'*20
-	end
-end
+		puts <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-module Clip
-	def play
-		puts &quot;Play with #{@source}&quot;
-	end
-end
+<span style="color:#66d9ef">module</span> Clip
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">play</span>
+		puts <span style="color:#e6db74">&#34;Play with </span><span style="color:#e6db74">#{</span>@source<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class Picture &lt; Media
-	def show
-		puts &quot;&lt;img src=\&quot;#{@source}\&quot; /&gt;&quot;
-	end
-end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Picture</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Media</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show</span>
+		puts <span style="color:#e6db74">&#34;&lt;img src=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">#{</span>@source<span style="color:#e6db74">}</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74"> /&gt;&#34;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class Video &lt; Media
-	include Clip
-	attr_accessor :resolution
-	def initialize(opts = {})
-		super
-		@resolution = opts[:resolution]
-	end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Video</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Media</span>
+	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Clip</span>
+	<span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:resolution</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
+		<span style="color:#66d9ef">super</span>
+		@resolution <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:resolution</span><span style="color:#f92672">]</span>
+	<span style="color:#66d9ef">end</span>
 
-	def display
-		super
-		puts &quot;Resolution: #{@resolution} px&quot;
-	end
-end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>
+		<span style="color:#66d9ef">super</span>
+		puts <span style="color:#e6db74">&#34;Resolution: </span><span style="color:#e6db74">#{</span>@resolution<span style="color:#e6db74">}</span><span style="color:#e6db74"> px&#34;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class Song &lt; Media
-	include Clip
-	attr_accessor :bpm	
-	def initialize(opts = {})
-		super
-		@bpm = opts[:bpm]
-	end
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Song</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Media</span>
+	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Clip</span>
+	<span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:bpm</span>	
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialize</span>(opts <span style="color:#f92672">=</span> {})
+		<span style="color:#66d9ef">super</span>
+		@bpm <span style="color:#f92672">=</span> opts<span style="color:#f92672">[</span><span style="color:#e6db74">:bpm</span><span style="color:#f92672">]</span>
+	<span style="color:#66d9ef">end</span>
 
-	def display
-		super
-		puts &quot;Beats: #{@bpm} bpm&quot;
-	end
-end
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display</span>
+		<span style="color:#66d9ef">super</span>
+		puts <span style="color:#e6db74">&#34;Beats: </span><span style="color:#e6db74">#{</span>@bpm<span style="color:#e6db74">}</span><span style="color:#e6db74"> bpm&#34;</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-pic = Picture.new( name:'VietNam2018', source:'/media/images/vietnam2018.jpg')
-(1..Random.new().rand(5..10)).each { |i|
-	pic.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+pic <span style="color:#f92672">=</span> <span style="color:#66d9ef">Picture</span><span style="color:#f92672">.</span>new( name<span style="color:#e6db74">:&#39;VietNam2018&#39;</span>, <span style="color:#e6db74">source</span>:<span style="color:#e6db74">&#39;/media/images/vietnam2018.jpg&#39;</span>)
+(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new()<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">5</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>))<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+	pic<span style="color:#f92672">.</span>add_comment( <span style="color:#e6db74">email</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Internet</span><span style="color:#f92672">.</span>email, <span style="color:#e6db74">text</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Lorem</span><span style="color:#f92672">.</span>sentences(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>)
 }
-pic.show
-pic.display
+pic<span style="color:#f92672">.</span>show
+pic<span style="color:#f92672">.</span>display
 
-video = Video.new( name: 'Việt Nam quê hương tôi', source:'/media/videos/VietNam2018.mp4', resolution: '1920x1080')
-(1..Random.new().rand(5..10)).each { |i|
-	video.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+video <span style="color:#f92672">=</span> <span style="color:#66d9ef">Video</span><span style="color:#f92672">.</span>new( name: <span style="color:#e6db74">&#39;Việt Nam quê hương tôi&#39;</span>, <span style="color:#e6db74">source</span>:<span style="color:#e6db74">&#39;/media/videos/VietNam2018.mp4&#39;</span>, <span style="color:#e6db74">resolution</span>: <span style="color:#e6db74">&#39;1920x1080&#39;</span>)
+(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new()<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">5</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>))<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+	video<span style="color:#f92672">.</span>add_comment( <span style="color:#e6db74">email</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Internet</span><span style="color:#f92672">.</span>email, <span style="color:#e6db74">text</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Lorem</span><span style="color:#f92672">.</span>sentences(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>)
 }
-video.play
-video.display
+video<span style="color:#f92672">.</span>play
+video<span style="color:#f92672">.</span>display
 
-song = Song.new( name: 'Tiến lên Việt Nam', source:'/media/videos/VietNam2018.mp4', bpm: '90' )
-(1..Random.new().rand(5..10)).each { |i|
-	song.add_comment( email: Faker::Internet.email, text: Faker::Lorem.sentences(1)[0])
+song <span style="color:#f92672">=</span> <span style="color:#66d9ef">Song</span><span style="color:#f92672">.</span>new( name: <span style="color:#e6db74">&#39;Tiến lên Việt Nam&#39;</span>, <span style="color:#e6db74">source</span>:<span style="color:#e6db74">&#39;/media/videos/VietNam2018.mp4&#39;</span>, <span style="color:#e6db74">bpm</span>: <span style="color:#e6db74">&#39;90&#39;</span> )
+(<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#66d9ef">Random</span><span style="color:#f92672">.</span>new()<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">5</span><span style="color:#f92672">..</span><span style="color:#ae81ff">10</span>))<span style="color:#f92672">.</span>each { <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+	song<span style="color:#f92672">.</span>add_comment( <span style="color:#e6db74">email</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Internet</span><span style="color:#f92672">.</span>email, <span style="color:#e6db74">text</span>: <span style="color:#66d9ef">Faker</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Lorem</span><span style="color:#f92672">.</span>sentences(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>)
 }
-song.play
-song.display
-</code></pre>
-
-<h2 id="important-notes">Important notes</h2>
-
+song<span style="color:#f92672">.</span>play
+song<span style="color:#f92672">.</span>display
+</code></pre></div><h2 id="important-notes">Important notes</h2>
 <p><strong>Module</strong></p>
-
-<pre><code class="language-html">A module is a collection of methods. The main diffrence between a module and a class is that you can't create instance of a module
-</code></pre>
-
-<p>*<em>Mixins</em></p>
-
-<pre><code class="language-html">- When you mix a module into a class, it's like adding all of the modules's methods to the class as instance methods
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">A module is a collection of methods. The main diffrence between a module and a class is that you can&#39;t create instance of a module
+</code></pre></div><p>*<em>Mixins</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">- When you mix a module into a class, it&#39;s like adding all of the modules&#39;s methods to the class as instance methods
 - Although a class can only inherit from one superclass, you can mix any number of modules into a class
-</code></pre>
+</code></pre></div><h2 id="amazing-comparing-methods">Amazing comparing methods</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">puts <span style="color:#e6db74">&#39;Amazing comparing method&#39;</span>
 
-<h2 id="amazing-comparing-methods">Amazing comparing methods</h2>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Steak</span>
+	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">Comparable</span>
+	<span style="color:#75715e"># constants</span>
+	<span style="color:#66d9ef">GRADE_SCORES</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Prime&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;Choice&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;Select&#34;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>}
 
-<pre><code class="language-ruby">puts 'Amazing comparing method'
+	<span style="color:#66d9ef">attr_accessor</span> <span style="color:#e6db74">:grade</span>
 
-class Steak
-	include Comparable
-	# constants
-	GRADE_SCORES = {&quot;Prime&quot; =&gt; 3, &quot;Choice&quot; =&gt; 2, &quot;Select&quot; =&gt; 1}
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">&gt;</span>(other)		
+		<span style="color:#66d9ef">GRADE_SCORES</span><span style="color:#f92672">[</span>grade<span style="color:#f92672">]</span> <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">GRADE_SCORES</span><span style="color:#f92672">[</span>other<span style="color:#f92672">.</span>grade<span style="color:#f92672">]</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-	attr_accessor :grade
+first_steak <span style="color:#f92672">=</span> <span style="color:#66d9ef">Steak</span><span style="color:#f92672">.</span>new
+first_steak<span style="color:#f92672">.</span>grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Prime&#39;</span>
 
-	def &gt;(other)		
-		GRADE_SCORES[grade] &gt; GRADE_SCORES[other.grade]
-	end
-end
+second_steak <span style="color:#f92672">=</span> <span style="color:#66d9ef">Steak</span><span style="color:#f92672">.</span>new
+second_steak<span style="color:#f92672">.</span>grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Choice&#39;</span>
 
-first_steak = Steak.new
-first_steak.grade = 'Prime'
+<span style="color:#66d9ef">if</span> first_steak <span style="color:#f92672">&gt;</span> second_steak
+	puts <span style="color:#e6db74">&#34;I&#39;ll take </span><span style="color:#e6db74">#{</span>first_steak<span style="color:#f92672">.</span>inspect<span style="color:#e6db74">}</span><span style="color:#e6db74">.&#34;</span>
+<span style="color:#66d9ef">end</span>
 
-second_steak = Steak.new
-second_steak.grade = 'Choice'
+meatA <span style="color:#f92672">=</span> <span style="color:#66d9ef">Steak</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;meatA&#39;</span>)
+meatA<span style="color:#f92672">.</span>grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Select&#34;</span>
 
-if first_steak &gt; second_steak
-	puts &quot;I'll take #{first_steak.inspect}.&quot;
-end
+meatB <span style="color:#f92672">=</span> <span style="color:#66d9ef">Steak</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;MeatB&#39;</span>)
+meatB<span style="color:#f92672">.</span>grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Choice&#34;</span>
 
-meatA = Steak.new('meatA')
-meatA.grade = &quot;Select&quot;
+puts <span style="color:#e6db74">&#34;I will choose </span><span style="color:#e6db74">#{</span>meatA<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">if</span> meatA <span style="color:#f92672">&gt;</span> meatB
+puts <span style="color:#e6db74">&#34;I will choose </span><span style="color:#e6db74">#{</span>meatB<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">if</span> meatA <span style="color:#f92672">&lt;</span> meatB
+meatA<span style="color:#f92672">.</span>grade <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Choice&#34;</span>
+puts <span style="color:#e6db74">&#34;I will choose </span><span style="color:#e6db74">#{</span>meatA<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> and </span><span style="color:#e6db74">#{</span>meatB<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">if</span> meatA <span style="color:#f92672">==</span> meatB
+</code></pre></div><h3 id="extend-vs-include">Extend vs Include</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/bin/env ruby</span>
 
-meatB = Steak.new('MeatB')
-meatB.grade = &quot;Choice&quot;
+<span style="color:#66d9ef">module</span> Food
+	<span style="color:#66d9ef">module</span> Cream
+		<span style="color:#75715e"># def self.extended(base)</span>
+		<span style="color:#75715e"># 	base.include self</span>
+		<span style="color:#75715e"># end</span>
+	  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cream?</span>
+	    <span style="color:#66d9ef">true</span>
+	  <span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-puts &quot;I will choose #{meatA.name}&quot; if meatA &gt; meatB
-puts &quot;I will choose #{meatB.name}&quot; if meatA &lt; meatB
-meatA.grade = &quot;Choice&quot;
-puts &quot;I will choose #{meatA.name} and #{meatB.name}&quot; if meatA == meatB
-</code></pre>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cookie</span>
+	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">extend</span>(parent)
+		self<span style="color:#f92672">.</span>include parent
+	<span style="color:#66d9ef">end</span>
+  <span style="color:#75715e"># include Cream</span>
+<span style="color:#66d9ef">end</span>
 
-<h3 id="extend-vs-include">Extend vs Include</h3>
+<span style="color:#66d9ef">Cookie</span><span style="color:#f92672">.</span>extend <span style="color:#f92672">::</span><span style="color:#66d9ef">Food</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Cream</span>
 
-<pre><code class="language-ruby">#!/usr/bin/env ruby
+cookie <span style="color:#f92672">=</span> <span style="color:#66d9ef">Cookie</span><span style="color:#f92672">.</span>new
+p cookie<span style="color:#f92672">.</span>cream?
 
-module Food
-	module Cream
-		# def self.extended(base)
-		# 	base.include self
-		# end
-	  def cream?
-	    true
-	  end
-	end
-end
+<span style="color:#66d9ef">module</span> HackNao
+	<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Base</span>
+		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">extend</span>(expand)
+			self<span style="color:#f92672">.</span>include expand
+		<span style="color:#66d9ef">end</span>
+		<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cau_mot</span>
+			puts <span style="color:#e6db74">&#39;Con ga co truoc qua trung hay trung co truoc con ga?&#39;</span>
+		<span style="color:#66d9ef">end</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-class Cookie
-	def self.extend(parent)
-		self.include parent
-	end
-  # include Cream
-end
+<span style="color:#66d9ef">module</span> HackNaoImprove
+	<span style="color:#66d9ef">module</span> HackNao
+		<span style="color:#66d9ef">module</span> ToanHoc
+			<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cau_hai</span>
+				puts <span style="color:#e6db74">&#39;Me hon con 22 tuoi, hoi khi nao tuoi me gap doi tuoi con?&#39;</span>
+			<span style="color:#66d9ef">end</span>
+		<span style="color:#66d9ef">end</span>
+		<span style="color:#f92672">::</span><span style="color:#66d9ef">HackNao</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>extend <span style="color:#66d9ef">ToanHoc</span>
+	<span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
 
-Cookie.extend ::Food::Cream
-
-cookie = Cookie.new
-p cookie.cream?
-
-module HackNao
-	class Base
-		def self.extend(expand)
-			self.include expand
-		end
-		def cau_mot
-			puts 'Con ga co truoc qua trung hay trung co truoc con ga?'
-		end
-	end
-end
-
-module HackNaoImprove
-	module HackNao
-		module ToanHoc
-			def cau_hai
-				puts 'Me hon con 22 tuoi, hoi khi nao tuoi me gap doi tuoi con?'
-			end
-		end
-		::HackNao::Base.extend ToanHoc
-	end
-end
-
-::HackNao::Base.new.cau_mot
-::HackNao::Base.new.cau_hai
-</code></pre>
-
+<span style="color:#f92672">::</span><span style="color:#66d9ef">HackNao</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>cau_mot
+<span style="color:#f92672">::</span><span style="color:#66d9ef">HackNao</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span><span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>cau_hai
+</code></pre></div>
     </article>
 
                     </main>                    

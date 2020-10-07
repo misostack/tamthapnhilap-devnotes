@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,159 +108,93 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Cài đặt ruby</h1>        
-        
-
-<p>Hướng dẫn cài đặt ruby trên các môi trường. Phiên bản ruby trong bài hướng dẫn hiện tại là <strong>2.5.1</strong>.</p>
-
+        <p>Hướng dẫn cài đặt ruby trên các môi trường. Phiên bản ruby trong bài hướng dẫn hiện tại là <strong>2.5.1</strong>.</p>
 <p>Link trang chủ : <a href="https://www.ruby-lang.org/en/downloads/">https://www.ruby-lang.org/en/downloads/</a></p>
-
 <h2 id="cài-đặt-ruby-trên-window-cho-môi-trường-dev">Cài đặt ruby trên window cho môi trường dev</h2>
-
 <ul>
 <li>Link cài đặt : <a href="https://rubyinstaller.org/downloads/">https://rubyinstaller.org/downloads/</a></li>
 </ul>
-
 <p>Lưu ý trên window cần cài đặt phiên bản ruby có tích hợp DevKit ( tool này tích hợp MSYS2-Devkit - công cụ build gems cho ruby trên window )</p>
-
 <p>Sau khi cài đặt xong nên tạo RUBY_PATH đến thư mục bin của phiên bản ruby đã cài đặt.</p>
-
 <p>Ví dụ : RUBY_PATH=C:\Ruby24-x64\bin</p>
-
 <p>Kiểm tra kết quả</p>
-
-<pre><code class="language-bash">C:\Users\Son Nguyen&gt;ruby -v
-ruby 2.4.4p296 (2018-03-28 revision 63013) [x64-mingw32]
-</code></pre>
-
-<h2 id="cài-đặt-ruby-trên-ubuntu-16-x-cho-môi-trường-dev">Cài đặt ruby trên ubuntu ( 16.x ) cho môi trường dev</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\S</span>on Nguyen&gt;ruby -v
+ruby 2.4.4p296 <span style="color:#f92672">(</span>2018-03-28 revision 63013<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>x64-mingw32<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="cài-đặt-ruby-trên-ubuntu--16x--cho-môi-trường-dev">Cài đặt ruby trên ubuntu ( 16.x ) cho môi trường dev</h2>
 <p>Có 2 hướng thông dụng để cài đặt ruby: rbenv và rvm</p>
-
 <ul>
 <li>RVM : Ruby Version Manager (thích hợp cho môi trường dev)</li>
 <li>Rbenv( thích hợp cho môi trường stage và prod )</li>
 </ul>
-
 <p>Do Ruby được viết trên C, nên cần cài đặt các package để máy tính có thể biên dịch được C, cũng như
 các dependency libraries tương tác với các loại database phổ biến như: mysql, posgresql, &hellip;</p>
-
-<h3 id="cài-đặt-các-gói-dependency">&mdash; Cài đặt các gói dependency</h3>
-
-<pre><code class="language-bash">sudo apt-get update
+<h3 id="----cài-đặt-các-gói-dependency">&mdash; Cài đặt các gói dependency</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 sudo apt-get install -y curl gnupg build-essential
-</code></pre>
-
-<h3 id="cài-đặt-rvm">&mdash; Cài đặt rvm</h3>
-
+</code></pre></div><h3 id="----cài-đặt-rvm">&mdash; Cài đặt rvm</h3>
 <p>Link tham khảo:</p>
-
 <ul>
 <li><a href="https://github.com/rvm/rvm">https://github.com/rvm/rvm</a></li>
 <li><a href="https://github.com/rvm/ubuntu_rvm">https://github.com/rvm/ubuntu_rvm</a></li>
 </ul>
-
 <p>Lưu ý, nên cài đặt dưới phân quyền user đang sử dụng</p>
-
 <p>Các bước:</p>
-
-<pre><code class="language-bash">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-</code></pre>
-
-<pre><code class="language-bash">\curl -sSL https://get.rvm.io | bash -s stable
-</code></pre>
-
-<p><strong>Sau khi cài đặt xong hệ thống sẽ hiện câu thông báo sau</strong></p>
-
-<pre><code class="language-bash">Installing RVM to /home/ubuntu/.rvm/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">\c</span>url -sSL https://get.rvm.io | bash -s stable
+</code></pre></div><p><strong>Sau khi cài đặt xong hệ thống sẽ hiện câu thông báo sau</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Installing RVM to /home/ubuntu/.rvm/
     Adding rvm PATH line to /home/ubuntu/.profile /home/ubuntu/.mkshrc /home/ubuntu/.bashrc /home/ubuntu/.zshrc.
     Adding rvm loading line to /home/ubuntu/.profile /home/ubuntu/.bash_profile /home/ubuntu/.zlogin.
 Installation of RVM in /home/ubuntu/.rvm/ is almost complete:
 
-  * To start using RVM you need to run `source /home/ubuntu/.rvm/scripts/rvm`
+  * To start using RVM you need to run <span style="color:#e6db74">`</span>source /home/ubuntu/.rvm/scripts/rvm<span style="color:#e6db74">`</span>
     in all your open shell windows, in rare cases you need to reopen all shell windows.
-</code></pre>
-
-<p><strong>Để sử dụng rvm ngay lập tức</strong></p>
-
-<pre><code class="language-bash">source /home/ubuntu/.rvm/scripts/rvm
-</code></pre>
-
-<p><strong>Gỡ bỏ rmv</strong></p>
-
-<pre><code class="language-bash">rvm implode
-</code></pre>
-
-<p><strong>Và chú ý cần remove các dòng PATH đã include sau khi cài</strong></p>
-
+</code></pre></div><p><strong>Để sử dụng rvm ngay lập tức</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source /home/ubuntu/.rvm/scripts/rvm
+</code></pre></div><p><strong>Gỡ bỏ rmv</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm implode
+</code></pre></div><p><strong>Và chú ý cần remove các dòng PATH đã include sau khi cài</strong></p>
 <p>Tham khảo thêm về bashrc, profile tại đây : <a href="https://top.quora.com/What-is-bash_profile-and-what-is-its-use">https://top.quora.com/What-is-bash_profile-and-what-is-its-use</a></p>
-
 <p><strong>Cài đặt ruby</strong></p>
-
-<pre><code class="language-bash">rvm install ruby-2.5.1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm install ruby-2.5.1
 rvm list
 rvm install ruby-2.3.0
 rvm list
-</code></pre>
-
-<p><strong>Chuyển đổi giữa các phiên bản</strong></p>
-
-<pre><code class="language-bash">rvm 2.5.1
-</code></pre>
-
-<p><strong>Thiết lập default ruby version</strong></p>
-
-<pre><code class="language-bash">rvm --default use 2.5.1
-</code></pre>
-
-<p><strong>Tạo alias để dễ dàng chuyển đổi hơn</strong></p>
-
+</code></pre></div><p><strong>Chuyển đổi giữa các phiên bản</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm 2.5.1
+</code></pre></div><p><strong>Thiết lập default ruby version</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm --default use 2.5.1
+</code></pre></div><p><strong>Tạo alias để dễ dàng chuyển đổi hơn</strong></p>
 <p>Có 1 alias mặc định là : default</p>
-
-<pre><code class="language-bash">rvm alias list
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm alias list
 rvm alias create alias-name ruby-version
 rvm alias delete alias-name
-</code></pre>
-
-<p><strong>Tạo gemset</strong></p>
-
-<pre><code class="language-bash">rvm 2.3.0
+</code></pre></div><p><strong>Tạo gemset</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rvm 2.3.0
 rvm gemset create example
 rvm gemset list
 rvm gemset use example
-</code></pre>
-
-<p><strong>Ứng dụng rvm cho phép nhiều ứng dụng độc lập chạy các phiên bản ruby khác nhau</strong></p>
-
-<pre><code class="language-bash">Giả sử chúng ta có các app như sau
+</code></pre></div><p><strong>Ứng dụng rvm cho phép nhiều ứng dụng độc lập chạy các phiên bản ruby khác nhau</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Giả sử chúng ta có các app như sau
 ~/apps/app_a
 ~/apps/app_b
 ~/apps/app_c
 
 Và mỗi app này sẽ sử dụng các loại gem khác nhau, cũng như phiên bản ruby khác nhau, để làm được điều này,
-trong mỗi app ta sẽ sử dụng 2 file để chỉ định phiên bản ruby, cũng như gemset cho chúng:
+trong mỗi app ta sẽ sử dụng <span style="color:#ae81ff">2</span> file để chỉ định phiên bản ruby, cũng như gemset cho chúng:
 .ruby-version
 2.3.0
 .ruby-gemset
 app_a
-</code></pre>
-
-<p><strong>Test thử</strong></p>
-
-<pre><code class="language-bash">ruby -v
+</code></pre></div><p><strong>Test thử</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ruby -v
 ruby hello.rb
-</code></pre>
-
-<h3 id="cài-đặt-rbenv">&mdash; Cài đặt rbenv</h3>
-
+</code></pre></div><h3 id="----cài-đặt-rbenv">&mdash; Cài đặt rbenv</h3>
 <h2 id="cài-đặt-ruby-trên-vultr-ubuntu-server">Cài đặt ruby trên Vultr Ubuntu Server</h2>
-
 <h2 id="cài-đặt-ruby-trên-amazon-ec2-ubuntu-server">Cài đặt ruby trên Amazon EC2 Ubuntu Server</h2>
-
 <h2 id="hướng-dẫn-cấu-hình-để-chạy-ruby-web-service-trên-heroku">Hướng dẫn cấu hình để chạy ruby web service trên Heroku</h2>
-
 <h2 id="các-công-cụ-hữu-ích-cho-ruby-developer">Các công cụ hữu ích cho ruby developer</h2>
-
 <ul>
 <li><a href="https://bundler.io/">Bundle &amp; Gemfile</a></li>
 <li><a href="https://rubygems.org/stats">https://rubygems.org/stats</a></li>

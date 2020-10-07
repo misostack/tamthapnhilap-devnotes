@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,15 +108,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Rails 001 - MVC</h1>        
-        
-
-<h2 id="all-references">All References</h2>
-
+        <h2 id="all-references">All References</h2>
 <ul>
 <li><a href="https://guides.rubyonrails.org/index.html">Official</a></li>
 <li><a href="https://blog.bigbinary.com/2016/02/16/rails-5-options-for-rake-routes.html">Routes</a></li>
 <li><a href="https://guides.rubyonrails.org/generators.html">Generators</a></li>
-<li><a href="https://rubyplus.com/articles/3231-How-To-Get-A-List-Of-All-Currently-Registered-MIME-Types-With-Rails">Mime</a></li>
+<li>[Mime] (<a href="https://rubyplus.com/articles/3231-How-To-Get-A-List-Of-All-Currently-Registered-MIME-Types-With-Rails">https://rubyplus.com/articles/3231-How-To-Get-A-List-Of-All-Currently-Registered-MIME-Types-With-Rails</a>)</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">Web Mime</a></li>
 <li><a href="https://ruby-doc.org/stdlib-2.3.1/libdoc/date/rdoc/DateTime.html#method-c-now">DateTime</a></li>
 <li><a href="https://guides.rubyonrails.org/routing.html">Routing</a></li>
@@ -125,190 +122,128 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><a href="https://stackoverflow.com/questions/49049111/rails-server-puma-ssl-not-available-in-this-build-standarderror?rq=1">Rails Server PUma SSL Not Avaible For this Build</a></li>
 <li><a href="https://guides.rubyonrails.org/layouts_and_rendering.html">Layout rendering</a></li>
 </ul>
-
 <h2 id="new-project">New Project</h2>
-
 <h3 id="install-rails">Install rails</h3>
-
-<pre><code class="language-bash">rails new appname --skip-install
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails new appname --skip-install
 cd appname
 bundle install
-</code></pre>
+</code></pre></div><h3 id="change-test-framework">Change Test Framework</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle add rspec-rails --group<span style="color:#f92672">=</span>development,test
+</code></pre></div><p><strong>config/application.rb</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">
+    config<span style="color:#f92672">.</span>generators <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>g<span style="color:#f92672">|</span>
+      g<span style="color:#f92672">.</span>orm             <span style="color:#e6db74">:active_record</span>
+      g<span style="color:#f92672">.</span>test_framework  <span style="color:#e6db74">:rspec</span>
+    <span style="color:#66d9ef">end</span>
 
-<h3 id="change-test-framework">Change Test Framework</h3>
-
-<pre><code class="language-bash">bundle add rspec-rails --group=development,test
-</code></pre>
-
-<p><strong>config/application.rb</strong></p>
-
-<pre><code class="language-ruby">
-    config.generators do |g|
-      g.orm             :active_record
-      g.test_framework  :rspec
-    end
-
-ENV['TMP'] = File.join(Rails.root, 'tmp')    
-</code></pre>
-
-<pre><code class="language-bash">rails generate rspec:install
-</code></pre>
-
-<h2 id="initialize">Initialize</h2>
-
-<pre><code class="language-bash">gem install rails
+<span style="color:#66d9ef">ENV</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;TMP&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>join(<span style="color:#66d9ef">Rails</span><span style="color:#f92672">.</span>root, <span style="color:#e6db74">&#39;tmp&#39;</span>)    
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails generate rspec:install
+</code></pre></div><h2 id="initialize">Initialize</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install rails
 rails new webapp -B
 cd webapp
 bundler install
-rails s -b 0.0.0.0 -p 3000 -e development
+rails s -b 0.0.0.0 -p <span style="color:#ae81ff">3000</span> -e development
 rails console
 Mime::LOOKUP
 gem install puma
 bundle update puma
-</code></pre>
-
-<h2 id="samples">Samples</h2>
-
-<pre><code class="language-ruby">Rails.application.routes.draw do
-  get '/ping', {to: 'home#ping'} # run
-  get '/ping', {to: 'home#index'} # never run
-  root to: &quot;home#index&quot; # default
-end
-</code></pre>
-
-<h2 id="cheatsheet">Cheatsheet</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/article/rails-002-cheatsheets/#article-titles-0">Routes cheatsheet</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/article/rails-002-cheatsheets/#article-titles-1">Controller Cheatsheet</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/article/rails-002-cheatsheets/#article-titles-2">View Cheatsheet</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/article/rails-002-cheatsheets/#article-titles-3">Model Cheatsheet</a></label></li>
-</ul>
-
-<h2 id="the-main-points">The main points</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> The default Database is SQLite</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> The default webserver is puma</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> MVC: controller, model, view</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Routes applied this priority( top to bottom )</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Gem version: <a href="https://robots.thoughtbot.com/rubys-pessimistic-operator">twiddle-wakka</a></label></li>
-</ul>
-
-<h3 id="controllers">Controllers</h3>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Naming Convention: Pluralization is preferable( eg : ClientsController or SiteAdminsController )</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Layout and rendering : by default <strong>render method</strong> will be execute and finding the view with the same name as action with this structure: &lsquo;views/{namespace/controllernames/action.html.erb}&rsquo;( eg: views/status/messages/index.html.erb)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Parameters</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Routes parameters</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Strong parameters</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> HTTP Basic Auth</label></li>
-</ul>
-
-<h3 id="routes">Routes</h3>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://guides.rubyonrails.org/routing.html">Official</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="/article/rails-005-routing">Details</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> root to:&lsquo;home#index&rsquo; : home route</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> rake routes : list all routes</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> routing types: resources, namespace, nested resources, routing concerns</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> priority: top to bottom</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Resources should never be nested more than 1 level deep</label></li>
-</ul>
-
-<h3 id="views">Views</h3>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> By default</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> ERB Template</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://rubygems.org/gems/haml/versions/5.0.4">HAML</a></label></li>
-</ul>
-
-<h3 id="models">Models</h3>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://www.sqlite.org/download.html">SQLite</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://www.tutorialspoint.com/sqlite/sqlite_create_database.htm">SQLite tutorials</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://guides.rubyonrails.org/active_record_validations.html">ActiveRecord Validation</a></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> <a href="https://guides.rubyonrails.org/active_record_migrations.html">ActiveRecord Migration</a></label></li>
-</ul>
-
-<h3 id="testing-with-rspec">Testing with RSpec</h3>
-
+</code></pre></div><h2 id="samples">Samples</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">Rails</span><span style="color:#f92672">.</span>application<span style="color:#f92672">.</span>routes<span style="color:#f92672">.</span>draw <span style="color:#66d9ef">do</span>
+  get <span style="color:#e6db74">&#39;/ping&#39;</span>, {<span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#ping&#39;</span>} <span style="color:#75715e"># run</span>
+  get <span style="color:#e6db74">&#39;/ping&#39;</span>, {<span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#39;home#index&#39;</span>} <span style="color:#75715e"># never run</span>
+  root <span style="color:#e6db74">to</span>: <span style="color:#e6db74">&#34;home#index&#34;</span> <span style="color:#75715e"># default</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="cheatsheet">Cheatsheet</h2>
 <ul>
-<li><p>[x] <a href="https://github.com/rspec/rspec-rails">Rspec Rails</a></p>
-
-<pre><code class="language-bash">bundle add rspec-rails --group=development,test
-</code></pre>
-
-<pre><code class="language-ruby">gem &quot;rspec-rails&quot;, &quot;~&gt; 3.8&quot;, :groups =&gt; [:development, :test]
-</code></pre></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/rails-002-cheatsheets/#article-titles-0">Routes cheatsheet</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/rails-002-cheatsheets/#article-titles-1">Controller Cheatsheet</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/rails-002-cheatsheets/#article-titles-2">View Cheatsheet</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/rails-002-cheatsheets/#article-titles-3">Model Cheatsheet</a></li>
 </ul>
+<h2 id="the-main-points">The main points</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> The default Database is SQLite</li>
+<li><input checked="" disabled="" type="checkbox"> The default webserver is puma</li>
+<li><input checked="" disabled="" type="checkbox"> MVC: controller, model, view</li>
+<li><input checked="" disabled="" type="checkbox"> Routes applied this priority( top to bottom )</li>
+<li><input checked="" disabled="" type="checkbox"> Gem version: <a href="https://robots.thoughtbot.com/rubys-pessimistic-operator">twiddle-wakka</a></li>
+</ul>
+<h3 id="controllers">Controllers</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Naming Convention: Pluralization is preferable( eg : ClientsController or SiteAdminsController )</li>
+<li><input checked="" disabled="" type="checkbox"> Layout and rendering : by default <strong>render method</strong> will be execute and finding the view with the same name as action with this structure: &lsquo;views/{namespace/controllernames/action.html.erb}'( eg: views/status/messages/index.html.erb)</li>
+<li><input checked="" disabled="" type="checkbox"> Parameters</li>
+<li><input checked="" disabled="" type="checkbox"> Routes parameters</li>
+<li><input checked="" disabled="" type="checkbox"> Strong parameters</li>
+<li><input checked="" disabled="" type="checkbox"> HTTP Basic Auth</li>
+</ul>
+<h3 id="routes">Routes</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://guides.rubyonrails.org/routing.html">Official</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="/article/rails-005-routing">Details</a></li>
+<li><input checked="" disabled="" type="checkbox"> root to:&lsquo;home#index&rsquo; : home route</li>
+<li><input checked="" disabled="" type="checkbox"> rake routes : list all routes</li>
+<li><input checked="" disabled="" type="checkbox"> routing types: resources, namespace, nested resources, routing concerns</li>
+<li><input checked="" disabled="" type="checkbox"> priority: top to bottom</li>
+<li><input checked="" disabled="" type="checkbox"> Resources should never be nested more than 1 level deep</li>
+</ul>
+<h3 id="views">Views</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> By default</li>
+<li><input checked="" disabled="" type="checkbox"> ERB Template</li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://rubygems.org/gems/haml/versions/5.0.4">HAML</a></li>
+</ul>
+<h3 id="models">Models</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://www.sqlite.org/download.html">SQLite</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://www.tutorialspoint.com/sqlite/sqlite_create_database.htm">SQLite tutorials</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://guides.rubyonrails.org/active_record_validations.html">ActiveRecord Validation</a></li>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://guides.rubyonrails.org/active_record_migrations.html">ActiveRecord Migration</a></li>
+</ul>
+<h3 id="testing-with-rspec">Testing with RSpec</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <a href="https://github.com/rspec/rspec-rails">Rspec Rails</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle add rspec-rails --group<span style="color:#f92672">=</span>development,test
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">gem <span style="color:#e6db74">&#34;rspec-rails&#34;</span>, <span style="color:#e6db74">&#34;~&gt; 3.8&#34;</span>, <span style="color:#e6db74">:groups</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">:development</span>, <span style="color:#e6db74">:test</span><span style="color:#f92672">]</span>
+</code></pre></div><p><strong>config/application.rb</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">
+    config<span style="color:#f92672">.</span>generators <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>g<span style="color:#f92672">|</span>
+      g<span style="color:#f92672">.</span>orm             <span style="color:#e6db74">:active_record</span>
+      g<span style="color:#f92672">.</span>test_framework  <span style="color:#e6db74">:rspec</span>
+    <span style="color:#66d9ef">end</span>
 
-<p><strong>config/application.rb</strong></p>
-
-<pre><code class="language-ruby">
-    config.generators do |g|
-      g.orm             :active_record
-      g.test_framework  :rspec
-    end
-
-ENV['TMP'] = File.join(Rails.root, 'tmp')    
-</code></pre>
-
-<pre><code class="language-bash">rails generate rspec:install
-</code></pre>
-
-<h3 id="generators">Generators</h3>
-
+<span style="color:#66d9ef">ENV</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;TMP&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>join(<span style="color:#66d9ef">Rails</span><span style="color:#f92672">.</span>root, <span style="color:#e6db74">&#39;tmp&#39;</span>)    
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails generate rspec:install
+</code></pre></div><h3 id="generators">Generators</h3>
 <ul>
 <li><a href="https://guides.rubyonrails.org/generators.html">Official</a></li>
 </ul>
-
 <h3 id="assets">Assets</h3>
-
-<pre><code class="language-ruby"># Debug mode disables concatenation and preprocessing of assets.
-# This option may cause significant delays in view rendering with a large
-# number of complex assets.
-# Prevent using compiled assets for all envs
-</code></pre>
-
-<pre><code class="language-ruby">config.assets.debug = true
-</code></pre>
-
-<h2 id="common-errors">Common errors</h2>
-
-<h3 id="1-bootstrap-gem">1.Bootstrap gem</h3>
-
-<pre><code class="language-bash">bundle add bootstrap # current gem version cause error
-</code></pre>
-
-<p>Ref: <a href="https://github.com/twbs/bootstrap-rubygem/issues/157">https://github.com/twbs/bootstrap-rubygem/issues/157</a></p>
-
-<h3 id="2-test-framework">2.Test Framework</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Debug mode disables concatenation and preprocessing of assets.</span>
+<span style="color:#75715e"># This option may cause significant delays in view rendering with a large</span>
+<span style="color:#75715e"># number of complex assets.</span>
+<span style="color:#75715e"># Prevent using compiled assets for all envs</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">config<span style="color:#f92672">.</span>assets<span style="color:#f92672">.</span>debug <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><h2 id="common-errors">Common errors</h2>
+<h3 id="1bootstrap-gem">1.Bootstrap gem</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle add bootstrap <span style="color:#75715e"># current gem version cause error</span>
+</code></pre></div><p>Ref: <a href="https://github.com/twbs/bootstrap-rubygem/issues/157">https://github.com/twbs/bootstrap-rubygem/issues/157</a></p>
+<h3 id="2test-framework">2.Test Framework</h3>
 <ul>
-<li><p>Ref : <a href="https://github.com/rspec/rspec-rails">https://github.com/rspec/rspec-rails</a></p>
-
-<pre><code class="language-bash">rails g rspec:install
-</code></pre></li>
+<li>Ref : <a href="https://github.com/rspec/rspec-rails">https://github.com/rspec/rspec-rails</a></li>
 </ul>
-
-<p>==&gt; Errors on window 10 : <a href="https://stackoverflow.com/questions/35517997/rspec-installation-error-invalid-argument">https://stackoverflow.com/questions/35517997/rspec-installation-error-invalid-argument</a></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rails g rspec:install
+</code></pre></div><p>==&gt; Errors on window 10 : <a href="https://stackoverflow.com/questions/35517997/rspec-installation-error-invalid-argument">https://stackoverflow.com/questions/35517997/rspec-installation-error-invalid-argument</a></p>
 <p>Because of the rails generate rspec:install command:</p>
-
 <ol>
 <li>Creates a temporary directory</li>
 <li>Populates it with the files it needs</li>
 <li>Uses Thor to copy those files into your Rails app</li>
 </ol>
-
 <p><strong>The Workaround</strong></p>
-
 <ol>
 <li>Open config/application.rb.</li>
 <li>Add the following to the bottom of your Application class.
@@ -316,19 +251,13 @@ ENV[&lsquo;TMP&rsquo;] = File.join(Rails.root, &lsquo;tmp&rsquo;) # or any other
 <li>Run rails generate rspec:install.</li>
 <li>Remove the line that was added in step 2.</li>
 </ol>
-
 <p><strong>config/application.rb</strong></p>
-
-<pre><code class="language-ruby">    config.generators do |g|      
-        g.test_framework :rspec
-    end
-</code></pre>
-
-<p><strong>Gemfile</strong></p>
-
-<pre><code class="language-ruby"># gem 'chromedriver-helper'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">    config<span style="color:#f92672">.</span>generators <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>g<span style="color:#f92672">|</span>      
+        g<span style="color:#f92672">.</span>test_framework <span style="color:#e6db74">:rspec</span>
+    <span style="color:#66d9ef">end</span>
+</code></pre></div><p><strong>Gemfile</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># gem &#39;chromedriver-helper&#39;</span>
+</code></pre></div>
     </article>
 
                     </main>                    

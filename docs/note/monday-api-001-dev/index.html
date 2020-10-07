@@ -100,99 +100,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Monday Api 001 Dev" />
     <h1>Monday Api 001 Dev</h1>
-    
-
-<h2 id="things-need-to-do">Things need to do:</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Design Application Structures: REST API, Core Module</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Design REST API Endpoints</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Design Models, Schemas, Services</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Document REST API Endpoints</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Design Data Validations</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Design Pagination, Search</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Integrate Services with Related Resources</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Secured: CORS, JWT</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Testing API with Postman</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Improvement with: Index, Caching, Elastic Search,&hellip;</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Automation: make generators that generate new resources endpoint from json data</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Common Services: Mailer &amp; SMS, Cron, <a href="https://www.fullstackpython.com/task-queues.html">Task Queues</a></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Deployment: Heroku, VPS, CI &amp; CD with gitlab, ci</label></li>
+    <h2 id="things-need-to-do">Things need to do:</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Design Application Structures: REST API, Core Module</li>
+<li><input disabled="" type="checkbox"> Design REST API Endpoints</li>
+<li><input disabled="" type="checkbox"> Design Models, Schemas, Services</li>
+<li><input disabled="" type="checkbox"> Document REST API Endpoints</li>
+<li><input disabled="" type="checkbox"> Design Data Validations</li>
+<li><input disabled="" type="checkbox"> Design Pagination, Search</li>
+<li><input disabled="" type="checkbox"> Integrate Services with Related Resources</li>
+<li><input disabled="" type="checkbox"> Secured: CORS, JWT</li>
+<li><input disabled="" type="checkbox"> Testing API with Postman</li>
+<li><input disabled="" type="checkbox"> Improvement with: Index, Caching, Elastic Search,&hellip;</li>
+<li><input disabled="" type="checkbox"> Automation: make generators that generate new resources endpoint from json data</li>
+<li><input disabled="" type="checkbox"> Common Services: Mailer &amp; SMS, Cron, <a href="https://www.fullstackpython.com/task-queues.html">Task Queues</a></li>
+<li><input disabled="" type="checkbox"> Deployment: Heroku, VPS, CI &amp; CD with gitlab, ci</li>
 </ul>
-
 <h3 id="application-structures">Application Structures</h3>
-
-<pre><code class="language-json">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">
 {
-  &quot;flaskr&quot;: { 
-    &quot;core&quot;: [
-    	&quot;base&quot;,
-    	&quot;db&quot;,
-    	&quot;helpers&quot;
+  <span style="color:#f92672">&#34;flaskr&#34;</span>: { 
+    <span style="color:#f92672">&#34;core&#34;</span>: [
+    	<span style="color:#e6db74">&#34;base&#34;</span>,
+    	<span style="color:#e6db74">&#34;db&#34;</span>,
+    	<span style="color:#e6db74">&#34;helpers&#34;</span>
     ],
-    &quot;admin&quot;: {
-    	&quot;admin_core&quot;: [
-	    	&quot;controllers&quot;,
-	    	&quot;services&quot;,
-	    	&quot;helpers&quot;    		
+    <span style="color:#f92672">&#34;admin&#34;</span>: {
+    	<span style="color:#f92672">&#34;admin_core&#34;</span>: [
+	    	<span style="color:#e6db74">&#34;controllers&#34;</span>,
+	    	<span style="color:#e6db74">&#34;services&#34;</span>,
+	    	<span style="color:#e6db74">&#34;helpers&#34;</span>    		
     	],
-    	&quot;admin_auth&quot;: [
-	    	&quot;controllers&quot;,
-	    	&quot;services&quot;,
-	    	&quot;helpers&quot;
+    	<span style="color:#f92672">&#34;admin_auth&#34;</span>: [
+	    	<span style="color:#e6db74">&#34;controllers&#34;</span>,
+	    	<span style="color:#e6db74">&#34;services&#34;</span>,
+	    	<span style="color:#e6db74">&#34;helpers&#34;</span>
     	]
     },
-    &quot;templates&quot;: {
-    	&quot;admin&quot;: {
-    		&quot;admin_core&quot;: [
-    			&quot;dashboard&quot;
+    <span style="color:#f92672">&#34;templates&#34;</span>: {
+    	<span style="color:#f92672">&#34;admin&#34;</span>: {
+    		<span style="color:#f92672">&#34;admin_core&#34;</span>: [
+    			<span style="color:#e6db74">&#34;dashboard&#34;</span>
     		],
-    		&quot;admin_auth&quot;: [
-    			&quot;auth&quot;,
-    			&quot;auth_login&quot;,
-    			&quot;auth_forget_password&quot;,
-    			&quot;auth_reset_password&quot;
+    		<span style="color:#f92672">&#34;admin_auth&#34;</span>: [
+    			<span style="color:#e6db74">&#34;auth&#34;</span>,
+    			<span style="color:#e6db74">&#34;auth_login&#34;</span>,
+    			<span style="color:#e6db74">&#34;auth_forget_password&#34;</span>,
+    			<span style="color:#e6db74">&#34;auth_reset_password&#34;</span>
     		],    		
     	}
     },
-    &quot;api&quot;: {
-      &quot;v1&quot;:[
-        &quot;__init__&quot;,
-      	&quot;users&quot;,
-        &quot;books&quot;,
-        &quot;categories&quot;,
-        &quot;tags&quot;,
-        &quot;reading-plans&quot;,
-        &quot;reading-logs&quot;
+    <span style="color:#f92672">&#34;api&#34;</span>: {
+      <span style="color:#f92672">&#34;v1&#34;</span>:[
+        <span style="color:#e6db74">&#34;__init__&#34;</span>,
+      	<span style="color:#e6db74">&#34;users&#34;</span>,
+        <span style="color:#e6db74">&#34;books&#34;</span>,
+        <span style="color:#e6db74">&#34;categories&#34;</span>,
+        <span style="color:#e6db74">&#34;tags&#34;</span>,
+        <span style="color:#e6db74">&#34;reading-plans&#34;</span>,
+        <span style="color:#e6db74">&#34;reading-logs&#34;</span>
       ]
     },
-    &quot;__init__&quot;
+    <span style="color:#f92672">&#34;__init__&#34;</span>
   },
-  &quot;instance&quot;: [],
-  &quot;tests&quot;: {
-  	&quot;admin&quot;: [
-  		// ...
+  <span style="color:#f92672">&#34;instance&#34;</span>: [],
+  <span style="color:#f92672">&#34;tests&#34;</span>: {
+  	<span style="color:#f92672">&#34;admin&#34;</span>: [
+  		<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
   	],
-  	&quot;resources&quot;: [
-  		// ...
+  	<span style="color:#f92672">&#34;resources&#34;</span>: [
+  		<span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">...</span>
   	]
   }
 }
 
-</code></pre>
-
-<p><strong>Example</strong></p>
-
+</code></pre></div><p><strong>Example</strong></p>
 <p>Create admin modules:</p>
-
 <ul>
 <li>URL: &lsquo;/admin/*&rsquo;</li>
 <li>Webview only</li>
@@ -201,42 +192,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li>Template: Using Bulma as CSS Frameworks</li>
 <li>I18n: Do later with <a href="http://babel.pocoo.org/en/latest/cmdline.html#">pybabel</a></li>
 </ul>
-
 <p>Getting start with blueprint routes first</p>
-
 <h4 id="blueprint-web">Blueprint Web</h4>
-
 <ul>
 <li>Register BluePrint for admin</li>
 <li>Register url</li>
 <li>Create Views</li>
 <li>Add Assets: SASS, Javascripts, Images</li>
-
-<li><p>Admin Bulma CSS Framework</p>
-
-<pre><code class="language-bash"># Add libsass and configure with flask
+<li>Admin Bulma CSS Framework</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Add libsass and configure with flask</span>
 https://sass.github.io/libsass-python/frameworks/flask.html#directory-layout
-# Node12 Ubuntu 18.04
+<span style="color:#75715e"># Node12 Ubuntu 18.04</span>
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
 
 curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 
-</code></pre></li>
-</ul>
-
-<h3 id="keywords">Keywords</h3>
-
+</code></pre></div><h3 id="keywords">Keywords</h3>
 <ul>
 <li>Object, Dataset, Relation or Associations</li>
 <li>CRUD, Pagination &amp; Search</li>
 <li>Evolution: index, caching, elastic search</li>
 <li>Choose the right database for your target.</li>
 </ul>
-
 <h3 id="design-rest-api">Design REST API</h3>
-
 <p><strong>Ref</strong>:</p>
-
 <ul>
 <li><a href="https://restfulapi.net/">https://restfulapi.net/</a></li>
 <li><a href="https://blog.octo.com/en/design-a-rest-api/">https://blog.octo.com/en/design-a-rest-api/</a></li>
@@ -245,17 +225,11 @@ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 <li><a href="https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215">https://blog.feathersjs.com/design-patterns-for-modern-web-apis-1f046635215</a></li>
 <li><a href="https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/#security-and-authentication">https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/#security-and-authentication</a></li>
 </ul>
-
 <h4 id="from-requirements-to-specifications">From Requirements to Specifications</h4>
-
 <p><strong>Requirements</strong>:</p>
-
 <p>Imagine you have a lot books need to read. And you want to read as much as possible. The main issue is you can not read all of them in a short period. The good way is making a plan for reading. Also, it is not easy to find an ebook with related subject in your PC/laptop. And of course you wanna know how many books you read in this month, this year, even you wanna compare the number of books that had been read in last year.</p>
-
 <p><strong>Specifications</strong>:</p>
-
 <p>Make the new APIs that allow:</p>
-
 <ul>
 <li>Manipulate book&rsquo;s data: name, category, author(not mandatory), public_date</li>
 <li>Search ebook by: name, category, author, public time, and other related data. Eg: list all the books that are not readed</li>
@@ -263,69 +237,58 @@ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 <li>Log your reading&rsquo;s status. Eg: the book A has been read in 3 weeks from dd-mm-yyyy to dd-mm-yyyy</li>
 <li>Analysis your reading&rsquo;s milestone with chart. Eg: number of books i&rsquo;ve readed in this month.</li>
 </ul>
-
 <h4 id="database-modelling">Database Modelling</h4>
-
 <p>1.Objects:</p>
-
-<pre><code class="language-javascript">
-&quot;book&quot;: {
-	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
-	&quot;name&quot;: { &quot;type&quot;: &quot;string&quot;, &quot;required&quot;: true},
-	&quot;categories&quot;: { &quot;type&quot;:  &quot;Array&quot;, &quot;required&quot;: false, &quot;default&quot;: []},// use category id
-	&quot;tags&quot;: { &quot;type&quot;:  &quot;Array&quot;, &quot;required&quot;: false, &quot;default&quot;: []},// use tag id
-	&quot;author&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;required&quot;: false},
-	&quot;public_date&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
-	&quot;type&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;isIn&quot;:[&quot;ebook&quot;, &quot;print&quot;]},
-	&quot;reading_state&quot;: {
-		&quot;type&quot;: &quot;string&quot;,
-		&quot;required&quot;: false,
-		&quot;default&quot;: &quot;unread&quot;,
-		&quot;isIn&quot;: [&quot;unread&quot;, &quot;reading&quot;, &quot;read&quot;, 'stopped', 'skipped']
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#e6db74">&#34;book&#34;</span><span style="color:#f92672">:</span> {
+	<span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;uuid&#34;</span>, <span style="color:#e6db74">&#34;primary_key&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
+	<span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
+	<span style="color:#e6db74">&#34;categories&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span>  <span style="color:#e6db74">&#34;Array&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">:</span> []},<span style="color:#75715e">// use category id
+</span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#34;tags&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span>  <span style="color:#e6db74">&#34;Array&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">:</span> []},<span style="color:#75715e">// use tag id
+</span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#34;author&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>},
+	<span style="color:#e6db74">&#34;public_date&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}, <span style="color:#75715e">// UNIX_TIMESTAMP	
+</span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;isIn&#34;</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;ebook&#34;</span>, <span style="color:#e6db74">&#34;print&#34;</span>]},
+	<span style="color:#e6db74">&#34;reading_state&#34;</span><span style="color:#f92672">:</span> {
+		<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>,
+		<span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+		<span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;unread&#34;</span>,
+		<span style="color:#e6db74">&#34;isIn&#34;</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;unread&#34;</span>, <span style="color:#e6db74">&#34;reading&#34;</span>, <span style="color:#e6db74">&#34;read&#34;</span>, <span style="color:#e6db74">&#39;stopped&#39;</span>, <span style="color:#e6db74">&#39;skipped&#39;</span>]
 	}
 }
 
-&quot;category&quot;: {
-	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
-	&quot;name&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true },
-	&quot;slug&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true, &quot;unique&quot;: true }
+<span style="color:#e6db74">&#34;category&#34;</span><span style="color:#f92672">:</span> {
+	<span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;uuid&#34;</span>, <span style="color:#e6db74">&#34;primary_key&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
+	<span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+	<span style="color:#e6db74">&#34;slug&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#34;unique&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }
 }
 
-&quot;tag&quot;: {
-	&quot;id&quot;: {&quot;type&quot;: &quot;uuid&quot;, &quot;primary_key&quot;: true},
-	&quot;name&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true },
-	&quot;slug&quot;: { &quot;type&quot;:&quot;string&quot;, &quot;required&quot;: true, &quot;unique&quot;: true }
+<span style="color:#e6db74">&#34;tag&#34;</span><span style="color:#f92672">:</span> {
+	<span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;uuid&#34;</span>, <span style="color:#e6db74">&#34;primary_key&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>},
+	<span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+	<span style="color:#e6db74">&#34;slug&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#e6db74">&#34;unique&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> }
 }
 
 
-&quot;reading_plan&quot;: {
-	&quot;book_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;foreign_key&quot;:&quot;book.id&quot;},
-	&quot;start_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
-	&quot;end_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: true}, // UNIX_TIMESTAMP	
-}
+<span style="color:#e6db74">&#34;reading_plan&#34;</span><span style="color:#f92672">:</span> {
+	<span style="color:#e6db74">&#34;book_id&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;foreign_key&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;book.id&#34;</span>},
+	<span style="color:#e6db74">&#34;start_at&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}, <span style="color:#75715e">// UNIX_TIMESTAMP	
+</span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#34;end_at&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}, <span style="color:#75715e">// UNIX_TIMESTAMP	
+</span><span style="color:#75715e"></span>}
 
-&quot;reading_log&quot;: {
-	&quot;book_id&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;foreign_key&quot;:&quot;book.id&quot;},
-	&quot;record_at&quot;: {&quot;type&quot;: &quot;number&quot;, &quot;required&quot;: false, &quot;default&quot;: &quot;current_time&quot;},
-	&quot;spent_time&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;required&quot;: true}, // unit: hour
-}
+<span style="color:#e6db74">&#34;reading_log&#34;</span><span style="color:#f92672">:</span> {
+	<span style="color:#e6db74">&#34;book_id&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;string&#34;</span>, <span style="color:#e6db74">&#34;foreign_key&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;book.id&#34;</span>},
+	<span style="color:#e6db74">&#34;record_at&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;number&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;current_time&#34;</span>},
+	<span style="color:#e6db74">&#34;spent_time&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;type&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;integer&#34;</span>, <span style="color:#e6db74">&#34;required&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>}, <span style="color:#75715e">// unit: hour
+</span><span style="color:#75715e"></span>}
 
-</code></pre>
-
-<h4 id="object-relational-mapping">Object-relational Mapping</h4>
-
+</code></pre></div><h4 id="object-relational-mapping">Object-relational Mapping</h4>
 <p>In this case, my ORM is SQLAlchemy</p>
-
 <h4 id="testing">Testing</h4>
-
 <blockquote>
 <p>Mock an item where it is used, not where it came from.</p>
 </blockquote>
-
 <h3 id="related-things">Related things</h3>
-
 <h4 id="most-common-programming-case-types">Most-common-programming-case-types</h4>
-
 <table class="table table-commands">
     <thead>
         
@@ -370,57 +333,26 @@ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
         
     </tbody>
 </table>
-
 <p>&hellip;</p>
-
 <h4 id="naming-conventions-in-database-modelling">Naming Conventions in Database Modelling</h4>
-
 <ul>
 <li><a href="http://www.wilsonmar.com/sql_adventureworks.htm">http://www.wilsonmar.com/sql_adventureworks.htm</a></li>
 <li><a href="https://stackoverflow.com/questions/7662/database-table-and-column-naming-conventions">https://stackoverflow.com/questions/7662/database-table-and-column-naming-conventions</a></li>
 <li><a href="https://www.vertabelo.com/blog/naming-conventions-in-database-modeling/">https://www.vertabelo.com/blog/naming-conventions-in-database-modeling/</a></li>
 <li><a href="https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/">https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/</a></li>
 </ul>
-
 <h4 id="must-read-articles">Must read articles</h4>
-
 <ul>
 <li><a href="https://www.toptal.com/python/an-introduction-to-mocking-in-python">https://www.toptal.com/python/an-introduction-to-mocking-in-python</a></li>
 <li><a href="https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python">https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python</a></li>
 </ul>
-
 <h4 id="tips">Tips</h4>
-
-<pre><code class="language-bash"># https://stackoverflow.com/questions/20006000/install-a-package-and-write-to-requirements-txt-with-pip
-pip install requests &amp;&amp; pip freeze | grep -i requests &gt;&gt; requirements.txt
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># https://stackoverflow.com/questions/20006000/install-a-package-and-write-to-requirements-txt-with-pip</span>
+pip install requests <span style="color:#f92672">&amp;&amp;</span> pip freeze | grep -i requests &gt;&gt; requirements.txt
+</code></pre></div>
 </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-<div class="sidebar-fixed">
-    <div id="article-scrollpy" class="sidebar-widget">
-        <h3 class="widget-header">
-            <a href="#">Đầu mục bài viết</a>
-        </h3>
-        <ul class="sidebar-links article-scrollpy-links">
-        </ul>
-    </div>
-</div>
-<div class="sidebar-fixed">
-    <div class="sidebar-widget">
-        <h3 class="widget-header ucfirst">
-            <span>Bài viết khác</span>
-        </h3>
-        
-
-        
-    </div>
-</div>
-
-                </aside>
             </div>
             
         </div>

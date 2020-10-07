@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
                 <div class="row">
                     <main class="content col-md-12 full-content">
@@ -108,67 +108,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <p class="text-center"><img class="responsive-image" src="/common/no-image-available.jpg" /></p>
         <h1>Ruby 009 - Common Libs</h1>        
-        
-
-<h2 id="common-libs">Common libs</h2>
-
+        <h2 id="common-libs">Common libs</h2>
 <ul>
 <li>MVC Framework : Ruby On Rails(ROR)</li>
 <li>dRuby</li>
 <li>CSV</li>
 </ul>
+<h2 id="--inline-if-and-unless">- Inline if and unless</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">puts <span style="color:#e6db74">&#39;example&#39;</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">true</span>
+puts <span style="color:#e6db74">&#39;example&#39;</span> <span style="color:#66d9ef">unless</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><h2 id="--private-method">- Private method</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sample</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>
+        puts <span style="color:#e6db74">&#39;hello&#39;</span>
+    <span style="color:#66d9ef">end</span>
 
-<h2 id="inline-if-and-unless">- Inline if and unless</h2>
+<span style="color:#66d9ef">private</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hi</span>
+        puts <span style="color:#e6db74">&#39;hi&#39;</span>
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h2 id="--command-line-arguments">- Command-line arguments</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">puts <span style="color:#66d9ef">ARGV</span><span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672">]</span>
+</code></pre></div><h2 id="--regular-expressions">- Regular Expressions</h2>
+<h2 id="--singleton-methods">- Singleton methods</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">superhero <span style="color:#f92672">=</span> <span style="color:#66d9ef">Person</span><span style="color:#f92672">.</span>new
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">superhero</span><span style="color:#f92672">.</span><span style="color:#a6e22e">fly</span>
+    puts <span style="color:#e6db74">&#39;Fly up&#39;</span>
+<span style="color:#66d9ef">end</span>
+superhero<span style="color:#f92672">.</span>fly
+</code></pre></div><h2 id="--call-any-method-even-undefined-ones">- Call any method, even undefined ones</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/env/bin ruby</span>
 
-<pre><code class="language-ruby">puts 'example' if true
-puts 'example' unless true
-</code></pre>
-
-<h2 id="private-method">- Private method</h2>
-
-<pre><code class="language-ruby">class Sample
-    def hello
-        puts 'hello'
-    end
-
-private
-    def hi
-        puts 'hi'
-    end
-end
-</code></pre>
-
-<h2 id="command-line-arguments">- Command-line arguments</h2>
-
-<pre><code class="language-ruby">puts ARGV[0]
-</code></pre>
-
-<h2 id="regular-expressions">- Regular Expressions</h2>
-
-<h2 id="singleton-methods">- Singleton methods</h2>
-
-<pre><code class="language-ruby">superhero = Person.new
-def superhero.fly
-    puts 'Fly up'
-end
-superhero.fly
-</code></pre>
-
-<h2 id="call-any-method-even-undefined-ones">- Call any method, even undefined ones</h2>
-
-<pre><code class="language-ruby">#!/usr/env/bin ruby
-
-class AskMeAnyThing
-    def method_missing(method_name, args = {})
-        &quot;You called #{method_name.to_s} #{args}&quot;
-    end
-end
-obj = AskMeAnyThing.new
-p obj.an_undefined_method({'arg1' =&gt; 'a','arg2'=&gt;'b'})
-</code></pre>
-
-<h2 id="automating-tasks-with-rake">- Automating tasks with Rake</h2>
-
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AskMeAnyThing</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">method_missing</span>(method_name, args <span style="color:#f92672">=</span> {})
+        <span style="color:#e6db74">&#34;You called </span><span style="color:#e6db74">#{</span>method_name<span style="color:#f92672">.</span>to_s<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>args<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">AskMeAnyThing</span><span style="color:#f92672">.</span>new
+p obj<span style="color:#f92672">.</span>an_undefined_method({<span style="color:#e6db74">&#39;arg1&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;arg2&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;b&#39;</span>})
+</code></pre></div><h2 id="--automating-tasks-with-rake">- Automating tasks with Rake</h2>
 <ul>
 <li>Ref1 : <a href="https://github.com/ruby/rake">https://github.com/ruby/rake</a></li>
 <li>Ref2 : <a href="https://jacobswanner.com/development/2013/rake-global-tasks/">https://jacobswanner.com/development/2013/rake-global-tasks/</a></li>
@@ -176,139 +155,100 @@ p obj.an_undefined_method({'arg1' =&gt; 'a','arg2'=&gt;'b'})
 <li>Cheatsheet : <a href="https://ruby.github.io/rake/doc/rakefile_rdoc.html">https://ruby.github.io/rake/doc/rakefile_rdoc.html</a></li>
 <li>Rakelib: <a href="https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub">https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub</a></li>
 </ul>
-
 <p><strong>Rake commands</strong></p>
-
-<pre><code class="language-bash">rake #run default task
-rake --tasks # list all tasks ( rake -T )
-rake task_nameA # run task_nameA
-rake task_nameA task_nameB # run task_nameA, then task_nameB
-</code></pre>
-
-<p><strong>Where to place tasks?</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rake <span style="color:#75715e">#run default task</span>
+rake --tasks <span style="color:#75715e"># list all tasks ( rake -T )</span>
+rake task_nameA <span style="color:#75715e"># run task_nameA</span>
+rake task_nameA task_nameB <span style="color:#75715e"># run task_nameA, then task_nameB</span>
+</code></pre></div><p><strong>Where to place tasks?</strong></p>
 <ul>
 <li>Global tasks are placed in <strong>Rakefile</strong></li>
 <li>Other tasks are placed in <strong>rakelib</strong> folder</li>
 </ul>
-
 <p><strong>Structures</strong></p>
-
-<pre><code class="language-html">rakelib
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">rakelib
     - task1.rake
     - task2.rake
 Rakefile
-</code></pre>
+</code></pre></div><p><strong>Subjects</strong></p>
+<h3 id="--rake-global-tasks">- Rake Global Tasks</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Rake does let you define global tasks, these global tasks can be run from any directory – even those that do not have a Rakefile in their hierarchy.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">desc <span style="color:#e6db74">&#34;Default Task&#34;</span>
+task <span style="color:#e6db74">:default</span> <span style="color:#66d9ef">do</span>
+    <span style="color:#e6db74">&#39;Default task&#39;</span>
+<span style="color:#66d9ef">end</span>
 
-<p><strong>Subjects</strong></p>
+task <span style="color:#e6db74">:prerequisite1</span> <span style="color:#66d9ef">do</span>
+	puts <span style="color:#e6db74">&#39;prerequisite1&#39;</span>
+<span style="color:#66d9ef">end</span>
 
-<h3 id="rake-global-tasks">- Rake Global Tasks</h3>
+task <span style="color:#e6db74">:prerequisite2</span> <span style="color:#66d9ef">do</span>
+	puts <span style="color:#e6db74">&#39;prerequisite2&#39;</span>
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-html">Rake does let you define global tasks, these global tasks can be run from any directory – even those that do not have a Rakefile in their hierarchy.
-</code></pre>
-
-<pre><code class="language-ruby">desc &quot;Default Task&quot;
-task :default do
-    'Default task'
-end
-
-task :prerequisite1 do
-	puts 'prerequisite1'
-end
-
-task :prerequisite2 do
-	puts 'prerequisite2'
-end
-
-desc &quot;The task's description&quot;
-task :task_name =&gt; [:prerequisite1, :prerequisite2] do |task| puts &quot;#{task.name}&quot; end
-</code></pre>
-
-<h3 id="rake-rule-tasks">- Rake Rule Tasks</h3>
-
+desc <span style="color:#e6db74">&#34;The task&#39;s description&#34;</span>
+task <span style="color:#e6db74">:task_name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">:prerequisite1</span>, <span style="color:#e6db74">:prerequisite2</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>task<span style="color:#f92672">|</span> puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>task<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">end</span>
+</code></pre></div><h3 id="--rake-rule-tasks">- Rake Rule Tasks</h3>
 <ul>
 <li><a href="https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub">https://ruby-doc.org/stdlib-2.0.0/libdoc/rake/rdoc/Rake/FileList.html#method-i-gsub</a></li>
 </ul>
-
 <p><strong>Some files need to be ignored</strong>:</p>
-
 <ul>
 <li>Files that contain tilde(~). Eg: ~$myfile.doc file is a temporary file used to help recover data if a program you are using stops unexpectedly.</li>
 <li>A scratch file is a temporary computer file which you use as a work area or as a store while a program is operating.</li>
 </ul>
-
 <p><strong>Rule tasks don’t need to be about files, as some of the examples above have shown, but if there is a file with the same name as the task’s name, then that task will have the characteristics of a file task</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">rule <span style="color:#e6db74">&#39;.yml&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;.yml.example&#39;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+	puts <span style="color:#e6db74">&#34;Make a copy of </span><span style="color:#e6db74">#{</span>t<span style="color:#f92672">.</span>source<span style="color:#e6db74">}</span><span style="color:#e6db74"> to %s&#34;</span> <span style="color:#f92672">%</span> t<span style="color:#f92672">.</span>name
+	cp t<span style="color:#f92672">.</span>source, t<span style="color:#f92672">.</span>name
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rake ./database.yml
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">file_list <span style="color:#f92672">=</span> <span style="color:#66d9ef">Rake</span><span style="color:#f92672">::</span><span style="color:#66d9ef">FileList</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;26/*.yml.example&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>fl<span style="color:#f92672">|</span>
+	fl<span style="color:#f92672">.</span>exclude(<span style="color:#e6db74">&#34;~*&#34;</span>)
+	fl<span style="color:#f92672">.</span>exclude(<span style="color:#e6db74">&#34;/^scratch\//&#34;</span>)
+	fl<span style="color:#f92672">.</span>gsub!(<span style="color:#e6db74">&#34;.example&#34;</span>,<span style="color:#e6db74">&#34;&#34;</span>)
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-ruby">rule '.yml' =&gt; '.yml.example' do |t|
-	puts &quot;Make a copy of #{t.source} to %s&quot; % t.name
-	cp t.source, t.name
-end
-</code></pre>
+rule <span style="color:#e6db74">&#39;.yml&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;.yml.example&#39;</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+	puts <span style="color:#e6db74">&#34;Make a copy of </span><span style="color:#e6db74">#{</span>t<span style="color:#f92672">.</span>source<span style="color:#e6db74">}</span><span style="color:#e6db74"> to %s&#34;</span> <span style="color:#f92672">%</span> t<span style="color:#f92672">.</span>name
+	cp t<span style="color:#f92672">.</span>source, t<span style="color:#f92672">.</span>name
+<span style="color:#66d9ef">end</span>
 
-<pre><code class="language-bash">rake ./database.yml
-</code></pre>
-
-<pre><code class="language-ruby">file_list = Rake::FileList.new(&quot;26/*.yml.example&quot;) do |fl|
-	fl.exclude(&quot;~*&quot;)
-	fl.exclude(&quot;/^scratch\//&quot;)
-	fl.gsub!(&quot;.example&quot;,&quot;&quot;)
-end
-
-rule '.yml' =&gt; '.yml.example' do |t|
-	puts &quot;Make a copy of #{t.source} to %s&quot; % t.name
-	cp t.source, t.name
-end
-
-desc &quot;Setup&quot;
-task :setup =&gt; file_list do |t|
-	puts t.inspect
-end
-</code></pre>
-
-<pre><code class="language-bash">rake setup
-</code></pre>
-
-<h3 id="rake-file-tasks">- Rake File Tasks</h3>
-
-<h3 id="directory-tasks">- Directory Tasks</h3>
-
-<h3 id="tasks-with-parallel-prerequisites">- Tasks with Parallel Prerequisites</h3>
-
-<h3 id="tasks-with-arguments">- Tasks with Arguments</h3>
-
-<h3 id="namespaces">- Namespaces</h3>
-
-<h2 id="bundler">- Bundler</h2>
-
+desc <span style="color:#e6db74">&#34;Setup&#34;</span>
+task <span style="color:#e6db74">:setup</span> <span style="color:#f92672">=&gt;</span> file_list <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>t<span style="color:#f92672">|</span>
+	puts t<span style="color:#f92672">.</span>inspect
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rake setup
+</code></pre></div><h3 id="--rake-file-tasks">- Rake File Tasks</h3>
+<h3 id="--directory-tasks">- Directory Tasks</h3>
+<h3 id="--tasks-with-parallel-prerequisites">- Tasks with Parallel Prerequisites</h3>
+<h3 id="--tasks-with-arguments">- Tasks with Arguments</h3>
+<h3 id="--namespaces">- Namespaces</h3>
+<h2 id="--bundler">- Bundler</h2>
 <ul>
 <li>Ref : <a href="https://bundler.io/">https://bundler.io/</a></li>
 </ul>
-
-<h2 id="ruby-special-synctax">- Ruby special synctax</h2>
-
+<h2 id="--ruby-special-synctax">- Ruby special synctax</h2>
 <ul>
-<li><a href="https://cbabhusal.wordpress.com/2015/10/06/ruby-what-is-the-asterix-in-function-param/">Asterisk or &ldquo;*&rdquo;</a></li>
+<li><a href="https://cbabhusal.wordpress.com/2015/10/06/ruby-what-is-the-asterix-in-function-param/">Asterisk or &ldquo;*&quot;</a></li>
 <li><a href="http://genua.github.io/ruby/2015/03/04/underscores-ampersands-asterisks/">http://genua.github.io/ruby/2015/03/04/underscores-ampersands-asterisks/</a></li>
 <li><a href="http://raysrashmi.com/2013/11/06/splat-operator-as-an-argument/">http://raysrashmi.com/2013/11/06/splat-operator-as-an-argument/</a></li>
 </ul>
-
 <h3 id="asterix">Asterix</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/env/bin ruby</span>
 
-<pre><code class="language-ruby">#!/usr/env/bin ruby
+puts <span style="color:#e6db74">&#39;Asterisk - The flat operator in ruby&#39;</span>
 
-puts 'Asterisk - The flat operator in ruby'
+first, last <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>
+puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>first<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">#{</span>last<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-first, last = 1,2
-puts &quot;#{first} - #{last}&quot;
+a, <span style="color:#f92672">*</span>b <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span><span style="color:#f92672">]</span>
+puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>a<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
-a, *b = [1,2,3,4]
-puts &quot;#{a} - #{b}&quot;
-
-str = 'Just for your information'
-puts str.split.map { |e| e.chr }.join('').upcase!
-puts str.split.map(&amp;:chr).join('').upcase!
-</code></pre>
-
+str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Just for your information&#39;</span>
+puts str<span style="color:#f92672">.</span>split<span style="color:#f92672">.</span>map { <span style="color:#f92672">|</span>e<span style="color:#f92672">|</span> e<span style="color:#f92672">.</span>chr }<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>upcase!
+puts str<span style="color:#f92672">.</span>split<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:chr</span>)<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>upcase!
+</code></pre></div>
     </article>
 
                     </main>                    

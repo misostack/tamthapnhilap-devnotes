@@ -100,182 +100,127 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
 <article class="article article-scrollby" data-target="#article-scrollpy">
     <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="Reactjs Ways - Advanced Solutions" />
     <h1>Reactjs Ways - Advanced Solutions</h1>
-    
-
-<h3 id="1-accessibility">1.Accessibility</h3>
-
+    <h3 id="1accessibility">1.Accessibility</h3>
 <p><strong>Refs</strong></p>
-
 <ul>
-<li><a href="https://reactjs.org/docs/accessibility.html">Full of story</a></li>
-
-<li><p><a href="https://a11yproject.com/checklist.html">Checklist</a></p></li>
-
-<li><p><strong>WAI-ARIA</strong></p>
-
-<pre><code class="language-javascript">&lt;div className=&quot;form-group&quot;&gt;
-    &lt;label&gt;Email address&lt;/label&gt;
-    &lt;input type=&quot;email&quot; aria-label={`Please enter your email`} aria-required=&quot;true&quot;
-        className=&quot;form-control&quot; onChange={this.handleChange} value={this.state.email} name=&quot;email&quot;
-        aria-describedby=&quot;emailHelp&quot; placeholder=&quot;Enter email&quot; /&gt;
-    &lt;small id=&quot;emailHelp&quot; className=&quot;form-text text-muted&quot;&gt;We'll never share your email with anyone else.&lt;/small&gt;
-&lt;/div&gt;
-</code></pre></li>
-
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Semantic HTML</a></p></li>
-
-<li><p><strong>Accessible Forms</strong></p>
-
-<pre><code class="language-javascript">&lt;div className=&quot;form-group&quot;&gt;
-    &lt;label htmlFor=&quot;email&quot;&gt;Email address&lt;/label&gt;
-    &lt;input id=&quot;email&quot; type=&quot;email&quot; aria-label={`Please enter your email`} aria-required=&quot;true&quot;
-        className=&quot;form-control&quot; onChange={this.handleChange} value={this.state.email} name=&quot;email&quot;
-        aria-describedby=&quot;emailHelp&quot; placeholder=&quot;Enter email&quot; /&gt;
-    &lt;small id=&quot;emailHelp&quot; className=&quot;form-text text-muted&quot;&gt;We'll never share your email with anyone else.&lt;/small&gt;
-&lt;/div&gt;
-</code></pre></li>
-
-<li><p><strong>User notifications:</strong></p></li>
+<li>
+<p><a href="https://reactjs.org/docs/accessibility.html">Full of story</a></p>
+</li>
+<li>
+<p><a href="https://a11yproject.com/checklist.html">Checklist</a></p>
+</li>
+<li>
+<p><strong>WAI-ARIA</strong></p>
+</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">label</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Email</span> <span style="color:#a6e22e">address</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/label&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`Please enter your email`</span>} <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">required</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>
+            <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">email</span>} <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span>
+            <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">describedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter email&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">small</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-text text-muted&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">We</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">ll</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">share</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">email</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">anyone</span> <span style="color:#66d9ef">else</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/small&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div><ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Semantic HTML</a></p>
+</li>
+<li>
+<p><strong>Accessible Forms</strong></p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-group&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">label</span> <span style="color:#a6e22e">htmlFor</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Email</span> <span style="color:#a6e22e">address</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/label&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span>{<span style="color:#e6db74">`Please enter your email`</span>} <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">required</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>
+            <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-control&#34;</span> <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleChange</span>} <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">email</span>} <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span>
+            <span style="color:#a6e22e">aria</span><span style="color:#f92672">-</span><span style="color:#a6e22e">describedby</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Enter email&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">small</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emailHelp&#34;</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form-text text-muted&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">We</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">ll</span> <span style="color:#a6e22e">never</span> <span style="color:#a6e22e">share</span> <span style="color:#a6e22e">your</span> <span style="color:#a6e22e">email</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">anyone</span> <span style="color:#66d9ef">else</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/small&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div><ul>
+<li><strong>User notifications:</strong></li>
+</ul>
 <p><a href="https://www.w3.org/WAI/tutorials/forms/notifications/">https://www.w3.org/WAI/tutorials/forms/notifications/</a></p>
-
-<pre><code class="language-html">&lt;!-- main heading --&gt;
-&lt;h1&gt;3 Errors – Billing Address&lt;/h1&gt;
-&lt;!-- page title --&gt;
-&lt;title&gt;Thank you for submitting your order.&lt;/title&gt;
-&lt;!-- dialog --&gt;
-&lt;script&gt;alert('Thanks for submitting the form!');&lt;/script&gt;
-&lt;!-- listing errors --&gt;
-&lt;!-- inline feedback --&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- main heading --&gt;</span>
+&lt;<span style="color:#f92672">h1</span>&gt;3 Errors – Billing Address&lt;/<span style="color:#f92672">h1</span>&gt;
+<span style="color:#75715e">&lt;!-- page title --&gt;</span>
+&lt;<span style="color:#f92672">title</span>&gt;Thank you for submitting your order.&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="color:#75715e">&lt;!-- dialog --&gt;</span>
+&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Thanks for submitting the form!&#39;</span>);&lt;/<span style="color:#f92672">script</span>&gt;
+<span style="color:#75715e">&lt;!-- listing errors --&gt;</span>
+<span style="color:#75715e">&lt;!-- inline feedback --&gt;</span>
 - After submit
 - During typing: Binary messages, Scaled feedback
 - On focus change
-</code></pre>
-
-<ul>
-<li><p><strong>Focus Control</strong></p></li>
-
-<li><p><strong>Mouse and pointer events</strong></p></li>
-
-<li><p><a href="https://reactjs.org/docs/events.html#mouse-events"><strong>Events</strong></a></p></li>
-
-<li><p><a href="https://speckyboy.com/custom-hover-click-effects-css-javascript/"><strong>Animations</strong></a></p></li>
+</code></pre></div><ul>
+<li>
+<p><strong>Focus Control</strong></p>
+</li>
+<li>
+<p><strong>Mouse and pointer events</strong></p>
+</li>
+<li>
+<p><a href="https://reactjs.org/docs/events.html#mouse-events"><strong>Events</strong></a></p>
+</li>
+<li>
+<p><a href="https://speckyboy.com/custom-hover-click-effects-css-javascript/"><strong>Animations</strong></a></p>
+</li>
 </ul>
-
-<h3 id="2-code-splitting">2.Code-Splitting</h3>
-
+<h3 id="2code-splitting">2.Code-Splitting</h3>
 <ul>
 <li><a href="https://reactjs.org/docs/code-splitting.html">https://reactjs.org/docs/code-splitting.html</a></li>
 <li><a href="https://webpack.js.org/guides/code-splitting/">https://webpack.js.org/guides/code-splitting/</a></li>
 <li><a href="https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html">https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html</a></li>
+<li><a href="https://github.com/jamiebuilds/react-loadable">https://github.com/jamiebuilds/react-loadable</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Loadable</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react-loadable&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Loading</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./my-loading-component&#39;</span>;
 
-<li><p><a href="https://github.com/jamiebuilds/react-loadable">https://github.com/jamiebuilds/react-loadable</a></p>
-
-<pre><code class="language-javascript">import Loadable from 'react-loadable';
-import Loading from './my-loading-component';
-
-const LoadableComponent = Loadable({
-loader: () =&gt; import('./my-component'),
-loading: Loading,
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LoadableComponent</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Loadable</span>({
+  <span style="color:#a6e22e">loader</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#66d9ef">import</span>(<span style="color:#e6db74">&#39;./my-component&#39;</span>),
+  <span style="color:#a6e22e">loading</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Loading</span>,
 });
 
-export default class App extends React.Component {
-render() {
-return &lt;LoadableComponent/&gt;;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">LoadableComponent</span><span style="color:#f92672">/&gt;</span>;
+  }
 }
-}
-</code></pre></li>
-</ul>
-
-<p><strong>Route-based code splitting</strong></p>
-
+</code></pre></div><p><strong>Route-based code splitting</strong></p>
 <ul>
 <li><a href="https://reacttraining.com/react-router/">https://reacttraining.com/react-router/</a></li>
-
-<li><p><a href="/note/reactjs-ways-003">Reactjs Ways - Router</a></p>
-
-<h3 id="3-context">3.Context</h3></li>
+<li><a href="/note/reactjs-ways-003">Reactjs Ways - Router</a></li>
 </ul>
-
+<h3 id="3context">3.Context</h3>
 <p><strong>Before You use context</strong></p>
-
-<pre><code class="language-html">Context is primarily used when some data needs to be accessible by many components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
-</code></pre>
-
-<pre><code class="language-html">If you only want to avoid passing some props through many levels, component composition is often a simpler solution than context.
-</code></pre>
-
-<pre><code class="language-javascript">&lt;Page user={user} /&gt;
-// ... which renders ...
-&lt;PageLayout user={user} /&gt;
-// ... which renders ...
-&lt;NavigationBar user={user} /&gt; 
-// ... which renders ...
-&lt;Avatar user={user} /&gt;
-</code></pre>
-
-<p><strong>becomes - no need context here</strong></p>
-
-<pre><code class="language-javascript">&lt;Page&gt;
-    &lt;PageLayout&gt;
-        &lt;NavigationBar&gt;
-            &lt;Avatar user={this.props.user} /&gt;
-        &lt;/NavigationBar&gt;
-    &lt;/PageLayout&gt;
-&lt;/Page&gt;
-</code></pre>
-
-<div>
-However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels.
-Context lets you <strong>“broadcast”</strong> such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
-</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Context is primarily used when some data needs to be accessible by many components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">If you only want to avoid passing some props through many levels, component composition is often a simpler solution than context.
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Page</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">user</span>} <span style="color:#f92672">/&gt;</span>
+<span style="color:#75715e">// ... which renders ...
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">PageLayout</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">user</span>} <span style="color:#f92672">/&gt;</span>
+<span style="color:#75715e">// ... which renders ...
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">NavigationBar</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">user</span>} <span style="color:#f92672">/&gt;</span> 
+<span style="color:#75715e">// ... which renders ...
+</span><span style="color:#75715e"></span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Avatar</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">user</span>} <span style="color:#f92672">/&gt;</span>
+</code></pre></div><p><strong>becomes - no need context here</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Page</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">PageLayout</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">NavigationBar</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Avatar</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">user</span>} <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/NavigationBar&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/PageLayout&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Page&gt;</span>
+</code></pre></div><!-- raw HTML omitted -->
 
 </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-<div class="sidebar-fixed">
-    <div id="article-scrollpy" class="sidebar-widget">
-        <h3 class="widget-header">
-            <a href="#">Đầu mục bài viết</a>
-        </h3>
-        <ul class="sidebar-links article-scrollpy-links">
-        </ul>
-    </div>
-</div>
-<div class="sidebar-fixed">
-    <div class="sidebar-widget">
-        <h3 class="widget-header ucfirst">
-            <span>Bài viết khác</span>
-        </h3>
-         
-            
-        
-
-        
-            <ul class="sidebar-links">
-            
-            
-                <li><a href="/note/reactjs-ways-003/">Reactjs Ways - React Router - React Redux</a></li>
-            
-                <li><a href="/note/reactjs-ways-001/">Reactjs Ways - Main Concepts</a></li>
-            
-            </ul>        
-        
-    </div>
-</div>
-
-                </aside>
             </div>
             
         </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on DevNotes 2019</title>
@@ -7,19 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-VN</language>
     <copyright>Everything is mine</copyright>
-    <lastBuildDate>Fri, 20 Dec 2019 12:08:18 +0700</lastBuildDate>
-    
-	<atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 20 Dec 2019 12:08:18 +0700</lastBuildDate><atom:link href="//devnotes.tamthapnhilap.site/article/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithms Analysis</title>
       <link>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</link>
       <pubDate>Fri, 20 Dec 2019 12:08:18 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/algorithms-and-data-structure-001/</guid>
-      <description>The most important properties of an algorithm are:  Correctness: The algorithm should be correct. It should be able to process all the given inputs and provide correct output.
- Efficiency: The algorithm should be efficient in solving problems. Efficiency is measured in two parameters. First is Time-Complexity, how quick result is provided by an algorithm. And the second is Space-Complexity, how much RAM that an algorithm is going to consume to give desired result.</description>
+      <description>The most important properties of an algorithm are:   Correctness: The algorithm should be correct. It should be able to process all the given inputs and provide correct output.
+  Efficiency: The algorithm should be efficient in solving problems. Efficiency is measured in two parameters. First is Time-Complexity, how quick result is provided by an algorithm. And the second is Space-Complexity, how much RAM that an algorithm is going to consume to give desired result.</description>
     </item>
     
     <item>
@@ -29,8 +25,7 @@
       
       <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-002/</guid>
       <description>Case is sensitive
- Datatypes:  String ( literals ): &amp;ldquo;bla bla&amp;rdquo; Runes: &amp;lsquo;A&amp;rsquo; &amp;lsquo;B&amp;rsquo; &amp;lsquo;\n&amp;rsquo; Booleans: true or false Numbers : 42(Integer) Derived types  Refs  https://yourbasic.org/golang/convert-int-to-string/ Bitwise What are stdin-stdout-stderr-on-linux
-package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Headfirst GO&amp;quot;) fmt.Println(&amp;quot;The alphabet&amp;quot;) theAlphabet(true) theAlphabet(false) } func theAlphabet(uppercase bool) { var str = &amp;quot;&amp;quot; if uppercase { for i:= &#39;A&#39;; i&amp;lt;= &#39;Z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; } }else { for i:= &#39;a&#39;; i&amp;lt;= &#39;z&#39;; i++ { str += string(i) + &amp;quot; &amp;quot; }	} fmt.</description>
+ Datatypes:  String ( literals ): &amp;ldquo;bla bla&amp;rdquo; Runes: &amp;lsquo;A&amp;rsquo; &amp;lsquo;B&amp;rsquo; &amp;lsquo;\n&amp;rsquo; Booleans: true or false Numbers : 42(Integer) Derived types  Refs  https://yourbasic.org/golang/convert-int-to-string/ Bitwise What are stdin-stdout-stderr-on-linux  package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;Headfirst GO&amp;#34;) fmt.Println(&amp;#34;The alphabet&amp;#34;) theAlphabet(true) theAlphabet(false) } func theAlphabet(uppercase bool) { var str = &amp;#34;&amp;#34; if uppercase { for i:= &amp;#39;A&amp;#39;; i&amp;lt;= &amp;#39;Z&amp;#39;; i++ { str += string(i) + &amp;#34; &amp;#34; } }else { for i:= &amp;#39;a&amp;#39;; i&amp;lt;= &amp;#39;z&amp;#39;; i++ { str += string(i) + &amp;#34; &amp;#34; }	} fmt.</description>
     </item>
     
     <item>
@@ -39,10 +34,10 @@ package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;
       <pubDate>Mon, 16 Dec 2019 10:44:52 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/golang-headfirst-001/</guid>
-      <description>1.Installation  Download binary and creat GOPATH
- Binaries
- GOPATH
-wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz which go go version go env   Important
+      <description>1.Installation   Download binary and creat GOPATH
+  Binaries
+  GOPATH
+  wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz which go go version go env Important
   GOPATH can be any directory on your system. In Unix examples, we will set it to $HOME/go (the default since Go 1.8). Note that GOPATH must not be the same path as your Go installation. Another common setup is to set GOPATH=$HOME.</description>
     </item>
     
@@ -52,7 +47,7 @@ wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local
       <pubDate>Tue, 03 Dec 2019 10:54:42 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/reactjs-002-react-form-validation/</guid>
-      <description> Procedure yarn add react-hook-form  Forms  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation https://devdojo.com/html/form-elements https://www.w3schools.com/html/html_forms.asp https://www.w3schools.com/html/html_form_elements.asp https://www.w3schools.com/html/html_form_input_types.asp https://www.w3schools.com/html/html_form_attributes.asp  Form Components  https://github.com/JedWatson/react-select  Calendar  https://programmingwithmosh.com/react/build-a-react-calendar-component-from-scratch/ https://reactjsexample.com/tag/calendar/ https://fullcalendar.io/docs  Validations  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation  </description>
+      <description>Procedure yarn add react-hook-form Forms  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation https://devdojo.com/html/form-elements https://www.w3schools.com/html/html_forms.asp https://www.w3schools.com/html/html_form_elements.asp https://www.w3schools.com/html/html_form_input_types.asp https://www.w3schools.com/html/html_form_attributes.asp  Form Components  https://github.com/JedWatson/react-select  Calendar  https://programmingwithmosh.com/react/build-a-react-calendar-component-from-scratch/ https://reactjsexample.com/tag/calendar/ https://fullcalendar.io/docs  Validations  https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation  </description>
     </item>
     
     <item>
@@ -62,8 +57,7 @@ wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz sudo tar -C /usr/local
       
       <guid>//devnotes.tamthapnhilap.site/article/reactjs-001-a-mockup/</guid>
       <description>1. Getting started Getting with &amp;ldquo;create-reactjs-app&amp;rdquo;. After installing and setup your development enviroment
-- Editor  https://create-react-app.dev/docs/setting-up-your-editor  - EsLint  https://alligator.io/react/linting-react/ https://eslint.org/docs/user-guide/getting-started#configuration
-yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D   This project was bootstrapped with Create React App.
+- Editor  https://create-react-app.dev/docs/setting-up-your-editor  - EsLint  https://alligator.io/react/linting-react/ https://eslint.org/docs/user-guide/getting-started#configuration  yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D This project was bootstrapped with Create React App.
 - Styles &amp;amp; Assets  https://css-tricks.com/css-modules-part-1-need/ https://alligator.io/react/react-css/ https://programmingwithmosh.com/react/css-modules-react/  - CSS in React  Global CSS files: the CSS files live completely separately from the component files a la typical HTML and CSS Javascript Stylesheets: each component has a Javascript object representing its styles which lives in the same .</description>
     </item>
     
@@ -73,8 +67,7 @@ yarn add eslint eslint-loader babel-loader babel-eslint eslint-plugin-react -D  
       <pubDate>Thu, 24 Oct 2019 11:40:50 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ubuntu-001-cheatsheet/</guid>
-      <description> ##
-APT # Update packages apt update, apt update -y # Upgrade all existing packages apt upgrade # Install/remove package apt install curl, which curl, apt remove curl #Search package apt search curl  APT GET # Install/remove package apt-get install curl, which curl, apt-get remove curl # Download without install apt-get download curl, ls -lth curl*.deb # Update package list apt-get update  </description>
+      <description> APT # Update packages apt update, apt update -y # Upgrade all existing packages apt upgrade # Install/remove package apt install curl, which curl, apt remove curl #Search package apt search curl APT GET # Install/remove package apt-get install curl, which curl, apt-get remove curl # Download without install apt-get download curl, ls -lth curl*.deb # Update package list apt-get update </description>
     </item>
     
     <item>
@@ -84,7 +77,7 @@ APT # Update packages apt update, apt update -y # Upgrade all existing packages 
       
       <guid>//devnotes.tamthapnhilap.site/article/postgresql-20191023-headfirst/</guid>
       <description>Objectives  Install PostgreSQL Most common PostgreSQL cli commands PostgreSQL Fundamentals PostgreSQL Datatypes Managing Databases Managing Tables Database Constraints Managing database schemas Conditional Expressions &amp;amp; Operators  I.Installation Windows  Download Link  Allow Remote Connection
-- C:\Program Files\PostgreSQL\{VERSION}\data\pg_hba.conf # change config: trust to md5 host all all 127.0.0.1/32 md5 # IPv6 local connections: host all all ::1/128 md5 # then restart service and open cmd psql -h 127.0.0.1 -U postgres # set password ALTER USER postgres with password &#39;123456&#39;; # quit \q # try logged with password psql -h 127.</description>
+- C:\Program Files\PostgreSQL\{VERSION}\data\pg_hba.conf # change config: trust to md5 host all all 127.0.0.1/32 md5 # IPv6 local connections: host all all ::1/128 md5 # then restart service and open cmd psql -h 127.0.0.1 -U postgres # set password ALTER USER postgres with password &amp;#39;123456&amp;#39;; # quit \q # try logged with password psql -h 127.</description>
     </item>
     
     <item>
@@ -93,7 +86,7 @@ APT # Update packages apt update, apt update -y # Upgrade all existing packages 
       <pubDate>Wed, 16 Oct 2019 15:09:59 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/backend-001-headfirst-curl/</guid>
-      <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html  POST (HTTP) curl -d &amp;quot;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;quot; http://api.</description>
+      <description>General  Curl Doc  Usage Simple Usage curl -v http://devnotes.tamthapnhilap.site # Get a web page and store in a local file with a specific name: curl -o index.html http://devnotes.tamthapnhilap.site # Get a web page and store in a local file, make the local file get the name of the remote document (if no file name part is specified in the URL, this will fail): curl -O http://devnotes.tamthapnhilap.site/index.html POST (HTTP) curl -d &amp;#34;user=foobar&amp;amp;pass=12345&amp;amp;id=blablabla&amp;amp;ding=submit&amp;#34; http://api.</description>
     </item>
     
     <item>
@@ -103,7 +96,7 @@ APT # Update packages apt update, apt update -y # Upgrade all existing packages 
       
       <guid>//devnotes.tamthapnhilap.site/article/rails-003-active-record/</guid>
       <description>In this chapter, you will see how powerfull the Active Record is!
-The Powering of rails console to make your query with active record Game::Team.all Game::Team.first Game::Team.first.class Status::Message.all Status::Message.find(1) Status::Message.find([1,2,3]) Status::Message.where(:status =&amp;gt; 1) Status::Message.where(:status =&amp;gt; 1..3) Status::Message.where(:status =&amp;gt; [1,2]) Status::Message.where(:status =&amp;gt; [1,2]).count Status::Message.where_not(:status =&amp;gt; [1,2]).count Status::Message.where(:status =&amp;gt; 1).or(Status::Message.where(:status =&amp;gt; 2)).count Status::Message.where(&#39;title like ?&#39;, &#39;%doing%&#39;) # prepared statement Status::Message.where(&#39;status = ? or status = ?&#39;, 1,2) Status::Message.where(&#39;status = :active or status = :inactive&#39;, :inactive =&amp;gt; 2, :active =&amp;gt; 1) Status::Message.</description>
+The Powering of rails console to make your query with active record Game::Team.all Game::Team.first Game::Team.first.class Status::Message.all Status::Message.find(1) Status::Message.find([1,2,3]) Status::Message.where(:status =&amp;gt; 1) Status::Message.where(:status =&amp;gt; 1..3) Status::Message.where(:status =&amp;gt; [1,2]) Status::Message.where(:status =&amp;gt; [1,2]).count Status::Message.where_not(:status =&amp;gt; [1,2]).count Status::Message.where(:status =&amp;gt; 1).or(Status::Message.where(:status =&amp;gt; 2)).count Status::Message.where(&amp;#39;title like ?&amp;#39;, &amp;#39;%doing%&amp;#39;) # prepared statement Status::Message.where(&amp;#39;status = ? or status = ?&amp;#39;, 1,2) Status::Message.where(&amp;#39;status = :active or status = :inactive&amp;#39;, :inactive =&amp;gt; 2, :active =&amp;gt; 1) Status::Message.</description>
     </item>
     
     <item>
@@ -112,7 +105,7 @@ The Powering of rails console to make your query with active record Game::Team.a
       <pubDate>Tue, 30 Oct 2018 10:17:23 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/rails-002-cheatsheets/</guid>
-      <description>Routes cheatsheet CommandDescriptionroot to: &amp;#39;home#index&amp;#39;Root URL, should place at the end TOP to BOTTOMroute priority is from top to bottom   Rails.application.routes.draw do get &#39;/ping&#39;, {to: &#39;home#ping&#39;} # run get &#39;/ping&#39;, {to: &#39;home#index&#39;} # never run get &#39;/download/:type&#39;, to: &#39;home#download&#39; get &#39;/fetch(/:type)&#39;, to: &#39;home#fetch&#39; get &#39;/redirect&#39;, to: &#39;home#redirect&#39; namespace :status do get &#39;/messages/ping&#39;, to: &#39;messages#ping&#39; get &#39;/messages/sample-app&#39;, to: &#39;messages#sampleapp&#39; resources :messages root to: &#39;messages#index&#39; end namespace :auth do get &#39;/basic&#39;, to: &#39;basic#index&#39; get &#39;/digest&#39;, to: &#39;digest#index&#39; end root to: &amp;quot;home#index&amp;quot; end  Rake tasks $ rake --tasks rake about # List versions of all Rails framew.</description>
+      <description>Routes cheatsheet   Command Description     root to: &amp;#39;home#index&amp;#39; Root URL, should place at the end   TOP to BOTTOM route priority is from top to bottom    Rails.application.routes.draw do get &amp;#39;/ping&amp;#39;, {to: &amp;#39;home#ping&amp;#39;} # run get &amp;#39;/ping&amp;#39;, {to: &amp;#39;home#index&amp;#39;} # never run get &amp;#39;/download/:type&amp;#39;, to: &amp;#39;home#download&amp;#39; get &amp;#39;/fetch(/:type)&amp;#39;, to: &amp;#39;home#fetch&amp;#39; get &amp;#39;/redirect&amp;#39;, to: &amp;#39;home#redirect&amp;#39; namespace :status do get &amp;#39;/messages/ping&amp;#39;, to: &amp;#39;messages#ping&amp;#39; get &amp;#39;/messages/sample-app&amp;#39;, to: &amp;#39;messages#sampleapp&amp;#39; resources :messages root to: &amp;#39;messages#index&amp;#39; end namespace :auth do get &amp;#39;/basic&amp;#39;, to: &amp;#39;basic#index&amp;#39; get &amp;#39;/digest&amp;#39;, to: &amp;#39;digest#index&amp;#39; end root to: &amp;#34;home#index&amp;#34; end Rake tasks $ rake --tasks rake about # List versions of all Rails framew.</description>
     </item>
     
     <item>
@@ -121,8 +114,8 @@ The Powering of rails console to make your query with active record Game::Team.a
       <pubDate>Fri, 05 Oct 2018 16:02:51 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/rails-001-firststep/</guid>
-      <description>All References  Official Routes Generators Mime Web Mime DateTime Routing Controller Self Singed SSL Certificate Rails Server PUma SSL Not Avaible For this Build Layout rendering  New Project Install rails rails new appname --skip-install cd appname bundle install  Change Test Framework bundle add rspec-rails --group=development,test  config/application.rb
-config.generators do |g| g.orm :active_record g.test_framework :rspec end ENV[&#39;TMP&#39;] = File.join(Rails.root, &#39;tmp&#39;)  rails generate rspec:install  Initialize gem install rails rails new webapp -B cd webapp bundler install rails s -b 0.</description>
+      <description>All References  Official Routes Generators [Mime] (https://rubyplus.com/articles/3231-How-To-Get-A-List-Of-All-Currently-Registered-MIME-Types-With-Rails) Web Mime DateTime Routing Controller Self Singed SSL Certificate Rails Server PUma SSL Not Avaible For this Build Layout rendering  New Project Install rails rails new appname --skip-install cd appname bundle install Change Test Framework bundle add rspec-rails --group=development,test config/application.rb
+config.generators do |g| g.orm :active_record g.test_framework :rspec end ENV[&amp;#39;TMP&amp;#39;] = File.join(Rails.root, &amp;#39;tmp&amp;#39;) rails generate rspec:install Initialize gem install rails rails new webapp -B cd webapp bundler install rails s -b 0.</description>
     </item>
     
     <item>
@@ -131,10 +124,7 @@ config.generators do |g| g.orm :active_record g.test_framework :rspec end ENV[&#
       <pubDate>Fri, 05 Oct 2018 11:42:10 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/javascript-001/</guid>
-      <description>General &amp;ndash;You may concern  Head First Javascript  &amp;ndash;Sublime plugin  html5 snippet  &amp;ndash;THe first step with webpack  Official : https://webpack.js.org/
-npm install webpack webpack-cli --save-dev  Assets: https://webpack.js.org/guides/asset-management/
-npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm install --save-dev file-loader npm install --save-dev html-webpack-plugin npm install --save-dev clean-webpack-plugin npm install --save-dev webpack-dev-server npm install --save-dev express webpack-dev-middleware  CLI : https://webpack.js.org/api/cli/#environment-options
- Hotmodule : https://webpack.</description>
+      <description>General &amp;ndash;You may concern  Head First Javascript  &amp;ndash;Sublime plugin  html5 snippet  &amp;ndash;THe first step with webpack  Official : https://webpack.js.org/  npm install webpack webpack-cli --save-dev  Assets: https://webpack.js.org/guides/asset-management/  npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm install --save-dev file-loader npm install --save-dev html-webpack-plugin npm install --save-dev clean-webpack-plugin npm install --save-dev webpack-dev-server npm install --save-dev express webpack-dev-middleware   CLI : https://webpack.js.org/api/cli/#environment-options</description>
     </item>
     
     <item>
@@ -154,8 +144,7 @@ npm install webpack webpack-cli --save-dev npm i -D style-loader css-loader npm 
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-016-web-apps/</guid>
       <description>First approach &amp;ndash; Set up project directory  Create your own project directory  &amp;ndash; Install sinatra lib for handling web requests  Set up routes Create first HTML Page Set up sinatra to respond with HTML  Overview
- The lastest version of sinatra used thin as a web server instead of WEBrick Refs : http://code.macournoyer.com/thin/
-gem install sinatra  #!/usr/bin/env ruby #puts $LOAD_PATH require &#39;sinatra&#39; get (&#39;/&#39;) do &#39;Home Page&#39; end   &amp;ndash; Display objects with HTML  Refs : https://ruby-doc.</description>
+ The lastest version of sinatra used thin as a web server instead of WEBrick Refs : http://code.macournoyer.com/thin/  gem install sinatra #!/usr/bin/env ruby #puts $LOAD_PATH require &amp;#39;sinatra&amp;#39; get (&amp;#39;/&amp;#39;) do &amp;#39;Home Page&amp;#39; end &amp;ndash; Display objects with HTML  Refs : https://ruby-doc.</description>
     </item>
     
     <item>
@@ -165,9 +154,9 @@ gem install sinatra  #!/usr/bin/env ruby #puts $LOAD_PATH require &#39;sinatra&#
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-010-redis/</guid>
       <description>1.Hướng dẫn cài đặt &amp;ndash; Hướng dẫn cài đặt trên ubuntu 16 Refs
- https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04 https://askubuntu.com/questions/868848/how-to-install-redis-on-ubuntu-16-04  &amp;ndash; Cách đơn giản nhất sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install redis-server  &amp;ndash; Cách cài đặt từ source Install the Build and Test Dependencies
-sudo apt-get update sudo apt-get install build-essential tcl  Download and Extract the Source Code
-cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stable.tar.gz cd redis-stable  Build và Install Redis</description>
+ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04 https://askubuntu.com/questions/868848/how-to-install-redis-on-ubuntu-16-04  &amp;ndash; Cách đơn giản nhất sudo add-apt-repository ppa:chris-lea/redis-server sudo apt-get update sudo apt-get install redis-server &amp;ndash; Cách cài đặt từ source Install the Build and Test Dependencies
+sudo apt-get update sudo apt-get install build-essential tcl Download and Extract the Source Code
+cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stable.tar.gz cd redis-stable Build và Install Redis</description>
     </item>
     
     <item>
@@ -176,7 +165,7 @@ cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stab
       <pubDate>Tue, 11 Sep 2018 10:47:48 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-009-common-libs/</guid>
-      <description>Common libs  MVC Framework : Ruby On Rails(ROR) dRuby CSV  - Inline if and unless puts &#39;example&#39; if true puts &#39;example&#39; unless true  - Private method class Sample def hello puts &#39;hello&#39; end private def hi puts &#39;hi&#39; end end  - Command-line arguments puts ARGV[0]  - Regular Expressions - Singleton methods superhero = Person.new def superhero.fly puts &#39;Fly up&#39; end superhero.fly  - Call any method, even undefined ones #!</description>
+      <description>Common libs  MVC Framework : Ruby On Rails(ROR) dRuby CSV  - Inline if and unless puts &amp;#39;example&amp;#39; if true puts &amp;#39;example&amp;#39; unless true - Private method class Sample def hello puts &amp;#39;hello&amp;#39; end private def hi puts &amp;#39;hi&amp;#39; end end - Command-line arguments puts ARGV[0] - Regular Expressions - Singleton methods superhero = Person.new def superhero.fly puts &amp;#39;Fly up&amp;#39; end superhero.fly - Call any method, even undefined ones #!</description>
     </item>
     
     <item>
@@ -187,7 +176,7 @@ cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stab
       <guid>//devnotes.tamthapnhilap.site/article/ruby-008-testing/</guid>
       <description>Types of Automated Tests There are actually many different types of automated tests in widespread use. Here are some of the most common:
  Performance tests measure the speed of your program. Integration tests run your entire program, to ensure that all its methods, classes, and other components integrate together successfully. Unit tests run individual components (units) of your program, usually individual methods.  &amp;ndash;Unit Test Keywords
- minitest assert_equal setup teardown</description>
+ minitest assert_equal setup teardown  #!</description>
     </item>
     
     <item>
@@ -196,7 +185,7 @@ cd /tmp curl -O http://download.redis.io/redis-stable.tar.gz tar xzvf redis-stab
       <pubDate>Tue, 11 Sep 2018 10:37:16 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-007-errors/</guid>
-      <description>Keywords  rescue ensure raise {ErrorType} =&amp;gt; error error.message CustomError &amp;lt; StandardError  #!/usr/bin/env ruby class GreaterFive &amp;lt; StandardError end class EqualFive &amp;lt; StandardError end def example_errors number begin random_number = Random.new.rand(10) puts &#39;-&#39;*20 puts &amp;quot;Test Case #{number}&amp;quot;	raise GreaterFive, &amp;quot;#{random_number} &amp;gt; 5&amp;quot; if random_number &amp;gt; 5 raise EqualFive, &amp;quot;#{random_number} = 5&amp;quot; if random_number == 5 raise &amp;quot;#{random_number} &amp;lt; 5&amp;quot; rescue GreaterFive =&amp;gt; error puts &amp;quot;GreaterFive: #{error.message}&amp;quot; rescue EqualFive =&amp;gt; error puts &amp;quot;EqualFive: #{error.</description>
+      <description>Keywords  rescue ensure raise {ErrorType} =&amp;gt; error error.message CustomError &amp;lt; StandardError  #!/usr/bin/env ruby class GreaterFive &amp;lt; StandardError end class EqualFive &amp;lt; StandardError end def example_errors number begin random_number = Random.new.rand(10) puts &amp;#39;-&amp;#39;*20 puts &amp;#34;Test Case #{number}&amp;#34;	raise GreaterFive, &amp;#34;#{random_number}&amp;gt; 5&amp;#34; if random_number &amp;gt; 5 raise EqualFive, &amp;#34;#{random_number}= 5&amp;#34; if random_number == 5 raise &amp;#34;#{random_number}&amp;lt; 5&amp;#34; rescue GreaterFive =&amp;gt; error puts &amp;#34;GreaterFive: #{error.message}&amp;#34; rescue EqualFive =&amp;gt; error puts &amp;#34;EqualFive: #{error.</description>
     </item>
     
     <item>
@@ -217,7 +206,7 @@ Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolu
       <pubDate>Tue, 11 Sep 2018 10:36:58 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-005-hash/</guid>
-      <description>Hash A hash can be created by: - Implicit form - With Symbol - Or using new method  grades = { &amp;quot;Jane Doe&amp;quot; =&amp;gt; 10, &amp;quot;Jim Doe&amp;quot; =&amp;gt; 6 } puts &amp;quot;grades[&#39;Jane Done&#39;] = #{grades[&#39;Jane Doe&#39;]}&amp;quot; opts = {:font_size =&amp;gt; 10, :font_family =&amp;gt; &#39;Arial&#39;} puts &amp;quot;opts[:font_size] = #{opts[:font_size]}&amp;quot; new_opts = { font_size: 12, font_family: &#39;Arial&#39; } puts &amp;quot;new_opts[:font_size] = #{new_opts[:font_size]}&amp;quot; new_opts[:font_weight] = &#39;bold&#39; puts &amp;quot;new_opts[:font_weight] = #{new_opts[:font_weight]}&amp;quot;  Important notes about hash Hashes have a default value that is returned when accessing keys that do not exist in the hash.</description>
+      <description>Hash A hash can be created by: - Implicit form - With Symbol - Or using new method grades = { &amp;#34;Jane Doe&amp;#34; =&amp;gt; 10, &amp;#34;Jim Doe&amp;#34; =&amp;gt; 6 } puts &amp;#34;grades[&amp;#39;Jane Done&amp;#39;] = #{grades[&amp;#39;Jane Doe&amp;#39;]}&amp;#34; opts = {:font_size =&amp;gt; 10, :font_family =&amp;gt; &amp;#39;Arial&amp;#39;} puts &amp;#34;opts[:font_size] = #{opts[:font_size]}&amp;#34; new_opts = { font_size: 12, font_family: &amp;#39;Arial&amp;#39; } puts &amp;#34;new_opts[:font_size] = #{new_opts[:font_size]}&amp;#34; new_opts[:font_weight] = &amp;#39;bold&amp;#39; puts &amp;#34;new_opts[:font_weight] = #{new_opts[:font_weight]}&amp;#34; Important notes about hash Hashes have a default value that is returned when accessing keys that do not exist in the hash.</description>
     </item>
     
     <item>
@@ -226,7 +215,7 @@ Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolu
       <pubDate>Wed, 05 Sep 2018 16:10:05 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-004-arrays-blocks/</guid>
-      <description>Arrays require &#39;faker&#39; filepath = &#39;./15-votes.txt&#39; module Votes def self.generate_votes(filepath, numbers = 100) return if File.exist?(filepath) votes = [] (1..numbers).each do |num| name = Faker::Name.name (1..Random.new.rand(100)).each do |i| votes &amp;lt;&amp;lt; name end	end File.open(filepath,&#39;w+&#39;) { |fh| votes.shuffle.each do |name|	fh.puts format(&amp;quot;%s&amp;quot;, name) end } end def self.read_votes(filepath) votes = {} File.readlines(filepath).each { |line|	name = line.chomp votes[name] += 1 if votes[name] votes[name] = 1 unless votes[name] } final_votes = [] votes.</description>
+      <description>Arrays require &amp;#39;faker&amp;#39; filepath = &amp;#39;./15-votes.txt&amp;#39; module Votes def self.generate_votes(filepath, numbers = 100) return if File.exist?(filepath) votes = [] (1..numbers).each do |num| name = Faker::Name.name (1..Random.new.rand(100)).each do |i| votes &amp;lt;&amp;lt; name end	end File.open(filepath,&amp;#39;w+&amp;#39;) { |fh| votes.shuffle.each do |name|	fh.puts format(&amp;#34;%s&amp;#34;, name) end } end def self.read_votes(filepath) votes = {} File.readlines(filepath).each { |line|	name = line.chomp votes[name] += 1 if votes[name] votes[name] = 1 unless votes[name] } final_votes = [] votes.</description>
     </item>
     
     <item>
@@ -235,8 +224,7 @@ Videos: need to keep track of their resolution(in pixels, eg: 1920 x 1080 resolu
       <pubDate>Wed, 05 Sep 2018 13:41:28 +0700</pubDate>
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-003-oop/</guid>
-      <description>Object Oriented Programming  Data Abstraction Encapsulation Inheritance Polymorphism
-class Animal # symbols : immutable attr_reader :name, :talk	def initialize @name = self.class.name.capitalize	end	def speak puts &amp;quot;#{@name} says &#39;hello&#39;&amp;quot; end end class Dog &amp;lt; Animal def initialize super @talk = &#39;gou gou gou&#39; end end class Cat &amp;lt; Animal def initialize super @talk = &#39;meow meow meow&#39; end	end dog = Dog.new dog.speak puts dog.name cat = Cat.new cat.</description>
+      <description>Object Oriented Programming  Data Abstraction Encapsulation Inheritance Polymorphism  class Animal # symbols : immutable attr_reader :name, :talk	def initialize @name = self.class.name.capitalize	end	def speak puts &amp;#34;#{@name}says &amp;#39;hello&amp;#39;&amp;#34; end end class Dog &amp;lt; Animal def initialize super @talk = &amp;#39;gou gou gou&amp;#39; end end class Cat &amp;lt; Animal def initialize super @talk = &amp;#39;meow meow meow&amp;#39; end	end dog = Dog.new dog.speak puts dog.name cat = Cat.new cat.speak puts cat.</description>
     </item>
     
     <item>
@@ -247,9 +235,9 @@ class Animal # symbols : immutable attr_reader :name, :talk	def initialize @name
       <guid>//devnotes.tamthapnhilap.site/article/ruby-002-basic/</guid>
       <description>Lời nói đầu, tổng hợp các keywords cần biết khi học ngôn ngữ ruby.
  First step : https://www.tutorialspoint.com/ruby/index.htm  The Basics Unix shebang  Ref : https://en.wikipedia.org/wiki/Shebang_%28Unix%29 https://en.wikibooks.org/wiki/Ruby_Programming/Hello_world  example.rb
-#!/usr/bin/env ruby puts &#39;Hello world&#39;  Thì khi đó chúng ta có thể thực thi file này chỉ bằng cách
-./example.rb  The IO class  Official : https://ruby-doc.org/core-2.5.1/IO.html Ref : http://zetcode.com/lang/rubytutorial/io/  Unix Commands:
- https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux https://linux.101hacks.com/unix/bind/ https://www.</description>
+#!/usr/bin/env ruby puts &amp;#39;Hello world&amp;#39; Thì khi đó chúng ta có thể thực thi file này chỉ bằng cách
+./example.rb The IO class  Official : https://ruby-doc.org/core-2.5.1/IO.html Ref : http://zetcode.com/lang/rubytutorial/io/  Unix Commands:
+ https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux https://linux.101hacks.com/unix/bind/ https://www.linux.org/threads/file-permissions-chmod.4124/  Exercises</description>
     </item>
     
     <item>
@@ -270,8 +258,8 @@ Cài đặt ruby trên window cho môi trường dev  Link cài đặt : https:/
       
       <guid>//devnotes.tamthapnhilap.site/article/ruby-001-installation/</guid>
       <description>Current Ruby stable version https://www.ruby-lang.org/en/downloads/
-2.5.1  1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04) Chi tiết các bước thực hiện
- Cài đặt các gói ruby dependencies Cài đặt rbenv Cài đặt ruby Kiểm tra version Cài đặt gem bundler để quản lí packages  Update sudo apt-get updateCài đặt các gói ruby dependencies sudo apt-get install -y libssl-dev libreadline-dev zlib1g-devsudo apt-get install -y curl gnupg build-essentialCài đặt rbenv  Link tham khảo : https://github.</description>
+2.5.1 1.Hướng dẫn cài đặt ruby với rbenv trên ubuntu(16.04) Chi tiết các bước thực hiện
+ Cài đặt các gói ruby dependencies Cài đặt rbenv Cài đặt ruby Kiểm tra version Cài đặt gem bundler để quản lí packages  Update sudo apt-get update Cài đặt các gói ruby dependencies sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev sudo apt-get install -y curl gnupg build-essential Cài đặt rbenv  Link tham khảo : https://github.</description>
     </item>
     
     <item>
@@ -282,7 +270,7 @@ Cài đặt ruby trên window cho môi trường dev  Link cài đặt : https:/
       <guid>//devnotes.tamthapnhilap.site/article/ruby-000-ror/</guid>
       <description>Lời nói đầu về Ruby:
  Ruby là một ngôn ngữ của sự cân đối. Nhà phát minh của nó Yukihiro “Matz” Matsumoto Rails là một framework lớn của ruby Rails được tạo ra vào năm 2013 bởi David Heinemeier Hansson trong khi làm việc với dự án Basecamp, và chính thức ra mắt vào năm 2004  Tham khảo thêm tại:
- https://code.tutsplus.com/articles/ruby-on-rails-study-guide-the-history-of-rails--net-29439  1. Backbone : ruby on rails ( ror ) Ruby version : &amp;gt;= 2.</description>
+ https://code.tutsplus.com/articles/ruby-on-rails-study-guide-the-history-of-rails--net-29439  1. Backbone : ruby on rails ( ror )  Ruby version : &amp;gt;= 2.</description>
     </item>
     
   </channel>

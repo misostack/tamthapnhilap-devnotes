@@ -100,10 +100,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </nav>
     </div>
-        <div class="container main-content">                            
+        <div class="container-fluid main-content">                            
             
             <div class="row">
-                <main class="content col-md-8">                    
+                <main class="content col-md-12 full-content">                    
                     
     <article class="article article-scrollby" data-target="#article-scrollpy">
         <img src="//devnotes.tamthapnhilap.site/common/no-image-available.jpg" class="img-responsive" alt="The Api World" />
@@ -113,181 +113,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <a class="category-tag category-uncategory" href="//devnotes.tamthapnhilap.site/categories/uncategory">uncategory</a>
             
         </p>
-        
-
-<h2 id="references">References</h2>
-
+        <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.moesif.com/blog/api-guide/api-design-guidelines/">https://www.moesif.com/blog/api-guide/api-design-guidelines/</a></li>
 <li><a href="https://www.restapitutorial.com/lessons/restfulresourcenaming.html">https://www.restapitutorial.com/lessons/restfulresourcenaming.html</a></li>
 <li><a href="https://www.programmableweb.com/category/all/apis">https://www.programmableweb.com/category/all/apis</a></li>
 </ul>
-
 <h2 id="completely-stateless">Completely Stateless</h2>
-
 <ul>
 <li>Origin : <a href="https://www.youtube.com/watch?v=67mezK3NzpU">https://www.youtube.com/watch?v=67mezK3NzpU</a></li>
 </ul>
-
 <p>1.Several problems with session id</p>
-
 <p><strong>One server is not enough</strong></p>
-
 <ul>
 <li>We use load balancer? Where to stored memory?</li>
 </ul>
-
 <p>=&gt; This will lead us to shared cache ==&gt; not works with a overloading connections
 =&gt; Distributed cache ( but complicated )</p>
-
 <ul>
 <li>Sticky sessions in load balancer?</li>
 </ul>
-
 <p>==&gt; Sticky sessions + distributed cache</p>
-
-<ol>
+<ol start="2">
 <li>Manage this in client side: JSON + WEB + TOKEN ( JWT )</li>
 </ol>
-
 <p><strong>JWT vs SessionID</strong></p>
-
 <p>There are 2 kinds of tokens:</p>
-
 <ul>
 <li>By reference ( credit card ): Eg, sessionid = a42 ==&gt; ah ha this is John</li>
 <li>By value. JWT=HEADER.PAYLOAD.SIGNATURE Like bank note checking with bank</li>
 </ul>
-
 <p>JWT token usually has 3 parts</p>
-
 <ul>
 <li>encodedHeader</li>
 <li>encodedPayload</li>
 <li>signature</li>
 </ul>
-
 <p><strong>encodedHeader</strong></p>
-
 <blockquote>
 <p>parseJSON(base64URL_decode(encodedHeader));
 &lsquo;{&ldquo;alg&rdquo;:&ldquo;HS256&rdquo;, &ldquo;typ&rdquo;:&ldquo;JWT&rdquo;}&rsquo;</p>
 </blockquote>
-
 <p><strong>encodedPayload</strong>
 {
-    // Issuer: who signed the token
-    &ldquo;iss&rdquo;: &ldquo;auth-backend&rdquo;,
-    // Subject : loggin on &hellip; Depends on context
-    &ldquo;sub&rdquo;: &ldquo;johnsnow&rdquo;,
-    // Audience
-    &ldquo;aud&rdquo;: &ldquo;web-frontend&rdquo;,
-    // Expiration Time
-    &ldquo;exp&rdquo;: 14214312312,
-    // Not before:
-    &ldquo;nbf&rdquo;: null,
-    // Issued At
-    &ldquo;iat&rdquo;: 14214312012,
-    // JWT ID
-    &ldquo;jti&rdquo;:&ldquo;8123casd-5123-acasd-e433-98123asdac312&rdquo;
-    // private claims
-    &ldquo;name&rdquo;: &ldquo;John Snow&rdquo;,
-    &ldquo;permissions&rdquo;: [&ldquo;READ_POSTS&rdquo;,&ldquo;WRITE_POSTS&rdquo;]
+// Issuer: who signed the token
+&ldquo;iss&rdquo;: &ldquo;auth-backend&rdquo;,
+// Subject : loggin on &hellip; Depends on context
+&ldquo;sub&rdquo;: &ldquo;johnsnow&rdquo;,
+// Audience
+&ldquo;aud&rdquo;: &ldquo;web-frontend&rdquo;,
+// Expiration Time
+&ldquo;exp&rdquo;: 14214312312,
+// Not before:
+&ldquo;nbf&rdquo;: null,
+// Issued At
+&ldquo;iat&rdquo;: 14214312012,
+// JWT ID
+&ldquo;jti&rdquo;:&ldquo;8123casd-5123-acasd-e433-98123asdac312&rdquo;
+// private claims
+&ldquo;name&rdquo;: &ldquo;John Snow&rdquo;,
+&ldquo;permissions&rdquo;: [&ldquo;READ_POSTS&rdquo;,&ldquo;WRITE_POSTS&rdquo;]
 }</p>
-
 <p><strong>signature</strong></p>
-
 <blockquote>
 <p>hmacSha256(encodedHeader + &lsquo;.&rsquo; + encodedPayload, &lsquo;s3cr3tk3y&rsquo;)</p>
 </blockquote>
-
 <p>With JWT we can use:</p>
-
 <ul>
 <li>A dead simple load balancer</li>
 <li>Multi programming language</li>
 <li>Microservice architectures</li>
 </ul>
-
 <p>There are 2 ways to sign signatures:</p>
-
 <p><em>symmetric ( ma hoa doi xung ): shared secret</em></p>
-
-<p><img src="/posts/signature-symmetic.png" alt="signature-asymmetic.png" /></p>
-
+<p><img src="/posts/signature-symmetic.png" alt="signature-asymmetic.png"></p>
 <p><em>asymmetric ( ma hoa bat doi xung ): private key + public key</em></p>
-
-<p><img src="/posts/signature-asymmetic.png" alt="signature-asymmetic.png" /></p>
-
+<p><img src="/posts/signature-asymmetic.png" alt="signature-asymmetic.png"></p>
 <p>Security provider: keycloak is a consider</p>
-
 <h2 id="oauth2-tokens">OAuth2 Tokens</h2>
-
 <ul>
 <li>Check access_token</li>
 <li>Check refresh_token</li>
 </ul>
-
 <p>==&gt; Completely stateless</p>
-
 <h2 id="drawbacks-or-cons-of-jwt">Drawbacks or Cons of JWT</h2>
-
 <ul>
 <li>Tokens revokation? banknote, passport</li>
 </ul>
-
 <p>Eg: if you have a blacklist that are not suppose to pass</p>
-
 <p>Other ways: no one can access, we have a whitelist that can access</p>
-
 <ul>
 <li>Single page applications SECURITY</li>
 </ul>
-
 <p>Eg: if you use local database or cookie to store the JWT token, you can be xss attacks: user content injections, third party scripts, non-secured http over public wifis</p>
-
-<p><img src="/posts/jwt-with-browser.png" alt="jwt-with-browser.png" /></p>
-
-<p><img src="/posts/jwt-with-mobileapp-third-party.png" alt="jwt-with-mobieapp-third-party.png" /></p>
-
+<p><img src="/posts/jwt-with-browser.png" alt="jwt-with-browser.png"></p>
+<p><img src="/posts/jwt-with-mobileapp-third-party.png" alt="jwt-with-mobieapp-third-party.png"></p>
 <p>CSRF Attacks</p>
-
-<p><img src="/posts/csrf-jwt.png" alt="CSRF Attacks" /></p>
-
+<p><img src="/posts/csrf-jwt.png" alt="CSRF Attacks"></p>
 <h1 id="mix-sessionid-and-jwt">Mix sessionID and JWT</h1>
-
-<p><img src="/posts/session-plus-jwt.png" alt="session-plus-jwt.png" /></p>
-
+<p><img src="/posts/session-plus-jwt.png" alt="session-plus-jwt.png"></p>
 <p>It means one side we have reference, another side is by value</p>
-
-<h1 id="q-a">Q/A</h1>
-
+<h1 id="qa">Q/A</h1>
 <p>1.Token size?</p>
-
 <h1 id="rest-security">REST Security</h1>
-
 <ul>
 <li><a href="https://www.youtube.com/watch?v=9CJ_BAeOmW0&amp;t=521s">https://www.youtube.com/watch?v=9CJ_BAeOmW0&amp;t=521s</a></li>
 </ul>
-
 <h1 id="comparing">Comparing</h1>
-
 <p>TPS : transaction processing system</p>
-
-<p><img src="/posts/baseline-architecture.png" alt="base line architecture.png" /></p>
-
+<p><img src="/posts/baseline-architecture.png" alt="base line architecture.png"></p>
 <h2 id="basic-auth">Basic Auth</h2>
-
-<p><img src="/posts/a-basic-auth-message.png" alt="a-basic-auth-message" /></p>
-
-<p><img src="/posts/a-basic-auth.png" alt="a-basic-auth-message" /></p>
-
+<p><img src="/posts/a-basic-auth-message.png" alt="a-basic-auth-message"></p>
+<p><img src="/posts/a-basic-auth.png" alt="a-basic-auth-message"></p>
 <p>If you use a door in the cors at the backend the new tps will be</p>
-
-<p><img src="/posts/basic-auth-both-sides.png" alt="basic-auth-both-sides.png" /></p>
-
+<p><img src="/posts/basic-auth-both-sides.png" alt="basic-auth-both-sides.png"></p>
 <h1 id="micro-service-patterns">Micro service patterns</h1>
-
 <ul>
 <li><a href="https://microservices.io/patterns/microservices.html">https://microservices.io/patterns/microservices.html</a></li>
 </ul>
@@ -295,35 +235,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </article>
                     
                 </main>
-                <aside id="primary-sidebar" class="sidebar col-md-4">
-                    
-    <div class="sidebar-fixed">
-        <div id="article-scrollpy" class="sidebar-widget">
-            <h3 class="widget-header"><a href="#">Đầu mục bài viết</a></h3>
-            <ul class="sidebar-links article-scrollpy-links">
-            </ul>
-        </div>   
-    </div>
-    <div class="sidebar-fixed">    
-        <div class="sidebar-widget">
-            <h3 class="widget-header ucfirst"><span>Bài viết khác</span></h3>
-            
-            
-            
-
-            
-                <ul class="sidebar-links">
-                
-                
-                    <li><a href="/blog/backend-roadmap/">Backend Roadmap</a></li>
-                
-                </ul>
-                
-        </div>
-        
-    </div>
-
-                </aside>
             </div>
             
         </div>
