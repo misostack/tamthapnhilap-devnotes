@@ -30,7 +30,7 @@
     "nvd3": "git+https://github.com/novus/nvd3.git",
     "postcss-loader": "^2.1.6",
     "precss": "^2.0.0",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.23.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
